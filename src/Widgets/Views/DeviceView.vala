@@ -17,6 +17,8 @@
 
 public class Bluetooth.Widgets.DeviceView : Gtk.Box {
 
+	private Bluetooth.Services.Device device;
+	private Wingpanel.Widgets.Switch connected_switch;
 	public Gtk.Button back_button;
 	private Gtk.Label name;
 	private Gtk.Label paired;
@@ -30,10 +32,18 @@ public class Bluetooth.Widgets.DeviceView : Gtk.Box {
 	public void refresh (Bluetooth.Services.Device device) {
 		name.set_label ("<b>" + device.get_name () + "</b>");
 		icon.set_from_icon_name (device.get_icon (), Gtk.IconSize.DIALOG);
-		paired.set_label ("Paired: " + device.get_paired ().to_string () );
+		paired.set_label ("Paired: " + device.get_paired ().to_string ());
 		
+		connected_switch.set_active (device.get_state ());
 	}
-		
+	
+	private void connect_signals () {	
+		connected_switch.switched.connect (() => {
+			this.device.set_state (connected_switch.get_active ());
+			
+		});
+	}
+	
 	private void build_ui () {
 		var back_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8);
 		back_button = new Gtk.Button.with_label (_("Bluetooth"));
@@ -49,11 +59,14 @@ public class Bluetooth.Widgets.DeviceView : Gtk.Box {
 		paired = new Gtk.Label ("");
 		icon.icon_size = (32);
 		
+		connected_switch = new Wingpanel.Widgets.Switch (_("Connection:"));
+		
 		paired.get_style_context ().add_class ("h3");
 		name.get_style_context ().add_class ("h3");
 		name.use_markup = true;
+		name.set_halign (Gtk.Align.START);
+		paired.set_halign (Gtk.Align.START);
 		icon.margin = (8);
-		
 		
 		device_grid.attach (icon, 0, 0, 2, 2);
 		device_grid.attach (name, 2, 0, 1, 1);
@@ -63,7 +76,7 @@ public class Bluetooth.Widgets.DeviceView : Gtk.Box {
 		this.add (new Wingpanel.Widgets.Separator ());
 		this.add (device_grid);
 		this.add (new Wingpanel.Widgets.Separator ());
-		this.add (new Wingpanel.Widgets.Switch (_("Connection:")));
+		this.add (connected_switch);
 		
 		this.set_orientation (Gtk.Orientation.VERTICAL);	
 	}

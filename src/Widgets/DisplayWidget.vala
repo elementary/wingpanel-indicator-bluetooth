@@ -15,29 +15,40 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
-	public signal void show_device (Bluetooth.Services.Device device);
+public class Bluetooth.Widgets.DisplayWidget : Gtk.Box {
+	private const string ACTIVE_ICON = "bluetooth-active-symbolic";
+	private const string DISABLED_ICON = "bluetooth-disabled-symbolic";
+	
+	public Bluetooth.Services.Manager manager;
+	private Gtk.Image image;
 
-	public Bluetooth.Services.Device device;
-	private Gtk.Button state_button;
+	public DisplayWidget (Bluetooth.Services.Manager manager) {
+		Object (orientation: Gtk.Orientation.HORIZONTAL);
+		this.manager = manager;		
 
-	public Device (string device_path) {
-		device = new Bluetooth.Services.Device (device_path);
-
+		
 		build_ui ();
 		connect_signals ();
 	}
 
 	private void build_ui () {
-		//var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL);
-		var label = new Gtk.Label (device.get_name ());
-		get_content_widget ().add (label);
+		image = new Gtk.Image ();
+		
+		set_icon (manager.adapter.get_state ());
+		this.pack_start (image);
 	}
-
+	
+	private void set_icon (bool state) {
+		if (state) {
+			image.icon_name = ACTIVE_ICON;
+		} else {
+			image.icon_name = DISABLED_ICON;
+		}
+	}
+	
 	private void connect_signals () {
-		this.clicked.connect (() => {
-			debug ("device cliked");
-			show_device (this.device);
+		manager.adapter.state_changed.connect ((state) => {
+			set_icon (state);
 		});
 	}
 }

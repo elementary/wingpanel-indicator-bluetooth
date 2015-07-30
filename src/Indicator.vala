@@ -16,19 +16,22 @@
  */
 
 public class Bluetooth.Indicator : Wingpanel.Indicator {
+	public Bluetooth.Services.Manager manager;
 	private Bluetooth.Widgets.PopoverWidget popover_widget;
-	private Gtk.Image dynamic_icon;
+	private Bluetooth.Widgets.DisplayWidget dynamic_icon;
 
 	public Indicator () {
 		Object (code_name: Wingpanel.Indicator.BLUETOOTH,
 				display_name: _("bluetooth"),
 				description:_("The bluetooth indicator"));
+				
+		manager = new Bluetooth.Services.Manager ();
 	}
 
 	public override Gtk.Widget get_display_widget () {
 		if (dynamic_icon == null) { 
-			dynamic_icon = new Gtk.Image ();
-			dynamic_icon.icon_name = "bluetooth-active-symbolic";
+			dynamic_icon = new Bluetooth.Widgets.DisplayWidget (manager);		
+			
 		}
 		
 		return dynamic_icon;
@@ -36,7 +39,7 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
 	public override Gtk.Widget? get_widget () {
 		if (popover_widget == null) {
-			popover_widget = new Bluetooth.Widgets.PopoverWidget ();
+			popover_widget = new Bluetooth.Widgets.PopoverWidget (manager);
 		}
 		
 		this.visible = true;

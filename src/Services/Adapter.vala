@@ -48,7 +48,6 @@ public class Bluetooth.Services.Adapter : GLib.Object {
 			adapter = Bus.get_proxy_sync (BusType.SYSTEM, INTERFACE, adapter_address, DBusProxyFlags.NONE);
 			properties = adapter.GetProperties ();
 
-
 			debug ("Connection to bluetooth adapter established: %s\n", adapter_address);
 
 		} catch (Error e) {
@@ -84,7 +83,8 @@ public class Bluetooth.Services.Adapter : GLib.Object {
 		});
 
 		adapter.DeviceFound.connect ((name, table) => {
-			debug (@"Device found $name\n");
+			debug (@"Bluetooth Device found $name\n");
+			device_found (name);
 		});
 
 		adapter.DeviceDisappeared.connect (() => {});
@@ -128,9 +128,9 @@ public class Bluetooth.Services.Adapter : GLib.Object {
 		
 	public void stop_discovery () {
 		try {
-
+			adapter.StopDiscovery ();
 		} catch (Error e) {
-
+			
 		}
 	}
 
@@ -139,7 +139,7 @@ public class Bluetooth.Services.Adapter : GLib.Object {
 			adapter.StartDiscovery ();
 			debug ("Discovery started\n");
 		} catch (Error e) {
-			debug ("Discovery Failed: %s\n", e.message);
+			stderr.printf ("Discovery Failed: %s\n", e.message);
 		}
 	}
 }

@@ -36,7 +36,7 @@ file (GLOB resources "${CMAKE_CURRENT_SOURCE_DIR}/data/*")
 install (FILES ${resources} DESTINATION ${PKGDATADIR})
 
 # Traslation stuff
-add_subdirectory (po)
+#add_subdirectory (po)
 
 # Code
 add_subdirectory(src)

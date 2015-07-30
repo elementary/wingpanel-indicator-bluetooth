@@ -17,17 +17,19 @@
 
 public class Bluetooth.Widgets.MainView : Gtk.Box {
 	public signal void device_requested (Bluetooth.Services.Device device);
+	public signal void discovery_requested ();
 	
 	private const string SETTINGS_EXEC = "/usr/bin/switchboard bluetooth";
 
-	private Bluetooth.Services.Manager manager;
+	public Bluetooth.Services.Manager manager;
 
 	private Wingpanel.Widgets.Button show_settings_button;
+	private Wingpanel.Widgets.Button discovery_button;
 	private Wingpanel.Widgets.Switch main_switch;
 	private Gtk.Box devices_box;
 	
-	public MainView () {
-		manager = new Bluetooth.Services.Manager ();
+	public MainView (Bluetooth.Services.Manager manager) {
+		this.manager = manager;
 
 		build_ui ();
 		create_devices ();
@@ -37,9 +39,10 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 	private void build_ui () {
 		main_switch = new Wingpanel.Widgets.Switch ("Bluetooth", manager.adapter.get_state ());
 		show_settings_button = new Wingpanel.Widgets.Button ("Bluetooth Settings...");
+		discovery_button = new Wingpanel.Widgets.Button ("Discover Devices");
 		devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 8);
 		
-		main_switch.set_sensitive (main_switch.get_active ());
+		//main_switch.set_sensitive (main_switch.get_active ());
 		main_switch.get_style_context ().add_class ("h4");
 		devices_box.set_orientation (Gtk.Orientation.VERTICAL);
 		
@@ -47,6 +50,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 		this.add (main_switch);
 		this.add (devices_box);
 		this.add (new Wingpanel.Widgets.Separator ());
+		this.add (discovery_button);
 		this.add (show_settings_button);
 
 		this.show_all ();
@@ -55,17 +59,21 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 	private void connect_signals () {
 		main_switch.switched.connect (() => {
 			manager.adapter.set_state ( main_switch.get_active ());
-			main_switch.set_sensitive (main_switch.get_active ());
+			//main_switch.set_sensitive (main_switch.get_active ());
 		});
 
 		show_settings_button.clicked.connect (() => {
 			show_settings ();
 		});
 		
+		discovery_button.clicked.connect (() => {
+			discovery_requested ();
+		});
+		
 		//Adapter's Connections
 		manager.adapter.state_changed.connect ((state) => {
 			// TODO switching to on crashes dbus interface, sensitive set to false for now
-			main_switch.set_sensitive (state);
+			//main_switch.set_sensitive (state);
 			main_switch.set_active (state);
 		});
 	}

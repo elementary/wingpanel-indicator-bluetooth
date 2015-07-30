@@ -8,7 +8,7 @@ link_directories (${DEPS_LIBRARY_DIRS})
 
 find_package (Vala REQUIRED)
 include (ValaVersion)
-ensure_vala_version ("0.26.0") 
+ensure_vala_version ("0.26.0")
 
 include (ValaPrecompile)
 # Add all your vala files and requires packages to the List below to include them in the build
@@ -19,12 +19,14 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Services/Device.vala
   Widgets/Device.vala
   Widgets/PopoverWidget.vala
-  Widgets/DeviceView.vala
-  Widgets/MainView.vala
+  Widgets/DisplayWidget.vala
+  Widgets/Views/DeviceView.vala
+  Widgets/Views/DiscoveryView.vala
+  Widgets/Views/MainView.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
 PACKAGES
   gio-2.0
-  gtk+-3.0 
+  gtk+-3.0
   libnotify
   wingpanel-2.0
   granite

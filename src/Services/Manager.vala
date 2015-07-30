@@ -8,7 +8,7 @@ interface ManagerInterface : Object {
 }
 
 public class Bluetooth.Services.Manager : GLib.Object {
-	ManagerInterface? manager =  null;
+	ManagerInterface manager =  null;
 
 	public Bluetooth.Services.Adapter adapter = null;
 
