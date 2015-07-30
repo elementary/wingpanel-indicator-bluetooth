@@ -67,7 +67,10 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 		});
 		
 		discovery_button.clicked.connect (() => {
-			discovery_requested ();
+			var cmd = new Granite.Services.SimpleCommand ("/usr/bin", "bluetooth-wizard");
+			cmd.run ();
+			
+			//discovery_requested ();
 		});
 		
 		//Adapter's Connections
@@ -79,7 +82,6 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 	}
 
 	private void create_devices () {
-		debug ("BLUETOOTH Creating Devices----------------------------------------");
 		bool first_device = true;		
 		foreach (var device_path in manager.adapter.list_devices ()) {
 			if (first_device == true) {
