@@ -26,24 +26,34 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 				description:_("The bluetooth indicator"));
 				
 		manager = new Bluetooth.Services.Manager ();
+		
+		if (manager.has_adapter == false) {
+			this.visible = false;
+		}
+		 else {  
+			this.visible = true;
+		}
+		debug ("Bluetooth Indicator started");
 	}
 
 	public override Gtk.Widget get_display_widget () {
 		if (dynamic_icon == null) { 
-			dynamic_icon = new Bluetooth.Widgets.DisplayWidget (manager);		
-			
-		}
+			dynamic_icon = new Bluetooth.Widgets.DisplayWidget (manager);
+		} 
 		
 		return dynamic_icon;
 	}
 
 	public override Gtk.Widget? get_widget () {
-		if (popover_widget == null) {
+		if (popover_widget == null && manager.has_adapter) {
 			popover_widget = new Bluetooth.Widgets.PopoverWidget (manager);
 		}
 		
-		this.visible = true;
-		return popover_widget;
+		if (manager.has_adapter) {
+			return popover_widget;
+		} else { 
+			return null;
+		}
 	}
 
 

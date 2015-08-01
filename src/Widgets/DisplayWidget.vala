@@ -25,16 +25,17 @@ public class Bluetooth.Widgets.DisplayWidget : Gtk.Box {
 	public DisplayWidget (Bluetooth.Services.Manager manager) {
 		Object (orientation: Gtk.Orientation.HORIZONTAL);
 		this.manager = manager;		
-
 		
 		build_ui ();
-		connect_signals ();
+		if (manager.has_adapter) {
+		 	connect_signals ();
+		}
 	}
 
 	private void build_ui () {
 		image = new Gtk.Image ();
 		
-		set_icon (manager.adapter.get_state ());
+		
 		this.pack_start (image);
 	}
 	
@@ -47,6 +48,8 @@ public class Bluetooth.Widgets.DisplayWidget : Gtk.Box {
 	}
 	
 	private void connect_signals () {
+		set_icon (manager.adapter.get_state ());
+	
 		manager.adapter.state_changed.connect ((state) => {
 			set_icon (state);
 		});

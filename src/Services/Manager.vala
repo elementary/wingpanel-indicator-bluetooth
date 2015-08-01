@@ -8,6 +8,8 @@ interface ManagerInterface : Object {
 }
 
 public class Bluetooth.Services.Manager : GLib.Object {
+	public bool has_adapter = true;
+
 	ManagerInterface manager =  null;
 
 	public Bluetooth.Services.Adapter adapter = null;
@@ -16,8 +18,15 @@ public class Bluetooth.Services.Manager : GLib.Object {
 		try {
 			manager = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", "/", DBusProxyFlags.NONE);
 			var address = manager.DefaultAdapter ();
-			adapter = new Bluetooth.Services.Adapter (address);
+			
+			if (address != null) {
+				adapter = new Bluetooth.Services.Adapter (address);
+			}else {
+				has_adapter = false;
+			}
+			 		
 		} catch (Error e) {
+			has_adapter = false;
 			stderr.printf ("Connecting to bluetooth manager failed: %s \n", e.message);
 		}
 	}

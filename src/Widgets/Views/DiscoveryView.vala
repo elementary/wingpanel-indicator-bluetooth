@@ -38,8 +38,8 @@ public class Bluetooth.Widgets.DiscoveryView : Gtk.Box {
 		
 	private void connections () {
 		adapter.device_found.connect ((address) => {
-			device_grid.add (new Gtk.Label (@"Device $address"));
-			device_grid.show_all ();
+			//device_grid.add (new Gtk.Label (@"Device $address"));
+			//device_grid.show_all ();
 		});
 		
 		back_button.clicked.connect (() => {

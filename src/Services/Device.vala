@@ -52,7 +52,7 @@ public class Bluetooth.Services.Device : GLib.Object {
 			debug ("Connection to bluetooth device established: %s\n", device_path);
 
 		} catch (Error e) {
-			stderr.printf ("Connecting to bluetooth adapter failed: %s \n", e.message);
+			stderr.printf ("Connecting to bluetooth device failed: %s \n", e.message);
 		}
 
 		try {

@@ -38,8 +38,8 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 
 	private void build_ui () {
 		main_switch = new Wingpanel.Widgets.Switch ("Bluetooth", manager.adapter.get_state ());
-		show_settings_button = new Wingpanel.Widgets.Button ("Bluetooth Settings...");
-		discovery_button = new Wingpanel.Widgets.Button ("Discover Devices");
+		show_settings_button = new Wingpanel.Widgets.Button ("Bluetooth Settings…");
+		discovery_button = new Wingpanel.Widgets.Button ("Discover Devices…");
 		devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 8);
 		
 		//main_switch.set_sensitive (main_switch.get_active ());
