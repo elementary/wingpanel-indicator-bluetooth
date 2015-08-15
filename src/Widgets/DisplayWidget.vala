@@ -19,19 +19,17 @@ public class Bluetooth.Widgets.DisplayWidget : Gtk.Box {
 	private const string ACTIVE_ICON = "bluetooth-active-symbolic";
 	private const string DISABLED_ICON = "bluetooth-disabled-symbolic";
 	
-	public Bluetooth.Services.Manager manager;
 	private Gtk.Image image;
 
-	public DisplayWidget (Bluetooth.Services.Manager manager) {
+	public DisplayWidget () {
 		Object (orientation: Gtk.Orientation.HORIZONTAL);
-		this.manager = manager;		
 		
 		build_ui ();
 		if (manager.has_adapter) {
 		 	connect_signals ();
 		}
 	}
-
+	
 	private void build_ui () {
 		image = new Gtk.Image ();
 		
@@ -52,6 +50,15 @@ public class Bluetooth.Widgets.DisplayWidget : Gtk.Box {
 	
 		manager.adapter.state_changed.connect ((state) => {
 			set_icon (state);
+		});
+		
+		button_press_event.connect ((e) => {
+			if (e.button == Gdk.BUTTON_MIDDLE) {
+				manager.adapter.set_state (!manager.adapter.get_state ());
+				
+				return Gdk.EVENT_STOP;
+			}
+			return Gdk.EVENT_PROPAGATE;
 		});
 	}
 }

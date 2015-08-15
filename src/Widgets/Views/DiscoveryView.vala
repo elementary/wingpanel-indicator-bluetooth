@@ -16,14 +16,13 @@
  */
 
 public class Bluetooth.Widgets.DiscoveryView : Gtk.Box {
-// BOSE Address FF:E8:16:50:EB:0C
 
 	public Gtk.Button back_button;
 	private Gtk.Grid device_grid;
 	private Bluetooth.Services.Adapter adapter;
 	
-	public DiscoveryView (Bluetooth.Services.Adapter adapter) {
-		this.adapter = adapter;
+	public DiscoveryView () {
+		adapter = manager.adapter;
 		build_ui ();
 		connections ();
 	}

@@ -15,17 +15,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Indicator : Wingpanel.Indicator {
-	public Bluetooth.Services.Manager manager;
+namespace Bluetooth {
+	private Bluetooth.Services.Manager manager;
 	private Bluetooth.Widgets.PopoverWidget popover_widget;
 	private Bluetooth.Widgets.DisplayWidget dynamic_icon;
+	private Bluetooth.Indicator indicator;
+}
 
+public class Bluetooth.Indicator : Wingpanel.Indicator {
 	public Indicator () {
 		Object (code_name: Wingpanel.Indicator.BLUETOOTH,
 				display_name: _("bluetooth"),
 				description:_("The bluetooth indicator"));
 				
 		manager = new Bluetooth.Services.Manager ();
+		indicator = this;
 		
 		if (manager.has_adapter == false) {
 			this.visible = false;
@@ -38,7 +42,7 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
 	public override Gtk.Widget get_display_widget () {
 		if (dynamic_icon == null) { 
-			dynamic_icon = new Bluetooth.Widgets.DisplayWidget (manager);
+			dynamic_icon = new Bluetooth.Widgets.DisplayWidget ();
 		} 
 		
 		return dynamic_icon;
@@ -46,14 +50,13 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
 	public override Gtk.Widget? get_widget () {
 		if (popover_widget == null && manager.has_adapter) {
-			popover_widget = new Bluetooth.Widgets.PopoverWidget (manager);
-		}
-		
-		if (manager.has_adapter) {
-			return popover_widget;
-		} else { 
+			popover_widget = new Bluetooth.Widgets.PopoverWidget ();
+			
+		} else if (manager.has_adapter == false) {
 			return null;
 		}
+		
+		return popover_widget;
 	}
 
 

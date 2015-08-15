@@ -29,8 +29,8 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
 	}
 
 	private void build_ui () {
-		//var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL);
 		var label = new Gtk.Label (device.get_name ());
+		label.set_margin_start (6);
 		get_content_widget ().add (label);
 	}
 

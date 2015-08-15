@@ -19,19 +19,17 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
 	private Bluetooth.Widgets.MainView main_view;
 	private Bluetooth.Widgets.DeviceView device_view;
 	private Bluetooth.Widgets.DiscoveryView discovery_view;
-	public Bluetooth.Services.Manager manager;
 	
-	public PopoverWidget (Bluetooth.Services.Manager manager) {
-		this.manager = manager;
-
+	public PopoverWidget () {
+		
 		build_ui ();
 		connect_signals ();
 	}
 
 	private void build_ui () {
-		main_view = new Bluetooth.Widgets.MainView (manager);
+		main_view = new Bluetooth.Widgets.MainView ();
 		device_view = new Bluetooth.Widgets.DeviceView ();
-		discovery_view = new Bluetooth.Widgets.DiscoveryView (manager.adapter);
+		discovery_view = new Bluetooth.Widgets.DiscoveryView ();
 
 		this.add_named (main_view, "main_view");
 		this.add_named (discovery_view, "discovery_view");
