@@ -15,92 +15,104 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Widgets.MainView : Gtk.Box {
-	public signal void request_close ();
-	public signal void device_requested (Bluetooth.Services.Device device);
-	public signal void discovery_requested ();
-	
-	private const string SETTINGS_EXEC = "/usr/bin/switchboard bluetooth";
+public class Bluetooth.Widgets.AdapterView : Gtk.Box {
+    public signal void request_close ();
+    public signal void device_requested (Bluetooth.Services.Device device);
+    public signal void discovery_requested ();
 
-	private Wingpanel.Widgets.Button show_settings_button;
-	private Wingpanel.Widgets.Button discovery_button;
-	private Wingpanel.Widgets.Switch main_switch;
-	private Gtk.Box devices_box;
-	
-	public MainView () {
-		build_ui ();
-		create_devices ();
-		connect_signals ();
-	}
+    private const string SETTINGS_EXEC = "/usr/bin/switchboard bluetooth";
 
-	private void build_ui () {
-		main_switch = new Wingpanel.Widgets.Switch ("Bluetooth", manager.adapter.get_state ());
-		show_settings_button = new Wingpanel.Widgets.Button ("Bluetooth Settings…");
-		discovery_button = new Wingpanel.Widgets.Button ("Discover Devices…");
-		devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-		
-		main_switch.get_style_context ().add_class ("h4");
-		devices_box.set_orientation (Gtk.Orientation.VERTICAL);
+    private Bluetooth.Services.Adapter adapter;
 
-		update_ui_state (manager.adapter.get_state ());		
-		this.set_orientation (Gtk.Orientation.VERTICAL);
-		this.add (main_switch);
-		this.add (devices_box);
-		this.add (new Wingpanel.Widgets.Separator ());
-		this.add (discovery_button);
-		this.add (show_settings_button);
+    private Wingpanel.Widgets.Button show_settings_button;
+    private Wingpanel.Widgets.Button discovery_button;
+    private Wingpanel.Widgets.Switch main_switch;
+    private Gtk.Box devices_box;
 
-		this.show_all ();
-	}
+    public AdapterView (Bluetooth.Services.Adapter adapter) {
+        this.adapter = adapter;
+        main_switch = new Wingpanel.Widgets.Switch ("Bluetooth", adapter.powered);
+        show_settings_button = new Wingpanel.Widgets.Button ("Bluetooth Settings…");
+        discovery_button = new Wingpanel.Widgets.Button ("Discover Devices…");
+        devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        devices_box.add (new Wingpanel.Widgets.Separator ());
 
-	private void connect_signals () {
-		main_switch.switched.connect (() => {
-			manager.adapter.set_state ( main_switch.get_active ());
-		});
+        main_switch.get_style_context ().add_class ("h4");
+        devices_box.set_orientation (Gtk.Orientation.VERTICAL);
 
-		show_settings_button.clicked.connect (() => {
-			indicator.close ();
-			show_settings ();
-		});
-		
-		discovery_button.clicked.connect (() => {
-			indicator.close ();
-			var cmd = new Granite.Services.SimpleCommand ("/usr/bin", "bluetooth-wizard");
-			cmd.run ();
-			
-			//discovery_requested ();
-		});
-		
-		//Adapter's Connections
-		manager.adapter.state_changed.connect ((state) => {
-			update_ui_state (state);
-		});
-	}
+        update_ui_state (adapter.powered);
+        this.set_orientation (Gtk.Orientation.VERTICAL);
+        this.add (main_switch);
+        this.add (devices_box);
+        this.add (new Wingpanel.Widgets.Separator ());
+        this.add (discovery_button);
+        this.add (show_settings_button);
 
-	private void update_ui_state (bool state) {
-		main_switch.set_active (state);
-		devices_box.set_sensitive (state);
-		discovery_button.set_sensitive (state);
-	}
+        this.show_all ();
+        main_switch.switched.connect (() => {
+            adapter.powered = main_switch.get_active ();
+        });
 
-	private void create_devices () {
-		bool first_device = true;		
-		foreach (var device_path in manager.adapter.list_devices ()) {
-			if (first_device == true) {
-				first_device = false;
-				devices_box.add (new Wingpanel.Widgets.Separator ());
-			}
-			var device = new Bluetooth.Widgets.Device (device_path);
-			devices_box.add (device);
-			
-			device.show_device.connect ((device_service) => {
-				device_requested (device_service);
-			});
-		}
-	}
+        show_settings_button.clicked.connect (() => {
+            indicator.close ();
+            show_settings ();
+        });
 
-	private void show_settings () {
-		var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
-		cmd.run ();
-	}
+        discovery_button.clicked.connect (() => {
+            indicator.close ();
+            var cmd = new Granite.Services.SimpleCommand ("/usr/bin", "bluetooth-wizard");
+            cmd.run ();
+        });
+
+        //Adapter's Connections
+        adapter.notify["Powered"].connect (() => {
+            update_ui_state (adapter.powered);
+        });
+
+        foreach (var device in object_manager.get_devices ()) {
+            add_device (device);
+        }
+
+        object_manager.device_added.connect ((device) => {
+            add_device (device);
+        });
+
+        object_manager.device_removed.connect ((device) => {
+            devices_box.get_children ().foreach ((child) => {
+                if (child is Bluetooth.Widgets.Device) {
+                    ((Bluetooth.Widgets.Device) child).destroy ();
+                }
+            });
+        });
+
+        devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
+        devices_box.visible = !devices_box.no_show_all;
+    }
+
+    private void update_ui_state (bool state) {
+        main_switch.set_active (state);
+        devices_box.set_sensitive (state);
+        discovery_button.set_sensitive (state);
+    }
+
+    private void add_device (Bluetooth.Services.Device device) {
+        if (object_manager.get_adapter_from_path (device.adapter) != adapter) {
+            return;
+        }
+
+        var device_widget = new Bluetooth.Widgets.Device (device);
+        devices_box.add (device_widget);
+
+        devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
+        devices_box.visible = !devices_box.no_show_all;
+
+        device_widget.show_device.connect ((device_service) => {
+            device_requested (device_service);
+        });
+    }
+
+    private void show_settings () {
+        var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
+        cmd.run ();
+    }
 }

@@ -16,28 +16,20 @@
  */
 
 public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
-	public signal void show_device (Bluetooth.Services.Device device);
+    public signal void show_device (Bluetooth.Services.Device device);
 
-	public Bluetooth.Services.Device device;
-	private Gtk.Button state_button;
+    public Bluetooth.Services.Device device;
+    private Gtk.Button state_button;
 
-	public Device (string device_path) {
-		device = new Bluetooth.Services.Device (device_path);
+    public Device (Bluetooth.Services.Device device) {
+        this.device = device;
 
-		build_ui ();
-		connect_signals ();
-	}
-
-	private void build_ui () {
-		var label = new Gtk.Label (device.get_name ());
-		label.set_margin_start (6);
-		get_content_widget ().add (label);
-	}
-
-	private void connect_signals () {
-		this.clicked.connect (() => {
-			debug ("device cliked");
-			show_device (this.device);
-		});
-	}
+        var label = new Gtk.Label (device.name);
+        label.set_margin_start (6);
+        get_content_widget ().add (label);
+        this.clicked.connect (() => {
+            debug ("device cliked");
+            show_device (this.device);
+        });
+    }
 }

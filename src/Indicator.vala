@@ -16,59 +16,54 @@
  */
 
 namespace Bluetooth {
-	private Bluetooth.Services.Manager manager;
-	private Bluetooth.Widgets.PopoverWidget popover_widget;
-	private Bluetooth.Widgets.DisplayWidget dynamic_icon;
-	private Bluetooth.Indicator indicator;
+    private Bluetooth.Services.ObjectManager object_manager;
+    private Bluetooth.Widgets.PopoverWidget popover_widget;
+    private Bluetooth.Widgets.DisplayWidget dynamic_icon;
+    private Bluetooth.Indicator indicator;
 }
 
 public class Bluetooth.Indicator : Wingpanel.Indicator {
-	public Indicator () {
-		Object (code_name: Wingpanel.Indicator.BLUETOOTH,
-				display_name: _("bluetooth"),
-				description:_("The bluetooth indicator"));
-				
-		manager = new Bluetooth.Services.Manager ();
-		indicator = this;
-		
-		if (manager.has_adapter == false) {
-			this.visible = false;
-		}
-		 else {  
-			this.visible = true;
-		}
-		debug ("Bluetooth Indicator started");
-	}
+    public Indicator () {
+        Object (code_name: Wingpanel.Indicator.BLUETOOTH,
+                display_name: _("bluetooth"),
+                description:_("The bluetooth indicator"));
+        object_manager = new Services.ObjectManager ();
+        indicator = this;
 
-	public override Gtk.Widget get_display_widget () {
-		if (dynamic_icon == null) { 
-			dynamic_icon = new Bluetooth.Widgets.DisplayWidget ();
-		} 
-		
-		return dynamic_icon;
-	}
+        this.visible = object_manager.has_object;
+        debug ("Bluetooth Indicator started");
+    }
 
-	public override Gtk.Widget? get_widget () {
-		if (popover_widget == null && manager.has_adapter) {
-			popover_widget = new Bluetooth.Widgets.PopoverWidget ();
-			
-		} else if (manager.has_adapter == false) {
-			return null;
-		}
-		
-		return popover_widget;
-	}
+    public override Gtk.Widget get_display_widget () {
+        if (dynamic_icon == null) { 
+            dynamic_icon = new Bluetooth.Widgets.DisplayWidget ();
+        }
+
+        return dynamic_icon;
+    }
+
+    public override Gtk.Widget? get_widget () {
+        if (object_manager.has_object == false) {
+            return null;
+        }
+
+        if (popover_widget == null) {
+            popover_widget = new Bluetooth.Widgets.PopoverWidget ();
+        }
+
+        return popover_widget;
+    }
 
 
-	public override void opened () {
-	}
+    public override void opened () {
+    }
 
-	public override void closed () {
-	}
+    public override void closed () {
+    }
 }
 
 public Wingpanel.Indicator get_indicator (Module module) {
-	debug ("Activating Bluetooth Indicator");
-	var indicator = new Bluetooth.Indicator ();
-	return indicator;
+    debug ("Activating Bluetooth Indicator");
+    var indicator = new Bluetooth.Indicator ();
+    return indicator;
 }

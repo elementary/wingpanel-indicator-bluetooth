@@ -15,50 +15,33 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Widgets.DisplayWidget : Gtk.Box {
-	private const string ACTIVE_ICON = "bluetooth-active-symbolic";
-	private const string DISABLED_ICON = "bluetooth-disabled-symbolic";
-	
-	private Gtk.Image image;
+public class Bluetooth.Widgets.DisplayWidget : Gtk.Image {
+    private const string ACTIVE_ICON = "bluetooth-active-symbolic";
+    private const string DISABLED_ICON = "bluetooth-disabled-symbolic";
 
-	public DisplayWidget () {
-		Object (orientation: Gtk.Orientation.HORIZONTAL);
-		
-		build_ui ();
-		if (manager.has_adapter) {
-		 	connect_signals ();
-		}
-	}
-	
-	private void build_ui () {
-		image = new Gtk.Image ();
-		
-		
-		this.pack_start (image);
-	}
-	
-	private void set_icon (bool state) {
-		if (state) {
-			image.icon_name = ACTIVE_ICON;
-		} else {
-			image.icon_name = DISABLED_ICON;
-		}
-	}
-	
-	private void connect_signals () {
-		set_icon (manager.adapter.get_state ());
-	
-		manager.adapter.state_changed.connect ((state) => {
-			set_icon (state);
-		});
-		
-		button_press_event.connect ((e) => {
-			if (e.button == Gdk.BUTTON_MIDDLE) {
-				manager.adapter.set_state (!manager.adapter.get_state ());
-				
-				return Gdk.EVENT_STOP;
-			}
-			return Gdk.EVENT_PROPAGATE;
-		});
-	}
+    public DisplayWidget () {
+        icon_size = Gtk.IconSize.LARGE_TOOLBAR;
+        set_icon (object_manager.get_global_state ());
+
+        object_manager.global_state_changed.connect ((state) => {
+            set_icon (state);
+        });
+
+        button_press_event.connect ((e) => {
+            if (e.button == Gdk.BUTTON_MIDDLE) {
+                object_manager.set_global_state (!object_manager.get_global_state ());
+                return Gdk.EVENT_STOP;
+            }
+
+            return Gdk.EVENT_PROPAGATE;
+        });
+    }
+
+    private void set_icon (bool state) {
+        if (state) {
+            icon_name = ACTIVE_ICON;
+        } else {
+            icon_name = DISABLED_ICON;
+        }
+    }
 }
