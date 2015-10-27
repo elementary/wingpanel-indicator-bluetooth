@@ -19,17 +19,35 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
     public signal void show_device (Bluetooth.Services.Device device);
 
     public Bluetooth.Services.Device device;
-    private Gtk.Button state_button;
+    private Gtk.Label name_label;
+    private Gtk.Image icon_image;
 
     public Device (Bluetooth.Services.Device device) {
         this.device = device;
+        name_label = new Gtk.Label (device.name);
+        icon_image = new Gtk.Image.from_icon_name (device.icon, Gtk.IconSize.MENU);
+        var grid = new Gtk.Grid ();
+        grid.orientation = Gtk.Orientation.HORIZONTAL;
+        grid.margin_start = 6;
 
-        var label = new Gtk.Label (device.name);
-        label.set_margin_start (6);
-        get_content_widget ().add (label);
+        grid.add (icon_image);
+        grid.add (name_label);
+        get_content_widget ().add (grid);
+
         this.clicked.connect (() => {
-            debug ("device cliked");
             show_device (this.device);
+        });
+
+        (device as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
+            var name_ = changed.lookup_value("Name", new VariantType("b"));
+            if (name_ != null) {
+                name_label.label = device.name;
+            }
+
+            var icon_ = changed.lookup_value("Icon", new VariantType("b"));
+            if (icon_ != null) {
+                icon_image.icon_name = device.icon;
+            }
         });
     }
 }

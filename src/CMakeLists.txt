@@ -32,6 +32,7 @@ PACKAGES
   granite
 OPTIONS
   --thread
+  --target-glib=2.32
 )
 
 add_library (${CMAKE_PROJECT_NAME} MODULE ${VALA_C})

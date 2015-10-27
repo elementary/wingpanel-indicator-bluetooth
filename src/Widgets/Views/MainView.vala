@@ -15,23 +15,20 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Widgets.AdapterView : Gtk.Box {
+public class Bluetooth.Widgets.MainView : Gtk.Box {
     public signal void request_close ();
     public signal void device_requested (Bluetooth.Services.Device device);
     public signal void discovery_requested ();
 
-    private const string SETTINGS_EXEC = "/usr/bin/switchboard bluetooth";
-
-    private Bluetooth.Services.Adapter adapter;
+    private const string SETTINGS_EXEC = "switchboard bluetooth";
 
     private Wingpanel.Widgets.Button show_settings_button;
     private Wingpanel.Widgets.Button discovery_button;
     private Wingpanel.Widgets.Switch main_switch;
     private Gtk.Box devices_box;
 
-    public AdapterView (Bluetooth.Services.Adapter adapter) {
-        this.adapter = adapter;
-        main_switch = new Wingpanel.Widgets.Switch ("Bluetooth", adapter.powered);
+    public MainView () {
+        main_switch = new Wingpanel.Widgets.Switch ("Bluetooth", object_manager.get_global_state ());
         show_settings_button = new Wingpanel.Widgets.Button ("Bluetooth Settings…");
         discovery_button = new Wingpanel.Widgets.Button ("Discover Devices…");
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -40,7 +37,7 @@ public class Bluetooth.Widgets.AdapterView : Gtk.Box {
         main_switch.get_style_context ().add_class ("h4");
         devices_box.set_orientation (Gtk.Orientation.VERTICAL);
 
-        update_ui_state (adapter.powered);
+        update_ui_state (object_manager.get_global_state ());
         this.set_orientation (Gtk.Orientation.VERTICAL);
         this.add (main_switch);
         this.add (devices_box);
@@ -50,23 +47,23 @@ public class Bluetooth.Widgets.AdapterView : Gtk.Box {
 
         this.show_all ();
         main_switch.switched.connect (() => {
-            adapter.powered = main_switch.get_active ();
+            object_manager.set_global_state (main_switch.get_active ());
         });
 
         show_settings_button.clicked.connect (() => {
-            indicator.close ();
+            request_close ();
             show_settings ();
         });
 
         discovery_button.clicked.connect (() => {
-            indicator.close ();
+            request_close ();
             var cmd = new Granite.Services.SimpleCommand ("/usr/bin", "bluetooth-wizard");
             cmd.run ();
         });
 
         //Adapter's Connections
-        adapter.notify["Powered"].connect (() => {
-            update_ui_state (adapter.powered);
+        object_manager.global_state_changed.connect ((state, paired) => {
+            update_ui_state (state);
         });
 
         foreach (var device in object_manager.get_devices ()) {
@@ -83,6 +80,9 @@ public class Bluetooth.Widgets.AdapterView : Gtk.Box {
                     ((Bluetooth.Widgets.Device) child).destroy ();
                 }
             });
+
+            devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
+            devices_box.visible = !devices_box.no_show_all;
         });
 
         devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
@@ -96,10 +96,6 @@ public class Bluetooth.Widgets.AdapterView : Gtk.Box {
     }
 
     private void add_device (Bluetooth.Services.Device device) {
-        if (object_manager.get_adapter_from_path (device.adapter) != adapter) {
-            return;
-        }
-
         var device_widget = new Bluetooth.Widgets.Device (device);
         devices_box.add (device_widget);
 

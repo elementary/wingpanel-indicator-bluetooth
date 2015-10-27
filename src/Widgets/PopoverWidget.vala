@@ -16,46 +16,41 @@
  */
 
 public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
-	private Bluetooth.Widgets.AdapterView main_view;
-	private Bluetooth.Widgets.DeviceView device_view;
-	private Bluetooth.Widgets.DiscoveryView discovery_view;
-	
-	public PopoverWidget () {
-		
-		build_ui ();
-		connect_signals ();
-	}
+    public signal void request_close ();
+    private Bluetooth.Widgets.MainView main_view;
+    private Bluetooth.Widgets.DiscoveryView discovery_view;
 
-	private void build_ui () {
-		main_view = new Bluetooth.Widgets.AdapterView (object_manager.get_adapters ().to_array ()[0]);
-		device_view = new Bluetooth.Widgets.DeviceView ();
-		discovery_view = new Bluetooth.Widgets.DiscoveryView ();
+    public PopoverWidget () {
+        transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+        main_view = new Bluetooth.Widgets.MainView ();
+        discovery_view = new Bluetooth.Widgets.DiscoveryView ();
 
-		this.add_named (main_view, "main_view");
-		this.add_named (discovery_view, "discovery_view");
-	}
+        add (main_view);
+        add (discovery_view);
 
-	private void connect_signals () {
-		
-		main_view.discovery_requested.connect (() => {
-			this.set_visible_child_full ("discovery_view", Gtk.StackTransitionType.SLIDE_LEFT);
-			discovery_view.start_discovery ();
-		});
-	
-		main_view.device_requested.connect ((device_service) => {
-			this.add_named (device_view, "device_view");
-			this.show_all ();
-			this.set_visible_child_full ("device_view", Gtk.StackTransitionType.SLIDE_LEFT);
-			this.device_view.refresh (device_service);
-		});
+        main_view.discovery_requested.connect (() => {
+            set_visible_child (discovery_view);
+            discovery_view.start_discovery ();
+        });
 
-		device_view.back_button.clicked.connect (() => {
-			this.set_visible_child_full ("main_view", Gtk.StackTransitionType.SLIDE_RIGHT);
-			this.remove (device_view);
-		});
-		
-		discovery_view.back_button.clicked.connect (() => {
-			this.set_visible_child_full ("main_view", Gtk.StackTransitionType.SLIDE_RIGHT);
-		});
-	}
+        main_view.device_requested.connect ((device) => {
+            var device_view = new Bluetooth.Widgets.DeviceView (device);
+            add (device_view);
+            device_view.show_all ();
+            set_visible_child (device_view);
+
+            device_view.go_back.connect (() => {
+                set_visible_child (main_view);
+                device_view.destroy ();
+            });
+        });
+
+        main_view.request_close.connect (() => {
+            request_close ();
+        });
+
+        discovery_view.back_button.clicked.connect (() => {
+            set_visible_child (main_view);
+        });
+    }
 }

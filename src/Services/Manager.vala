@@ -24,7 +24,7 @@ public interface Bluetooth.Services.DBusInterface : Object {
 }
 
 public class Bluetooth.Services.ObjectManager : Object {
-    public signal void global_state_changed (bool enabled);
+    public signal void global_state_changed (bool enabled, bool connected);
     public signal void adapter_added (Bluetooth.Services.Adapter adapter);
     public signal void adapter_removed (Bluetooth.Services.Adapter adapter);
     public signal void device_added (Bluetooth.Services.Device adapter);
@@ -38,16 +38,16 @@ public class Bluetooth.Services.ObjectManager : Object {
 
     private Bluetooth.Services.DBusInterface object_interface;
     private Gee.HashMap<string, Bluetooth.Services.Adapter> adapters;
-    private Gee.LinkedList<Bluetooth.Services.Device> devices;
+    private Gee.HashMap<string, Bluetooth.Services.Device> devices;
     public ObjectManager () {
         adapters = new Gee.HashMap<string, Bluetooth.Services.Adapter> (null, null);
-        devices = new Gee.LinkedList<Bluetooth.Services.Device> ();
+        devices = new Gee.HashMap<string, Bluetooth.Services.Device> (null, null);
         try {
             object_interface = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", "/", DBusProxyFlags.NONE);
             var objects = object_interface.get_managed_objects ();
             objects.foreach ((path, param) => {add_path (path, param);});
             object_interface.interfaces_added.connect ((path, param) => {add_path (path, param);});
-            object_interface.interfaces_removed.connect ((path, array) => {});
+            object_interface.interfaces_removed.connect ((path, array) => {remove_path (path);});
         } catch (Error e) {
             critical (e.message);
         }
@@ -56,20 +56,59 @@ public class Bluetooth.Services.ObjectManager : Object {
     private void add_path (ObjectPath path, HashTable<string, HashTable<string, Variant>> param) {
         if ("org.bluez.Adapter1" in param) {
             try {
-                Bluetooth.Services.Adapter adapter = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.NONE);
+                Bluetooth.Services.Adapter adapter = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
                 adapters.set (path, adapter);
                 adapter_added (adapter);
+                (adapter as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
+                    var powered = changed.lookup_value("Powered", new VariantType("b"));
+                    if (powered != null) {
+                        check_global_state ();
+                    }
+                });
             } catch (Error e) {
                 debug ("Connecting to bluetooth adapter failed: %s", e.message);
             }
         } else if ("org.bluez.Device1" in param) {
             try {
-                Bluetooth.Services.Device device = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.NONE);
-                devices.add (device);
-                device_added (device);
+                Bluetooth.Services.Device device = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
+                if (device.paired) {
+                    devices.set (path, device);
+                    device_added (device);
+                }
+                (device as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
+                    var connected = changed.lookup_value("Connected", new VariantType("b"));
+                    if (connected != null) {
+                        check_global_state ();
+                    }
+                    var paired = changed.lookup_value("Paired", new VariantType("b"));
+                    if (paired != null) {
+                        if (device.paired) {
+                            devices.set (path, device);
+                            device_added (device);
+                        } else {
+                            devices.unset (path);
+                            device_removed (device);
+                        }
+                    }
+                });
             } catch (Error e) {
                 debug ("Connecting to bluetooth device failed: %s", e.message);
             }
+        }
+    }
+
+    public void remove_path (ObjectPath path) {
+        var adapter = adapters.get (path);
+        if (adapter != null) {
+            adapters.unset (path);
+            adapter_removed (adapter);
+            return;
+        }
+
+        var device = devices.get (path);
+        if (device != null) {
+            devices.unset (path);
+            device_removed (device);
         }
     }
 
@@ -78,11 +117,25 @@ public class Bluetooth.Services.ObjectManager : Object {
     }
 
     public Gee.Collection<Bluetooth.Services.Device> get_devices () {
-        return devices.read_only_view;
+        return devices.values;
     }
 
     public Bluetooth.Services.Adapter? get_adapter_from_path (string path) {
         return adapters.get (path);
+    }
+
+    private void check_global_state () {
+        global_state_changed (get_global_state (), get_connected ());
+    }
+
+    public bool get_connected () {
+        foreach (var device in devices.values) {
+            if (device.connected) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public bool get_global_state () {
@@ -96,8 +149,22 @@ public class Bluetooth.Services.ObjectManager : Object {
     }
 
     public void set_global_state (bool state) {
-        foreach (var adapter in adapters.values) {
-            adapter.powered = state;
-        }
+        new Thread<void*> (null, () => {
+            foreach (var device in devices.values) {
+                if (device.connected) {
+                    try {
+                        device.disconnect ();
+                    } catch (Error e) {
+                        critical (e.message);
+                    }
+                }
+            }
+
+            foreach (var adapter in adapters.values) {
+                adapter.powered = state;
+            }
+
+            return null;
+        });
     }
 }

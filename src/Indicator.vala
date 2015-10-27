@@ -16,21 +16,26 @@
  */
 
 namespace Bluetooth {
-    private Bluetooth.Services.ObjectManager object_manager;
-    private Bluetooth.Widgets.PopoverWidget popover_widget;
-    private Bluetooth.Widgets.DisplayWidget dynamic_icon;
-    private Bluetooth.Indicator indicator;
+    public static Bluetooth.Services.ObjectManager object_manager;
+    public static Bluetooth.Indicator indicator;
 }
 
 public class Bluetooth.Indicator : Wingpanel.Indicator {
+    private Bluetooth.Widgets.PopoverWidget popover_widget;
+    private Bluetooth.Widgets.DisplayWidget dynamic_icon;
     public Indicator () {
         Object (code_name: Wingpanel.Indicator.BLUETOOTH,
                 display_name: _("bluetooth"),
                 description:_("The bluetooth indicator"));
         object_manager = new Services.ObjectManager ();
-        indicator = this;
-
         this.visible = object_manager.has_object;
+        object_manager.adapter_added.connect (() => {
+            visible = object_manager.has_object;
+        });
+
+        object_manager.adapter_removed.connect (() => {
+            visible = object_manager.has_object;
+        });
         debug ("Bluetooth Indicator started");
     }
 
@@ -49,6 +54,9 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
         if (popover_widget == null) {
             popover_widget = new Bluetooth.Widgets.PopoverWidget ();
+            popover_widget.request_close.connect (() => {
+                close ();
+            });
         }
 
         return popover_widget;
@@ -64,6 +72,9 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
 public Wingpanel.Indicator get_indicator (Module module) {
     debug ("Activating Bluetooth Indicator");
-    var indicator = new Bluetooth.Indicator ();
-    return indicator;
+    if (Bluetooth.indicator == null) {
+        Bluetooth.indicator = new Bluetooth.Indicator ();
+    }
+
+    return Bluetooth.indicator;
 }
