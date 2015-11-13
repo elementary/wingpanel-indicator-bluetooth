@@ -16,52 +16,54 @@
  */
 
 public class Bluetooth.Widgets.DiscoveryView : Gtk.Box {
+    public Gtk.Button back_button;
+    private Gtk.Grid device_grid;
 
-	public Gtk.Button back_button;
-	private Gtk.Grid device_grid;
-	private Bluetooth.Services.Adapter adapter;
-	
-	public DiscoveryView () {
-		adapter = manager.adapter;
-		build_ui ();
-		connections ();
-	}
-	
-	public void start_discovery () {
-		foreach (var widget in device_grid.get_children ()) {
-			device_grid.remove (widget);
-			widget.destroy ();
-		}
-		adapter.start_discovery ();
-	}	
-		
-	private void connections () {
-		adapter.device_found.connect ((address) => {
-			//device_grid.add (new Gtk.Label (@"Device $address"));
-			//device_grid.show_all ();
-		});
-		
-		back_button.clicked.connect (() => {
-			adapter.stop_discovery ();
-		});
-	}
-	
-	private void build_ui () {
-		var back_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8);
-		back_button = new Gtk.Button.with_label (_("Bluetooth"));
-		back_button.get_style_context ().add_class ("back-button");
-		back_button.set_margin_start (8);
-		back_button.set_margin_top (8);
-		back_button.set_margin_bottom (8);
-		back_box.add (back_button);
-				
-		device_grid = new Gtk.Grid ();
-		device_grid.set_orientation (Gtk.Orientation.VERTICAL);
-	
-		this.add (back_box);
-		this.add (new Wingpanel.Widgets.Separator ());
-		this.add (device_grid);
-		
-		this.set_orientation (Gtk.Orientation.VERTICAL);	
-	}
+    public DiscoveryView () {
+        
+    }
+
+    construct {
+        var back_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 8);
+        back_button = new Gtk.Button.with_label (_("Bluetooth"));
+        back_button.get_style_context ().add_class ("back-button");
+        back_button.set_margin_start (8);
+        back_button.set_margin_top (8);
+        back_button.set_margin_bottom (8);
+        back_box.add (back_button);
+
+        device_grid = new Gtk.Grid ();
+        device_grid.set_orientation (Gtk.Orientation.VERTICAL);
+
+        this.add (back_box);
+        this.add (new Wingpanel.Widgets.Separator ());
+        this.add (device_grid);
+
+        this.set_orientation (Gtk.Orientation.VERTICAL);
+
+        back_button.clicked.connect (() => {
+            foreach (var adapter in object_manager.get_adapters ()) {
+                try {
+                    adapter.stop_discovery ();
+                } catch (Error e) {
+                    critical (e.message);
+                }
+            }
+        });
+    }
+
+    public void start_discovery () {
+        foreach (var widget in device_grid.get_children ()) {
+            device_grid.remove (widget);
+            widget.destroy ();
+        }
+
+        foreach (var adapter in object_manager.get_adapters ()) {
+            try {
+                adapter.start_discovery ();
+            } catch (Error e) {
+                critical (e.message);
+            }
+        }
+    }
 }
