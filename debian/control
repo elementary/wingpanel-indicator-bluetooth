@@ -25,8 +25,7 @@ Package: wingpanel-indicator-bluetooth-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: wingpanel-indicator-bluetooth (= ${binary:Version}),
-         ${misc:Depends}
+Depends: wingpanel-indicator-bluetooth (= ${binary:Version}), ${misc:Depends}
 Enhances: wingpanel-indicator-bluetooth
 Description: WingPanel Bluetooth Indicator (debugging symbols)
  WingPanel Bluetooth Indicator
