@@ -16,15 +16,12 @@
  */
 
 public class Bluetooth.Widgets.DisplayWidget : Gtk.Image {
-    private const string ACTIVE_ICON = "bluetooth-active-symbolic";
-    private const string DISABLED_ICON = "bluetooth-disabled-symbolic";
-
     public DisplayWidget () {
         icon_size = Gtk.IconSize.LARGE_TOOLBAR;
-        set_icon (object_manager.get_global_state ());
+        set_icon (object_manager.get_global_state (), object_manager.get_connected ());
 
-        object_manager.global_state_changed.connect ((state) => {
-            set_icon (state);
+        object_manager.global_state_changed.connect ((state, connected) => {
+            set_icon (state, connected);
         });
 
         button_press_event.connect ((e) => {
@@ -37,11 +34,15 @@ public class Bluetooth.Widgets.DisplayWidget : Gtk.Image {
         });
     }
 
-    private void set_icon (bool state) {
+    private void set_icon (bool state, bool connected) {
         if (state) {
-            icon_name = ACTIVE_ICON;
+            if (connected) {
+                icon_name = "bluetooth-paired-symbolic";
+            } else {
+                icon_name = "bluetooth-active-symbolic";
+            }
         } else {
-            icon_name = DISABLED_ICON;
+            icon_name = "bluetooth-disabled-symbolic";
         }
     }
 }
