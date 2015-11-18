@@ -28,9 +28,9 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     private Gtk.Box devices_box;
 
     public MainView () {
-        main_switch = new Wingpanel.Widgets.Switch ("Bluetooth", object_manager.get_global_state ());
-        show_settings_button = new Wingpanel.Widgets.Button ("Bluetooth Settings…");
-        discovery_button = new Wingpanel.Widgets.Button ("Discover Devices…");
+        main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
+        show_settings_button = new Wingpanel.Widgets.Button (_("Bluetooth Settings…"));
+        discovery_button = new Wingpanel.Widgets.Button (_("Discover Devices…"));
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         devices_box.add (new Wingpanel.Widgets.Separator ());
 
