@@ -3,18 +3,18 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-18 21:09+0100\n"
-"PO-Revision-Date: 2015-11-18 21:02+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-12-14 14:39+0000\n"
+"Last-Translator: Phillip Sz <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-19 05:38+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-15 05:44+0000\n"
+"X-Generator: Launchpad (build 17865)\n"
 
 #: ../src/Indicator.vala:28
 msgid "bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: ../src/Indicator.vala:29
 msgid "The bluetooth indicator"
@@ -24,15 +24,15 @@ msgstr ""
 #: ../src/Widgets/Views/DiscoveryView.vala:28
 #: ../src/Widgets/Views/MainView.vala:31
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: ../src/Widgets/Views/DeviceView.vala:67
 msgid "Connection"
-msgstr ""
+msgstr "Verbindung"
 
 #: ../src/Widgets/Views/MainView.vala:32
 msgid "Bluetooth Settings…"
-msgstr ""
+msgstr "Bluetooth-Einstellungen …"
 
 #: ../src/Widgets/Views/MainView.vala:33
 msgid "Discover Devices…"
