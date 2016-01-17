@@ -35,10 +35,12 @@ public class Bluetooth.Services.ObjectManager : Object {
             return !adapters.is_empty;
         }
     }
-
+    
+    private Settings settings;
     private Bluetooth.Services.DBusInterface object_interface;
     private Gee.HashMap<string, Bluetooth.Services.Adapter> adapters;
     private Gee.HashMap<string, Bluetooth.Services.Device> devices;
+    
     public ObjectManager () {
         adapters = new Gee.HashMap<string, Bluetooth.Services.Adapter> (null, null);
         devices = new Gee.HashMap<string, Bluetooth.Services.Device> (null, null);
@@ -48,6 +50,8 @@ public class Bluetooth.Services.ObjectManager : Object {
             objects.foreach ((path, param) => {add_path (path, param);});
             object_interface.interfaces_added.connect ((path, param) => {add_path (path, param);});
             object_interface.interfaces_removed.connect ((path, array) => {remove_path (path);});
+            settings = new Settings ("org.pantheon.desktop.wingpanel.indicators.bluetooth");
+            set_last_state ();
         } catch (Error e) {
             critical (e.message);
         }
@@ -164,7 +168,13 @@ public class Bluetooth.Services.ObjectManager : Object {
                 adapter.powered = state;
             }
 
+            settings.set_boolean ("bluetooth-enabled", state);
+
             return null;
         });
+    }
+    
+    private void set_last_state () {
+        set_global_state (settings.get_boolean ("bluetooth-enabled"));
     }
 }
