@@ -25,7 +25,7 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
         main_view = new Bluetooth.Widgets.MainView ();
         discovery_view = new Bluetooth.Widgets.DiscoveryView ();
 
-        //add (main_view);
+        add (main_view);
         add (discovery_view);
 
         main_view.discovery_requested.connect (() => {
