@@ -26,7 +26,6 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     private Wingpanel.Widgets.Button discovery_button;
     private Wingpanel.Widgets.Switch main_switch;
     private Gtk.Box devices_box;
-    private bool is_in_session = false;
 
     public MainView (bool is_in_session) {
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
@@ -42,8 +41,8 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         this.set_orientation (Gtk.Orientation.VERTICAL);
         this.add (main_switch);
         this.add (devices_box);
-        this.add (new Wingpanel.Widgets.Separator ());
         if (is_in_session) {
+            this.add (new Wingpanel.Widgets.Separator ());
             this.add (discovery_button);
             this.add (show_settings_button);
         }
@@ -90,8 +89,6 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 
         devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
         devices_box.visible = !devices_box.no_show_all;
-
-        this.is_in_session = is_in_session;
     }
 
     private void update_ui_state (bool state) {
