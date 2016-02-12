@@ -19,10 +19,11 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
     public signal void request_close ();
     private Bluetooth.Widgets.MainView main_view;
     private Bluetooth.Widgets.DiscoveryView discovery_view;
+    private bool is_in_session = false;
 
-    public PopoverWidget () {
+    public PopoverWidget (bool is_in_session) {
         transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
-        main_view = new Bluetooth.Widgets.MainView ();
+        main_view = new Bluetooth.Widgets.MainView (is_in_session);
         discovery_view = new Bluetooth.Widgets.DiscoveryView ();
 
         add (main_view);
@@ -52,5 +53,7 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
         discovery_view.back_button.clicked.connect (() => {
             set_visible_child (main_view);
         });
+
+        this.is_in_session = is_in_session;
     }
 }
