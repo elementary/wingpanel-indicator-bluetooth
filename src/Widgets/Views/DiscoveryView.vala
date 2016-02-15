@@ -41,6 +41,8 @@ public class Bluetooth.Widgets.DiscoveryView : Gtk.Box {
 
         this.set_orientation (Gtk.Orientation.VERTICAL);
 
+        show_view (false);
+
         back_button.clicked.connect (() => {
             foreach (var adapter in object_manager.get_adapters ()) {
                 try {
@@ -49,10 +51,14 @@ public class Bluetooth.Widgets.DiscoveryView : Gtk.Box {
                     critical (e.message);
                 }
             }
+
+            show_view (false);
         });
     }
 
     public void start_discovery () {
+        show_view (true);
+
         foreach (var widget in device_grid.get_children ()) {
             device_grid.remove (widget);
             widget.destroy ();
@@ -65,5 +71,10 @@ public class Bluetooth.Widgets.DiscoveryView : Gtk.Box {
                 critical (e.message);
             }
         }
+    }
+
+    private void show_view (bool show) {
+        this.no_show_all = !show;
+        this.visible = !this.no_show_all;
     }
 }

@@ -21,9 +21,10 @@ namespace Bluetooth {
 }
 
 public class Bluetooth.Indicator : Wingpanel.Indicator {
+    private bool is_in_session = false;
     private Bluetooth.Widgets.PopoverWidget popover_widget;
     private Bluetooth.Widgets.DisplayWidget dynamic_icon;
-    public Indicator () {
+    public Indicator (bool is_in_session) {
         Object (code_name: Wingpanel.Indicator.BLUETOOTH,
                 display_name: _("bluetooth"),
                 description:_("The bluetooth indicator"));
@@ -36,6 +37,9 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
         object_manager.adapter_removed.connect (() => {
             visible = object_manager.has_object;
         });
+
+        this.is_in_session = is_in_session;
+
         debug ("Bluetooth Indicator started");
     }
 
@@ -53,7 +57,7 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
         }
 
         if (popover_widget == null) {
-            popover_widget = new Bluetooth.Widgets.PopoverWidget ();
+            popover_widget = new Bluetooth.Widgets.PopoverWidget (is_in_session);
             popover_widget.request_close.connect (() => {
                 close ();
             });
@@ -70,10 +74,10 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
     }
 }
 
-public Wingpanel.Indicator get_indicator (Module module) {
+public Wingpanel.Indicator get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
     debug ("Activating Bluetooth Indicator");
     if (Bluetooth.indicator == null) {
-        Bluetooth.indicator = new Bluetooth.Indicator ();
+        Bluetooth.indicator = new Bluetooth.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
     }
 
     return Bluetooth.indicator;

@@ -27,7 +27,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     private Wingpanel.Widgets.Switch main_switch;
     private Gtk.Box devices_box;
 
-    public MainView () {
+    public MainView (bool is_in_session) {
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
         show_settings_button = new Wingpanel.Widgets.Button (_("Bluetooth Settings…"));
         discovery_button = new Wingpanel.Widgets.Button (_("Discover Devices…"));
@@ -41,9 +41,11 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         this.set_orientation (Gtk.Orientation.VERTICAL);
         this.add (main_switch);
         this.add (devices_box);
-        this.add (new Wingpanel.Widgets.Separator ());
-        this.add (discovery_button);
-        this.add (show_settings_button);
+        if (is_in_session) {
+            this.add (new Wingpanel.Widgets.Separator ());
+            this.add (discovery_button);
+            this.add (show_settings_button);
+        }
 
         this.show_all ();
         main_switch.switched.connect (() => {
