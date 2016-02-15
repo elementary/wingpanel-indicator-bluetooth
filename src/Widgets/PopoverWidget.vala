@@ -28,14 +28,9 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
         add (main_view);
         add (discovery_view);
 
-        discovery_view.no_show_all = true;
-        discovery_view.visible = !discovery_view.no_show_all;
-
         main_view.discovery_requested.connect (() => {
-            set_visible_child (discovery_view);
-            discovery_view.no_show_all = false;
-            discovery_view.visible = !discovery_view.no_show_all;
             discovery_view.start_discovery ();
+            set_visible_child (discovery_view);
         });
 
         main_view.device_requested.connect ((device) => {
@@ -56,8 +51,6 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
 
         discovery_view.back_button.clicked.connect (() => {
             set_visible_child (main_view);
-            discovery_view.no_show_all = true;
-            discovery_view.visible = !discovery_view.no_show_all;
         });
     }
 }
