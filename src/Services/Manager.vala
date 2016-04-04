@@ -51,7 +51,6 @@ public class Bluetooth.Services.ObjectManager : Object {
             object_interface.interfaces_added.connect ((path, param) => {add_path (path, param);});
             object_interface.interfaces_removed.connect ((path, array) => {remove_path (path);});
             settings = new Settings ("org.pantheon.desktop.wingpanel.indicators.bluetooth");
-            set_last_state ();
         } catch (Error e) {
             critical (e.message);
         }
@@ -173,8 +172,12 @@ public class Bluetooth.Services.ObjectManager : Object {
             return null;
         });
     }
-    
-    private void set_last_state () {
-        set_global_state (settings.get_boolean ("bluetooth-enabled"));
+
+    public void set_last_state () {
+        bool last_state = settings.get_boolean ("bluetooth-enabled");
+
+        if (get_global_state () != last_state) {
+            set_global_state (last_state);
+        }
     }
 }

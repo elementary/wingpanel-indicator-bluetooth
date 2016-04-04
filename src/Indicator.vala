@@ -22,6 +22,8 @@ namespace Bluetooth {
 
 public class Bluetooth.Indicator : Wingpanel.Indicator {
     private bool is_in_session = false;
+    private bool last_state_set = false;
+
     private Bluetooth.Widgets.PopoverWidget popover_widget;
     private Bluetooth.Widgets.DisplayWidget dynamic_icon;
     public Indicator (bool is_in_session) {
@@ -29,9 +31,20 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
                 display_name: _("bluetooth"),
                 description:_("The bluetooth indicator"));
         object_manager = new Services.ObjectManager ();
+
         this.visible = object_manager.has_object;
+
+        if (this.visible) {
+            object_manager.set_last_state ();
+            last_state_set = true;
+        }
+
         object_manager.adapter_added.connect (() => {
             visible = object_manager.has_object;
+            if (!last_state_set) {
+                object_manager.set_last_state ();
+                last_state_set = true;
+            }
         });
 
         object_manager.adapter_removed.connect (() => {
@@ -44,7 +57,7 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
     }
 
     public override Gtk.Widget get_display_widget () {
-        if (dynamic_icon == null) { 
+        if (dynamic_icon == null) {
             dynamic_icon = new Bluetooth.Widgets.DisplayWidget ();
         }
 
