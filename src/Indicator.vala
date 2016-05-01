@@ -15,62 +15,44 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Bluetooth {
-    public static Bluetooth.Services.ObjectManager object_manager;
-    public static Bluetooth.Indicator indicator;
-}
-
 public class Bluetooth.Indicator : Wingpanel.Indicator {
     private bool is_in_session = false;
-    private bool last_state_set = false;
 
     private Bluetooth.Widgets.PopoverWidget popover_widget;
     private Bluetooth.Widgets.DisplayWidget dynamic_icon;
+    private Bluetooth.Services.ObjectManager object_manager;
     public Indicator (bool is_in_session) {
         Object (code_name: Wingpanel.Indicator.BLUETOOTH,
                 display_name: _("bluetooth"),
                 description:_("The bluetooth indicator"));
+        this.is_in_session = is_in_session;
         object_manager = new Services.ObjectManager ();
+        object_manager.bind_property ("has-object", this, "visible", GLib.BindingFlags.SYNC_CREATE);
 
-        this.visible = object_manager.has_object;
-
-        if (this.visible) {
+        if (object_manager.has_object) {
             object_manager.set_last_state ();
-            last_state_set = true;
         }
 
-        object_manager.adapter_added.connect (() => {
-            visible = object_manager.has_object;
-            if (!last_state_set) {
+        object_manager.notify["has-object"].connect (() => {
+            if (object_manager.has_object) {
                 object_manager.set_last_state ();
-                last_state_set = true;
             }
         });
-
-        object_manager.adapter_removed.connect (() => {
-            visible = object_manager.has_object;
-        });
-
-        this.is_in_session = is_in_session;
 
         debug ("Bluetooth Indicator started");
     }
 
     public override Gtk.Widget get_display_widget () {
         if (dynamic_icon == null) {
-            dynamic_icon = new Bluetooth.Widgets.DisplayWidget ();
+            dynamic_icon = new Bluetooth.Widgets.DisplayWidget (object_manager);
         }
 
         return dynamic_icon;
     }
 
     public override Gtk.Widget? get_widget () {
-        if (object_manager.has_object == false) {
-            return null;
-        }
-
         if (popover_widget == null) {
-            popover_widget = new Bluetooth.Widgets.PopoverWidget (is_in_session);
+            popover_widget = new Bluetooth.Widgets.PopoverWidget (object_manager, is_in_session);
             popover_widget.request_close.connect (() => {
                 close ();
             });
@@ -89,9 +71,7 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
 public Wingpanel.Indicator get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
     debug ("Activating Bluetooth Indicator");
-    if (Bluetooth.indicator == null) {
-        Bluetooth.indicator = new Bluetooth.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
-    }
+    var indicator = new Bluetooth.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
 
-    return Bluetooth.indicator;
+    return indicator;
 }
