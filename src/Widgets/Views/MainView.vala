@@ -27,7 +27,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     private Wingpanel.Widgets.Switch main_switch;
     private Gtk.Box devices_box;
 
-    public MainView (bool is_in_session) {
+    public MainView (Bluetooth.Services.ObjectManager object_manager, bool is_in_session) {
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
         show_settings_button = new Wingpanel.Widgets.Button (_("Bluetooth Settings…"));
         discovery_button = new Wingpanel.Widgets.Button (_("Discover Devices…"));
