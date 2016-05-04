@@ -110,7 +110,14 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     }
 
     private void show_settings () {
-        var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
-        cmd.run ();
+        var list = new List<string> ();
+        list.append ("bluetooth");
+
+        try {
+            var appinfo = AppInfo.create_from_commandline ("switchboard", null, AppInfoCreateFlags.SUPPORTS_URIS);
+            appinfo.launch_uris (list, null);
+        } catch (Error e) {
+            warning ("%s\n", e.message);
+        }
     }
 }
