@@ -20,8 +20,6 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     public signal void device_requested (Bluetooth.Services.Device device);
     public signal void discovery_requested ();
 
-    private const string SETTINGS_EXEC = "switchboard bluetooth";
-
     private Wingpanel.Widgets.Button show_settings_button;
     private Wingpanel.Widgets.Button discovery_button;
     private Wingpanel.Widgets.Switch main_switch;
@@ -59,8 +57,13 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 
         discovery_button.clicked.connect (() => {
             request_close ();
-            var cmd = new Granite.Services.SimpleCommand ("/usr/bin", "bluetooth-wizard");
-            cmd.run ();
+
+            try {
+                var appinfo = AppInfo.create_from_commandline ("bluetooth-wizard", null, AppInfoCreateFlags.SUPPORTS_URIS);
+                appinfo.launch_uris (null, null);
+            } catch (Error e) {
+                warning ("%s\n", e.message);
+            }
         });
 
         //Adapter's Connections
