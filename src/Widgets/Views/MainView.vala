@@ -32,13 +32,16 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         devices_box.add (new Wingpanel.Widgets.Separator ());
 
+        var scroll_box = new Wingpanel.Widgets.AutomaticScrollBox ();
+        scroll_box.add (devices_box);
+
         main_switch.get_style_context ().add_class ("h4");
         devices_box.set_orientation (Gtk.Orientation.VERTICAL);
 
         update_ui_state (object_manager.get_global_state ());
         this.set_orientation (Gtk.Orientation.VERTICAL);
         this.add (main_switch);
-        this.add (devices_box);
+        this.add (scroll_box);
         if (is_in_session) {
             this.add (new Wingpanel.Widgets.Separator ());
             this.add (discovery_button);
