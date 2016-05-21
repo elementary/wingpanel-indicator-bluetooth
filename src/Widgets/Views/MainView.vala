@@ -24,30 +24,37 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     private Wingpanel.Widgets.Button discovery_button;
     private Wingpanel.Widgets.Switch main_switch;
     private Gtk.Box devices_box;
+    private Gtk.Revealer revealer;
 
     public MainView (Bluetooth.Services.ObjectManager object_manager, bool is_in_session) {
+        orientation = Gtk.Orientation.VERTICAL;
+
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
         main_switch.get_style_context ().add_class ("h4");
-        show_settings_button = new Wingpanel.Widgets.Button (_("Bluetooth Settings…"));
-        discovery_button = new Wingpanel.Widgets.Button (_("Discover Devices…"));
+
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        devices_box.add (new Wingpanel.Widgets.Separator ());
 
         var scroll_box = new Wingpanel.Widgets.AutomaticScrollBox ();
         scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll_box.add (devices_box);
 
-        update_ui_state (object_manager.get_global_state ());
-        this.set_orientation (Gtk.Orientation.VERTICAL);
-        this.add (main_switch);
-        this.add (scroll_box);
+        revealer = new Gtk.Revealer ();
+        revealer.add (scroll_box);
+
+        show_settings_button = new Wingpanel.Widgets.Button (_("Bluetooth Settings…"));
+        discovery_button = new Wingpanel.Widgets.Button (_("Discover Devices…"));
+
+        add (main_switch);
+        add (revealer);
         if (is_in_session) {
-            this.add (new Wingpanel.Widgets.Separator ());
-            this.add (discovery_button);
-            this.add (show_settings_button);
+            add (new Wingpanel.Widgets.Separator ());
+            add (discovery_button);
+            add (show_settings_button);
         }
 
-        this.show_all ();
+        update_ui_state (object_manager.get_global_state ());
+        show_all ();
+
         main_switch.switched.connect (() => {
             object_manager.set_global_state (main_switch.get_active ());
         });
@@ -88,25 +95,25 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
                 }
             });
 
-            devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
+            devices_box.no_show_all = (devices_box.get_children ().length () <= 0);
             devices_box.visible = !devices_box.no_show_all;
         });
 
-        devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
+        devices_box.no_show_all = (devices_box.get_children ().length () <= 0);
         devices_box.visible = !devices_box.no_show_all;
     }
 
     private void update_ui_state (bool state) {
         main_switch.set_active (state);
-        devices_box.set_sensitive (state);
-        discovery_button.set_sensitive (state);
+        revealer.reveal_child = state;
+        discovery_button.sensitive = state;
     }
 
     private void add_device (Bluetooth.Services.Device device) {
         var device_widget = new Bluetooth.Widgets.Device (device);
         devices_box.add (device_widget);
 
-        devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
+        devices_box.no_show_all = (devices_box.get_children ().length () <= 0);
         devices_box.visible = !devices_box.no_show_all;
 
         device_widget.show_device.connect ((device_service) => {
