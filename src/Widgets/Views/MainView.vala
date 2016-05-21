@@ -33,6 +33,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         devices_box.add (new Wingpanel.Widgets.Separator ());
 
         var scroll_box = new Wingpanel.Widgets.AutomaticScrollBox ();
+        scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll_box.add (devices_box);
 
         main_switch.get_style_context ().add_class ("h4");
