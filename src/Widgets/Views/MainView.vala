@@ -27,6 +27,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 
     public MainView (Bluetooth.Services.ObjectManager object_manager, bool is_in_session) {
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
+        main_switch.get_style_context ().add_class ("h4");
         show_settings_button = new Wingpanel.Widgets.Button (_("Bluetooth Settings…"));
         discovery_button = new Wingpanel.Widgets.Button (_("Discover Devices…"));
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -35,9 +36,6 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         var scroll_box = new Wingpanel.Widgets.AutomaticScrollBox ();
         scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll_box.add (devices_box);
-
-        main_switch.get_style_context ().add_class ("h4");
-        devices_box.set_orientation (Gtk.Orientation.VERTICAL);
 
         update_ui_state (object_manager.get_global_state ());
         this.set_orientation (Gtk.Orientation.VERTICAL);
