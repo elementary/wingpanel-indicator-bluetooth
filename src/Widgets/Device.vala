@@ -33,6 +33,7 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
         status_label.halign = Gtk.Align.START;
         spinner = new Gtk.Spinner ();
         spinner.halign = Gtk.Align.START;
+        spinner.hexpand = true;
         icon_image = new Gtk.Image.from_icon_name (device.icon, Gtk.IconSize.DIALOG);
         var grid = new Gtk.Grid ();
 
@@ -70,8 +71,10 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
         new Thread<void*> (null, () => {
             try {
                 if (!device.connected) {
+                    status_label.label = _("Connecting…");
                     device.connect ();
                 } else {
+                    status_label.label = _("Disconnecting…");
                     device.disconnect ();
                 }
             } catch (Error e) {
