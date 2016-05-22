@@ -21,6 +21,7 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
     public Bluetooth.Services.Device device;
     private Gtk.Label name_label;
     private Gtk.Label status_label;
+    private Gtk.Spinner spinner;
     private Gtk.Image icon_image;
 
     public Device (Bluetooth.Services.Device device) {
@@ -30,16 +31,19 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
         name_label.use_markup = true;
         status_label = new Gtk.Label (_("Not Connected"));
         status_label.halign = Gtk.Align.START;
+        spinner = new Gtk.Spinner ();
+        spinner.halign = Gtk.Align.START;
         icon_image = new Gtk.Image.from_icon_name (device.icon, Gtk.IconSize.DIALOG);
         var grid = new Gtk.Grid ();
 
         grid.attach (icon_image, 0, 0, 1, 2);
-        grid.attach (name_label, 1, 0, 1, 1);
+        grid.attach (name_label, 1, 0, 2, 1);
         grid.attach (status_label, 1, 1, 1, 1);
+        grid.attach (spinner, 2, 1, 1, 1);
         get_content_widget ().add (grid);
 
-        this.clicked.connect (() => {
-            show_device (this.device);
+        clicked.connect (() => {
+            toggle_device ();
         });
 
         (device as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
@@ -58,6 +62,23 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
             if (icon_ != null) {
                 icon_image.icon_name = device.icon;
             }
+        });
+    }
+
+    private void toggle_device () {
+        spinner.active = true;
+        new Thread<void*> (null, () => {
+            try {
+                if (!device.connected) {
+                    device.connect ();
+                } else {
+                    device.disconnect ();
+                }
+            } catch (Error e) {
+                critical (e.message);
+            }
+            spinner.active = false;
+            return null;
         });
     }
 }
