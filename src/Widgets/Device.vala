@@ -76,6 +76,7 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
                 }
             } catch (Error e) {
                 critical (e.message);
+                status_label.label = _("Unable to Connect");
             }
             spinner.active = false;
             return null;
