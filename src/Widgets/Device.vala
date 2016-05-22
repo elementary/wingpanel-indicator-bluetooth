@@ -23,11 +23,9 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
     private Gtk.Label status_label;
     private Gtk.Spinner spinner;
     private Gtk.Image icon_image;
-    private bool updating;
 
     public Device (Bluetooth.Services.Device device) {
         this.device = device;
-        updating = false;
         name_label = new Gtk.Label ("<b>%s</b>".printf (device.name));
         name_label.halign = Gtk.Align.START;
         name_label.use_markup = true;
@@ -46,7 +44,7 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
         get_content_widget ().add (grid);
 
         clicked.connect (() => {
-            if (!updating) {
+            if (!spinner.active) {
                 toggle_device ();
             }
         });
@@ -71,7 +69,6 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
     }
 
     private void toggle_device () {
-        updating = true;
         spinner.active = true;
         new Thread<void*> (null, () => {
             try {
@@ -87,7 +84,6 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
                 status_label.label = _("Unable to Connect");
             }
             spinner.active = false;
-            updating = false;
             return null;
         });
     }
