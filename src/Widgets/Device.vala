@@ -20,22 +20,33 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
 
     public Bluetooth.Services.Device device;
     private Gtk.Label name_label;
+    private Gtk.Label status_label;
+    private Gtk.Spinner spinner;
     private Gtk.Image icon_image;
 
     public Device (Bluetooth.Services.Device device) {
         this.device = device;
-        name_label = new Gtk.Label (device.name);
-        icon_image = new Gtk.Image.from_icon_name (device.icon, Gtk.IconSize.MENU);
+        name_label = new Gtk.Label ("<b>%s</b>".printf (device.name));
+        name_label.halign = Gtk.Align.START;
+        name_label.use_markup = true;
+        status_label = new Gtk.Label (_("Not Connected"));
+        status_label.halign = Gtk.Align.START;
+        spinner = new Gtk.Spinner ();
+        spinner.halign = Gtk.Align.START;
+        spinner.hexpand = true;
+        icon_image = new Gtk.Image.from_icon_name (device.icon, Gtk.IconSize.DIALOG);
         var grid = new Gtk.Grid ();
-        grid.orientation = Gtk.Orientation.HORIZONTAL;
-        grid.margin_start = 6;
 
-        grid.add (icon_image);
-        grid.add (name_label);
+        grid.attach (icon_image, 0, 0, 1, 2);
+        grid.attach (name_label, 1, 0, 2, 1);
+        grid.attach (status_label, 1, 1, 1, 1);
+        grid.attach (spinner, 2, 1, 1, 1);
         get_content_widget ().add (grid);
 
-        this.clicked.connect (() => {
-            show_device (this.device);
+        clicked.connect (() => {
+            if (!spinner.active) {
+                toggle_device ();
+            }
         });
 
         (device as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
@@ -44,10 +55,36 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
                 name_label.label = device.name;
             }
 
+            if (device.connected) {
+                status_label.label = _("Connected");
+            } else {
+                status_label.label = _("Not Connected");
+            }
+
             var icon_ = changed.lookup_value("Icon", new VariantType("b"));
             if (icon_ != null) {
                 icon_image.icon_name = device.icon;
             }
+        });
+    }
+
+    private void toggle_device () {
+        spinner.active = true;
+        new Thread<void*> (null, () => {
+            try {
+                if (!device.connected) {
+                    status_label.label = _("Connecting…");
+                    device.connect ();
+                } else {
+                    status_label.label = _("Disconnecting…");
+                    device.disconnect ();
+                }
+            } catch (Error e) {
+                critical (e.message);
+                status_label.label = _("Unable to Connect");
+            }
+            spinner.active = false;
+            return null;
         });
     }
 }

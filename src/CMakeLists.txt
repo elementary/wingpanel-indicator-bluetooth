@@ -20,7 +20,6 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Widgets/Device.vala
   Widgets/PopoverWidget.vala
   Widgets/DisplayWidget.vala
-  Widgets/Views/DeviceView.vala
   Widgets/Views/DiscoveryView.vala
   Widgets/Views/MainView.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala

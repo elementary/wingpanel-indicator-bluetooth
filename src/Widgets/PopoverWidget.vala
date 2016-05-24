@@ -33,18 +33,6 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
             set_visible_child (discovery_view);
         });
 
-        main_view.device_requested.connect ((device) => {
-            var device_view = new Bluetooth.Widgets.DeviceView (device);
-            add (device_view);
-            device_view.show_all ();
-            set_visible_child (device_view);
-
-            device_view.go_back.connect (() => {
-                set_visible_child (main_view);
-                device_view.destroy ();
-            });
-        });
-
         main_view.request_close.connect (() => {
             request_close ();
         });
