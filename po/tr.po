@@ -2,38 +2,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-18 21:09+0100\n"
+"POT-Creation-Date: 2016-05-24 18:54-0700\n"
 "PO-Revision-Date: 2016-04-09 14:27+0000\n"
 "Last-Translator: Melih Güçlü <melihguclu@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-05-08 04:56+0000\n"
-"X-Generator: Launchpad (build 18025)\n"
+"X-Launchpad-Export-Date: 2016-05-25 06:17+0000\n"
+"X-Generator: Launchpad (build 18053)\n"
 
-#: ../src/Indicator.vala:28
+#: ../src/Indicator.vala:26
 msgid "bluetooth"
 msgstr "bluetooth"
 
-#: ../src/Indicator.vala:29
+#: ../src/Indicator.vala:27
 msgid "The bluetooth indicator"
 msgstr "Bluetooth göstergesi"
 
-#: ../src/Widgets/Views/DeviceView.vala:53
-#: ../src/Widgets/Views/DiscoveryView.vala:28
-#: ../src/Widgets/Views/MainView.vala:31
+#: ../src/Widgets/Views/MainView.vala:32
+#: ../src/Widgets/Views/DiscoveryView.vala:29
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../src/Widgets/Views/DeviceView.vala:67
-msgid "Connection"
-msgstr "Bağlantı"
-
-#: ../src/Widgets/Views/MainView.vala:32
+#: ../src/Widgets/Views/MainView.vala:45
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth Ayarları…"
 
-#: ../src/Widgets/Views/MainView.vala:33
+#: ../src/Widgets/Views/MainView.vala:46
 msgid "Discover Devices…"
 msgstr "Cihazları Keşfet..."
+
+#: ../src/Widgets/Device.vala:32 ../src/Widgets/Device.vala:61
+msgid "Not Connected"
+msgstr ""
+
+#: ../src/Widgets/Device.vala:59
+msgid "Connected"
+msgstr ""
+
+#: ../src/Widgets/Device.vala:76
+msgid "Connecting…"
+msgstr ""
+
+#: ../src/Widgets/Device.vala:79
+msgid "Disconnecting…"
+msgstr ""
+
+#: ../src/Widgets/Device.vala:84
+msgid "Unable to Connect"
+msgstr ""
+
+#~ msgid "Connection"
+#~ msgstr "Bağlantı"
