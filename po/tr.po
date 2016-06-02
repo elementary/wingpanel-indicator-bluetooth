@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-24 18:54-0700\n"
-"PO-Revision-Date: 2016-04-09 14:27+0000\n"
+"PO-Revision-Date: 2016-06-01 20:20+0000\n"
 "Last-Translator: Melih Güçlü <melihguclu@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-05-26 05:53+0000\n"
+"X-Launchpad-Export-Date: 2016-06-02 06:28+0000\n"
 "X-Generator: Launchpad (build 18053)\n"
 
 #: ../src/Indicator.vala:26
@@ -35,20 +35,20 @@ msgstr "Cihazları Keşfet..."
 
 #: ../src/Widgets/Device.vala:32 ../src/Widgets/Device.vala:61
 msgid "Not Connected"
-msgstr ""
+msgstr "Bağlanmadı"
 
 #: ../src/Widgets/Device.vala:59
 msgid "Connected"
-msgstr ""
+msgstr "Bağlandı"
 
 #: ../src/Widgets/Device.vala:76
 msgid "Connecting…"
-msgstr ""
+msgstr "Bağlanılıyor..."
 
 #: ../src/Widgets/Device.vala:79
 msgid "Disconnecting…"
-msgstr ""
+msgstr "Bağlantı kesiliyor…"
 
 #: ../src/Widgets/Device.vala:84
 msgid "Unable to Connect"
-msgstr ""
+msgstr "Bağlantı kurulamıyor"
