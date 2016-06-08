@@ -16,6 +16,7 @@
  */
 
 public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
+    private const string DEFAULT_ICON = "bluetooth";
     public signal void show_device (Bluetooth.Services.Device device);
 
     public Bluetooth.Services.Device device;
@@ -34,7 +35,7 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
         spinner = new Gtk.Spinner ();
         spinner.halign = Gtk.Align.START;
         spinner.hexpand = true;
-        icon_image = new Gtk.Image.from_icon_name (device.icon, Gtk.IconSize.DIALOG);
+        icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon, Gtk.IconSize.DIALOG);
         var grid = new Gtk.Grid ();
 
         grid.attach (icon_image, 0, 0, 1, 2);
