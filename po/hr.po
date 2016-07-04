@@ -3,52 +3,52 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-24 18:54-0700\n"
-"PO-Revision-Date: 2015-11-18 20:57+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2016-07-03 21:18+0000\n"
+"Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-05-26 05:53+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-07-04 06:16+0000\n"
+"X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/Indicator.vala:26
 msgid "bluetooth"
-msgstr ""
+msgstr "bluetooth"
 
 #: ../src/Indicator.vala:27
 msgid "The bluetooth indicator"
-msgstr ""
+msgstr "Bluetooth indikator"
 
 #: ../src/Widgets/Views/MainView.vala:32
 #: ../src/Widgets/Views/DiscoveryView.vala:29
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: ../src/Widgets/Views/MainView.vala:45
 msgid "Bluetooth Settings…"
-msgstr ""
+msgstr "Bluetooth postavke..."
 
 #: ../src/Widgets/Views/MainView.vala:46
 msgid "Discover Devices…"
-msgstr ""
+msgstr "Pretraži uređaje..."
 
 #: ../src/Widgets/Device.vala:32 ../src/Widgets/Device.vala:61
 msgid "Not Connected"
-msgstr ""
+msgstr "Nije povezano"
 
 #: ../src/Widgets/Device.vala:59
 msgid "Connected"
-msgstr ""
+msgstr "Povezano"
 
 #: ../src/Widgets/Device.vala:76
 msgid "Connecting…"
-msgstr ""
+msgstr "Povezivanje…"
 
 #: ../src/Widgets/Device.vala:79
 msgid "Disconnecting…"
-msgstr ""
+msgstr "Prekidanje povezivanja..."
 
 #: ../src/Widgets/Device.vala:84
 msgid "Unable to Connect"
-msgstr ""
+msgstr "Nemoguće povezivanje"
