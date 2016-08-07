@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-24 18:54-0700\n"
-"PO-Revision-Date: 2015-11-18 20:57+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2016-08-06 18:13+0000\n"
+"Last-Translator: Stanislav <stunito0o0o0@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-05-26 05:52+0000\n"
-"X-Generator: Launchpad (build 18053)\n"
+"X-Launchpad-Export-Date: 2016-08-07 05:50+0000\n"
+"X-Generator: Launchpad (build 18169)\n"
 
 #: ../src/Indicator.vala:26
 msgid "bluetooth"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: ../src/Widgets/Views/MainView.vala:46
 msgid "Discover Devices…"
-msgstr ""
+msgstr "Откриване на устройства..."
 
 #: ../src/Widgets/Device.vala:32 ../src/Widgets/Device.vala:61
 msgid "Not Connected"
@@ -43,11 +43,11 @@ msgstr ""
 
 #: ../src/Widgets/Device.vala:76
 msgid "Connecting…"
-msgstr ""
+msgstr "Свързване…"
 
 #: ../src/Widgets/Device.vala:79
 msgid "Disconnecting…"
-msgstr ""
+msgstr "Прекъсване на връзката..."
 
 #: ../src/Widgets/Device.vala:84
 msgid "Unable to Connect"
