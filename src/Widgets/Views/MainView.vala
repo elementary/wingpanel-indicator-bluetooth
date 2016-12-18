@@ -125,12 +125,8 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     }
 
     private void show_settings () {
-        var list = new List<string> ();
-        list.append ("bluetooth");
-
         try {
-            var appinfo = AppInfo.create_from_commandline ("switchboard", null, AppInfoCreateFlags.SUPPORTS_URIS);
-            appinfo.launch_uris (list, null);
+            Gtk.show_uri (null, "settings://network/bluetooth", Gdk.CURRENT_TIME);
         } catch (Error e) {
             warning ("%s\n", e.message);
         }
