@@ -217,5 +217,7 @@ public class Bluetooth.Services.ObjectManager : Object {
         if (get_global_state () != last_state) {
             set_global_state (last_state);
         }
+        
+        check_global_state();
     }
 }
