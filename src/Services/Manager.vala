@@ -187,13 +187,15 @@ public class Bluetooth.Services.ObjectManager : Object {
 
     public void set_global_state (bool state) {
         new Thread<void*> (null, () => {
-            lock (devices) {
-                foreach (var device in devices.values) {
-                    if (device.connected) {
-                        try {
-                            device.disconnect ();
-                        } catch (Error e) {
-                            critical (e.message);
+            if (state == false) {
+                lock (devices) {
+                    foreach (var device in devices.values) {
+                        if (device.connected) {
+                            try {
+                                device.disconnect ();
+                            } catch (Error e) {
+                                critical (e.message);
+                            }
                         }
                     }
                 }
