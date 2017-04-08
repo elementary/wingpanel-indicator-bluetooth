@@ -3,52 +3,56 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-24 18:54-0700\n"
-"PO-Revision-Date: 2015-11-18 20:57+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-04-08 10:46+0000\n"
+"Last-Translator: popvladaurel <popvladaurel@gmail.com>\n"
+"Language-Team: Romanian <http://weblate.elementary.io/projects/desktop"
+"/wingpanel-indicator-bluetooth/ro/>\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: ../src/Indicator.vala:26
 msgid "bluetooth"
-msgstr ""
+msgstr "bluetooth"
 
 #: ../src/Indicator.vala:27
 msgid "The bluetooth indicator"
-msgstr ""
+msgstr "Indicatorul bluetooth"
 
 #: ../src/Widgets/Views/MainView.vala:32
 #: ../src/Widgets/Views/DiscoveryView.vala:29
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: ../src/Widgets/Views/MainView.vala:45
 msgid "Bluetooth Settings…"
-msgstr ""
+msgstr "Setări bluetooth…"
 
 #: ../src/Widgets/Views/MainView.vala:46
 msgid "Discover Devices…"
-msgstr ""
+msgstr "Descoperă dispozitive…"
 
 #: ../src/Widgets/Device.vala:32 ../src/Widgets/Device.vala:61
 msgid "Not Connected"
-msgstr ""
+msgstr "Deconectat"
 
 #: ../src/Widgets/Device.vala:59
 msgid "Connected"
-msgstr ""
+msgstr "Conectat"
 
 #: ../src/Widgets/Device.vala:76
 msgid "Connecting…"
-msgstr ""
+msgstr "Conectare…"
 
 #: ../src/Widgets/Device.vala:79
 msgid "Disconnecting…"
-msgstr ""
+msgstr "Deconectare…"
 
 #: ../src/Widgets/Device.vala:84
 msgid "Unable to Connect"
-msgstr ""
+msgstr "Nu se poate conecta"
