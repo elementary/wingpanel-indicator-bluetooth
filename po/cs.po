@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-24 18:54-0700\n"
-"PO-Revision-Date: 2017-04-23 20:29+0000\n"
-"Last-Translator: Jan Polášek <jan@polasek.cc>\n"
+"PO-Revision-Date: 2017-05-17 21:10+0000\n"
+"Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-bluetooth/cs/>\n"
 "Language: cs\n"
@@ -20,7 +20,6 @@ msgid "bluetooth"
 msgstr "bluetooth"
 
 #: ../src/Indicator.vala:27
-#, fuzzy
 msgid "The bluetooth indicator"
 msgstr "Indikátor Bluetooth"
 
