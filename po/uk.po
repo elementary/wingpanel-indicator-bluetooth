@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-24 18:54-0700\n"
-"PO-Revision-Date: 2017-04-11 00:47+0000\n"
+"PO-Revision-Date: 2017-04-26 15:47+0000\n"
 "Last-Translator: Володимир Білошицький <volbilnexus@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-bluetooth/uk/>\n"
@@ -43,7 +43,7 @@ msgstr "Не під’єднаний"
 
 #: ../src/Widgets/Device.vala:59
 msgid "Connected"
-msgstr "Під’єднаний"
+msgstr "З'єднано"
 
 #: ../src/Widgets/Device.vala:76
 msgid "Connecting…"
