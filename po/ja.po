@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-24 18:54-0700\n"
-"PO-Revision-Date: 2017-04-08 05:09+0000\n"
-"Last-Translator: Ryo Nakano <nscnskichiro0911@gmail.com>\n"
-"Language-Team: Japanese <http://weblate.elementary.io/projects/desktop"
+"PO-Revision-Date: 2017-05-04 12:40+0000\n"
+"Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-bluetooth/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -42,7 +42,7 @@ msgstr "接続していません"
 
 #: ../src/Widgets/Device.vala:59
 msgid "Connected"
-msgstr "接続しました"
+msgstr "接続済み"
 
 #: ../src/Widgets/Device.vala:76
 msgid "Connecting…"
