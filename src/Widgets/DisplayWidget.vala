@@ -16,7 +16,7 @@
  */
 
 public class Bluetooth.Widgets.DisplayWidget : Gtk.Image {
-    public DisplayWidget (Bluetooth.Services.ObjectManager object_manager) {
+    public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
         icon_size = Gtk.IconSize.LARGE_TOOLBAR;
         set_icon (object_manager.get_global_state (), object_manager.get_connected ());
 

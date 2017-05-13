@@ -19,8 +19,8 @@ public class Bluetooth.Widgets.DiscoveryView : Gtk.Box {
     public Gtk.Button back_button;
     private Gtk.Grid device_grid;
 
-    unowned Bluetooth.Services.ObjectManager object_manager;
-    public DiscoveryView (Bluetooth.Services.ObjectManager object_manager) {
+    unowned BluetoothIndicator.Services.ObjectManager object_manager;
+    public DiscoveryView (BluetoothIndicator.Services.ObjectManager object_manager) {
         this.object_manager = object_manager;
     }
 
