@@ -16,7 +16,7 @@
  */
 
 [DBus (name = "org.bluez.Device1")]
-public interface Bluetooth.Services.Device : Object {
+public interface BluetoothIndicator.Services.Device : Object {
     public abstract void cancel_pairing () throws IOError;
     public abstract void connect () throws IOError;
     public abstract void connect_profile (string UUID) throws IOError;

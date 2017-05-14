@@ -17,15 +17,15 @@
 
 public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
     private const string DEFAULT_ICON = "bluetooth";
-    public signal void show_device (Bluetooth.Services.Device device);
+    public signal void show_device (BluetoothIndicator.Services.Device device);
 
-    public Bluetooth.Services.Device device;
+    public BluetoothIndicator.Services.Device device;
     private Gtk.Label name_label;
     private Gtk.Label status_label;
     private Gtk.Spinner spinner;
     private Gtk.Image icon_image;
 
-    public Device (Bluetooth.Services.Device device) {
+    public Device (BluetoothIndicator.Services.Device device) {
         this.device = device;
         name_label = new Gtk.Label ("<b>%s</b>".printf (device.name));
         name_label.halign = Gtk.Align.START;

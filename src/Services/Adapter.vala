@@ -16,7 +16,7 @@
  */
 
 [DBus (name = "org.bluez.Adapter1")]
-public interface Bluetooth.Services.Adapter : Object {
+public interface BluetoothIndicator.Services.Adapter : Object {
     public abstract void remove_device (ObjectPath device) throws IOError;
     public abstract void set_discovery_filter (HashTable<string, Variant> properties) throws IOError;
     public abstract void start_discovery () throws IOError;
