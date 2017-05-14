@@ -20,13 +20,13 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
     private Bluetooth.Widgets.PopoverWidget popover_widget;
     private Bluetooth.Widgets.DisplayWidget dynamic_icon;
-    private Bluetooth.Services.ObjectManager object_manager;
+    private BluetoothIndicator.Services.ObjectManager object_manager;
     public Indicator (bool is_in_session) {
         Object (code_name: Wingpanel.Indicator.BLUETOOTH,
                 display_name: _("bluetooth"),
                 description:_("The bluetooth indicator"));
         this.is_in_session = is_in_session;
-        object_manager = new Services.ObjectManager ();
+        object_manager = new BluetoothIndicator.Services.ObjectManager ();
         object_manager.bind_property ("has-object", this, "visible", GLib.BindingFlags.SYNC_CREATE);
 
         if (object_manager.has_object) {

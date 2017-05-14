@@ -17,7 +17,7 @@
 
 public class Bluetooth.Widgets.MainView : Gtk.Box {
     public signal void request_close ();
-    public signal void device_requested (Bluetooth.Services.Device device);
+    public signal void device_requested (BluetoothIndicator.Services.Device device);
     public signal void discovery_requested ();
 
     private Wingpanel.Widgets.Button show_settings_button;
@@ -26,7 +26,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     private Gtk.Box devices_box;
     private Gtk.Revealer revealer;
 
-    public MainView (Bluetooth.Services.ObjectManager object_manager, bool is_in_session) {
+    public MainView (BluetoothIndicator.Services.ObjectManager object_manager, bool is_in_session) {
         orientation = Gtk.Orientation.VERTICAL;
 
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
@@ -113,7 +113,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         devices_box.visible = !devices_box.no_show_all;
     }
 
-    private void add_device (Bluetooth.Services.Device device) {
+    private void add_device (BluetoothIndicator.Services.Device device) {
         var device_widget = new Bluetooth.Widgets.Device (device);
         devices_box.add (device_widget);
 
