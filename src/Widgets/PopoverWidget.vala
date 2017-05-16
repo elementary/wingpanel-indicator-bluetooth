@@ -20,7 +20,7 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Stack {
     private Bluetooth.Widgets.MainView main_view;
     private Bluetooth.Widgets.DiscoveryView discovery_view;
 
-    public PopoverWidget (Bluetooth.Services.ObjectManager object_manager, bool is_in_session) {
+    public PopoverWidget (BluetoothIndicator.Services.ObjectManager object_manager, bool is_in_session) {
         transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
         main_view = new Bluetooth.Widgets.MainView (object_manager, is_in_session);
         discovery_view = new Bluetooth.Widgets.DiscoveryView (object_manager);

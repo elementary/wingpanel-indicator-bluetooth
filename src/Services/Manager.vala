@@ -16,36 +16,32 @@
  */
 
 [DBus (name = "org.freedesktop.DBus.ObjectManager")]
-public interface Bluetooth.Services.DBusInterface : Object {
+public interface BluetoothIndicator.Services.DBusInterface : Object {
     public signal void interfaces_added (ObjectPath object_path, HashTable<string, HashTable<string, Variant>> param);
     public signal void interfaces_removed (ObjectPath object_path, string[] string_array);
 
     public abstract HashTable<ObjectPath, HashTable<string, HashTable<string, Variant>>> get_managed_objects () throws IOError;
 }
 
-public class Bluetooth.Services.ObjectManager : Object {
+public class BluetoothIndicator.Services.ObjectManager : Object {
     public signal void global_state_changed (bool enabled, bool connected);
-    public signal void adapter_added (Bluetooth.Services.Adapter adapter);
-    public signal void adapter_removed (Bluetooth.Services.Adapter adapter);
-    public signal void device_added (Bluetooth.Services.Device adapter);
-    public signal void device_removed (Bluetooth.Services.Device adapter);
+    public signal void adapter_added (BluetoothIndicator.Services.Adapter adapter);
+    public signal void adapter_removed (BluetoothIndicator.Services.Adapter adapter);
+    public signal void device_added (BluetoothIndicator.Services.Device adapter);
+    public signal void device_removed (BluetoothIndicator.Services.Device adapter);
 
     public bool has_object { get; private set; default = false; }
 
     private Settings settings;
-    private Bluetooth.Services.DBusInterface object_interface;
-    private Gee.HashMap<string, Bluetooth.Services.Adapter> adapters;
-    private Gee.HashMap<string, Bluetooth.Services.Device> devices;
-
-    public ObjectManager () {
-        
-    }
+    private BluetoothIndicator.Services.DBusInterface object_interface;
+    private Gee.HashMap<string, BluetoothIndicator.Services.Adapter> adapters;
+    private Gee.HashMap<string, BluetoothIndicator.Services.Device> devices;
 
     construct {
-        adapters = new Gee.HashMap<string, Bluetooth.Services.Adapter> (null, null);
-        devices = new Gee.HashMap<string, Bluetooth.Services.Device> (null, null);
+        adapters = new Gee.HashMap<string, BluetoothIndicator.Services.Adapter> (null, null);
+        devices = new Gee.HashMap<string, BluetoothIndicator.Services.Device> (null, null);
         settings = new Settings ("org.pantheon.desktop.wingpanel.indicators.bluetooth");
-        Bus.get_proxy.begin<Bluetooth.Services.DBusInterface> (BusType.SYSTEM, "org.bluez", "/", DBusProxyFlags.NONE, null, (obj, res) => {
+        Bus.get_proxy.begin<BluetoothIndicator.Services.DBusInterface> (BusType.SYSTEM, "org.bluez", "/", DBusProxyFlags.NONE, null, (obj, res) => {
             try {
                 object_interface = Bus.get_proxy.end (res);
                 object_interface.get_managed_objects ().foreach (add_path);
@@ -61,7 +57,7 @@ public class Bluetooth.Services.ObjectManager : Object {
     private void add_path (ObjectPath path, HashTable<string, HashTable<string, Variant>> param) {
         if ("org.bluez.Adapter1" in param) {
             try {
-                Bluetooth.Services.Adapter adapter = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
+                BluetoothIndicator.Services.Adapter adapter = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
                 lock (adapters) {
                     adapters.set (path, adapter);
                 }
@@ -79,7 +75,7 @@ public class Bluetooth.Services.ObjectManager : Object {
             }
         } else if ("org.bluez.Device1" in param) {
             try {
-                Bluetooth.Services.Device device = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
+                BluetoothIndicator.Services.Device device = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
                 if (device.paired) {
                     lock (devices) {
                         devices.set (path, device);
@@ -139,19 +135,19 @@ public class Bluetooth.Services.ObjectManager : Object {
         }
     }
 
-    public Gee.Collection<Bluetooth.Services.Adapter> get_adapters () {
+    public Gee.Collection<BluetoothIndicator.Services.Adapter> get_adapters () {
         lock (adapters) {
             return adapters.values;
         }
     }
 
-    public Gee.Collection<Bluetooth.Services.Device> get_devices () {
+    public Gee.Collection<BluetoothIndicator.Services.Device> get_devices () {
         lock (devices) {
             return devices.values;
         }
     }
 
-    public Bluetooth.Services.Adapter? get_adapter_from_path (string path) {
+    public BluetoothIndicator.Services.Adapter? get_adapter_from_path (string path) {
         lock (adapters) {
             return adapters.get (path);
         }
