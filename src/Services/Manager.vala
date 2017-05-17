@@ -77,11 +77,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             try {
                 BluetoothIndicator.Services.Device device = Bus.get_proxy_sync (BusType.SYSTEM, "org.bluez", path, DBusProxyFlags.GET_INVALIDATED_PROPERTIES);
                 if (device.paired) {
-                    lock (devices) {
-                        devices.set (path, device);
-                    }
-
-                    device_added (device);
+                    add_device (device, path);
                 }
 
                 (device as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
@@ -93,11 +89,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                     var paired = changed.lookup_value("Paired", new VariantType("b"));
                     if (paired != null) {
                         if (device.paired) {
-                            lock (devices) {
-                                devices.set (path, device);
-                            }
-
-                            device_added (device);
+                            add_device (device, path);
                         } else {
                             lock (devices) {
                                 devices.unset (path);
@@ -131,6 +123,15 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             if (device != null) {
                 devices.unset (path);
                 device_removed (device);
+            }
+        }
+    }
+
+    private void add_device (BluetoothIndicator.Services.Device device, string path) {
+        lock (devices) {
+            if (!devices.has_key (path)) {
+                devices.set (path, device);
+                device_added (device);
             }
         }
     }
@@ -215,7 +216,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         if (get_global_state () != last_state) {
             set_global_state (last_state);
         }
-        
+
         check_global_state();
     }
 }
