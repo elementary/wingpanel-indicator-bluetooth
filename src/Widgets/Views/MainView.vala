@@ -91,10 +91,9 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
 
         object_manager.device_removed.connect ((device) => {
             devices_box.get_children ().foreach ((child) => {
-                if (child is Bluetooth.Widgets.Device) {
-                    if (((Bluetooth.Widgets.Device) child).device.modalias == device.modalias) {
-                        ((Bluetooth.Widgets.Device) child).destroy ();
-                    }
+                var device_child = child as Bluetooth.Widgets.Device;
+                if (device_child != null && device_child.device.modalias == device.modalias) {
+                    device_child.destroy ();
                 }
             });
 
