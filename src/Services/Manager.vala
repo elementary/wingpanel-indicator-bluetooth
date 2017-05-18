@@ -130,7 +130,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     private void add_device (BluetoothIndicator.Services.Device device, string path) {
         lock (devices) {
             if (!devices.has_key (path)) {
-                devices.set (path, device);
+                devices[path] = device;
                 device_added (device);
             }
         }
@@ -218,5 +218,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         }
 
         check_global_state();
+    }
+
+    public static bool compare_devices (Device device, Device other) {
+        return device.modalias == other.modalias;
     }
 }
