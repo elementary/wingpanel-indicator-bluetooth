@@ -26,8 +26,12 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     private Gtk.Box devices_box;
     private Gtk.Revealer revealer;
 
+    private Gee.HashMap <string, Bluetooth.Widgets.Device> devices;
+
     public MainView (BluetoothIndicator.Services.ObjectManager object_manager, bool is_in_session) {
         orientation = Gtk.Orientation.VERTICAL;
+
+        devices = new Gee.HashMap <string, Bluetooth.Widgets.Device> ();
 
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
         main_switch.get_style_context ().add_class ("h4");
@@ -90,11 +94,11 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         });
 
         object_manager.device_removed.connect ((device) => {
-            devices_box.get_children ().foreach ((child) => {
-                if (child is Bluetooth.Widgets.Device) {
-                    ((Bluetooth.Widgets.Device) child).destroy ();
-                }
-            });
+            if (devices.has_key (device.modalias)) {
+                var widget = devices.get (device.modalias);
+                widget.no_show_all = true;
+                widget.visible = false;
+            }
 
             update_devices_box_visible ();
         });
@@ -109,19 +113,37 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     }
 
     private void update_devices_box_visible () {
-        devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
-        devices_box.visible = !devices_box.no_show_all;
+        bool has_visible_device = false;
+        foreach (var device in devices.values) {
+            if (!device.no_show_all) {
+                has_visible_device = true;
+                break;
+            }
+        }
+
+        devices_box.no_show_all = !has_visible_device;
+        devices_box.visible = has_visible_device;
     }
 
     private void add_device (BluetoothIndicator.Services.Device device) {
-        var device_widget = new Bluetooth.Widgets.Device (device);
-        devices_box.add (device_widget);
+        Bluetooth.Widgets.Device device_widget;
+        if (!devices.has_key (device.modalias)) {
+            device_widget = new Bluetooth.Widgets.Device (device);
+            devices_box.add (device_widget);
+
+            device_widget.show_device.connect ((device_service) => {
+                device_requested (device_service);
+            });
+
+            devices.set (device.modalias, device_widget);
+        } else {
+            device_widget = devices.get (device.modalias);
+        }
+
+        device_widget.no_show_all = false;
+        device_widget.visible = true;
 
         update_devices_box_visible ();
-
-        device_widget.show_device.connect ((device_service) => {
-            device_requested (device_service);
-        });
     }
 
     private void show_settings () {
