@@ -114,7 +114,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     }
 
     private void update_devices_box_visible () {
-        devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
+        devices_box.no_show_all = (devices_box.get_children ().length () <= 0);
         devices_box.visible = !devices_box.no_show_all;
 
         device_box_separator.no_show_all = devices_box.no_show_all;
