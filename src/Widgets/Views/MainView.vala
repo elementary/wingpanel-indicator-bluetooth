@@ -20,6 +20,7 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     public signal void device_requested (BluetoothIndicator.Services.Device device);
     public signal void discovery_requested ();
 
+    private Wingpanel.Widgets.Separator device_box_separator;
     private Wingpanel.Widgets.Button show_settings_button;
     private Wingpanel.Widgets.Button discovery_button;
     private Wingpanel.Widgets.Switch main_switch;
@@ -33,14 +34,18 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         main_switch.get_style_context ().add_class ("h4");
 
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        devices_box.add (new Wingpanel.Widgets.Separator ());
+        device_box_separator = new Wingpanel.Widgets.Separator ();
 
         var scroll_box = new Wingpanel.Widgets.AutomaticScrollBox ();
         scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll_box.add (devices_box);
 
+        var revealer_content = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        revealer_content.add (device_box_separator);
+        revealer_content.add (scroll_box);
+
         revealer = new Gtk.Revealer ();
-        revealer.add (scroll_box);
+        revealer.add (revealer_content);
 
         show_settings_button = new Wingpanel.Widgets.Button (_("Bluetooth Settings…"));
         discovery_button = new Wingpanel.Widgets.Button (_("Discover Devices…"));
@@ -110,8 +115,11 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     }
 
     private void update_devices_box_visible () {
-        devices_box.no_show_all = (devices_box.get_children ().length () <= 1);
+        devices_box.no_show_all = (devices_box.get_children ().length () <= 0);
         devices_box.visible = !devices_box.no_show_all;
+
+        device_box_separator.no_show_all = devices_box.no_show_all;
+        device_box_separator.visible = !devices_box.no_show_all;
     }
 
     private void add_device (BluetoothIndicator.Services.Device device) {

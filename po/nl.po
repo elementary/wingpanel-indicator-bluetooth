@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-05-24 18:54-0700\n"
-"PO-Revision-Date: 2017-04-08 11:39+0000\n"
-"Last-Translator: Jonathan Moerman <jonathanmoerman@gmail.com>\n"
+"PO-Revision-Date: 2017-04-09 16:35+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <http://weblate.elementary.io/projects/desktop"
 "/wingpanel-indicator-bluetooth/nl/>\n"
 "Language: nl\n"
@@ -21,7 +21,7 @@ msgstr "bluetooth"
 
 #: ../src/Indicator.vala:27
 msgid "The bluetooth indicator"
-msgstr "de bluetooth indicator"
+msgstr "De bluetooth indicator"
 
 #: ../src/Widgets/Views/MainView.vala:32
 #: ../src/Widgets/Views/DiscoveryView.vala:29
