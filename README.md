@@ -1,4 +1,6 @@
 # Wingpanel Bluetooth Indicator
+[![Packaging status](https://repology.org/badge/tiny-repos/wingpanel-indicator-bluetooth.svg)](https://repology.org/metapackage/wingpanel-indicator-bluetooth)
+[![l10n](https://l10n.elementary.io/widgets/wingpanel/wingpanel-indicator-bluetooth/svg-badge.svg)](https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-bluetooth)
 
 ![Screenshot](data/screenshot.png?raw=true)
 
