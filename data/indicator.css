@@ -31,11 +31,11 @@
 }
 
 .bluetooth-icon.disabled {
-    animation: disabled 160ms cubic-bezier(0.4, 0.0, 0.2, 1);
+    animation: bluetooth-disabled 160ms cubic-bezier(0.4, 0.0, 0.2, 1);
     -gtk-icon-source: -gtk-icontheme("bluetooth-disabled-symbolic");
 }
 
-@keyframes disabled {
+@keyframes bluetooth-disabled {
     0% { -gtk-icon-source: -gtk-icontheme("bluetooth-active-symbolic"); }
     10% { -gtk-icon-source: -gtk-icontheme("bluetooth-disabled-10-symbolic"); opacity: 0.94; }
     20% { -gtk-icon-source: -gtk-icontheme("bluetooth-disabled-20-symbolic"); opacity: 0.78; }
