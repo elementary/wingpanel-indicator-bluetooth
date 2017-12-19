@@ -1,0 +1,9 @@
+src/Indicator.vala
+src/Services/Adapter.vala
+src/Services/Device.vala
+src/Services/Manager.vala
+src/Widgets/Views/DiscoverView.vala
+src/Widgets/Views/MainView.vala
+src/Widgets/Device.vala
+src/Widgets/DisplayWidget.vala
+src/Widgets/PopoverWidget.vala
