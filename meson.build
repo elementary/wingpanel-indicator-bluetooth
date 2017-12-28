@@ -1,8 +1,9 @@
 project('bluetooth', 'vala', 'c')
 
+gettext_name = meson.project_name() + '-indicator'
 i18n = import('i18n')
 
-add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '-indicator"', language:'c')
+add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(gettext_name), language:'c')
 
 wingpanel_dep = dependency('wingpanel-2.0')
 
