@@ -15,9 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Widgets.DisplayWidget : Gtk.Image {
+public class Bluetooth.Widgets.DisplayWidget : Gtk.Spinner {
+    private Gtk.StyleContext style_context;
+
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
-        icon_size = Gtk.IconSize.LARGE_TOOLBAR;
         set_icon (object_manager.get_global_state (), object_manager.get_connected ());
 
         object_manager.global_state_changed.connect ((state, connected) => {
@@ -34,15 +35,26 @@ public class Bluetooth.Widgets.DisplayWidget : Gtk.Image {
         });
     }
 
+    construct {
+        style_context = get_style_context ();
+        style_context.add_class ("bluetooth-icon");
+
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
+        style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+    }
+
     private void set_icon (bool state, bool connected) {
         if (state) {
+            style_context.remove_class ("disabled");
             if (connected) {
-                icon_name = "bluetooth-paired-symbolic";
+                style_context.add_class ("paired");
             } else {
-                icon_name = "bluetooth-active-symbolic";
+                style_context.remove_class ("paired");
             }
         } else {
-            icon_name = "bluetooth-disabled-symbolic";
+            style_context.remove_class ("paired");
+            style_context.add_class ("disabled");
         }
     }
 }

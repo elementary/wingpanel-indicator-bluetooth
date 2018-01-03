@@ -34,7 +34,10 @@ OPTIONS
   --target-glib=2.32
 )
 
-add_library (${CMAKE_PROJECT_NAME} MODULE ${VALA_C})
+include (GResource)
+glib_compile_resources (GLIB_RESOURCES_CSS SOURCE ../data/io.elementary.wingpanel.bluetooth.gresource.xml)
+
+add_library (${CMAKE_PROJECT_NAME} MODULE ${VALA_C} ${GLIB_RESOURCES_CSS})
 target_link_libraries(${CMAKE_PROJECT_NAME} ${DEPS_LIBRARIES})
 
 # Installation

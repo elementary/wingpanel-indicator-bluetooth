@@ -1,8 +1,15 @@
 project('bluetooth', 'vala', 'c')
 
+gnome = import('gnome')
 i18n = import('i18n')
 
 add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '-indicator"', language:'c')
+
+asresources = gnome.compile_resources(
+    'as-resources', 'data/io.elementary.wingpanel.bluetooth.gresource.xml',
+    source_dir: 'data',
+    c_name: 'as'
+)
 
 wingpanel_dep = dependency('wingpanel-2.0')
 
@@ -17,6 +24,7 @@ shared_module(
     'src/Widgets/Device.vala',
     'src/Widgets/DisplayWidget.vala',
     'src/Widgets/PopoverWidget.vala',
+    asresources,
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
