@@ -1,9 +1,10 @@
 project('bluetooth', 'vala', 'c')
 
+gettext_name = meson.project_name() + '-indicator'
 gnome = import('gnome')
 i18n = import('i18n')
 
-add_global_arguments('-DGETTEXT_PACKAGE="' + meson.project_name() + '-indicator"', language:'c')
+add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(gettext_name), language:'c')
 
 asresources = gnome.compile_resources(
     'as-resources', 'data/io.elementary.wingpanel.bluetooth.gresource.xml',
