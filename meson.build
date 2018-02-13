@@ -38,4 +38,9 @@ shared_module(
     install_dir : wingpanel_dep.get_pkgconfig_variable('indicatorsdir')
 )
 
+install_data(
+    'schemas/org.pantheon.desktop.wingpanel.indicators.bluetooth.gschema.xml',
+    install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
+)
+
 subdir('po')
