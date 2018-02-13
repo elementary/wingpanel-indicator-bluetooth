@@ -2,11 +2,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-24 18:54-0700\n"
+"POT-Creation-Date: 2018-02-12 18:40-0800\n"
 "PO-Revision-Date: 2017-04-08 10:46+0000\n"
 "Last-Translator: popvladaurel <popvladaurel@gmail.com>\n"
-"Language-Team: Romanian <http://weblate.elementary.io/projects/desktop"
-"/wingpanel-indicator-bluetooth/ro/>\n"
+"Language-Team: Romanian <http://weblate.elementary.io/projects/desktop/"
+"wingpanel-indicator-bluetooth/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,43 +16,42 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: ../src/Indicator.vala:26
+#: src/Indicator.vala:26
 msgid "bluetooth"
 msgstr "bluetooth"
 
-#: ../src/Indicator.vala:27
+#: src/Indicator.vala:27
 msgid "The bluetooth indicator"
 msgstr "Indicatorul bluetooth"
 
-#: ../src/Widgets/Views/MainView.vala:32
-#: ../src/Widgets/Views/DiscoveryView.vala:29
+#: src/Widgets/Views/DiscoveryView.vala:29 src/Widgets/Views/MainView.vala:33
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: ../src/Widgets/Views/MainView.vala:45
+#: src/Widgets/Views/MainView.vala:50
 msgid "Bluetooth Settings…"
 msgstr "Setări bluetooth…"
 
-#: ../src/Widgets/Views/MainView.vala:46
+#: src/Widgets/Views/MainView.vala:51
 msgid "Discover Devices…"
 msgstr "Descoperă dispozitive…"
 
-#: ../src/Widgets/Device.vala:32 ../src/Widgets/Device.vala:61
+#: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
 msgid "Not Connected"
 msgstr "Deconectat"
 
-#: ../src/Widgets/Device.vala:59
+#: src/Widgets/Device.vala:60
 msgid "Connected"
 msgstr "Conectat"
 
-#: ../src/Widgets/Device.vala:76
+#: src/Widgets/Device.vala:77
 msgid "Connecting…"
 msgstr "Conectare…"
 
-#: ../src/Widgets/Device.vala:79
+#: src/Widgets/Device.vala:80
 msgid "Disconnecting…"
 msgstr "Deconectare…"
 
-#: ../src/Widgets/Device.vala:84
+#: src/Widgets/Device.vala:85
 msgid "Unable to Connect"
 msgstr "Nu se poate conecta"
