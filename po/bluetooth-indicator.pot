@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the bluetooth-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: bluetooth-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-24 18:54-0700\n"
+"POT-Creation-Date: 2018-02-12 18:40-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,43 +17,42 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/Indicator.vala:26
+#: src/Indicator.vala:26
 msgid "bluetooth"
 msgstr ""
 
-#: ../src/Indicator.vala:27
+#: src/Indicator.vala:27
 msgid "The bluetooth indicator"
 msgstr ""
 
-#: ../src/Widgets/Views/MainView.vala:32
-#: ../src/Widgets/Views/DiscoveryView.vala:29
+#: src/Widgets/Views/DiscoveryView.vala:29 src/Widgets/Views/MainView.vala:33
 msgid "Bluetooth"
 msgstr ""
 
-#: ../src/Widgets/Views/MainView.vala:45
+#: src/Widgets/Views/MainView.vala:50
 msgid "Bluetooth Settings…"
 msgstr ""
 
-#: ../src/Widgets/Views/MainView.vala:46
+#: src/Widgets/Views/MainView.vala:51
 msgid "Discover Devices…"
 msgstr ""
 
-#: ../src/Widgets/Device.vala:32 ../src/Widgets/Device.vala:61
+#: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
 msgid "Not Connected"
 msgstr ""
 
-#: ../src/Widgets/Device.vala:59
+#: src/Widgets/Device.vala:60
 msgid "Connected"
 msgstr ""
 
-#: ../src/Widgets/Device.vala:76
+#: src/Widgets/Device.vala:77
 msgid "Connecting…"
 msgstr ""
 
-#: ../src/Widgets/Device.vala:79
+#: src/Widgets/Device.vala:80
 msgid "Disconnecting…"
 msgstr ""
 
-#: ../src/Widgets/Device.vala:84
+#: src/Widgets/Device.vala:85
 msgid "Unable to Connect"
 msgstr ""
