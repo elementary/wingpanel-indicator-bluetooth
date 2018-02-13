@@ -21,8 +21,8 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
     public signal void discovery_requested ();
 
     private Wingpanel.Widgets.Separator device_box_separator;
-    private Wingpanel.Widgets.Button show_settings_button;
-    private Wingpanel.Widgets.Button discovery_button;
+    private Gtk.ModelButton show_settings_button;
+    private Gtk.ModelButton discovery_button;
     private Wingpanel.Widgets.Switch main_switch;
     private Gtk.Box devices_box;
     private Gtk.Revealer revealer;
@@ -47,8 +47,11 @@ public class Bluetooth.Widgets.MainView : Gtk.Box {
         revealer = new Gtk.Revealer ();
         revealer.add (revealer_content);
 
-        show_settings_button = new Wingpanel.Widgets.Button (_("Bluetooth Settings…"));
-        discovery_button = new Wingpanel.Widgets.Button (_("Discover Devices…"));
+        show_settings_button = new Gtk.ModelButton ();
+        show_settings_button.text = _("Bluetooth Settings…");
+
+        discovery_button = new Gtk.ModelButton ();
+        discovery_button.text= _("Discover Devices…");
 
         add (main_switch);
         add (revealer);
