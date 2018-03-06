@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:40-0800\n"
+"POT-Creation-Date: 2018-03-06 09:39-0800\n"
 "PO-Revision-Date: 2017-12-31 00:22+0000\n"
 "Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/wingpanel/"
@@ -23,18 +23,6 @@ msgstr "Bluetooth"
 msgid "The bluetooth indicator"
 msgstr "Der Bluetooth-Indikator"
 
-#: src/Widgets/Views/DiscoveryView.vala:29 src/Widgets/Views/MainView.vala:33
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-#: src/Widgets/Views/MainView.vala:50
-msgid "Bluetooth Settings…"
-msgstr "Bluetooth-Einstellungen …"
-
-#: src/Widgets/Views/MainView.vala:51
-msgid "Discover Devices…"
-msgstr "Geräte suchen …"
-
 #: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
 msgid "Not Connected"
 msgstr "Nicht verbunden"
@@ -43,14 +31,25 @@ msgstr "Nicht verbunden"
 msgid "Connected"
 msgstr "Verbunden"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:76
 msgid "Connecting…"
 msgstr "Verbinden …"
 
-#: src/Widgets/Device.vala:80
+#: src/Widgets/Device.vala:79
 msgid "Disconnecting…"
 msgstr "Verbindung wird getrennt …"
 
-#: src/Widgets/Device.vala:85
+#: src/Widgets/Device.vala:84
 msgid "Unable to Connect"
 msgstr "Verbindung nicht möglich"
+
+#: src/Widgets/PopoverWidget.vala:32
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: src/Widgets/PopoverWidget.vala:50
+msgid "Bluetooth Settings…"
+msgstr "Bluetooth-Einstellungen …"
+
+#~ msgid "Discover Devices…"
+#~ msgstr "Geräte suchen …"

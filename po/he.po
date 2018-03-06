@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:40-0800\n"
+"POT-Creation-Date: 2018-03-06 09:39-0800\n"
 "PO-Revision-Date: 2017-04-20 15:21+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
@@ -23,18 +23,6 @@ msgstr "בלוטות׳"
 msgid "The bluetooth indicator"
 msgstr "מחוון הבלוטות׳"
 
-#: src/Widgets/Views/DiscoveryView.vala:29 src/Widgets/Views/MainView.vala:33
-msgid "Bluetooth"
-msgstr "בלוטות׳"
-
-#: src/Widgets/Views/MainView.vala:50
-msgid "Bluetooth Settings…"
-msgstr "הגדרות בלוטות׳…"
-
-#: src/Widgets/Views/MainView.vala:51
-msgid "Discover Devices…"
-msgstr "גילוי התקנים…"
-
 #: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
 msgid "Not Connected"
 msgstr "אין חיבור"
@@ -43,14 +31,25 @@ msgstr "אין חיבור"
 msgid "Connected"
 msgstr "יש חיבור"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:76
 msgid "Connecting…"
 msgstr "בהתחברות…"
 
-#: src/Widgets/Device.vala:80
+#: src/Widgets/Device.vala:79
 msgid "Disconnecting…"
 msgstr "מתבצע ניתוק…"
 
-#: src/Widgets/Device.vala:85
+#: src/Widgets/Device.vala:84
 msgid "Unable to Connect"
 msgstr "לא ניתן להתחבר"
+
+#: src/Widgets/PopoverWidget.vala:32
+msgid "Bluetooth"
+msgstr "בלוטות׳"
+
+#: src/Widgets/PopoverWidget.vala:50
+msgid "Bluetooth Settings…"
+msgstr "הגדרות בלוטות׳…"
+
+#~ msgid "Discover Devices…"
+#~ msgstr "גילוי התקנים…"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:40-0800\n"
+"POT-Creation-Date: 2018-03-06 09:39-0800\n"
 "PO-Revision-Date: 2017-06-19 23:58+0000\n"
 "Last-Translator: Anand Kumar <anand@anandkumar.net>\n"
 "Language-Team: Hindi <https://l10n.elementary.io/projects/wingpanel/"
@@ -23,18 +23,6 @@ msgstr "ब्लूटूथ"
 msgid "The bluetooth indicator"
 msgstr "ब्लूटूथ सूचक"
 
-#: src/Widgets/Views/DiscoveryView.vala:29 src/Widgets/Views/MainView.vala:33
-msgid "Bluetooth"
-msgstr "ब्लूटूथ"
-
-#: src/Widgets/Views/MainView.vala:50
-msgid "Bluetooth Settings…"
-msgstr "ब्लूटूथ सेटिंग्स…"
-
-#: src/Widgets/Views/MainView.vala:51
-msgid "Discover Devices…"
-msgstr "डिवाइस खोजें…"
-
 #: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
 msgid "Not Connected"
 msgstr "संबंध स्थापित नहीं है"
@@ -43,14 +31,25 @@ msgstr "संबंध स्थापित नहीं है"
 msgid "Connected"
 msgstr "संबंध स्थापित"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:76
 msgid "Connecting…"
 msgstr "संबंध स्थापित हो रहा है…"
 
-#: src/Widgets/Device.vala:80
+#: src/Widgets/Device.vala:79
 msgid "Disconnecting…"
 msgstr "असंबंधन जारी…"
 
-#: src/Widgets/Device.vala:85
+#: src/Widgets/Device.vala:84
 msgid "Unable to Connect"
 msgstr "सम्बन्ध स्थापित करने में असमर्थ"
+
+#: src/Widgets/PopoverWidget.vala:32
+msgid "Bluetooth"
+msgstr "ब्लूटूथ"
+
+#: src/Widgets/PopoverWidget.vala:50
+msgid "Bluetooth Settings…"
+msgstr "ब्लूटूथ सेटिंग्स…"
+
+#~ msgid "Discover Devices…"
+#~ msgstr "डिवाइस खोजें…"

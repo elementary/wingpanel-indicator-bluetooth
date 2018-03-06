@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:40-0800\n"
+"POT-Creation-Date: 2018-03-06 09:39-0800\n"
 "PO-Revision-Date: 2017-05-04 12:40+0000\n"
 "Last-Translator: Jun Takeda <takeda.jun@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
@@ -23,18 +23,6 @@ msgstr "Bluetooth"
 msgid "The bluetooth indicator"
 msgstr "Bluetooth の通知"
 
-#: src/Widgets/Views/DiscoveryView.vala:29 src/Widgets/Views/MainView.vala:33
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-#: src/Widgets/Views/MainView.vala:50
-msgid "Bluetooth Settings…"
-msgstr "Bluetoothの設定…"
-
-#: src/Widgets/Views/MainView.vala:51
-msgid "Discover Devices…"
-msgstr "デバイスの検出…"
-
 #: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
 msgid "Not Connected"
 msgstr "接続していません"
@@ -43,14 +31,25 @@ msgstr "接続していません"
 msgid "Connected"
 msgstr "接続済み"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:76
 msgid "Connecting…"
 msgstr "接続しています…"
 
-#: src/Widgets/Device.vala:80
+#: src/Widgets/Device.vala:79
 msgid "Disconnecting…"
 msgstr "切断しています…"
 
-#: src/Widgets/Device.vala:85
+#: src/Widgets/Device.vala:84
 msgid "Unable to Connect"
 msgstr "接続できません"
+
+#: src/Widgets/PopoverWidget.vala:32
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: src/Widgets/PopoverWidget.vala:50
+msgid "Bluetooth Settings…"
+msgstr "Bluetoothの設定…"
+
+#~ msgid "Discover Devices…"
+#~ msgstr "デバイスの検出…"

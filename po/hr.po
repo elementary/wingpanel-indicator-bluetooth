@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-12 18:40-0800\n"
+"POT-Creation-Date: 2018-03-06 09:39-0800\n"
 "PO-Revision-Date: 2016-07-03 21:18+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,18 +21,6 @@ msgstr "bluetooth"
 msgid "The bluetooth indicator"
 msgstr "Bluetooth indikator"
 
-#: src/Widgets/Views/DiscoveryView.vala:29 src/Widgets/Views/MainView.vala:33
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-#: src/Widgets/Views/MainView.vala:50
-msgid "Bluetooth Settings…"
-msgstr "Bluetooth postavke..."
-
-#: src/Widgets/Views/MainView.vala:51
-msgid "Discover Devices…"
-msgstr "Pretraži uređaje..."
-
 #: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
 msgid "Not Connected"
 msgstr "Nije povezano"
@@ -41,14 +29,25 @@ msgstr "Nije povezano"
 msgid "Connected"
 msgstr "Povezano"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:76
 msgid "Connecting…"
 msgstr "Povezivanje…"
 
-#: src/Widgets/Device.vala:80
+#: src/Widgets/Device.vala:79
 msgid "Disconnecting…"
 msgstr "Prekidanje povezivanja..."
 
-#: src/Widgets/Device.vala:85
+#: src/Widgets/Device.vala:84
 msgid "Unable to Connect"
 msgstr "Nemoguće povezivanje"
+
+#: src/Widgets/PopoverWidget.vala:32
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: src/Widgets/PopoverWidget.vala:50
+msgid "Bluetooth Settings…"
+msgstr "Bluetooth postavke..."
+
+#~ msgid "Discover Devices…"
+#~ msgstr "Pretraži uređaje..."
