@@ -27,7 +27,7 @@ public class Bluetooth.Widgets.DisplayWidget : Gtk.Spinner {
 
         button_press_event.connect ((e) => {
             if (e.button == Gdk.BUTTON_MIDDLE) {
-                object_manager.set_global_state (!object_manager.get_global_state ());
+                object_manager.set_global_state.begin (!object_manager.get_global_state ());
                 return Gdk.EVENT_STOP;
             }
 
