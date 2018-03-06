@@ -30,12 +30,12 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
         object_manager.bind_property ("has-object", this, "visible", GLib.BindingFlags.SYNC_CREATE);
 
         if (object_manager.has_object) {
-            object_manager.set_last_state ();
+            object_manager.set_last_state.begin ();
         }
 
         object_manager.notify["has-object"].connect (() => {
             if (object_manager.has_object) {
-                object_manager.set_last_state ();
+                object_manager.set_last_state.begin ();
             }
         });
 

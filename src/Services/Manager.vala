@@ -20,7 +20,7 @@ public interface BluetoothIndicator.Services.DBusInterface : Object {
     public signal void interfaces_added (ObjectPath object_path, HashTable<string, HashTable<string, Variant>> param);
     public signal void interfaces_removed (ObjectPath object_path, string[] string_array);
 
-    public abstract HashTable<ObjectPath, HashTable<string, HashTable<string, Variant>>> get_managed_objects () throws IOError;
+    public abstract HashTable<ObjectPath, HashTable<string, HashTable<string, Variant>>> get_managed_objects () throws Error;
 }
 
 public class BluetoothIndicator.Services.ObjectManager : Object {
@@ -182,42 +182,38 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         return false;
     }
 
-    public void set_global_state (bool state) {
-        new Thread<void*> (null, () => {
-            if (state == false) {
-                lock (devices) {
-                    foreach (var device in devices.values) {
-                        if (device.connected) {
-                            try {
-                                device.disconnect ();
-                            } catch (Error e) {
-                                critical (e.message);
-                            }
+    public async void set_global_state (bool state) {
+        if (state == false) {
+            lock (devices) {
+                foreach (var device in devices.values) {
+                    if (device.connected) {
+                        try {
+                            yield device.disconnect ();
+                        } catch (Error e) {
+                            critical (e.message);
                         }
                     }
                 }
             }
+        }
 
-            lock (adapters) {
-                foreach (var adapter in adapters.values) {
-                    adapter.powered = state;
-                }
+        lock (adapters) {
+            foreach (var adapter in adapters.values) {
+                adapter.powered = state;
             }
+        }
 
-            settings.set_boolean ("bluetooth-enabled", state);
-
-            return null;
-        });
+        settings.set_boolean ("bluetooth-enabled", state);
     }
 
-    public void set_last_state () {
+    public async void set_last_state () {
         bool last_state = settings.get_boolean ("bluetooth-enabled");
 
         if (get_global_state () != last_state) {
-            set_global_state (last_state);
+            yield set_global_state (last_state);
         }
 
-        check_global_state();
+        check_global_state ();
     }
 
     public static bool compare_devices (Device device, Device other) {

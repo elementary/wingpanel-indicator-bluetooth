@@ -46,7 +46,7 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
 
         clicked.connect (() => {
             if (!spinner.active) {
-                toggle_device ();
+                toggle_device.begin ();
             }
         });
 
@@ -69,23 +69,21 @@ public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
         });
     }
 
-    private void toggle_device () {
+    private async void toggle_device () {
         spinner.active = true;
-        new Thread<void*> (null, () => {
-            try {
-                if (!device.connected) {
-                    status_label.label = _("Connecting…");
-                    device.connect ();
-                } else {
-                    status_label.label = _("Disconnecting…");
-                    device.disconnect ();
-                }
-            } catch (Error e) {
-                critical (e.message);
-                status_label.label = _("Unable to Connect");
+        try {
+            if (!device.connected) {
+                status_label.label = _("Connecting…");
+                yield device.connect ();
+            } else {
+                status_label.label = _("Disconnecting…");
+                yield device.disconnect ();
             }
-            spinner.active = false;
-            return null;
-        });
+        } catch (Error e) {
+            critical (e.message);
+            status_label.label = _("Unable to Connect");
+        }
+
+        spinner.active = false;
     }
 }
