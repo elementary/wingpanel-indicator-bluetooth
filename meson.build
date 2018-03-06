@@ -20,8 +20,6 @@ shared_module(
     'src/Services/Adapter.vala',
     'src/Services/Device.vala',
     'src/Services/Manager.vala',
-    'src/Widgets/Views/DiscoveryView.vala',
-    'src/Widgets/Views/MainView.vala',
     'src/Widgets/Device.vala',
     'src/Widgets/DisplayWidget.vala',
     'src/Widgets/PopoverWidget.vala',
