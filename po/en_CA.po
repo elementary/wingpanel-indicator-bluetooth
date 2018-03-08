@@ -3,48 +3,51 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-06 09:39-0800\n"
-"PO-Revision-Date: 2015-11-18 21:00+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-03-08 14:22+0000\n"
+"Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
+"Language-Team: English (Canada) "
+"<https://weblate.elementary.io/projects/wingpanel/wingpanel-indicator-"
+"bluetooth/en_CA/>\n"
+"Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: src/Indicator.vala:26
 msgid "bluetooth"
-msgstr ""
+msgstr "bluetooth"
 
 #: src/Indicator.vala:27
 msgid "The bluetooth indicator"
-msgstr ""
+msgstr "The bluetooth indicator"
 
 #: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
 msgid "Not Connected"
-msgstr ""
+msgstr "Not Connected"
 
 #: src/Widgets/Device.vala:60
 msgid "Connected"
-msgstr ""
+msgstr "Connected"
 
 #: src/Widgets/Device.vala:76
 msgid "Connecting…"
-msgstr ""
+msgstr "Connecting…"
 
 #: src/Widgets/Device.vala:79
 msgid "Disconnecting…"
-msgstr ""
+msgstr "Disconnecting…"
 
 #: src/Widgets/Device.vala:84
 msgid "Unable to Connect"
-msgstr ""
+msgstr "Unable to Connect"
 
 #: src/Widgets/PopoverWidget.vala:32
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:50
 msgid "Bluetooth Settings…"
-msgstr ""
+msgstr "Bluetooth Settings…"
