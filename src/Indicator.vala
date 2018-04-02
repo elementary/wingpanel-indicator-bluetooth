@@ -16,16 +16,22 @@
  */
 
 public class Bluetooth.Indicator : Wingpanel.Indicator {
-    private bool is_in_session = false;
+    public bool is_in_session { get; construct; default = false; }
 
     private Bluetooth.Widgets.PopoverWidget popover_widget;
     private Bluetooth.Widgets.DisplayWidget dynamic_icon;
     private BluetoothIndicator.Services.ObjectManager object_manager;
+
     public Indicator (bool is_in_session) {
-        Object (code_name: Wingpanel.Indicator.BLUETOOTH,
-                display_name: _("bluetooth"),
-                description:_("The bluetooth indicator"));
-        this.is_in_session = is_in_session;
+        Object (
+            code_name: Wingpanel.Indicator.BLUETOOTH,
+            display_name: _("bluetooth"),
+            description:_("The bluetooth indicator"),
+            is_in_session: is_in_session
+        );
+    }
+
+    construct {
         object_manager = new BluetoothIndicator.Services.ObjectManager ();
         object_manager.bind_property ("has-object", this, "visible", GLib.BindingFlags.SYNC_CREATE);
 
@@ -38,8 +44,6 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
                 object_manager.set_last_state.begin ();
             }
         });
-
-        debug ("Bluetooth Indicator started");
     }
 
     public override Gtk.Widget get_display_widget () {
