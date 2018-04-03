@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015 Wingpanel Developers (http://launchpad.net/wingpanel)
+ * Copyright (c) 2015-2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -28,7 +28,7 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Box {
         orientation = Gtk.Orientation.VERTICAL;
 
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
-        main_switch.get_style_context ().add_class ("h4");
+        main_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
