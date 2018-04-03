@@ -98,7 +98,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void update_devices_box_visible () {
-        if (devices_box.get_children ().length () >= 1) {
+        if (devices_box.get_children ().first ().data != null) {
             revealer.reveal_child = main_switch.get_active ();
         } else {
             revealer.reveal_child = false;
