@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Widgets.PopoverWidget : Gtk.Box {
+public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public signal void device_requested (BluetoothIndicator.Services.Device device);
     public signal void discovery_requested ();
 
@@ -85,8 +85,8 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Box {
 
         object_manager.device_removed.connect ((device) => {
             devices_box.get_children ().foreach ((child) => {
-                var device_child = child as Bluetooth.Widgets.Device;
-                if (device_child != null && BluetoothIndicator.Services.ObjectManager.compare_devices (device_child.device, device)) {
+                var device_child = child as Widgets.Device;
+                if (device_child != null && Services.ObjectManager.compare_devices (device_child.device, device)) {
                     device_child.destroy ();
                 }
             });
@@ -111,7 +111,7 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void add_device (BluetoothIndicator.Services.Device device) {
-        var device_widget = new Bluetooth.Widgets.Device (device);
+        var device_widget = new Widgets.Device (device);
         devices_box.add (device_widget);
 
         update_devices_box_visible ();
