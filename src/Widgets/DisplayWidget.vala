@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Widgets.DisplayWidget : Gtk.Spinner {
+public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     private Gtk.StyleContext style_context;
 
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
