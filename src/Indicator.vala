@@ -15,12 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Indicator : Wingpanel.Indicator {
+public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public bool is_in_session { get; construct; default = false; }
 
-    private Bluetooth.Widgets.PopoverWidget popover_widget;
-    private Bluetooth.Widgets.DisplayWidget dynamic_icon;
-    private BluetoothIndicator.Services.ObjectManager object_manager;
+    private Widgets.PopoverWidget popover_widget;
+    private Widgets.DisplayWidget dynamic_icon;
+    private Services.ObjectManager object_manager;
 
     public Indicator (bool is_in_session) {
         Object (
@@ -48,7 +48,7 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
     public override Gtk.Widget get_display_widget () {
         if (dynamic_icon == null) {
-            dynamic_icon = new Bluetooth.Widgets.DisplayWidget (object_manager);
+            dynamic_icon = new Widgets.DisplayWidget (object_manager);
         }
 
         return dynamic_icon;
@@ -56,7 +56,7 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
     public override Gtk.Widget? get_widget () {
         if (popover_widget == null) {
-            popover_widget = new Bluetooth.Widgets.PopoverWidget (object_manager, is_in_session);
+            popover_widget = new Widgets.PopoverWidget (object_manager, is_in_session);
             popover_widget.request_close.connect (() => {
                 close ();
             });
@@ -75,7 +75,7 @@ public class Bluetooth.Indicator : Wingpanel.Indicator {
 
 public Wingpanel.Indicator get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
     debug ("Activating Bluetooth Indicator");
-    var indicator = new Bluetooth.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
+    var indicator = new BluetoothIndicator.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
 
     return indicator;
 }
