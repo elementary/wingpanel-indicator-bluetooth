@@ -32,7 +32,9 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
-        var scroll_box = new Wingpanel.Widgets.AutomaticScrollBox ();
+        var scroll_box = new Gtk.ScrolledWindow (null, null);
+        scroll_box.max_content_height = 512;
+        scroll_box.propagate_natural_height = true;
         scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll_box.add (devices_box);
 
