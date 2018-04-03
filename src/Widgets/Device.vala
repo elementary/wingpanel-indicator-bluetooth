@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Bluetooth.Widgets.Device : Wingpanel.Widgets.Container {
+public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
     private const string DEFAULT_ICON = "bluetooth";
     public signal void show_device (BluetoothIndicator.Services.Device device);
 
