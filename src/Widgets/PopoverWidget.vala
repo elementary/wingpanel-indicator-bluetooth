@@ -30,7 +30,7 @@ public class Bluetooth.Widgets.PopoverWidget : Gtk.Box {
         orientation = Gtk.Orientation.VERTICAL;
 
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
-        main_switch.get_style_context ().add_class ("h4");
+        main_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         devices_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         device_box_separator = new Wingpanel.Widgets.Separator ();
