@@ -18,7 +18,13 @@
 public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     private Gtk.StyleContext style_context;
 
+    public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
+
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
+        Object (object_manager: object_manager);
+    }
+
+    construct {
         set_icon (object_manager.get_global_state (), object_manager.get_connected ());
 
         object_manager.global_state_changed.connect ((state, connected) => {
@@ -33,9 +39,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
 
             return Gdk.EVENT_PROPAGATE;
         });
-    }
 
-    construct {
         style_context = get_style_context ();
         style_context.add_class ("bluetooth-icon");
 
