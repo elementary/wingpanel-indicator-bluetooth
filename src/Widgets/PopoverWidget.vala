@@ -66,9 +66,9 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
         show_settings_button.clicked.connect (() => {
             try {
-                Gtk.show_uri (null, "settings://network/bluetooth", Gdk.CURRENT_TIME);
+                AppInfo.launch_default_for_uri ("settings://network/bluetooth", null);
             } catch (Error e) {
-                warning ("%s", e.message);
+                warning ("Failed to open bluetooth settings: %s", e.message);
             }
         });
 
