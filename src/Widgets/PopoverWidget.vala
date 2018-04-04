@@ -61,8 +61,8 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         update_ui_state (object_manager.get_global_state ());
         show_all ();
 
-        main_switch.switched.connect (() => {
-            object_manager.set_global_state.begin (main_switch.get_active ());
+        main_switch.notify["active"].connect (() => {
+            object_manager.set_global_state.begin (main_switch.active);
         });
 
         show_settings_button.clicked.connect (() => {
@@ -98,7 +98,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void update_ui_state (bool state) {
-        main_switch.set_active (state);
+        main_switch.active = state;
         revealer.reveal_child = state;
     }
 
