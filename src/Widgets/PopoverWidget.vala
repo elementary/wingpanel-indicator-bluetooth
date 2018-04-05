@@ -16,7 +16,6 @@
  */
 
 public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
-    public signal void request_close ();
     public signal void device_requested (BluetoothIndicator.Services.Device device);
     public signal void discovery_requested ();
 
@@ -66,8 +65,11 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         });
 
         show_settings_button.clicked.connect (() => {
-            request_close ();
-            show_settings ();
+            try {
+                AppInfo.launch_default_for_uri ("settings://network/bluetooth", null);
+            } catch (Error e) {
+                warning ("Failed to open bluetooth settings: %s", e.message);
+            }
         });
 
         //Adapter's Connections
@@ -119,13 +121,5 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         device_widget.show_device.connect ((device_service) => {
             device_requested (device_service);
         });
-    }
-
-    private void show_settings () {
-        try {
-            Gtk.show_uri (null, "settings://network/bluetooth", Gdk.CURRENT_TIME);
-        } catch (Error e) {
-            warning ("%s\n", e.message);
-        }
     }
 }
