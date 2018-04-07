@@ -57,9 +57,6 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public override Gtk.Widget? get_widget () {
         if (popover_widget == null) {
             popover_widget = new Widgets.PopoverWidget (object_manager, is_in_session);
-            popover_widget.request_close.connect (() => {
-                close ();
-            });
         }
 
         return popover_widget;
