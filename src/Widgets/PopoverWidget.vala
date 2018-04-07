@@ -15,7 +15,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
+public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box
+{
     public signal void device_requested (BluetoothIndicator.Services.Device device);
     public signal void discovery_requested ();
 
