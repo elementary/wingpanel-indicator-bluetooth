@@ -25,8 +25,6 @@ public interface BluetoothIndicator.Services.DBusInterface : Object {
 
 public class BluetoothIndicator.Services.ObjectManager : Object {
     public signal void global_state_changed (bool enabled, bool connected);
-    public signal void adapter_added (BluetoothIndicator.Services.Adapter adapter);
-    public signal void adapter_removed (BluetoothIndicator.Services.Adapter adapter);
     public signal void device_added (BluetoothIndicator.Services.Device adapter);
     public signal void device_removed (BluetoothIndicator.Services.Device adapter);
 
@@ -40,7 +38,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     construct {
         adapters = new Gee.HashMap<string, BluetoothIndicator.Services.Adapter> (null, null);
         devices = new Gee.HashMap<string, BluetoothIndicator.Services.Device> (null, null);
+
         settings = new Settings ("org.pantheon.desktop.wingpanel.indicators.bluetooth");
+
         Bus.get_proxy.begin<BluetoothIndicator.Services.DBusInterface> (BusType.SYSTEM, "org.bluez", "/", DBusProxyFlags.NONE, null, (obj, res) => {
             try {
                 object_interface = Bus.get_proxy.end (res);
@@ -63,7 +63,6 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 }
                 has_object = true;
 
-                adapter_added (adapter);
                 (adapter as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
                     var powered = changed.lookup_value("Powered", new VariantType("b"));
                     if (powered != null) {
@@ -106,14 +105,13 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     [CCode (instance_pos = -1)]
-    public void remove_path (ObjectPath path) {
+    private void remove_path (ObjectPath path) {
         lock (adapters) {
             var adapter = adapters.get (path);
             if (adapter != null) {
                 adapters.unset (path);
                 has_object = !adapters.is_empty;
 
-                adapter_removed (adapter);
                 return;
             }
         }
@@ -136,21 +134,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         }
     }
 
-    public Gee.Collection<BluetoothIndicator.Services.Adapter> get_adapters () {
-        lock (adapters) {
-            return adapters.values;
-        }
-    }
-
     public Gee.Collection<BluetoothIndicator.Services.Device> get_devices () {
         lock (devices) {
             return devices.values;
-        }
-    }
-
-    public BluetoothIndicator.Services.Adapter? get_adapter_from_path (string path) {
-        lock (adapters) {
-            return adapters.get (path);
         }
     }
 
