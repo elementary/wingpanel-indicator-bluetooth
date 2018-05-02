@@ -22,11 +22,19 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
 
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
         Object (object_manager: object_manager);
+
+        /* Style context not available in construct clause so deal with it here */
+        style_context = get_style_context ();
+        style_context.add_class ("bluetooth-icon");
+
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
+        style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+        set_icon (object_manager.get_global_state (), object_manager.get_connected ());
     }
 
     construct {
-        set_icon (object_manager.get_global_state (), object_manager.get_connected ());
-
         object_manager.global_state_changed.connect ((state, connected) => {
             set_icon (state, connected);
         });
@@ -39,13 +47,6 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
 
             return Gdk.EVENT_PROPAGATE;
         });
-
-        style_context = get_style_context ();
-        style_context.add_class ("bluetooth-icon");
-
-        var provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
-        style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 
     private void set_icon (bool state, bool connected) {
