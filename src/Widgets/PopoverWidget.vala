@@ -54,8 +54,11 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
             add (show_settings_button);
         }
 
+        main_switch.active = object_manager.get_global_state ();
+
         update_ui_state (object_manager.get_global_state ());
         show_all ();
+
 
         main_switch.notify["active"].connect (() => {
             object_manager.set_global_state.begin (main_switch.active);
@@ -70,13 +73,11 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         });
 
         //Adapter's Connections
+
         object_manager.global_state_changed.connect ((state, paired) => {
             update_ui_state (state);
         });
 
-        foreach (var device in object_manager.get_devices ()) {
-            add_device (device);
-        }
 
         object_manager.device_added.connect ((device) => {
             add_device (device);
@@ -93,11 +94,20 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
             update_devices_box_visible ();
         });
 
+        if (object_manager.has_object && object_manager.retrieve_finished) {
+            foreach (var device in object_manager.get_devices ()) {
+                add_device (device);
+            }
+        }
+
         update_devices_box_visible ();
     }
 
     private void update_ui_state (bool state) {
-        main_switch.active = state;
+        if (main_switch.active != state) {
+            main_switch.active = state;
+        }
+
         update_devices_box_visible ();
     }
 

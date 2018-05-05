@@ -29,11 +29,14 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public signal void device_removed (BluetoothIndicator.Services.Device adapter);
 
     public bool has_object { get; private set; default = false; }
-
+    public bool retrieve_finished { get; private set; default = false; }
     private Settings settings;
     private BluetoothIndicator.Services.DBusInterface object_interface;
     private Gee.HashMap<string, BluetoothIndicator.Services.Adapter> adapters;
     private Gee.HashMap<string, BluetoothIndicator.Services.Device> devices;
+
+    public bool is_powered {get; private set; default = false; }
+    public bool is_connected {get; private set; default = false; }
 
     construct {
         adapters = new Gee.HashMap<string, BluetoothIndicator.Services.Adapter> (null, null);
@@ -47,6 +50,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 object_interface.get_managed_objects ().foreach (add_path);
                 object_interface.interfaces_added.connect (add_path);
                 object_interface.interfaces_removed.connect (remove_path);
+                retrieve_finished = true;
             } catch (Error e) {
                 critical (e.message);
             }
@@ -61,14 +65,18 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 lock (adapters) {
                     adapters.set (path, adapter);
                 }
+
                 has_object = true;
 
                 (adapter as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
-                    var powered = changed.lookup_value("Powered", new VariantType("b"));
+                    var powered = changed.lookup_value ("Powered", new VariantType("b"));
                     if (powered != null) {
                         check_global_state ();
                     }
                 });
+
+                check_global_state ();
+
             } catch (Error e) {
                 debug ("Connecting to bluetooth adapter failed: %s", e.message);
             }
@@ -140,8 +148,21 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         }
     }
 
-    private void check_global_state () {
-        global_state_changed (get_global_state (), get_connected ());
+    public void check_global_state () {
+        /* As this is called within a signal handler, it should be in a Idle loop  else
+         * races occur */
+        Idle.add (() => {
+            var powered = get_global_state ();
+            var connected = get_connected ();
+
+            /* Only signal if actually changed */
+            if (powered != is_powered || connected != is_connected) {
+                is_powered = powered;
+                is_connected = connected;
+                global_state_changed (is_powered, is_connected);
+            }
+            return false;
+        });
     }
 
     public bool get_connected () {
@@ -169,6 +190,14 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     public async void set_global_state (bool state) {
+        is_powered = state;
+
+        lock (adapters) {
+            foreach (var adapter in adapters.values) {
+                adapter.powered = state;
+            }
+        }
+
         if (state == false) {
             lock (devices) {
                 foreach (var device in devices.values) {
@@ -183,11 +212,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             }
         }
 
-        lock (adapters) {
-            foreach (var adapter in adapters.values) {
-                adapter.powered = state;
-            }
-        }
+
 
         settings.set_boolean ("bluetooth-enabled", state);
     }
