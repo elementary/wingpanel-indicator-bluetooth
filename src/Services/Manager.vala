@@ -50,6 +50,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 object_interface.get_managed_objects ().foreach (add_path);
                 object_interface.interfaces_added.connect (add_path);
                 object_interface.interfaces_removed.connect (remove_path);
+                check_global_state ();
                 retrieve_finished = true;
             } catch (Error e) {
                 critical (e.message);
@@ -74,9 +75,6 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                         check_global_state ();
                     }
                 });
-
-                check_global_state ();
-
             } catch (Error e) {
                 debug ("Connecting to bluetooth adapter failed: %s", e.message);
             }

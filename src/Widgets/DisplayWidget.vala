@@ -25,7 +25,11 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     }
 
     construct {
-        set_icon (object_manager.get_global_state (), object_manager.get_connected ());
+        if (object_manager.has_object && object_manager.retrieve_finished) {
+            set_icon (object_manager.is_powered, object_manager.is_connected);
+        } else {
+            set_icon (false, false);
+        }
 
         object_manager.global_state_changed.connect ((state, connected) => {
             set_icon (state, connected);
@@ -49,6 +53,18 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     }
 
     private void set_icon (bool state, bool connected) {
+        if (get_realized ()) {
+            update_icon ();
+        } else {
+            realize.connect_after  (update_icon);
+        }
+
+    }
+
+    private void update_icon () {
+        var state = object_manager.is_powered;
+        var connected = object_manager.is_connected;
+
         if (state) {
             style_context.remove_class ("disabled");
             if (connected) {
