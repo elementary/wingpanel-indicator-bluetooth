@@ -24,17 +24,21 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
 
     construct {
         var style_context = get_style_context ();
-        style_context.add_class ("bluetooth-icon");
-
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
         style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-        set_icon (object_manager.get_global_state (), object_manager.get_connected ());
+        style_context.add_class ("bluetooth-icon");
+        style.context.add_class ("disabled");
 
         object_manager.global_state_changed.connect ((state, connected) => {
-            set_icon (state, connected);
+            set_icon ();
         });
+
+        if (object_manager.has_object && object_manager.retrieve_finished) {
+            set_icon ();
+        } else {
+            object_manager.notify["retrieve-finished"].connect (set_icon);
+        }
 
         button_press_event.connect ((e) => {
             if (e.button == Gdk.BUTTON_MIDDLE) {
@@ -46,7 +50,18 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
         });
     }
 
-    private void set_icon (bool state, bool connected) {
+    private void set_icon () {
+        if (get_realized ()) {
+            update_icon ();
+        } else {
+            /* When called from constructor usually not realized */
+            realize.connect_after  (update_icon);
+        }
+    }
+
+    private void update_icon () {
+        var state = object_manager.is_powered;
+        var connected = object_manager.is_connected;
         var style_context = get_style_context ();
 
         if (state) {
