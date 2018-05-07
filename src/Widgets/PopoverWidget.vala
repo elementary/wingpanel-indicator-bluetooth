@@ -72,8 +72,6 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
             }
         });
 
-        //Adapter's Connections
-
         object_manager.global_state_changed.connect ((state, paired) => {
             update_ui_state (state);
         });
