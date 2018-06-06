@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-	<schema path="/org/pantheon/desktop/wingpanel/indicators/bluetooth/" id="org.pantheon.desktop.wingpanel.indicators.bluetooth" gettext-domain="bluetooth-indicator">
+	<schema path="/org/pantheon/desktop/wingpanel/indicators/bluetooth/" id="org.pantheon.desktop.wingpanel.indicators.bluetooth">
 		<key type="b" name="bluetooth-enabled">
 			<default>true</default>
 			<summary>Sets the last bluetooth state to re-apply on reboot</summary>
