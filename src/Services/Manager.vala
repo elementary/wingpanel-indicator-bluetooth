@@ -42,7 +42,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         adapters = new Gee.HashMap<string, BluetoothIndicator.Services.Adapter> (null, null);
         devices = new Gee.HashMap<string, BluetoothIndicator.Services.Device> (null, null);
 
-        settings = new Settings ("org.pantheon.desktop.wingpanel.indicators.bluetooth");
+        settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
 
         Bus.get_proxy.begin<BluetoothIndicator.Services.DBusInterface> (BusType.SYSTEM, "org.bluez", "/", DBusProxyFlags.NONE, null, (obj, res) => {
             try {

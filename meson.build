@@ -37,7 +37,7 @@ shared_module(
 )
 
 install_data(
-    'schemas/org.pantheon.desktop.wingpanel.indicators.bluetooth.gschema.xml',
+    'data/io.elementary.desktop.wingpanel.bluetooth.gschema.xml',
     install_dir: join_paths(get_option('datadir'), 'glib-2.0', 'schemas')
 )
 
