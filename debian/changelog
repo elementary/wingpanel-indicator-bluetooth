@@ -1,8 +1,8 @@
-wingpanel-indicator-bluetooth (2.0.4) UNRELEASED; urgency=medium
+wingpanel-indicator-bluetooth (2.1.0) bionic; urgency=medium
 
-  * Pre-release version bump.
+  * New upstream release.
 
- -- Daniel <daniel@elementary.io>  Thu, 29 Mar 2018 14:56:34 -0700
+ -- Cody Garver <cody@elementary.io>  Mon, 11 Jun 2018 13:43:31 -0500
 
 wingpanel-indicator-bluetooth (2.0.3) xenial; urgency=medium
 
