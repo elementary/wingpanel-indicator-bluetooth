@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-06 09:39-0800\n"
+"POT-Creation-Date: 2018-06-27 09:40-0700\n"
 "PO-Revision-Date: 2016-08-06 10:02+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,39 +13,39 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: src/Indicator.vala:26
+#: src/Indicator.vala:28
 msgid "bluetooth"
 msgstr "藍牙"
 
-#: src/Indicator.vala:27
+#: src/Indicator.vala:29
 msgid "The bluetooth indicator"
 msgstr "藍牙指示器"
 
-#: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
+#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
 msgid "Not Connected"
 msgstr "未連接"
 
-#: src/Widgets/Device.vala:60
-msgid "Connected"
-msgstr "已連接"
-
-#: src/Widgets/Device.vala:76
+#: src/Widgets/Device.vala:69
 msgid "Connecting…"
 msgstr "連接中…"
 
-#: src/Widgets/Device.vala:79
+#: src/Widgets/Device.vala:72
 msgid "Disconnecting…"
 msgstr "中斷連接中…"
 
-#: src/Widgets/Device.vala:84
+#: src/Widgets/Device.vala:77
 msgid "Unable to Connect"
 msgstr "無法連接"
 
-#: src/Widgets/PopoverWidget.vala:32
+#: src/Widgets/Device.vala:87
+msgid "Connected"
+msgstr "已連接"
+
+#: src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "藍牙"
 
-#: src/Widgets/PopoverWidget.vala:50
+#: src/Widgets/PopoverWidget.vala:48
 msgid "Bluetooth Settings…"
 msgstr "藍牙設定值…"
 

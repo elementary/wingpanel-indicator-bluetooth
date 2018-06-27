@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-06 09:39-0800\n"
+"POT-Creation-Date: 2018-06-27 09:40-0700\n"
 "PO-Revision-Date: 2017-04-08 04:57+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <http://weblate.elementary.io/projects/desktop/"
@@ -15,39 +15,39 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:26
+#: src/Indicator.vala:28
 msgid "bluetooth"
 msgstr "블루투스"
 
-#: src/Indicator.vala:27
+#: src/Indicator.vala:29
 msgid "The bluetooth indicator"
 msgstr "블루투스 알림판"
 
-#: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
+#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
 msgid "Not Connected"
 msgstr "연결되지 않음"
 
-#: src/Widgets/Device.vala:60
-msgid "Connected"
-msgstr "연결됨"
-
-#: src/Widgets/Device.vala:76
+#: src/Widgets/Device.vala:69
 msgid "Connecting…"
 msgstr "연결 중…"
 
-#: src/Widgets/Device.vala:79
+#: src/Widgets/Device.vala:72
 msgid "Disconnecting…"
 msgstr "연결 해제 중…"
 
-#: src/Widgets/Device.vala:84
+#: src/Widgets/Device.vala:77
 msgid "Unable to Connect"
 msgstr "연결할 수 없음"
 
-#: src/Widgets/PopoverWidget.vala:32
+#: src/Widgets/Device.vala:87
+msgid "Connected"
+msgstr "연결됨"
+
+#: src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "블루투스"
 
-#: src/Widgets/PopoverWidget.vala:50
+#: src/Widgets/PopoverWidget.vala:48
 msgid "Bluetooth Settings…"
 msgstr "블루투스 설정…"
 

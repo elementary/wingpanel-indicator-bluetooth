@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-06 09:39-0800\n"
+"POT-Creation-Date: 2018-06-27 09:40-0700\n"
 "PO-Revision-Date: 2016-08-11 12:53+0000\n"
 "Last-Translator: Stanislav <stunito0o0o0@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,39 +13,39 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: src/Indicator.vala:26
+#: src/Indicator.vala:28
 msgid "bluetooth"
 msgstr "блутут"
 
-#: src/Indicator.vala:27
+#: src/Indicator.vala:29
 msgid "The bluetooth indicator"
 msgstr "Индикатор на блутута"
 
-#: src/Widgets/Device.vala:33 src/Widgets/Device.vala:62
+#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
 msgid "Not Connected"
 msgstr "Няма връзка"
 
-#: src/Widgets/Device.vala:60
-msgid "Connected"
-msgstr "Установена е връзка"
-
-#: src/Widgets/Device.vala:76
+#: src/Widgets/Device.vala:69
 msgid "Connecting…"
 msgstr "Свързване…"
 
-#: src/Widgets/Device.vala:79
+#: src/Widgets/Device.vala:72
 msgid "Disconnecting…"
 msgstr "Прекъсване на връзката..."
 
-#: src/Widgets/Device.vala:84
+#: src/Widgets/Device.vala:77
 msgid "Unable to Connect"
 msgstr "Неуспешно свързване"
 
-#: src/Widgets/PopoverWidget.vala:32
+#: src/Widgets/Device.vala:87
+msgid "Connected"
+msgstr "Установена е връзка"
+
+#: src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "Блутут"
 
-#: src/Widgets/PopoverWidget.vala:50
+#: src/Widgets/PopoverWidget.vala:48
 msgid "Bluetooth Settings…"
 msgstr "Настройки на Блутут..."
 
