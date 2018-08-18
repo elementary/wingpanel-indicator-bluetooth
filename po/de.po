@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-27 09:40-0700\n"
-"PO-Revision-Date: 2017-12-31 00:22+0000\n"
-"Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
+"PO-Revision-Date: 2018-08-19 00:10+0000\n"
+"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/de/>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Indicator.vala:28
@@ -29,11 +29,11 @@ msgstr "Nicht verbunden"
 
 #: src/Widgets/Device.vala:69
 msgid "Connecting…"
-msgstr "Verbinden …"
+msgstr "Verbinden…"
 
 #: src/Widgets/Device.vala:72
 msgid "Disconnecting…"
-msgstr "Verbindung wird getrennt …"
+msgstr "Verbindung wird getrennt…"
 
 #: src/Widgets/Device.vala:77
 msgid "Unable to Connect"
@@ -49,7 +49,7 @@ msgstr "Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:48
 msgid "Bluetooth Settings…"
-msgstr "Bluetooth-Einstellungen …"
+msgstr "Bluetooth-Einstellungen…"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "Geräte suchen …"
