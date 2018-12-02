@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 14:37-0700\n"
 "PO-Revision-Date: 2018-12-02 05:49+0000\n"
-"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
+"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ar/>\n"
 "Language: ar\n"
@@ -38,16 +38,16 @@ msgstr "يقطع الإتصال…"
 
 #: src/Widgets/Device.vala:77
 msgid "Unable to Connect"
-msgstr ""
+msgstr "غير قادر على الإتصال"
 
 #: src/Widgets/Device.vala:87
 msgid "Connected"
-msgstr ""
+msgstr "متصل"
 
 #: src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
-msgstr ""
+msgstr "بلوتوث"
 
 #: src/Widgets/PopoverWidget.vala:48
 msgid "Bluetooth Settings…"
-msgstr ""
+msgstr "إعدادات البلوتوث"
