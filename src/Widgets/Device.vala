@@ -32,14 +32,23 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
     construct {
         name_label = new Gtk.Label ("<b>%s</b>".printf (device.name));
         name_label.halign = Gtk.Align.START;
+        name_label.valign = Gtk.Align.END;
+        name_label.vexpand = true;
         name_label.use_markup = true;
 
         status_label = new Gtk.Label (_("Not Connected"));
         status_label.halign = Gtk.Align.START;
+        status_label.valign = Gtk.Align.START;
+        status_label.vexpand = true;
 
         spinner = new Gtk.Spinner ();
         spinner.halign = Gtk.Align.START;
+        spinner.valign = Gtk.Align.START;
         spinner.hexpand = true;
+
+        var size_group = new Gtk.SizeGroup (Gtk.SizeGroupMode.VERTICAL);
+        size_group.add_widget (status_label);
+        size_group.add_widget (spinner);
 
         icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon, Gtk.IconSize.DIALOG);
 
@@ -81,7 +90,7 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
     }
 
     private void update_status () {
-        name_label.label = device.name;
+        name_label.label = "<b>%s</b>".printf (device.name);
 
         if (device.connected) {
             status_label.label = _("Connected");
