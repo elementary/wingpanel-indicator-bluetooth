@@ -26,7 +26,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
         Object (
             code_name: Wingpanel.Indicator.BLUETOOTH,
             display_name: _("Bluetooth"),
-            description:_("Indicator for Bluethooth signal"),
+            description:_("Indicator for Bluetooth signal"),
             is_in_session: is_in_session
         );
     }
