@@ -98,7 +98,6 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
             status_label.label = _("Not Connected");
         }
 
-        icon_image.icon_name = device.icon;
-
+        icon_image.icon_name = device.icon == null ? DEFAULT_ICON : device.icon;
     }
 }
