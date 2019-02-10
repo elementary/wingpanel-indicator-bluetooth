@@ -67,7 +67,6 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
         grid.attach (status_label, 1, 1, 1, 1);
         grid.attach (spinner, 2, 1, 1, 1);
 
-
         get_content_widget ().add (grid);
 
         clicked.connect (() => {
