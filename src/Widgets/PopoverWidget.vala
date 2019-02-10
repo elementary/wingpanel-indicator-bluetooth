@@ -105,21 +105,6 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     private int compare_rows (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
         unowned Services.Device device1 = ((Widgets.Device) row1.get_child ()).device;
         unowned Services.Device device2 = ((Widgets.Device) row2.get_child ()).device;
-        if (device1.paired && !device2.paired) {
-            return -1;
-        }
-
-        if (!device1.paired && device2.paired) {
-            return 1;
-        }
-
-        if (device1.connected && !device2.connected) {
-            return -1;
-        }
-
-        if (!device1.connected && device2.connected) {
-            return 1;
-        }
 
         if (device1.name != null && device2.name == null) {
             return -1;
