@@ -30,7 +30,6 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         main_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         devices_list = new Gtk.ListBox ();
-        devices_list.selection_mode = Gtk.SelectionMode.NONE;
         devices_list.set_sort_func ((Gtk.ListBoxSortFunc) compare_rows);
 
         var scroll_box = new Gtk.ScrolledWindow (null, null);
