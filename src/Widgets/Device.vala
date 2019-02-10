@@ -23,6 +23,7 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
     private Gtk.Label status_label;
     private Gtk.Label name_label;
     private Gtk.Image icon_image;
+    private Gtk.Image status_image;
     private Gtk.Spinner spinner;
 
     public Device (BluetoothIndicator.Services.Device device) {
@@ -52,8 +53,16 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
 
         icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon, Gtk.IconSize.DIALOG);
 
+        status_image = new Gtk.Image.from_icon_name ("user-offline", Gtk.IconSize.MENU);
+        status_image.halign = Gtk.Align.END;
+        status_image.valign = Gtk.Align.END;
+
+        var overlay = new Gtk.Overlay ();
+        overlay.add (icon_image);
+        overlay.add_overlay (status_image);
+
         var grid = new Gtk.Grid ();
-        grid.attach (icon_image, 0, 0, 1, 2);
+        grid.attach (overlay, 0, 0, 1, 2);
         grid.attach (name_label, 1, 0, 2, 1);
         grid.attach (status_label, 1, 1, 1, 1);
         grid.attach (spinner, 2, 1, 1, 1);
@@ -73,6 +82,7 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
 
     private async void toggle_device () {
         spinner.active = true;
+        status_image.icon_name = "user-away";
         try {
             if (!device.connected) {
                 status_label.label = _("Connecting…");
@@ -84,6 +94,7 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
         } catch (Error e) {
             critical (e.message);
             status_label.label = _("Unable to Connect");
+            status_image.icon_name = "user-busy";
         }
 
         spinner.active = false;
@@ -94,8 +105,10 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
 
         if (device.connected) {
             status_label.label = _("Connected");
+            status_image.icon_name = "user-available";
         } else {
             status_label.label = _("Not Connected");
+            status_image.icon_name = "user-offline";
         }
 
         icon_image.icon_name = device.icon == null ? DEFAULT_ICON : device.icon;
