@@ -28,7 +28,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
         provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
         style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         style_context.add_class ("bluetooth-icon");
-        style.context.add_class ("disabled");
+        style_context.add_class ("disabled");
 
         object_manager.global_state_changed.connect ((state, connected) => {
             set_icon ();
