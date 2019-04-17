@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 14:37-0700\n"
-"PO-Revision-Date: 2019-04-09 21:53+0000\n"
+"PO-Revision-Date: 2019-04-18 22:54+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/tr/>\n"
@@ -37,11 +37,11 @@ msgstr "Bağlantı kesiliyor…"
 
 #: src/Widgets/Device.vala:77
 msgid "Unable to Connect"
-msgstr "Bağlantı kurulamıyor"
+msgstr "Bağlantı Kurulamıyor"
 
 #: src/Widgets/Device.vala:87
 msgid "Connected"
-msgstr "Bağlandı"
+msgstr "Bağlı"
 
 #: src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
