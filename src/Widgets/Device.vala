@@ -76,6 +76,8 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         (device as DBusProxy).g_properties_changed.connect (update_status);
 
         update_status ();
+
+        get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
     }
 
     public async void toggle_device () {
