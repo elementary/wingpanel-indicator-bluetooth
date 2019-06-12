@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 14:37-0700\n"
-"PO-Revision-Date: 2019-01-14 00:11+0000\n"
+"PO-Revision-Date: 2019-02-22 00:06+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/fr/>\n"
@@ -17,11 +17,11 @@ msgstr ""
 
 #: src/Indicator.vala:28
 msgid "bluetooth"
-msgstr "bluetooth"
+msgstr "Bluetooth"
 
 #: src/Indicator.vala:29
 msgid "The bluetooth indicator"
-msgstr "L'indicateur bluetooth"
+msgstr "L'indicateur Bluetooth"
 
 #: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
 msgid "Not Connected"
