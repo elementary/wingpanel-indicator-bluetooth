@@ -78,6 +78,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         update_status ();
 
         get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        selectable = false;
     }
 
     public async void toggle_device () {
