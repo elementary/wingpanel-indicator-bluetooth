@@ -10,7 +10,7 @@ i18n = import('i18n')
 
 add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(gettext_name), language:'c')
 
-add_project_arguments('-DG_LOG_DOMAIN="wingpanel-indicator-bluetooth"', language:'c')
+add_project_arguments('-DG_LOG_DOMAIN="io.elementary.wingpanel.bluetooth"', language:'c')
 
 asresources = gnome.compile_resources(
     'as-resources', 'data/io.elementary.wingpanel.bluetooth.gresource.xml',
