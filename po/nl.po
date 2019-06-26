@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2017-04-09 16:35+0000\n"
 "Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
 "Language-Team: Dutch <http://weblate.elementary.io/projects/desktop/"
@@ -15,41 +15,43 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "bluetooth"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "De bluetooth indicator"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
-msgid "Not Connected"
-msgstr "Niet verbonden"
-
-#: src/Widgets/Device.vala:69
-msgid "Connecting…"
-msgstr "Verbinding maken…"
-
-#: src/Widgets/Device.vala:72
-msgid "Disconnecting…"
-msgstr "Verbinding verbreken…"
-
-#: src/Widgets/Device.vala:77
-msgid "Unable to Connect"
-msgstr "Niet mogelijk om te verbinden"
-
-#: src/Widgets/Device.vala:87
-msgid "Connected"
-msgstr "Verbonden"
-
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Indicator.vala:29
+msgid "Indicator for Bluetooth signal"
+msgstr ""
+
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+msgid "Not Connected"
+msgstr "Niet verbonden"
+
+#: src/Widgets/Device.vala:88
+msgid "Connecting…"
+msgstr "Verbinding maken…"
+
+#: src/Widgets/Device.vala:91
+msgid "Disconnecting…"
+msgstr "Verbinding verbreken…"
+
+#: src/Widgets/Device.vala:96
+msgid "Unable to Connect"
+msgstr "Niet mogelijk om te verbinden"
+
+#: src/Widgets/Device.vala:107
+msgid "Connected"
+msgstr "Verbonden"
+
+#: src/Widgets/PopoverWidget.vala:49
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth-instellingen…"
+
+#~ msgid "bluetooth"
+#~ msgstr "bluetooth"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "De bluetooth indicator"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "Ontdek apparaten…"

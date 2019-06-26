@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-bluetooth\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2016-12-30 14:28+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -18,41 +18,43 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "كۆكچىش"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "كۆكچىش كۆرسەتكۈچى"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
-msgid "Not Connected"
-msgstr "ئۇلانمىدى"
-
-#: src/Widgets/Device.vala:69
-msgid "Connecting…"
-msgstr "ئۇلاۋاتىدۇ...."
-
-#: src/Widgets/Device.vala:72
-msgid "Disconnecting…"
-msgstr "ئۈزۈۋاتىدۇ…"
-
-#: src/Widgets/Device.vala:77
-msgid "Unable to Connect"
-msgstr "ئۇلىغىلى بولمىدى"
-
-#: src/Widgets/Device.vala:87
-msgid "Connected"
-msgstr "ئۇلاندى"
-
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "كۆكچىش"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Indicator.vala:29
+msgid "Indicator for Bluetooth signal"
+msgstr ""
+
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+msgid "Not Connected"
+msgstr "ئۇلانمىدى"
+
+#: src/Widgets/Device.vala:88
+msgid "Connecting…"
+msgstr "ئۇلاۋاتىدۇ...."
+
+#: src/Widgets/Device.vala:91
+msgid "Disconnecting…"
+msgstr "ئۈزۈۋاتىدۇ…"
+
+#: src/Widgets/Device.vala:96
+msgid "Unable to Connect"
+msgstr "ئۇلىغىلى بولمىدى"
+
+#: src/Widgets/Device.vala:107
+msgid "Connected"
+msgstr "ئۇلاندى"
+
+#: src/Widgets/PopoverWidget.vala:49
 msgid "Bluetooth Settings…"
 msgstr "كۆكچىش تەڭشىكى…"
+
+#~ msgid "bluetooth"
+#~ msgstr "كۆكچىش"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "كۆكچىش كۆرسەتكۈچى"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "ئۈسكۈنە قىتىش...."

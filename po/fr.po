@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2019-02-22 00:06+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,41 +15,43 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "Bluetooth"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "L'indicateur Bluetooth"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
-msgid "Not Connected"
-msgstr "Déconnecté"
-
-#: src/Widgets/Device.vala:69
-msgid "Connecting…"
-msgstr "Connexion…"
-
-#: src/Widgets/Device.vala:72
-msgid "Disconnecting…"
-msgstr "Déconnexion…"
-
-#: src/Widgets/Device.vala:77
-msgid "Unable to Connect"
-msgstr "Impossible de se connecter"
-
-#: src/Widgets/Device.vala:87
-msgid "Connected"
-msgstr "Connecté"
-
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Indicator.vala:29
+msgid "Indicator for Bluetooth signal"
+msgstr ""
+
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+msgid "Not Connected"
+msgstr "Déconnecté"
+
+#: src/Widgets/Device.vala:88
+msgid "Connecting…"
+msgstr "Connexion…"
+
+#: src/Widgets/Device.vala:91
+msgid "Disconnecting…"
+msgstr "Déconnexion…"
+
+#: src/Widgets/Device.vala:96
+msgid "Unable to Connect"
+msgstr "Impossible de se connecter"
+
+#: src/Widgets/Device.vala:107
+msgid "Connected"
+msgstr "Connecté"
+
+#: src/Widgets/PopoverWidget.vala:49
 msgid "Bluetooth Settings…"
 msgstr "Paramètres Bluetooth…"
+
+#~ msgid "bluetooth"
+#~ msgstr "Bluetooth"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "L'indicateur Bluetooth"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "Rechercher des périphériques…"
