@@ -19,11 +19,21 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public signal void device_requested (BluetoothIndicator.Services.Device device);
     public signal void discovery_requested ();
 
+    public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
+    public bool is_in_session { get; construct; }
+
     private Wingpanel.Widgets.Switch main_switch;
     private Gtk.ListBox devices_list;
     private Gtk.Revealer revealer;
 
     public PopoverWidget (BluetoothIndicator.Services.ObjectManager object_manager, bool is_in_session) {
+        Object (
+            object_manager: object_manager,
+            is_in_session: is_in_session
+        );
+    }
+
+    construct {
         orientation = Gtk.Orientation.VERTICAL;
 
         main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
