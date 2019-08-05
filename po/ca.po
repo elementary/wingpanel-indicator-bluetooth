@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2017-05-03 14:26+0000\n"
+"PO-Revision-Date: 2019-08-11 00:22+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ca/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
@@ -29,11 +29,11 @@ msgstr "No connectat"
 
 #: src/Widgets/Device.vala:88
 msgid "Connecting…"
-msgstr "S'està connectant…"
+msgstr "Es connecta…"
 
 #: src/Widgets/Device.vala:91
 msgid "Disconnecting…"
-msgstr "Desconnectant…"
+msgstr "Es desconnecta…"
 
 #: src/Widgets/Device.vala:96
 msgid "Unable to Connect"
