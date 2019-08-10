@@ -18,14 +18,17 @@
 public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
 
+    private unowned Gtk.StyleContext style_context;
+
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
         Object (object_manager: object_manager);
     }
 
     construct {
-        var style_context = get_style_context ();
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
+
+        style_context = get_style_context ();
         style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         style_context.add_class ("bluetooth-icon");
         style_context.add_class ("disabled");
@@ -62,7 +65,6 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     private void update_icon () {
         var state = object_manager.is_powered;
         var connected = object_manager.is_connected;
-        var style_context = get_style_context ();
 
         if (state) {
             style_context.remove_class ("disabled");
