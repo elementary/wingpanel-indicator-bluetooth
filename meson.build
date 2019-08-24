@@ -21,6 +21,7 @@ asresources = gnome.compile_resources(
 )
 
 wingpanel_dep = dependency('wingpanel-2.0')
+wingpanel_indicatorsdir = wingpanel_dep.get_pkgconfig_variable('indicatorsdir', define_variable: ['libdir', libdir])
 
 shared_module(
     meson.project_name(),
@@ -41,7 +42,7 @@ shared_module(
         wingpanel_dep
     ],
     install: true,
-    install_dir : wingpanel_dep.get_pkgconfig_variable('indicatorsdir')
+    install_dir : wingpanel_indicatorsdir
 )
 
 install_data(
