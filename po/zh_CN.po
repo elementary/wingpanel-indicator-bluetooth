@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2017-04-14 02:04+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -15,41 +15,43 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "蓝牙"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "蓝牙指示器"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
-msgid "Not Connected"
-msgstr "未连接"
-
-#: src/Widgets/Device.vala:69
-msgid "Connecting…"
-msgstr "连接中…"
-
-#: src/Widgets/Device.vala:72
-msgid "Disconnecting…"
-msgstr "断开中…"
-
-#: src/Widgets/Device.vala:77
-msgid "Unable to Connect"
-msgstr "无法连接"
-
-#: src/Widgets/Device.vala:87
-msgid "Connected"
-msgstr "已连接"
-
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "蓝牙"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Indicator.vala:29
+msgid "Indicator for Bluetooth signal"
+msgstr ""
+
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+msgid "Not Connected"
+msgstr "未连接"
+
+#: src/Widgets/Device.vala:88
+msgid "Connecting…"
+msgstr "连接中…"
+
+#: src/Widgets/Device.vala:91
+msgid "Disconnecting…"
+msgstr "断开中…"
+
+#: src/Widgets/Device.vala:96
+msgid "Unable to Connect"
+msgstr "无法连接"
+
+#: src/Widgets/Device.vala:107
+msgid "Connected"
+msgstr "已连接"
+
+#: src/Widgets/PopoverWidget.vala:49
 msgid "Bluetooth Settings…"
 msgstr "蓝牙设置…"
+
+#~ msgid "bluetooth"
+#~ msgstr "蓝牙"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "蓝牙指示器"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "添加设备…"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2016-08-11 12:53+0000\n"
 "Last-Translator: Stanislav <stunito0o0o0@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,41 +13,43 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "блутут"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "Индикатор на блутута"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
-msgid "Not Connected"
-msgstr "Няма връзка"
-
-#: src/Widgets/Device.vala:69
-msgid "Connecting…"
-msgstr "Свързване…"
-
-#: src/Widgets/Device.vala:72
-msgid "Disconnecting…"
-msgstr "Прекъсване на връзката..."
-
-#: src/Widgets/Device.vala:77
-msgid "Unable to Connect"
-msgstr "Неуспешно свързване"
-
-#: src/Widgets/Device.vala:87
-msgid "Connected"
-msgstr "Установена е връзка"
-
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "Блутут"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Indicator.vala:29
+msgid "Indicator for Bluetooth signal"
+msgstr ""
+
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+msgid "Not Connected"
+msgstr "Няма връзка"
+
+#: src/Widgets/Device.vala:88
+msgid "Connecting…"
+msgstr "Свързване…"
+
+#: src/Widgets/Device.vala:91
+msgid "Disconnecting…"
+msgstr "Прекъсване на връзката..."
+
+#: src/Widgets/Device.vala:96
+msgid "Unable to Connect"
+msgstr "Неуспешно свързване"
+
+#: src/Widgets/Device.vala:107
+msgid "Connected"
+msgstr "Установена е връзка"
+
+#: src/Widgets/PopoverWidget.vala:49
 msgid "Bluetooth Settings…"
 msgstr "Настройки на Блутут..."
+
+#~ msgid "bluetooth"
+#~ msgstr "блутут"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "Индикатор на блутута"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "Откриване на устройства..."

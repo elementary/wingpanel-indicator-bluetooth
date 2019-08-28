@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluetooth-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2019-06-26 22:46+0200\n"
 "PO-Revision-Date: 2018-05-31 08:03+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/wingpanel/"
@@ -19,38 +19,40 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "blutus"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "Indicador blutus"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
-msgid "Not Connected"
-msgstr "Nu este conectat"
-
-#: src/Widgets/Device.vala:69
-msgid "Connecting…"
-msgstr "Conectare…"
-
-#: src/Widgets/Device.vala:72
-msgid "Disconnecting…"
-msgstr "Desconectare…"
-
-#: src/Widgets/Device.vala:77
-msgid "Unable to Connect"
-msgstr "Imposibil de conectat"
-
-#: src/Widgets/Device.vala:87
-msgid "Connected"
-msgstr "Conectat"
-
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
 msgid "Bluetooth"
 msgstr "Blutus"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Indicator.vala:29
+msgid "Indicator for Bluetooth signal"
+msgstr ""
+
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+msgid "Not Connected"
+msgstr "Nu este conectat"
+
+#: src/Widgets/Device.vala:88
+msgid "Connecting…"
+msgstr "Conectare…"
+
+#: src/Widgets/Device.vala:91
+msgid "Disconnecting…"
+msgstr "Desconectare…"
+
+#: src/Widgets/Device.vala:96
+msgid "Unable to Connect"
+msgstr "Imposibil de conectat"
+
+#: src/Widgets/Device.vala:107
+msgid "Connected"
+msgstr "Conectat"
+
+#: src/Widgets/PopoverWidget.vala:49
 msgid "Bluetooth Settings…"
 msgstr "Setări Bluetooth …"
+
+#~ msgid "bluetooth"
+#~ msgstr "blutus"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "Indicador blutus"
