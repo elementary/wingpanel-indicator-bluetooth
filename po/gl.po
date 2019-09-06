@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2017-09-08 14:56+0000\n"
-"Last-Translator: Thiago Galvani <thiagopaiva99@gmail.com>\n"
-"Language-Team: Galician <https://weblate.elementary.io/projects/wingpanel/"
+"PO-Revision-Date: 2019-09-07 10:22+0000\n"
+"Last-Translator: Daniel <riesp@protonmail.com>\n"
+"Language-Team: Galician <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
@@ -21,7 +21,7 @@ msgstr "Bluetooth"
 
 #: src/Indicator.vala:29
 msgid "Indicator for Bluetooth signal"
-msgstr ""
+msgstr "Indicador para sinal Bluetooth"
 
 #: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
 msgid "Not Connected"
