@@ -58,7 +58,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
             update_icon ();
         } else {
             /* When called from constructor usually not realized */
-            realize.connect_after  (update_icon);
+            realize.connect_after (update_icon);
         }
     }
 
