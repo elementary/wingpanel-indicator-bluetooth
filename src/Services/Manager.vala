@@ -70,7 +70,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 has_object = true;
 
                 (adapter as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
-                    var powered = changed.lookup_value ("Powered", new VariantType("b"));
+                    var powered = changed.lookup_value ("Powered", new VariantType ("b"));
                     if (powered != null) {
                         check_global_state ();
                     }
@@ -86,12 +86,12 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 }
 
                 (device as DBusProxy).g_properties_changed.connect ((changed, invalid) => {
-                    var connected = changed.lookup_value("Connected", new VariantType("b"));
+                    var connected = changed.lookup_value ("Connected", new VariantType ("b"));
                     if (connected != null) {
                         check_global_state ();
                     }
 
-                    var paired = changed.lookup_value("Paired", new VariantType("b"));
+                    var paired = changed.lookup_value ("Paired", new VariantType ("b"));
                     if (paired != null) {
                         if (device.paired) {
                             add_device (device, path);
