@@ -5,16 +5,13 @@
   <extends>io.elementary.wingpanel</extends>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1</project_license>
-  <name>Wingpanel Bluetooth Indicator</name>
-  <summary>Provides an indicator in Wingpanel for managing Bluetooth connections</summary>
+  <name>Bluetooth Indicator</name>
+  <summary>Connect and disconnect paired bluetooth devices</summary>
   <screenshots>
     <screenshot type="default">
       <image>https://raw.githubusercontent.com/elementary/wingpanel-indicator-bluetooth/master/data/screenshot.png</image>
     </screenshot>
   </screenshots>
-  <provides>
-    <library>libbluetooth.so</library>
-  </provides>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
     <content_attribute id="violence-fantasy">none</content_attribute>
@@ -46,7 +43,11 @@
   </content_rating>
   <translation type="gettext">io.elementary.wingpanel.bluetooth</translation>
   <developer_name>elementary, Inc.</developer_name>
-  <url type="homepage">https://elementary.io</url>
-  <url type="bugtracker">https://github.com/elementary/tasks/issues</url>
+  <url type="homepage">https://elementary.io/</url>
+  <url type="bugtracker">https://github.com/elementary/wingpanel-indicator-bluetooth/issues</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://elementaryos.stackexchange.com/questions/tagged/wingpanel</url>
   <url type="translate">https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-bluetooth/</url>
+  <update_contact>contact_AT_elementary.io</update_contact>
+  <project_group>elementary</project_group>
 </component>
