@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"POT-Creation-Date: 2019-11-07 22:17+0000\n"
 "PO-Revision-Date: 2016-08-06 10:02+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "藍牙"
 
@@ -41,7 +41,7 @@ msgstr "無法連接"
 msgid "Connected"
 msgstr "已連接"
 
-#: src/Widgets/PopoverWidget.vala:49
+#: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "藍牙設定值…"
 

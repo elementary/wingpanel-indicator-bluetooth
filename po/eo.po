@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"POT-Creation-Date: 2019-11-07 22:17+0000\n"
 "PO-Revision-Date: 2019-08-29 17:22+0000\n"
 "Last-Translator: Shtonchjo <shtonchjo@gmail.com>\n"
 "Language-Team: Esperanto <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bludento"
 
@@ -43,7 +43,7 @@ msgstr "Ne eblas konektiĝi"
 msgid "Connected"
 msgstr "Konektita"
 
-#: src/Widgets/PopoverWidget.vala:49
+#: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "Bludentaj agordoj…"
 

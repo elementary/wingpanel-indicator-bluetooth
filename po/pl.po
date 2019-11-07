@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"POT-Creation-Date: 2019-11-07 22:17+0000\n"
 "PO-Revision-Date: 2018-09-20 00:05+0000\n"
 "Last-Translator: Cleiton Floss <cleitonfloss@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/wingpanel/"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -44,7 +44,7 @@ msgstr "Nie można połączyć"
 msgid "Connected"
 msgstr "Połączony"
 
-#: src/Widgets/PopoverWidget.vala:49
+#: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "Ustawienia Bluetooth…"
 
