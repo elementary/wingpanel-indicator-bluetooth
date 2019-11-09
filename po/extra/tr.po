@@ -8,22 +8,24 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-07 22:17+0000\n"
-"PO-Revision-Date: 2019-11-07 13:58-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2019-11-10 20:24+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
+"Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
+"indicator-bluetooth-extra/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.7.1\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
-msgstr ""
+msgstr "Bluetooth Göstergesi"
 
 #: data/bluetooth.appdata.xml.in:9
 msgid "Connect and disconnect paired bluetooth devices"
-msgstr ""
+msgstr "Eşleştirilmiş bluetooth cihazlarını bağlayın ve bağlantısını kesin"
 
 #: data/bluetooth.appdata.xml.in:13
 msgid "Updated translations"
@@ -31,4 +33,4 @@ msgstr ""
 
 #: data/bluetooth.appdata.xml.in:52
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
