@@ -8,7 +8,7 @@
   <name>Bluetooth Indicator</name>
   <summary>Connect and disconnect paired bluetooth devices</summary>
   <releases>
-    <release version="2.1.4" date="2019-11-06" urgency="medium">
+    <release version="2.1.4" date="2019-11-15" urgency="medium">
       <description>
         <p>Updated translations</p>
       </description>
