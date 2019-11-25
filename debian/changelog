@@ -1,3 +1,24 @@
+wingpanel-indicator-bluetooth (2.1.4) bionic; urgency=medium
+
+  * Release 2.1.4 (#98)
+  * Add Release to Actions
+  * Update translation template
+  * Add Appdata (#97)
+  * Add Gettext Updates to Actions
+  * run installation in CI (#95)
+  * Add Lint to CI (#94)
+  * Fix linting errors
+  * Use GitHub CI (#93)
+  * Delete FUNDING.yml
+  * Delete CODE_OF_CONDUCT.md
+  * build: fix install path for wingpanel indicator (#90)
+  * DisplayWidget: Only get style context once (#88)
+  * PopoverWidget: GObject-style construction (#87)
+  * Add Silesian and update translation template
+  * Create FUNDING.yml
+
+ -- elementary LLC <builds@elementary.io>  Mon, 25 Nov 2019 16:44:42 +0000
+
 wingpanel-indicator-bluetooth (2.1.3) bionic; urgency=medium
 
   * New upstream release.
