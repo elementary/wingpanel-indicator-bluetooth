@@ -50,6 +50,7 @@ install_data(
     install_dir: join_paths(datadir, 'glib-2.0', 'schemas')
 )
 
+subdir('data')
 subdir('po')
 
 meson.add_install_script('meson/post_install.py')
