@@ -5,3 +5,9 @@ i18n.merge_file(
     install_dir: join_paths(datadir, 'metainfo'),
     install: true
 )
+
+install_data(
+    'gschema.xml',
+    rename: 'io.elementary.desktop.wingpanel.bluetooth.gschema.xml',
+    install_dir: join_paths(datadir, 'glib-2.0', 'schemas')
+)
