@@ -2,26 +2,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2018-05-31 00:05+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
-"Language-Team: Japanese <https://weblate.elementary.io/projects/wingpanel/"
+"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"PO-Revision-Date: 2019-08-29 17:22+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
+"Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
 #: src/Indicator.vala:29
 msgid "Indicator for Bluetooth signal"
-msgstr ""
+msgstr "Bluetooth インジケーター"
 
 #: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
 msgid "Not Connected"
@@ -43,7 +43,7 @@ msgstr "接続できません"
 msgid "Connected"
 msgstr "接続済み"
 
-#: src/Widgets/PopoverWidget.vala:49
+#: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth の設定…"
 

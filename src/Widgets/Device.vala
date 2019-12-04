@@ -31,7 +31,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     }
 
     construct {
-        name_label = new Gtk.Label ("<b>%s</b>".printf (Markup.escape_text(device.name)));
+        name_label = new Gtk.Label ("<b>%s</b>".printf (Markup.escape_text (device.name)));
         name_label.halign = Gtk.Align.START;
         name_label.valign = Gtk.Align.END;
         name_label.vexpand = true;
@@ -106,7 +106,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     }
 
     private void update_status () {
-        name_label.label = "<b>%s</b>".printf (Markup.escape_text(device.name));
+        name_label.label = "<b>%s</b>".printf (Markup.escape_text (device.name));
 
         if (device.connected) {
             status_label.label = _("Connected");

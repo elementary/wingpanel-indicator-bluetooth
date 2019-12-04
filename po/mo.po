@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluetooth-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
+"POT-Creation-Date: 2019-11-07 22:17+0000\n"
 "PO-Revision-Date: 2018-05-31 08:03+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/wingpanel/"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Blutus"
 
@@ -47,7 +47,7 @@ msgstr "Imposibil de conectat"
 msgid "Connected"
 msgstr "Conectat"
 
-#: src/Widgets/PopoverWidget.vala:49
+#: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "Setări Bluetooth …"
 

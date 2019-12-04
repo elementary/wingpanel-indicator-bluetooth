@@ -1,7 +1,7 @@
 project(
     'bluetooth',
     'vala', 'c',
-    version: '2.1.3'
+    version: '2.1.4'
 )
 
 gettext_name = meson.project_name() + '-indicator'
@@ -14,10 +14,10 @@ libdir = join_paths(prefix, get_option('libdir'))
 
 add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(gettext_name), language:'c')
 
-asresources = gnome.compile_resources(
-    'as-resources', 'data/io.elementary.wingpanel.bluetooth.gresource.xml',
-    source_dir: 'data',
-    c_name: 'as'
+gresource = gnome.compile_resources(
+    'gresource',
+    join_paths('data', 'gresource.xml'),
+    source_dir: 'data'
 )
 
 wingpanel_dep = dependency('wingpanel-2.0')
@@ -32,7 +32,7 @@ shared_module(
     'src/Widgets/Device.vala',
     'src/Widgets/DisplayWidget.vala',
     'src/Widgets/PopoverWidget.vala',
-    asresources,
+    gresource,
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
@@ -45,11 +45,7 @@ shared_module(
     install_dir : wingpanel_indicatorsdir
 )
 
-install_data(
-    'data/io.elementary.desktop.wingpanel.bluetooth.gschema.xml',
-    install_dir: join_paths(datadir, 'glib-2.0', 'schemas')
-)
-
+subdir('data')
 subdir('po')
 
 meson.add_install_script('meson/post_install.py')

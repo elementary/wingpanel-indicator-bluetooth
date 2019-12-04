@@ -2,26 +2,26 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:46+0200\n"
-"PO-Revision-Date: 2017-04-14 02:04+0000\n"
+"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"PO-Revision-Date: 2019-10-04 02:23+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"wingpanel/wingpanel-indicator-bluetooth/zh_CN/>\n"
+"wingpanel/wingpanel-indicator-bluetooth/zh_Hans/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:29
+#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "蓝牙"
 
 #: src/Indicator.vala:29
 msgid "Indicator for Bluetooth signal"
-msgstr ""
+msgstr "蓝牙指示器"
 
 #: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
 msgid "Not Connected"
@@ -43,7 +43,7 @@ msgstr "无法连接"
 msgid "Connected"
 msgstr "已连接"
 
-#: src/Widgets/PopoverWidget.vala:49
+#: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "蓝牙设置…"
 
