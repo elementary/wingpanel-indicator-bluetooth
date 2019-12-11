@@ -63,7 +63,6 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
 
         var grid = new Gtk.Grid ();
         grid.column_spacing = 6;
-        grid.margin = 3;
         grid.margin_start = 6;
         grid.margin_end = 12;
         grid.attach (overlay, 0, 0, 1, 2);
