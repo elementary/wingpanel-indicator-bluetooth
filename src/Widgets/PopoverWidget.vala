@@ -70,6 +70,10 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         update_ui_state (object_manager.get_global_state ());
         show_all ();
 
+        devices_list.row_activated.connect ((row) => {
+            ((Widgets.Device) row).toggle_device.begin ();
+        });
+
         main_switch.notify["active"].connect (() => {
             object_manager.set_global_state.begin (main_switch.active);
         });
@@ -93,7 +97,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
         object_manager.device_removed.connect ((device) => {
             devices_list.get_children ().foreach ((row) => {
-                var device_child = (Widgets.Device) ((Gtk.ListBoxRow) row).get_child ();
+                var device_child = (Widgets.Device) ((Gtk.ListBoxRow) row);
                 if (device_child != null && Services.ObjectManager.compare_devices (device_child.device, device)) {
                     row.destroy ();
                 }
@@ -113,8 +117,8 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
     [CCode (instance_pos = -1)]
     private int compare_rows (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
-        unowned Services.Device device1 = ((Widgets.Device) row1.get_child ()).device;
-        unowned Services.Device device2 = ((Widgets.Device) row2.get_child ()).device;
+        unowned Services.Device device1 = ((Widgets.Device) row1).device;
+        unowned Services.Device device2 = ((Widgets.Device) row2).device;
 
         if (device1.name != null && device2.name == null) {
             return -1;

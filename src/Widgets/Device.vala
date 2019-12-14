@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
+public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private const string DEFAULT_ICON = "bluetooth";
     public signal void show_device (BluetoothIndicator.Services.Device device);
 
@@ -62,25 +62,28 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
         overlay.add_overlay (status_image);
 
         var grid = new Gtk.Grid ();
+        grid.column_spacing = 6;
+        grid.margin_end = 6;
         grid.attach (overlay, 0, 0, 1, 2);
         grid.attach (name_label, 1, 0, 2, 1);
         grid.attach (status_label, 1, 1, 1, 1);
         grid.attach (spinner, 2, 1, 1, 1);
 
-        get_content_widget ().add (grid);
-
-        clicked.connect (() => {
-            if (!spinner.active) {
-                toggle_device.begin ();
-            }
-        });
+        add (grid);
 
         (device as DBusProxy).g_properties_changed.connect (update_status);
 
         update_status ();
+
+        get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        selectable = false;
     }
 
-    private async void toggle_device () {
+    public async void toggle_device () {
+        if (spinner.active) {
+            return;
+        }
+
         spinner.active = true;
         status_image.icon_name = "user-away";
         try {
