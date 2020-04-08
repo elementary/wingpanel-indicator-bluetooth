@@ -1,3 +1,15 @@
+wingpanel-indicator-bluetooth (2.1.5) bionic; urgency=medium
+
+  * Release 2.1.5 (#107)
+  * Use GLib.DBusObjectManagerClient instead of doing everything by
+    oursels (#108)
+  * Update bluetooth.appdata.xml.in
+  * Device: Subclass Gtk.ListBoxRow (#79)
+  * Meson: Add data to subdirs (#100)
+  * Data: clean up names and meson (#101)
+
+ -- elementary LLC <builds@elementary.io>  Wed, 08 Apr 2020 23:08:16 +0000
+
 wingpanel-indicator-bluetooth (2.1.4) bionic; urgency=medium
 
   * Release 2.1.4 (#98)
