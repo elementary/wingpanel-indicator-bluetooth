@@ -92,16 +92,14 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
 
         object_manager.device_added.connect ((device) => {
+            // Remove existing rows for this device
+            remove_device (device);
+
             add_device (device);
         });
 
         object_manager.device_removed.connect ((device) => {
-            devices_list.get_children ().foreach ((row) => {
-                var device_child = (Widgets.Device) ((Gtk.ListBoxRow) row);
-                if (device_child != null && Services.ObjectManager.compare_devices (device_child.device, device)) {
-                    row.destroy ();
-                }
-            });
+            remove_device (device);
 
             update_devices_box_visible ();
         });
@@ -159,6 +157,15 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
         device_widget.show_device.connect ((device_service) => {
             device_requested (device_service);
+        });
+    }
+
+    private void remove_device (BluetoothIndicator.Services.Device device) {
+        devices_list.get_children ().foreach ((row) => {
+            var device_child = (Widgets.Device) ((Gtk.ListBoxRow) row);
+            if (device_child != null && device_child.device.address == device.address) {
+                row.destroy ();
+            }
         });
     }
 }
