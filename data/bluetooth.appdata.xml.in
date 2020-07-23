@@ -7,7 +7,7 @@
   <project_license>LGPL-2.1</project_license>
   <name>Bluetooth Indicator</name>
   <summary>Connect and disconnect paired bluetooth devices</summary>
-  <icon type="stock">preferences-desktop-bluetooth</icon>
+  <icon type="stock">preferences-bluetooth</icon>
   <releases>
     <release version="2.1.5" date="2020-04-08" urgency="medium">
       <description>
