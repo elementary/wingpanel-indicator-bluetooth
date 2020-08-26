@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"POT-Creation-Date: 2020-08-26 22:00+0000\n"
 "PO-Revision-Date: 2020-05-27 17:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,10 +27,10 @@ msgstr "Bluetooth Indikator"
 msgid "Connect and disconnect paired bluetooth devices"
 msgstr "Tilslut og frakobl parrede Bluetooth-enheder"
 
-#: data/bluetooth.appdata.xml.in:13
+#: data/bluetooth.appdata.xml.in:14 data/bluetooth.appdata.xml.in:19
 msgid "Updated translations"
 msgstr "Opdaterede oversættelser"
 
-#: data/bluetooth.appdata.xml.in:52
+#: data/bluetooth.appdata.xml.in:58
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
