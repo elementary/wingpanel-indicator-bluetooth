@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"POT-Creation-Date: 2020-08-26 22:00+0000\n"
 "PO-Revision-Date: 2019-11-12 15:24+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,37 +15,36 @@ msgstr ""
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-#: src/Indicator.vala:29
-msgid "Indicator for Bluetooth signal"
-msgstr "Indicador del senyal de Bluetooth"
-
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
 msgid "Not Connected"
 msgstr "No connectat"
 
-#: src/Widgets/Device.vala:88
+#: src/Widgets/Device.vala:91
 msgid "Connecting…"
 msgstr "Es connecta…"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:94
 msgid "Disconnecting…"
 msgstr "Es desconnecta…"
 
-#: src/Widgets/Device.vala:96
+#: src/Widgets/Device.vala:99
 msgid "Unable to Connect"
 msgstr "No es pot connectar"
 
-#: src/Widgets/Device.vala:107
+#: src/Widgets/Device.vala:110
 msgid "Connected"
 msgstr "Connectat"
+
+#: src/Widgets/PopoverWidget.vala:39
+msgid "Bluetooth"
+msgstr "Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "Paràmetres del Bluetooth…"
+
+#~ msgid "Indicator for Bluetooth signal"
+#~ msgstr "Indicador del senyal de Bluetooth"
 
 #~ msgid "bluetooth"
 #~ msgstr "Bluetooth"

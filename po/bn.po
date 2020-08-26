@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"POT-Creation-Date: 2020-08-26 22:00+0000\n"
 "PO-Revision-Date: 2017-12-27 08:19+0000\n"
 "Last-Translator: Subhadeep Jasu <subhajasu@gmail.com>\n"
 "Language-Team: Bengali <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,33 +15,29 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
-msgid "Bluetooth"
-msgstr "ব্লুটুথ"
-
-#: src/Indicator.vala:29
-msgid "Indicator for Bluetooth signal"
-msgstr ""
-
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
 msgid "Not Connected"
 msgstr "সংযোগ স্থাপিত নেই"
 
-#: src/Widgets/Device.vala:88
+#: src/Widgets/Device.vala:91
 msgid "Connecting…"
 msgstr "সংযোগ স্থাপন করছে…"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:94
 msgid "Disconnecting…"
 msgstr "সংযোগ বিচ্ছিন্ন করছে…"
 
-#: src/Widgets/Device.vala:96
+#: src/Widgets/Device.vala:99
 msgid "Unable to Connect"
 msgstr "সংযোগ স্থাপন করা সম্ভব হচ্ছেনা"
 
-#: src/Widgets/Device.vala:107
+#: src/Widgets/Device.vala:110
 msgid "Connected"
 msgstr "সংযুক্ত"
+
+#: src/Widgets/PopoverWidget.vala:39
+msgid "Bluetooth"
+msgstr "ব্লুটুথ"
 
 #: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"

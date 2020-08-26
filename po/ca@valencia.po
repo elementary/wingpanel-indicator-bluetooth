@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluetooth-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"POT-Creation-Date: 2020-08-26 22:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,32 +16,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
-msgid "Bluetooth"
-msgstr ""
-
-#: src/Indicator.vala:29
-msgid "Indicator for Bluetooth signal"
-msgstr ""
-
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
 msgid "Not Connected"
 msgstr ""
 
-#: src/Widgets/Device.vala:88
+#: src/Widgets/Device.vala:91
 msgid "Connecting…"
 msgstr ""
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:94
 msgid "Disconnecting…"
 msgstr ""
 
-#: src/Widgets/Device.vala:96
+#: src/Widgets/Device.vala:99
 msgid "Unable to Connect"
 msgstr ""
 
-#: src/Widgets/Device.vala:107
+#: src/Widgets/Device.vala:110
 msgid "Connected"
+msgstr ""
+
+#: src/Widgets/PopoverWidget.vala:39
+msgid "Bluetooth"
 msgstr ""
 
 #: src/Widgets/PopoverWidget.vala:59
