@@ -18,7 +18,6 @@
 [DBus (name = "org.bluez.obex.Session1")]
 public interface BluetoothIndicator.Services.Obex.Session : Object {
     public abstract string GetCapabilities () throws GLib.Error;
-
     public abstract string Source { owned get; }
     public abstract string Destination { owned get; }
     public abstract int Channel { owned get; }

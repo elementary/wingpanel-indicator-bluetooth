@@ -27,8 +27,7 @@ public class BluetoothIndicator.Services.Rfkill : GLib.Object {
         rfkill.device_added.connect (()=>{ try { load_rfkill (); } catch (Error e) { error (e.message); } });
         rfkill.device_deleted.connect (()=>{ try { load_rfkill (); } catch (Error e) { error (e.message); } });
         rfkill.device_changed.connect (()=>{ try { load_rfkill (); } catch (Error e) { error (e.message); } });
-
-	    Bus.own_name (
+        Bus.own_name (
             BusType.SESSION,
             "io.elementary.bluetooth.rfkill",
             GLib.BusNameOwnerFlags.NONE,

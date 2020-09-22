@@ -83,7 +83,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         authorize_label.use_markup = true;
         authorize_label.hexpand = true;
 
-		var box_action = new Gtk.Grid ();
+        var box_action = new Gtk.Grid ();
         box_action.orientation = Gtk.Orientation.HORIZONTAL;
         box_action.column_homogeneous = true;
         box_action.margin_start = 2;
@@ -98,7 +98,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         action_revealer = new Gtk.Revealer ();
         action_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN;
         action_revealer.margin_end = 6;
-        action_revealer.margin_start = 6;;
+        action_revealer.margin_start = 6;
         action_revealer.add (act_lab_grid);
 
         progress_label = new Gtk.Label (null);
@@ -193,7 +193,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
             });
         } catch (Error e) {
             GLib.warning (e.message);
-	    }
+        }
         if (transfer.Name == null) {
             return;
         }
@@ -229,8 +229,8 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
 
     private void move_to_folder (string file) throws GLib.Error {
         var src = File.new_for_path (file);
-	    var dest = change_name (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD) + GLib.Path.DIR_SEPARATOR_S + src.get_basename ());
-		src.move (dest, FileCopyFlags.ALL_METADATA);
+        var dest = change_name (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD) + GLib.Path.DIR_SEPARATOR_S + src.get_basename ());
+        src.move (dest, FileCopyFlags.ALL_METADATA);
         manager.send_notification.begin (
             device.icon,
             _("File transferred successfully "),
@@ -239,16 +239,16 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     }
 
     private bool file_exist (string name, uint64 size) {
-	    var input_file = File.new_for_path (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD) + GLib.Path.DIR_SEPARATOR_S + name);
+        var input_file = File.new_for_path (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD) + GLib.Path.DIR_SEPARATOR_S + name);
         uint64 size_file = 0;
         if (input_file.query_exists ()) {
-	        try {
-		        FileInfo info = input_file.query_info ("standard::*",0);
+           try {
+                FileInfo info = input_file.query_info ("standard::*",0);
                 size_file = info.get_size ();
-	        } catch (Error e) {
+            } catch (Error e) {
                 GLib.warning (e.message);
-	        }
-	    }
+            }
+        }
         return input_file.query_exists () && size == size_file;
     }
 
@@ -274,18 +274,18 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private void on_transfer_progress (uint64 transferred) {
         progressbar.fraction = (double) transferred / (double) total_size;
         progress_label.label = _("Receiving... %i% / %s").printf ((int)(progressbar.fraction * 100), GLib.format_size (total_size));
-	    int current_time = (int) (get_real_time ());
-	    int elapsed_time = (current_time - start_time) / 1000000;
-	    if (current_time < start_time + 1000000) {
-		    return;
-		}
-	    if (elapsed_time == 0) {
-		    return;
+        int current_time = (int) (get_real_time ());
+        int elapsed_time = (current_time - start_time) / 1000000;
+        if (current_time < start_time + 1000000) {
+            return;
         }
-	    uint64 transfer_rate = transferred / elapsed_time;
-	    if (transfer_rate == 0) {
-		    return;
-		}
+        if (elapsed_time == 0) {
+            return;
+        }
+        uint64 transfer_rate = transferred / elapsed_time;
+        if (transfer_rate == 0) {
+            return;
+        }
         progress_label.label = _("Receiving... %i% / %s rate %s/s").printf ((int)(progressbar.fraction * 100), GLib.format_size (total_size), GLib.format_size (transfer_rate));
     }
 

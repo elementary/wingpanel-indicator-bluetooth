@@ -23,7 +23,7 @@ public class BluetoothIndicator.Services.Obex.Agent : GLib.Object {
     public MainLoop loop;
 
     public Agent () {
-	    Bus.own_name (
+        Bus.own_name (
             BusType.SESSION,
             "org.bluez.obex.Agent1",
             GLib.BusNameOwnerFlags.NONE,
