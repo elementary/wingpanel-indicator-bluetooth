@@ -19,30 +19,39 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public signal void global_state_changed (bool enabled, bool connected);
     public signal void device_added (BluetoothIndicator.Services.Device adapter);
     public signal void device_removed (BluetoothIndicator.Services.Device adapter);
-
+    public BluetoothIndicator.Services.Obex.Agent agent_obex;
+    private BluetoothIndicator.Services.Rfkill rfkillbus;
     public bool has_object { get; private set; default = false; }
     public bool retrieve_finished { get; private set; default = false; }
-    private Settings settings;
-    private GLib.DBusObjectManagerClient object_manager;
-
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
+    public Settings settings;
+    private DBusConnection connecting;
+    private GLib.DBusObjectManagerClient object_manager;
+    private const string BLUEZ_BUS_NAME = "org.bluez";
+    private const string OBEX_BUS_NAME = "org.bluez.obex";
+    private const string PATH = "/org/bluez/obex";
+    private const string AGENT_MANAGER_INTERFACE = "org.bluez.obex.AgentManager1";
 
     construct {
         settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
+        agent_obex = new BluetoothIndicator.Services.Obex.Agent ();
+        rfkillbus = new BluetoothIndicator.Services.Rfkill ();
         create_manager.begin ();
     }
 
     private async void create_manager () {
         try {
+	        connecting = yield GLib.Bus.get (BusType.SESSION);
             object_manager = yield new GLib.DBusObjectManagerClient.for_bus.begin (
                 BusType.SYSTEM,
                 GLib.DBusObjectManagerClientFlags.NONE,
-                "org.bluez",
+                BLUEZ_BUS_NAME,
                 "/",
                 object_manager_proxy_get_type,
                 null
             );
+
             object_manager.get_objects ().foreach ((object) => {
                 object.get_interfaces ().foreach ((iface) => on_interface_added (object, iface));
             });
@@ -57,8 +66,11 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         } catch (Error e) {
             critical (e.message);
         }
-
         retrieve_finished = true;
+        settings.changed ["bluetooth-obex-enabled"].connect (()=>{
+            reg_ureg.begin ();
+        });
+        reg_ureg.begin ();
     }
 
     //TODO: Do not rely on this when it is possible to do it natively in Vala
@@ -82,20 +94,62 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         }
     }
 
+    private async void reg_ureg () {
+        try {
+	        yield connecting.call (
+	            OBEX_BUS_NAME,
+	            PATH,
+	            AGENT_MANAGER_INTERFACE,
+	            settings.get_boolean ("bluetooth-obex-enabled")? "RegisterAgent" : "UnregisterAgent",
+	            new Variant ("(o)", "/org/bluez/obex/elementary"),
+	            null,
+	            GLib.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION,
+	            -1
+	        );
+        } catch (Error e) {
+            critical (e.message);
+        }
+    }
+    public async void send_notification (string icon, string summary, string body) {
+        if (!settings.get_boolean ("bluetooth-notify")) {
+            return;
+        }
+        try {
+	        yield connecting.call (
+	            "org.freedesktop.Notifications",
+	            "/org/freedesktop/Notifications",
+	            "org.freedesktop.Notifications",
+	            "Notify",
+	            new Variant (
+	                "(susssasa{sv}i)",
+	                "Bluetooth",
+	                0,
+	                icon,
+	                summary,
+	                body,
+	                new VariantBuilder (new VariantType ("as")),
+	                new VariantBuilder (new VariantType ("a{sv}")),
+	                6000
+	            ),
+	            null,
+	            GLib.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION,
+	            -1
+	        );
+        } catch (GLib.Error e) {
+            warning (" %s\n", e.message);
+        }
+    }
     private void on_interface_added (GLib.DBusObject object, GLib.DBusInterface iface) {
         if (iface is BluetoothIndicator.Services.Device) {
             unowned BluetoothIndicator.Services.Device device = (BluetoothIndicator.Services.Device) iface;
-
             if (device.paired) {
                 device_added (device);
             }
-
             ((DBusProxy) device).g_properties_changed.connect ((changed, invalid) => {
                 var connected = changed.lookup_value ("Connected", new VariantType ("b"));
                 if (connected != null) {
                     check_global_state ();
                 }
-
                 var paired = changed.lookup_value ("Paired", new VariantType ("b"));
                 if (paired != null) {
                     if (device.paired) {
@@ -103,11 +157,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                     } else {
                         device_removed (device);
                     }
-
                     check_global_state ();
                 }
             });
-
             check_global_state ();
         } else if (iface is BluetoothIndicator.Services.Adapter) {
             unowned BluetoothIndicator.Services.Adapter adapter = (BluetoothIndicator.Services.Adapter) iface;
@@ -198,7 +250,11 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public async void set_global_state (bool state) {
         /* `is_powered` and `connected` properties will be set by the check_global state () callback when adapter or device
          * properties change.  Do not set now so that global_state_changed signal will be emitted. */
-
+        try {
+            rfkillbus.bluetooth_airplane_mode (state);
+        } catch (Error e) {
+            error (e.message);
+        }
         var adapters = get_adapters ();
         foreach (var adapter in adapters) {
             adapter.powered = state;
@@ -216,17 +272,10 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 }
             }
         }
-
         settings.set_boolean ("bluetooth-enabled", state);
     }
 
     public async void set_last_state () {
-        bool last_state = settings.get_boolean ("bluetooth-enabled");
-
-        if (get_global_state () != last_state) {
-            yield set_global_state (last_state);
-        }
-
         check_global_state ();
     }
 

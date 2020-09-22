@@ -73,11 +73,12 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         devices_list.row_activated.connect ((row) => {
             ((Widgets.Device) row).toggle_device.begin ();
         });
-
+        object_manager.settings.changed ["bluetooth-enabled"].connect (()=>{
+            main_switch.active = object_manager.settings.get_boolean ("bluetooth-enabled"); //activate with dconf key
+        });
         main_switch.notify["active"].connect (() => {
             object_manager.set_global_state.begin (main_switch.active);
         });
-
         show_settings_button.clicked.connect (() => {
             try {
                 AppInfo.launch_default_for_uri ("settings://network/bluetooth", null);
@@ -89,7 +90,13 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         object_manager.global_state_changed.connect ((state, paired) => {
             update_ui_state (state);
         });
-
+        object_manager.agent_obex.authorize_notify.connect ((address, objectpath) =>{
+            devices_list.foreach ((row)=>{
+                if (address == ((Widgets.Device) row).device.address) {
+                    ((Widgets.Device) row).authorize_notify (objectpath);
+                }
+            });
+        });
 
         object_manager.device_added.connect ((device) => {
             // Remove existing rows for this device which are no longer connected to device
@@ -150,7 +157,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void add_device (BluetoothIndicator.Services.Device device) {
-        var device_widget = new Widgets.Device (device);
+        var device_widget = new Widgets.Device (device, object_manager);
         devices_list.add (device_widget);
         devices_list.show_all ();
 
