@@ -17,7 +17,7 @@
 
 [DBus (name = "org.bluez.obex.Transfer1")]
 public interface BluetoothIndicator.Services.Obex.Transfer : Object {
-    public abstract void Cancel () throws GLib.Error;
+    public abstract void cancel () throws GLib.Error;
     public abstract string Status { owned get; }
     public abstract ObjectPath Session { owned get; }
     public abstract string Name { owned get; }

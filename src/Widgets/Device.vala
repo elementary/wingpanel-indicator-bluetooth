@@ -243,7 +243,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         uint64 size_file = 0;
         if (input_file.query_exists ()) {
            try {
-                FileInfo info = input_file.query_info ("standard::*",0);
+                FileInfo info = input_file.query_info ("standard::*", 0);
                 size_file = info.get_size ();
             } catch (Error e) {
                 GLib.warning (e.message);
@@ -273,7 +273,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
 
     private void on_transfer_progress (uint64 transferred) {
         progressbar.fraction = (double) transferred / (double) total_size;
-        progress_label.label = _("Receiving... %i% / %s").printf ((int)(progressbar.fraction * 100), GLib.format_size (total_size));
+        progress_label.label = _("Receiving… %i% / %s").printf ((int)(progressbar.fraction * 100), GLib.format_size (total_size));
         int current_time = (int) (get_real_time ());
         int elapsed_time = (current_time - start_time) / 1000000;
         if (current_time < start_time + 1000000) {
@@ -286,7 +286,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         if (transfer_rate == 0) {
             return;
         }
-        progress_label.label = _("Receiving... %i% / %s rate %s/s").printf ((int)(progressbar.fraction * 100), GLib.format_size (total_size), GLib.format_size (transfer_rate));
+        progress_label.label = _("Receiving… %i% / %s rate %s/s").printf ((int)(progressbar.fraction * 100), GLib.format_size (total_size), GLib.format_size (transfer_rate));
     }
 
     public void cancel_receive () {
@@ -313,7 +313,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     public async void toggle_device () {
         if (progress_revealer.child_revealed) {
             try {
-                transfer.Cancel (); //cancel transfer
+                transfer.cancel (); //cancel transfer
             } catch (Error e) {
                 critical (e.message);
             }
