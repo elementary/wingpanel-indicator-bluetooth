@@ -221,13 +221,8 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     public async void set_last_state () {
-        bool last_state = settings.get_boolean ("bluetooth-enabled");
-
-        if (get_global_state () != last_state) {
-            yield set_global_state (last_state);
-        }
-
-        check_global_state ();
+        /*bus bluez run on system bus i think we no need to use dconf, dconf in session this wil made error*/
+        check_global_state (); 
     }
 
     public static bool compare_devices (Device device, Device other) {
