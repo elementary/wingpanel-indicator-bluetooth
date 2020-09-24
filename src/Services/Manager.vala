@@ -221,8 +221,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     public async void set_last_state () {
-        /*bus bluez run on system bus i think we no need to use dconf, dconf in session this wil made error*/
-        check_global_state (); 
+        check_global_state (); /*bus bluez run on system bus i think we no need to use dconf, dconf in session this wil made error*/
     }
 
     public static bool compare_devices (Device device, Device other) {
