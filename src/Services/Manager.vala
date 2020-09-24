@@ -24,12 +24,13 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public bool retrieve_finished { get; private set; default = false; }
     private Settings settings;
     private GLib.DBusObjectManagerClient object_manager;
-
+    private BluetoothIndicator.Services.Rfkill rfkillbus;
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
 
     construct {
         settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
+        rfkillbus = new BluetoothIndicator.Services.Rfkill ();
         create_manager.begin ();
     }
 
@@ -198,7 +199,11 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public async void set_global_state (bool state) {
         /* `is_powered` and `connected` properties will be set by the check_global state () callback when adapter or device
          * properties change.  Do not set now so that global_state_changed signal will be emitted. */
-
+        try {
+            rfkillbus.bluetooth_airplane_mode (state);
+        } catch (Error e) {
+            error (e.message);
+        }
         var adapters = get_adapters ();
         foreach (var adapter in adapters) {
             adapter.powered = state;

@@ -29,6 +29,8 @@ shared_module(
     'src/Services/Adapter.vala',
     'src/Services/Device.vala',
     'src/Services/Manager.vala',
+    'src/Services/rfkill.vala',
+    'src/Services/RfkillBus.vala',
     'src/Widgets/Device.vala',
     'src/Widgets/DisplayWidget.vala',
     'src/Widgets/PopoverWidget.vala',
@@ -39,6 +41,7 @@ shared_module(
         dependency('granite'),
         dependency('gtk+-3.0'),
         dependency('libnotify'),
+        meson.get_compiler('vala').find_library('posix'),
         wingpanel_dep
     ],
     install: true,
