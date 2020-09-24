@@ -22,19 +22,22 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
     public bool has_object { get; private set; default = false; }
     public bool retrieve_finished { get; private set; default = false; }
-    private Settings settings;
+    public Settings settings;
+    private DBusConnection connecting;
     private GLib.DBusObjectManagerClient object_manager;
-
+    public BluetoothIndicator.Services.Obex.Agent agent_obex;
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
 
     construct {
         settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
+        agent_obex = new BluetoothIndicator.Services.Obex.Agent ();
         create_manager.begin ();
     }
 
     private async void create_manager () {
         try {
+            connecting = yield GLib.Bus.get (BusType.SESSION);
             object_manager = yield new GLib.DBusObjectManagerClient.for_bus.begin (
                 BusType.SYSTEM,
                 GLib.DBusObjectManagerClientFlags.NONE,
@@ -59,6 +62,10 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         }
 
         retrieve_finished = true;
+        settings.changed ["bluetooth-obex-enabled"].connect (()=>{
+            reg_ureg.begin ();
+        });
+        reg_ureg.begin ();
     }
 
     //TODO: Do not rely on this when it is possible to do it natively in Vala
@@ -81,7 +88,23 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 return typeof (GLib.DBusProxy);
         }
     }
-
+    private async void reg_ureg () {
+        try {
+            yield connecting.call ("org.bluez.obex", "/org/bluez/obex", "org.bluez.obex.AgentManager1", settings.get_boolean ("bluetooth-obex-enabled")? "RegisterAgent" : "UnregisterAgent", new Variant ("(o)", "/org/bluez/obex/elementary"), null, GLib.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION, -1);
+        } catch (Error e) {
+            critical (e.message);
+        }
+    }
+    public async void send_notification (string icon, string summary, string body) {
+        if (!settings.get_boolean ("bluetooth-notify")) {
+            return;
+        }
+        try {
+            yield connecting.call ("org.freedesktop.Notifications", "/org/freedesktop/Notifications", "org.freedesktop.Notifications", "Notify", new Variant ("(susssasa{sv}i)", "Bluetooth", 0, icon, summary, body, new VariantBuilder (new VariantType ("as")), new VariantBuilder (new VariantType ("a{sv}")), 6000), null, GLib.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION, -1);
+        } catch (GLib.Error e) {
+            warning (" %s\n", e.message);
+        }
+    }
     private void on_interface_added (GLib.DBusObject object, GLib.DBusInterface iface) {
         if (iface is BluetoothIndicator.Services.Device) {
             unowned BluetoothIndicator.Services.Device device = (BluetoothIndicator.Services.Device) iface;

@@ -89,7 +89,13 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         object_manager.global_state_changed.connect ((state, paired) => {
             update_ui_state (state);
         });
-
+        object_manager.agent_obex.authorize_notify.connect ((address, objectpath) =>{
+            devices_list.foreach ((row)=>{
+                if (address == ((Widgets.Device) row).device.address) {
+                    ((Widgets.Device) row).authorize_notify (objectpath);
+                }
+            });
+        });
 
         object_manager.device_added.connect ((device) => {
             // Remove existing rows for this device which are no longer connected to device
@@ -150,7 +156,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void add_device (BluetoothIndicator.Services.Device device) {
-        var device_widget = new Widgets.Device (device);
+        var device_widget = new Widgets.Device (device, object_manager);
         devices_list.add (device_widget);
         devices_list.show_all ();
 
