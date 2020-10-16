@@ -257,9 +257,11 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
     private async void setup_dbus_rfkill () {
         try {
-            killer = yield Bus.get_proxy (BusType.SESSION,
-                                          "org.gnome.SettingsDaemon.Rfkill",
-                                          "/org/gnome/SettingsDaemon/Rfkill");
+            killer = yield Bus.get_proxy (
+                BusType.SESSION,
+                "org.gnome.SettingsDaemon.Rfkill",
+                "/org/gnome/SettingsDaemon/Rfkill"
+            );
         } catch (Error e) {
             killer = null;
             return;
