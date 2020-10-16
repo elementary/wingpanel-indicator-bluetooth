@@ -16,7 +16,7 @@
  */
 
 [DBus (name="org.gnome.SettingsDaemon.Rfkill")]
-public interface Rfkill : Object {
+public interface BluetoothIndicator.Services.Rfkill : Object {
     public abstract bool BluetoothAirplaneMode { set; get; }
 }
 
