@@ -232,8 +232,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             if (killer != null) {
                 killer.BluetoothAirplaneMode = true;
             }
-        }
-        else {
+        } else {
             if (killer != null) {
                 killer.BluetoothAirplaneMode = false;
             }
