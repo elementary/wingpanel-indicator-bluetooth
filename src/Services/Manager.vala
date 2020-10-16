@@ -33,7 +33,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
 
-    Rfkill? killer = null;
+    private Rfkill? killer = null;
 
     construct {
         settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
