@@ -67,9 +67,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
         retrieve_finished = true;
 
-        this.setup_dbus_rfkill.begin (()=> {
-            if (this.killer == null) {
-              return;
+        setup_dbus_rfkill.begin (() => {
+            if (killer == null) {
+                return;
             }
         });
 
