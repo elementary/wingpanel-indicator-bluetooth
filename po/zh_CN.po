@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-17 18:06+0000\n"
-"PO-Revision-Date: 2019-10-04 02:23+0000\n"
+"PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/zh_Hans/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
@@ -33,31 +33,31 @@ msgstr "无法连接"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
-msgstr ""
+msgstr "扬声器"
 
 #: src/Widgets/Device.vala:116
 msgid "Controller"
-msgstr ""
+msgstr "控制器"
 
 #: src/Widgets/Device.vala:119
 msgid "Keyboard"
-msgstr ""
+msgstr "键盘"
 
 #: src/Widgets/Device.vala:122
 msgid "Mouse"
-msgstr ""
+msgstr "鼠标"
 
 #: src/Widgets/Device.vala:125
 msgid "Tablet"
-msgstr ""
+msgstr "写字板"
 
 #: src/Widgets/Device.vala:128
 msgid "Touchpad"
-msgstr ""
+msgstr "触控板"
 
 #: src/Widgets/Device.vala:131
 msgid "Phone"
-msgstr ""
+msgstr "手机"
 
 #: src/Widgets/Device.vala:145
 msgid "Connected"
