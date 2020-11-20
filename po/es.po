@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-17 18:06+0000\n"
-"PO-Revision-Date: 2019-09-09 13:22+0000\n"
+"PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
@@ -29,35 +29,35 @@ msgstr "Desconectando…"
 
 #: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
-msgstr "Imposible realizar la conexión"
+msgstr "No se puede conectar"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
-msgstr ""
+msgstr "Altavoz"
 
 #: src/Widgets/Device.vala:116
 msgid "Controller"
-msgstr ""
+msgstr "Mando"
 
 #: src/Widgets/Device.vala:119
 msgid "Keyboard"
-msgstr ""
+msgstr "Teclado"
 
 #: src/Widgets/Device.vala:122
 msgid "Mouse"
-msgstr ""
+msgstr "Ratón"
 
 #: src/Widgets/Device.vala:125
 msgid "Tablet"
-msgstr ""
+msgstr "Tableta"
 
 #: src/Widgets/Device.vala:128
 msgid "Touchpad"
-msgstr ""
+msgstr "Panel táctil"
 
 #: src/Widgets/Device.vala:131
 msgid "Phone"
-msgstr ""
+msgstr "Teléfono"
 
 #: src/Widgets/Device.vala:145
 msgid "Connected"
