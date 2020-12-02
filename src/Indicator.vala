@@ -18,8 +18,8 @@
 public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public bool is_in_session { get; construct; default = false; }
 
-    private Widgets.PopoverWidget popover_widget;
-    private Widgets.DisplayWidget dynamic_icon;
+    BluetoothIndicator.Widgets.PopoverWidget? popover_widget = null;
+    Widgets.DisplayWidget? display_widget;
     private Services.ObjectManager object_manager;
 
     public Indicator (bool is_in_session) {
@@ -27,6 +27,8 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
             code_name: Wingpanel.Indicator.BLUETOOTH,
             is_in_session: is_in_session
         );
+        
+        display_widget = new Widgets.DisplayWidget (object_manager);
     }
 
     construct {
@@ -45,11 +47,8 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     }
 
     public override Gtk.Widget get_display_widget () {
-        if (dynamic_icon == null) {
-            dynamic_icon = new Widgets.DisplayWidget (object_manager);
-        }
-
-        return dynamic_icon;
+        update_tooltip ();
+        return display_widget;
     }
 
     public override Gtk.Widget? get_widget () {
@@ -65,6 +64,10 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     }
 
     public override void closed () {
+    }
+    
+    private void update_tooltip () {
+        display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Bluetooth: %s, connected to '%s'".printf ("On","Device Name")));
     }
 }
 
