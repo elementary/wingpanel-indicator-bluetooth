@@ -27,7 +27,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
             code_name: Wingpanel.Indicator.BLUETOOTH,
             is_in_session: is_in_session
         );
-        
+
         display_widget = new Widgets.DisplayWidget (object_manager);
     }
 
@@ -65,7 +65,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
 
     public override void closed () {
     }
-    
+
     private void update_tooltip () {
         display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Bluetooth: %s, connected to '%s'".printf ("On","Device Name")));
     }
