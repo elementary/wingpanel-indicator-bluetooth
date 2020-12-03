@@ -72,20 +72,20 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     private void update_tooltip (bool state, bool paired) {
         string bluetooth_state = "Off";
         string paired_device = " ";
-        
+
         if (state) {
             bluetooth_state = "On";
-        } 
+        }
 
-        if (paired) { 
+        if (paired) {
             paired_device = "Device Name";
             display_widget.tooltip_markup = Granite.markup_accel_tooltip (
-                {}, 
+                {},
                 _("Bluetooth: %s, connected to %s".printf (bluetooth_state, paired_device))
             );
         } else {
             display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Bluetooth: %s".printf (bluetooth_state)));
-        }        
+        }
     }
 }
 
