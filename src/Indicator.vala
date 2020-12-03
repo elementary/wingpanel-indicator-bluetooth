@@ -18,7 +18,7 @@
 public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public bool is_in_session { get; construct; default = false; }
 
-    BluetoothIndicator.Widgets.PopoverWidget? popover_widget;
+    BluetoothIndicator.Widgets.PopoverWidget popover_widget;
     Widgets.DisplayWidget? display_widget;
     private Services.ObjectManager object_manager;
 
@@ -29,6 +29,10 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
         );
 
         display_widget = new Widgets.DisplayWidget (object_manager);
+
+        object_manager.global_state_changed.connect ((state, paired) => {
+            update_tooltip (state, paired);
+        });
     }
 
     construct {
@@ -47,7 +51,6 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     }
 
     public override Gtk.Widget get_display_widget () {
-        update_tooltip ();
         return display_widget;
     }
 
@@ -66,14 +69,28 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public override void closed () {
     }
 
-    private void update_tooltip () {
-        display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Bluetooth: %s, connected to '%s'".printf ("On","Device Name")));
+    private void update_tooltip (bool state, bool paired) {
+        string bluetooth_state = "Off";
+        string paired_device = " ";
+        
+        if (state) {
+            bluetooth_state = "On";
+        } 
+
+        if (paired) { 
+            paired_device = "Device Name";
+            display_widget.tooltip_markup = Granite.markup_accel_tooltip (
+                {}, 
+                _("Bluetooth: %s, connected to %s".printf (bluetooth_state, paired_device))
+            );
+        } else {
+            display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Bluetooth: %s".printf (bluetooth_state)));
+        }        
     }
 }
 
 public Wingpanel.Indicator get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
     debug ("Activating Bluetooth Indicator");
     var indicator = new BluetoothIndicator.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
-
     return indicator;
 }
