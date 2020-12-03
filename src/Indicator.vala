@@ -18,6 +18,8 @@
 public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public bool is_in_session { get; construct; default = false; }
 
+    public signal void device_requested (BluetoothIndicator.Services.Device device);
+    private BluetoothIndicator.Services.Device paired_device;
     BluetoothIndicator.Widgets.PopoverWidget popover_widget;
     Widgets.DisplayWidget? display_widget;
     private Services.ObjectManager object_manager;
@@ -32,6 +34,10 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
 
         object_manager.global_state_changed.connect ((state, paired) => {
             update_tooltip (state, paired);
+        });
+
+        object_manager.device_added.connect ((device) => {
+            paired_device = device;
         });
     }
 
@@ -71,20 +77,20 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
 
     private void update_tooltip (bool state, bool paired) {
         string bluetooth_state = "Off";
-        string paired_device = " ";
 
         if (state) {
             bluetooth_state = "On";
         }
 
         if (paired) {
-            paired_device = "Device Name";
             display_widget.tooltip_markup = Granite.markup_accel_tooltip (
                 {},
-                _("Bluetooth: %s, connected to %s".printf (bluetooth_state, paired_device))
+                _("Bluetooth: %s, connected to %s".printf (bluetooth_state, paired_device.name))
             );
         } else {
-            display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Bluetooth: %s".printf (bluetooth_state)));
+            display_widget.tooltip_markup = Granite.markup_accel_tooltip (
+                {},
+                _("Bluetooth: %s".printf (bluetooth_state)));
         }
     }
 }
