@@ -76,7 +76,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     }
 
     private void update_tooltip (bool state, bool paired) {
-        string bluetooth_state = "Off";
+        string bluetooth_state = _("Off");
 
         if (state) {
             bluetooth_state = "On";
