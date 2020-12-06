@@ -79,7 +79,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
         string bluetooth_state = _("Off");
 
         if (state) {
-            bluetooth_state = "On";
+            bluetooth_state = _("On");
         }
 
         if (paired) {
