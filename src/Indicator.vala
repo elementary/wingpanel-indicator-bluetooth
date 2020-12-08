@@ -77,14 +77,18 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
 
     private void update_tooltip (bool state, bool paired) {
         string message = _("disabled");
+        string accel = """<span weight="600" size="smaller" alpha="75%">Middle-click to disable</span>""";
 
         if (state && paired) {
             message = _("connected to %s".printf (paired_device.name));
         } else if (state) {
             message = _("enabled");
+        } else {
+            /* Blutetooth adapter Off */
+            accel = """<span weight="600" size="smaller" alpha="75%">Middle-click to enable</span>""";
         }
 
-        display_widget.tooltip_markup = Granite.markup_accel_tooltip ({"<small>Testing</small>"}, _("Bluetooth %s".printf (message)));
+        display_widget.tooltip_markup = _("Bluetooth %s\n%s".printf (message, accel));
 
     }
 }
