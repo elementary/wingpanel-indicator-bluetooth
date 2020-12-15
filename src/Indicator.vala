@@ -88,11 +88,10 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
             context = _("Middle-click to enable");
         }
 
-        display_widget.tooltip_markup = Granite.markup_contextual_tooltip (
-            context,
-            _("Bluetooth %s".printf (description))
+        display_widget.tooltip_markup = "%s\n%s".printf (
+            _("Bluetooth %s".printf (description)),
+            Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
         );
-
     }
 }
 
