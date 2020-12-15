@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
-"PO-Revision-Date: 2020-09-12 23:11+0000\n"
+"POT-Creation-Date: 2020-11-17 18:06+0000\n"
+"PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/uk/>\n"
@@ -16,23 +16,51 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Не під’єднаний"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "З'єднання…"
 
-#: src/Widgets/Device.vala:94
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "Від'єднання…"
 
-#: src/Widgets/Device.vala:99
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Неможливо підʼєднатися"
 
-#: src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "Гучномовець"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "Контролер"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "Клавіатура"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "Миша"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "Планшет"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "Сенсорна поверхня"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "Телефон"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "З'єднано"
 

@@ -41,11 +41,12 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     }
 
     construct {
-        name_label = new Gtk.Label ("<b>%s</b>".printf (Markup.escape_text (device.name)));
-        name_label.halign = Gtk.Align.START;
-        name_label.valign = Gtk.Align.END;
-        name_label.vexpand = true;
-        name_label.use_markup = true;
+        name_label = new Gtk.Label (null) {
+            halign = Gtk.Align.START,
+            use_markup = true,
+            valign = Gtk.Align.END,
+            vexpand = true
+        };
 
         status_label = new Gtk.Label (_("Not Connected"));
         status_label.halign = Gtk.Align.START;
@@ -342,7 +343,41 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     }
 
     private void update_status () {
-        name_label.label = "<b>%s</b>".printf (Markup.escape_text (device.name));
+        string? device_name = device.name;
+        if (device_name == null) {
+            if (device.icon != null) {
+                switch (device.icon) {
+                    case "audio-card":
+                        device_name = _("Speaker");
+                        break;
+                    case "input-gaming":
+                        device_name = _("Controller");
+                        break;
+                    case "input-keyboard":
+                        device_name = _("Keyboard");
+                        break;
+                    case "input-mouse":
+                        device_name = _("Mouse");
+                        break;
+                    case "input-tablet":
+                        device_name = _("Tablet");
+                        break;
+                    case "input-touchpad":
+                        device_name = _("Touchpad");
+                        break;
+                    case "phone":
+                        device_name = _("Phone");
+                        break;
+                    default:
+                        device_name = device.address;
+                        break;
+                }
+            } else {
+                device_name = device.address;
+            }
+        }
+
+        name_label.label = "<b>%s</b>".printf (Markup.escape_text (device_name));
 
         if (device.connected) {
             status_label.label = _("Connected");

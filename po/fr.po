@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
-"PO-Revision-Date: 2019-10-05 10:23+0000\n"
+"POT-Creation-Date: 2020-11-17 18:06+0000\n"
+"PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/fr/>\n"
@@ -12,26 +12,54 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Déconnecté"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "Connexion…"
 
-#: src/Widgets/Device.vala:94
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "Déconnexion…"
 
-#: src/Widgets/Device.vala:99
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Impossible de se connecter"
 
-#: src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "Enceinte"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "Manette"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "Clavier"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "Souris"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "Tablette"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "Pavé tactile"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "Téléphone"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Connecté"
 

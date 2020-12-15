@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
+"POT-Creation-Date: 2020-11-17 18:06+0000\n"
 "PO-Revision-Date: 2018-06-09 12:26+0000\n"
 "Last-Translator: Gamunu Udaya Balagalla <gamunu.balagalla@gmail.com>\n"
 "Language-Team: Sinhala <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,23 +15,51 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "සම්බන්ධවී නැත"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "සම්බන්ධ කිරීම…"
 
-#: src/Widgets/Device.vala:94
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "විසන්ධි කිරීම…"
 
-#: src/Widgets/Device.vala:99
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "සම්බන්ධ වීමට නොහැකිය"
 
-#: src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr ""
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr ""
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr ""
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr ""
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr ""
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr ""
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr ""
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "සම්බන්ධයි"
 

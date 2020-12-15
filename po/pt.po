@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
-"PO-Revision-Date: 2019-08-29 17:23+0000\n"
+"POT-Creation-Date: 2020-11-17 18:06+0000\n"
+"PO-Revision-Date: 2020-11-22 15:15+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/pt/>\n"
@@ -12,26 +12,54 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Não Ligado"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "A ligar…"
 
-#: src/Widgets/Device.vala:94
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "A desligar…"
 
-#: src/Widgets/Device.vala:99
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Impossível Ligar"
 
-#: src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "Altifalante"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "Controlador"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "Teclado"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "Rato"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "Tablet"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "Touchpad"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "Telefone"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Ligado"
 
