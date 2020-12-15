@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"POT-Creation-Date: 2020-11-17 18:06+0000\n"
 "PO-Revision-Date: 2017-12-17 16:34+0000\n"
 "Last-Translator: Вагиф Кязым <vaqif134@gmail.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,33 +15,57 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-#: src/Indicator.vala:29
-msgid "Indicator for Bluetooth signal"
-msgstr ""
-
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Qoşulmayıb"
 
-#: src/Widgets/Device.vala:88
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "Qoşulur…"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "Qoşulma kəsilir…"
 
-#: src/Widgets/Device.vala:96
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Qoşulma alınmadı"
 
-#: src/Widgets/Device.vala:107
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr ""
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr ""
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr ""
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr ""
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr ""
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr ""
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr ""
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Qoşulub"
+
+#: src/Widgets/PopoverWidget.vala:39
+msgid "Bluetooth"
+msgstr "Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"POT-Creation-Date: 2020-08-26 22:00+0000\n"
 "PO-Revision-Date: 2019-11-28 16:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,10 +27,10 @@ msgstr "ब्लूटूथ निर्देशक"
 msgid "Connect and disconnect paired bluetooth devices"
 msgstr "जोडलेले ब्लूटूथ डिव्हाइस कनेक्ट आणि डिस्कनेक्ट करा"
 
-#: data/bluetooth.appdata.xml.in:13
+#: data/bluetooth.appdata.xml.in:14 data/bluetooth.appdata.xml.in:19
 msgid "Updated translations"
 msgstr "अद्ययावत भाषांतर"
 
-#: data/bluetooth.appdata.xml.in:52
+#: data/bluetooth.appdata.xml.in:58
 msgid "elementary, Inc."
 msgstr "एलिमेंटरी, Inc."

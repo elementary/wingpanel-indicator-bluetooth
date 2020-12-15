@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
-"PO-Revision-Date: 2019-11-12 15:24+0000\n"
+"POT-Creation-Date: 2020-11-17 18:06+0000\n"
+"PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ca/>\n"
@@ -12,40 +12,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
-msgid "Bluetooth"
-msgstr "Bluetooth"
-
-#: src/Indicator.vala:29
-msgid "Indicator for Bluetooth signal"
-msgstr "Indicador del senyal de Bluetooth"
-
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "No connectat"
 
-#: src/Widgets/Device.vala:88
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "Es connecta…"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "Es desconnecta…"
 
-#: src/Widgets/Device.vala:96
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "No es pot connectar"
 
-#: src/Widgets/Device.vala:107
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "Altaveu"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "Controlador"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "Teclat"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "Ratolí"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "Tauleta"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "Ratolí tàctil"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "Telèfon"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Connectat"
+
+#: src/Widgets/PopoverWidget.vala:39
+msgid "Bluetooth"
+msgstr "Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "Paràmetres del Bluetooth…"
+
+#~ msgid "Indicator for Bluetooth signal"
+#~ msgstr "Indicador del senyal de Bluetooth"
 
 #~ msgid "bluetooth"
 #~ msgstr "Bluetooth"

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
-"PO-Revision-Date: 2019-10-04 02:23+0000\n"
+"POT-Creation-Date: 2020-11-17 18:06+0000\n"
+"PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/zh_Hans/>\n"
@@ -12,40 +12,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28 src/Widgets/PopoverWidget.vala:39
-msgid "Bluetooth"
-msgstr "蓝牙"
-
-#: src/Indicator.vala:29
-msgid "Indicator for Bluetooth signal"
-msgstr "蓝牙指示器"
-
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "未连接"
 
-#: src/Widgets/Device.vala:88
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "连接中…"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "断开中…"
 
-#: src/Widgets/Device.vala:96
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "无法连接"
 
-#: src/Widgets/Device.vala:107
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "扬声器"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "控制器"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "键盘"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "鼠标"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "写字板"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "触控板"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "手机"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "已连接"
+
+#: src/Widgets/PopoverWidget.vala:39
+msgid "Bluetooth"
+msgstr "蓝牙"
 
 #: src/Widgets/PopoverWidget.vala:59
 msgid "Bluetooth Settings…"
 msgstr "蓝牙设置…"
+
+#~ msgid "Indicator for Bluetooth signal"
+#~ msgstr "蓝牙指示器"
 
 #~ msgid "bluetooth"
 #~ msgstr "蓝牙"

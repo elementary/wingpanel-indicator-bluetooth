@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-07 22:17+0000\n"
+"POT-Creation-Date: 2020-11-17 18:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,10 +25,10 @@ msgstr ""
 msgid "Connect and disconnect paired bluetooth devices"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:13
+#: data/bluetooth.appdata.xml.in:14 data/bluetooth.appdata.xml.in:19
 msgid "Updated translations"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:52
+#: data/bluetooth.appdata.xml.in:58
 msgid "elementary, Inc."
 msgstr ""
