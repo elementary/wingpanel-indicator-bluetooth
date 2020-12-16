@@ -23,7 +23,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public bool has_object { get; private set; default = false; }
     public bool retrieve_finished { get; private set; default = false; }
     public Settings settings;
-    private DBusConnection connecting;
+    private DBusConnection connection;
     private GLib.DBusObjectManagerClient object_manager;
     public BluetoothIndicator.Services.Obex.Agent agent_obex;
     public bool is_powered {get; private set; default = false; }
@@ -37,7 +37,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
     private async void create_manager () {
         try {
-            connecting = yield GLib.Bus.get (BusType.SESSION);
+            connection = yield GLib.Bus.get (BusType.SESSION);
             object_manager = yield new GLib.DBusObjectManagerClient.for_bus.begin (
                 BusType.SYSTEM,
                 GLib.DBusObjectManagerClientFlags.NONE,
@@ -90,7 +90,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
     private async void reg_ureg () {
         try {
-            yield connecting.call ("org.bluez.obex", "/org/bluez/obex", "org.bluez.obex.AgentManager1", settings.get_boolean ("bluetooth-obex-enabled")? "RegisterAgent" : "UnregisterAgent", new Variant ("(o)", "/org/bluez/obex/elementary"), null, GLib.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION, -1);
+            yield connection.call ("org.bluez.obex", "/org/bluez/obex", "org.bluez.obex.AgentManager1", settings.get_boolean ("bluetooth-obex-enabled")? "RegisterAgent" : "UnregisterAgent", new Variant ("(o)", "/org/bluez/obex/elementary"), null, GLib.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION, -1);
         } catch (Error e) {
             critical (e.message);
         }
@@ -100,7 +100,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             return;
         }
         try {
-            yield connecting.call ("org.freedesktop.Notifications", "/org/freedesktop/Notifications", "org.freedesktop.Notifications", "Notify", new Variant ("(susssasa{sv}i)", "Bluetooth", 0, icon, summary, body, new VariantBuilder (new VariantType ("as")), new VariantBuilder (new VariantType ("a{sv}")), 6000), null, GLib.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION, -1);
+            yield connection.call ("org.freedesktop.Notifications", "/org/freedesktop/Notifications", "org.freedesktop.Notifications", "Notify", new Variant ("(susssasa{sv}i)", "Bluetooth", 0, icon, summary, body, new VariantBuilder (new VariantType ("as")), new VariantBuilder (new VariantType ("a{sv}")), 6000), null, GLib.DBusCallFlags.ALLOW_INTERACTIVE_AUTHORIZATION, -1);
         } catch (GLib.Error e) {
             warning (" %s\n", e.message);
         }
