@@ -76,21 +76,20 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     }
 
     private void update_tooltip (bool state, bool paired) {
-        string description = _("is off");
+        string description = _("Bluetooth is off");
         string context = _("Middle-click to disable");
 
         if (state && paired) {
-            description = _("connected to %s".printf (paired_device.name));
+            description = _("Bluetooth connected to %s".printf (paired_device.name));
         } else if (state) {
-            description = _("is on");
+            description = _("Bluetooth is on");
         } else {
             /* Blutetooth adapter Off */
             context = _("Middle-click to enable");
         }
 
         display_widget.tooltip_markup = "%s\n%s".printf (
-            _("Bluetooth %s".printf (description)),
-            Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
+            description, Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
         );
     }
 }
