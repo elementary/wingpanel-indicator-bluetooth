@@ -80,7 +80,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
         string context = _("Middle-click to disable");
 
         if (state && paired) {
-            description = _("Bluetooth connected to %s".printf (paired_device.name));
+            description = _("Bluetooth connected");
         } else if (state) {
             description = _("Bluetooth is on");
         } else {
