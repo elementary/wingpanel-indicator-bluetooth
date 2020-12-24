@@ -87,8 +87,6 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         var box_action = new Gtk.Grid ();
         box_action.orientation = Gtk.Orientation.HORIZONTAL;
         box_action.column_homogeneous = true;
-        box_action.margin_start = 2;
-        box_action.margin_end = 2;
         box_action.add (cancel_button);
         box_action.add (accept_button);
 
@@ -110,8 +108,6 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
 
         progressbar = new Gtk.ProgressBar ();
         progressbar.hexpand = true;
-        progressbar.margin_start = 3;
-        progressbar.margin_end = 3;
 
         file_label = new Gtk.Label (null);
         file_label.ellipsize = Pango.EllipsizeMode.END;
@@ -149,7 +145,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         box_grid.attach (progress_revealer, 0, 2);
         add (box_grid);
 
-        (device as DBusProxy).g_properties_changed.connect (update_status);
+        ((DBusProxy) device).g_properties_changed.connect (update_status);
         manager.agent_obex.authorize_cancel.connect (hide_action);
         update_status ();
 
