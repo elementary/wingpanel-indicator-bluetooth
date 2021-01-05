@@ -1,3 +1,16 @@
+wingpanel-indicator-bluetooth (2.1.6) bionic; urgency=medium
+
+  * Release 2.1.6 (#141)
+  * Update translation files
+  * Update translation template
+  * Device: Ensure name is never null (#136)
+  * Indicator.css: Fix flashing animation (#132)
+  * Indicator: Remove deprecated display_name and description (#125)
+  * Appdata: Add icon (#122)
+  * Prevent device duplicates (#116)
+
+ -- elementary LLC <builds@elementary.io>  Tue, 05 Jan 2021 22:00:48 +0000
+
 wingpanel-indicator-bluetooth (2.1.5) bionic; urgency=medium
 
   * Release 2.1.5 (#107)
