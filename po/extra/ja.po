@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-05 22:00+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"PO-Revision-Date: 2021-01-18 13:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
@@ -29,15 +29,15 @@ msgstr "ペアリングした Bluetooth デバイスを接続したり切断し�
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Prevent showing duplicate devices"
-msgstr ""
+msgstr "デバイスが重複して表示される不具合を修正"
 
 #: data/bluetooth.appdata.xml.in:15
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr ""
+msgstr "Bluetooth を無効にするときに表示されるアニメーションアイコンを修正"
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Fallback device names to their device type instead of \"(null)\""
-msgstr ""
+msgstr "デバイス名が利用可能ではない場合に、\"(null)\" と表示するのではなくデバイスの種類を表示するように修正"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27
