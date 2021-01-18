@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-05 22:00+0000\n"
-"PO-Revision-Date: 2020-12-29 08:16+0000\n"
+"PO-Revision-Date: 2021-01-19 01:11+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/he/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
@@ -29,15 +29,15 @@ msgstr "חיבור וניתוק התקני bluetooth מצומדים"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Prevent showing duplicate devices"
-msgstr ""
+msgstr "נמנעה הצגת התקנים פעמיים"
 
 #: data/bluetooth.appdata.xml.in:15
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr ""
+msgstr "תוקן הסמל המונפש בעת השבתת Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Fallback device names to their device type instead of \"(null)\""
-msgstr ""
+msgstr "שמות ההתקנים יסוגו לסוג ההתקן שלהם במקום ל־„(ריק)”"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27
