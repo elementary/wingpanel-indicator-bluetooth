@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-05 22:00+0000\n"
-"PO-Revision-Date: 2020-09-12 17:14+0000\n"
+"PO-Revision-Date: 2021-01-20 21:02+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
@@ -30,15 +30,15 @@ msgstr "Підʼєднайте та від'єднайте сполучені п�
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Prevent showing duplicate devices"
-msgstr ""
+msgstr "Запобігання повторюваному показу пристроїв"
 
 #: data/bluetooth.appdata.xml.in:15
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr ""
+msgstr "Виправлено анімацію піктограми вимкнення Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Fallback device names to their device type instead of \"(null)\""
-msgstr ""
+msgstr "Резервні назви пристроїв для типу їхнього пристрою замість \"(null)\""
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27
