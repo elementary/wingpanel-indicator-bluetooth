@@ -223,9 +223,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public async void set_last_state () {
         bool last_state = settings.get_boolean ("bluetooth-enabled");
 
-        if (get_global_state () != last_state) {
-            yield set_global_state (last_state);
-        }
+        yield set_global_state (last_state);
 
         check_global_state ();
     }
