@@ -30,7 +30,11 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
             is_in_session: is_in_session
         );
 
+        var settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
         display_widget = new Widgets.DisplayWidget (object_manager);
+        
+        var state = settings.get_boolean ("bluetooth-enabled");
+        update_tooltip (state, false);
 
         object_manager.global_state_changed.connect ((state, paired) => {
             update_tooltip (state, paired);
