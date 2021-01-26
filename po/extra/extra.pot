@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 18:06+0000\n"
+"POT-Creation-Date: 2021-01-05 22:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,10 +25,23 @@ msgstr ""
 msgid "Connect and disconnect paired bluetooth devices"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:14 data/bluetooth.appdata.xml.in:19
+#: data/bluetooth.appdata.xml.in:14
+msgid "Prevent showing duplicate devices"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:15
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:16
+msgid "Fallback device names to their device type instead of \"(null)\""
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:27
 msgid "Updated translations"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:58
+#: data/bluetooth.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr ""

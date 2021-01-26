@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"POT-Creation-Date: 2021-01-05 22:00+0000\n"
+"PO-Revision-Date: 2021-01-21 16:53+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
@@ -27,10 +27,25 @@ msgstr "Indicador Bluetooth"
 msgid "Connect and disconnect paired bluetooth devices"
 msgstr "Conectar e desconectar dispositivos bluetooth emparelhados"
 
-#: data/bluetooth.appdata.xml.in:14 data/bluetooth.appdata.xml.in:19
+#: data/bluetooth.appdata.xml.in:14
+msgid "Prevent showing duplicate devices"
+msgstr "Evitar mostrar dispositivos duplicados"
+
+#: data/bluetooth.appdata.xml.in:15
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr "Corrige ícone animado ao desativar o Bluetooth"
+
+#: data/bluetooth.appdata.xml.in:16
+msgid "Fallback device names to their device type instead of \"(null)\""
+msgstr ""
+"Repõe os nomes dos dispositivos para o seu tipo de dispositivo em vez de \""
+"(nulo)\""
+
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:27
 msgid "Updated translations"
 msgstr "Traduções atualizadas"
 
-#: data/bluetooth.appdata.xml.in:58
+#: data/bluetooth.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
