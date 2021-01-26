@@ -81,7 +81,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
 
     private void update_tooltip (bool state, bool paired) {
         string description = _("Bluetooth is off");
-        string context = _("Middle-click to disable");
+        string context = _("Middle-click to disable bluetooth");
 
         if (state && paired) {
             description = _("Bluetooth connected");
@@ -89,7 +89,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
             description = _("Bluetooth is on");
         } else {
             /* Blutetooth adapter Off */
-            context = _("Middle-click to enable");
+            context = _("Middle-click to enable bluetooth");
         }
 
         display_widget.tooltip_markup = "%s\n%s".printf (
