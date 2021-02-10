@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-17 18:06+0000\n"
-"PO-Revision-Date: 2019-11-05 13:24+0000\n"
+"PO-Revision-Date: 2021-02-09 10:43+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
@@ -33,31 +33,31 @@ msgstr "Yhdistäminen ei onnistunut"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
-msgstr ""
+msgstr "Kaiutin"
 
 #: src/Widgets/Device.vala:116
 msgid "Controller"
-msgstr ""
+msgstr "Ohjain"
 
 #: src/Widgets/Device.vala:119
 msgid "Keyboard"
-msgstr ""
+msgstr "Näppäimistö"
 
 #: src/Widgets/Device.vala:122
 msgid "Mouse"
-msgstr ""
+msgstr "Hiiri"
 
 #: src/Widgets/Device.vala:125
 msgid "Tablet"
-msgstr ""
+msgstr "Tabletti"
 
 #: src/Widgets/Device.vala:128
 msgid "Touchpad"
-msgstr ""
+msgstr "Kosketuslevy"
 
 #: src/Widgets/Device.vala:131
 msgid "Phone"
-msgstr ""
+msgstr "Puhelin"
 
 #: src/Widgets/Device.vala:145
 msgid "Connected"
