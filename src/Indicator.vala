@@ -19,7 +19,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public bool is_in_session { get; construct; default = false; }
 
     private BluetoothIndicator.Widgets.PopoverWidget popover_widget;
-    Widgets.DisplayWidget? display_widget;
+    private Widgets.DisplayWidget? display_widget;
     private Services.ObjectManager object_manager;
 
     public Indicator (bool is_in_session) {
