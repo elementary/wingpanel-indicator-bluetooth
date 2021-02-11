@@ -18,9 +18,7 @@
 public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public bool is_in_session { get; construct; default = false; }
 
-    public signal void device_requested (BluetoothIndicator.Services.Device device);
-    private BluetoothIndicator.Services.Device paired_device;
-    BluetoothIndicator.Widgets.PopoverWidget popover_widget;
+    private BluetoothIndicator.Widgets.PopoverWidget popover_widget;
     Widgets.DisplayWidget? display_widget;
     private Services.ObjectManager object_manager;
 
@@ -40,9 +38,6 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
             update_tooltip (state, paired);
         });
 
-        object_manager.device_added.connect ((device) => {
-            paired_device = device;
-        });
     }
 
     construct {
