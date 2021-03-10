@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-05 22:00+0000\n"
-"PO-Revision-Date: 2021-01-20 21:02+0000\n"
-"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
+"PO-Revision-Date: 2021-03-11 08:34+0000\n"
+"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/uk/>\n"
 "Language: uk\n"
@@ -38,7 +38,7 @@ msgstr "Виправлено анімацію піктограми вимкне�
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Fallback device names to their device type instead of \"(null)\""
-msgstr "Резервні назви пристроїв для типу їхнього пристрою замість \"(null)\""
+msgstr "Резервні назви пристроїв для типу їхнього пристрою замість «(null)»"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27
