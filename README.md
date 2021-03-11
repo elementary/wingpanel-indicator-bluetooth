@@ -12,7 +12,7 @@ You'll need the following dependencies:
     libglib2.0-dev
     libgranite-dev
     libnotify-dev
-    libwingpanel-2.0-dev
+    libwingpanel-dev
     meson
     valac
 
