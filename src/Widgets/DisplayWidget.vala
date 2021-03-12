@@ -65,17 +65,28 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     private void update_icon () {
         var state = object_manager.is_powered;
         var connected = object_manager.is_connected;
+        string description;
+        string context;
 
         if (state) {
             style_context.remove_class ("disabled");
+            context = _("Middle-click to disable bluetooth");
             if (connected) {
                 style_context.add_class ("paired");
+                description = _("Bluetooth connected");
             } else {
                 style_context.remove_class ("paired");
+                description = _("Bluetooth is on");
             }
         } else {
             style_context.remove_class ("paired");
             style_context.add_class ("disabled");
+            description = _("Bluetooth is off");
+            context = _("Middle-click to enable bluetooth");
         }
+
+        tooltip_markup = "%s\n%s".printf (
+            description, Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
+        );
     }
 }
