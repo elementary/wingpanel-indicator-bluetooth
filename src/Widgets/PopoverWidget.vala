@@ -22,7 +22,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
     public bool is_in_session { get; construct; }
 
-    private Wingpanel.Widgets.Switch main_switch;
+    private Granite.SwitchModelButton main_switch;
     private Gtk.ListBox devices_list;
     private Gtk.Revealer revealer;
 
@@ -36,7 +36,9 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     construct {
         orientation = Gtk.Orientation.VERTICAL;
 
-        main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
+        main_switch = new Granite.SwitchModelButton (_("Bluetooth")) {
+            active = object_manager.get_global_state ()
+        };
         main_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         devices_list = new Gtk.ListBox ();
