@@ -50,8 +50,13 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll_box.add (devices_list);
 
+        var revealer_content_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+
         var revealer_content = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        revealer_content.add (new Wingpanel.Widgets.Separator ());
+        revealer_content.add (revealer_content_separator);
         revealer_content.add (scroll_box);
 
         revealer = new Gtk.Revealer ();
@@ -63,7 +68,12 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         add (main_switch);
         add (revealer);
         if (is_in_session) {
-            add (new Wingpanel.Widgets.Separator ());
+            var settings_button_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+                margin_top = 3,
+                margin_bottom = 3
+            };
+
+            add (settings_button_separator);
             add (show_settings_button);
         }
 
