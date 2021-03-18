@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluetooth-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 18:06+0000\n"
+"POT-Creation-Date: 2021-03-18 16:03+0000\n"
 "PO-Revision-Date: 2018-02-12 18:40-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -64,10 +64,30 @@ msgstr ""
 msgid "Connected"
 msgstr ""
 
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to disable bluetooth"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:76
+msgid "Bluetooth connected"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:79
+msgid "Bluetooth is on"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:84
+msgid "Bluetooth is off"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to enable bluetooth"
+msgstr ""
+
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:59
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr ""
