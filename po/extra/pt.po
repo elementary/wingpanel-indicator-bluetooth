@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-05 22:00+0000\n"
+"POT-Creation-Date: 2021-03-18 16:03+0000\n"
 "PO-Revision-Date: 2021-01-21 16:53+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -38,8 +38,8 @@ msgstr "Corrige ícone animado ao desativar o Bluetooth"
 #: data/bluetooth.appdata.xml.in:16
 msgid "Fallback device names to their device type instead of \"(null)\""
 msgstr ""
-"Repõe os nomes dos dispositivos para o seu tipo de dispositivo em vez de \""
-"(nulo)\""
+"Repõe os nomes dos dispositivos para o seu tipo de dispositivo em vez de "
+"\"(nulo)\""
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27
