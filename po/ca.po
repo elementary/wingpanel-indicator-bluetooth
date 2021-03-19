@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-18 16:03+0000\n"
-"PO-Revision-Date: 2020-11-21 12:15+0000\n"
+"PO-Revision-Date: 2021-03-19 18:09+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ca/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
@@ -65,29 +65,23 @@ msgstr "Connectat"
 
 #: src/Widgets/DisplayWidget.vala:73
 msgid "Middle-click to disable bluetooth"
-msgstr ""
+msgstr "Clic del mig per inhabilitar el bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:76
-#, fuzzy
-#| msgid "Not Connected"
 msgid "Bluetooth connected"
-msgstr "No connectat"
+msgstr "Bluetooth connectat"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "Bluetooth"
+msgstr "Bluetooth actiu"
 
 #: src/Widgets/DisplayWidget.vala:84
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "Bluetooth"
+msgstr "Bluetooth inactiu"
 
 #: src/Widgets/DisplayWidget.vala:85
 msgid "Middle-click to enable bluetooth"
-msgstr ""
+msgstr "Clic del mig per habilitar el bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
