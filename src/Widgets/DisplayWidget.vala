@@ -70,7 +70,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
 
         if (state) {
             style_context.remove_class ("disabled");
-            context = _("Middle-click to turn off Bluetooth");
+            context = _("Middle-click to turn Bluetooth off");
             if (connected) {
                 style_context.add_class ("paired");
                 description = _("Bluetooth connected");
@@ -82,7 +82,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
             style_context.remove_class ("paired");
             style_context.add_class ("disabled");
             description = _("Bluetooth is off");
-            context = _("Middle-click to turn on Bluetooth");
+            context = _("Middle-click to turn Bluetooth on");
         }
 
         tooltip_markup = "%s\n%s".printf (
