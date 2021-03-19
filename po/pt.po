@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-18 16:03+0000\n"
-"PO-Revision-Date: 2020-11-22 15:15+0000\n"
+"PO-Revision-Date: 2021-03-19 22:57+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/pt/>\n"
@@ -12,12 +12,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
-msgstr "Não Ligado"
+msgstr "Não ligado"
 
 #: src/Widgets/Device.vala:92
 msgid "Connecting…"
@@ -29,7 +29,7 @@ msgstr "A desligar…"
 
 #: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
-msgstr "Impossível Ligar"
+msgstr "Incapaz de ligar"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
@@ -65,29 +65,23 @@ msgstr "Ligado"
 
 #: src/Widgets/DisplayWidget.vala:73
 msgid "Middle-click to disable bluetooth"
-msgstr ""
+msgstr "Clicar com o botão do meio para desativar o bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:76
-#, fuzzy
-#| msgid "Not Connected"
 msgid "Bluetooth connected"
-msgstr "Não Ligado"
+msgstr "Bluetooth ligado"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "Bluetooth"
+msgstr "O Bluetooth está ligado"
 
 #: src/Widgets/DisplayWidget.vala:84
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "Bluetooth"
+msgstr "O Bluetooth está desligado"
 
 #: src/Widgets/DisplayWidget.vala:85
 msgid "Middle-click to enable bluetooth"
-msgstr ""
+msgstr "Clicar com o botão do meio para ativar o bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
