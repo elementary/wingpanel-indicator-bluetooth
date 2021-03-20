@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-20 02:16+0000\n"
-"PO-Revision-Date: 2021-03-18 18:13+0000\n"
+"PO-Revision-Date: 2021-03-20 18:05+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/uk/>\n"
@@ -65,10 +65,8 @@ msgid "Connected"
 msgstr "З'єднано"
 
 #: src/Widgets/DisplayWidget.vala:73
-#, fuzzy
-#| msgid "Middle-click to enable bluetooth"
 msgid "Middle-click to turn Bluetooth off"
-msgstr "Клацніть середньою клавішею, щоб увімкнути Bluetooth"
+msgstr "Клацніть середньою клавішею, щоб вимкнути Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:76
 msgid "Bluetooth connected"
@@ -83,8 +81,6 @@ msgid "Bluetooth is off"
 msgstr "Bluetooth вимкнено"
 
 #: src/Widgets/DisplayWidget.vala:85
-#, fuzzy
-#| msgid "Middle-click to enable bluetooth"
 msgid "Middle-click to turn Bluetooth on"
 msgstr "Клацніть середньою клавішею, щоб увімкнути Bluetooth"
 
