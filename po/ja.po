@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-18 16:03+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2020-11-21 12:15+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
@@ -64,7 +64,7 @@ msgid "Connected"
 msgstr "接続済み"
 
 #: src/Widgets/DisplayWidget.vala:73
-msgid "Middle-click to disable bluetooth"
+msgid "Middle-click to turn Bluetooth off"
 msgstr ""
 
 #: src/Widgets/DisplayWidget.vala:76
@@ -86,8 +86,10 @@ msgid "Bluetooth is off"
 msgstr "Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:85
-msgid "Middle-click to enable bluetooth"
-msgstr ""
+#, fuzzy
+#| msgid "Indicator for Bluetooth signal"
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Bluetooth インジケーター"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
@@ -96,9 +98,6 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth の設定…"
-
-#~ msgid "Indicator for Bluetooth signal"
-#~ msgstr "Bluetooth インジケーター"
 
 #~ msgid "bluetooth"
 #~ msgstr "Bluetooth"

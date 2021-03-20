@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-bluetooth\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-18 16:03+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2017-05-04 20:02+0000\n"
 "Last-Translator: Rokar <rokartv10@gmail.com>\n"
 "Language-Team: ku (generated) <https://l10n.elementary.io/projects/wingpanel/"
@@ -69,7 +69,7 @@ msgid "Connected"
 msgstr "Hate girêdan"
 
 #: src/Widgets/DisplayWidget.vala:73
-msgid "Middle-click to disable bluetooth"
+msgid "Middle-click to turn Bluetooth off"
 msgstr ""
 
 #: src/Widgets/DisplayWidget.vala:76
@@ -91,7 +91,7 @@ msgid "Bluetooth is off"
 msgstr "Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:85
-msgid "Middle-click to enable bluetooth"
+msgid "Middle-click to turn Bluetooth on"
 msgstr ""
 
 #: src/Widgets/PopoverWidget.vala:39

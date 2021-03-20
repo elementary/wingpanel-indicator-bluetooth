@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-18 16:03+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -63,7 +63,7 @@ msgid "Connected"
 msgstr "Połōnczōne"
 
 #: src/Widgets/DisplayWidget.vala:73
-msgid "Middle-click to disable bluetooth"
+msgid "Middle-click to turn Bluetooth off"
 msgstr ""
 
 #: src/Widgets/DisplayWidget.vala:76
@@ -85,8 +85,10 @@ msgid "Bluetooth is off"
 msgstr "Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:85
-msgid "Middle-click to enable bluetooth"
-msgstr ""
+#, fuzzy
+#| msgid "Indicator for Bluetooth signal"
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Skaźnik sygnału bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
@@ -95,6 +97,3 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Sztelōnki Bluetooth…"
-
-#~ msgid "Indicator for Bluetooth signal"
-#~ msgstr "Skaźnik sygnału bluetooth"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-18 16:03+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2021-03-19 22:57+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -64,8 +64,10 @@ msgid "Connected"
 msgstr "Ligado"
 
 #: src/Widgets/DisplayWidget.vala:73
-msgid "Middle-click to disable bluetooth"
-msgstr "Clicar com o botão do meio para desativar o bluetooth"
+#, fuzzy
+#| msgid "Middle-click to enable bluetooth"
+msgid "Middle-click to turn Bluetooth off"
+msgstr "Clicar com o botão do meio para ativar o bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:76
 msgid "Bluetooth connected"
@@ -80,7 +82,9 @@ msgid "Bluetooth is off"
 msgstr "O Bluetooth está desligado"
 
 #: src/Widgets/DisplayWidget.vala:85
-msgid "Middle-click to enable bluetooth"
+#, fuzzy
+#| msgid "Middle-click to enable bluetooth"
+msgid "Middle-click to turn Bluetooth on"
 msgstr "Clicar com o botão do meio para ativar o bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:39
@@ -90,6 +94,9 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Definições do bluetooth…"
+
+#~ msgid "Middle-click to disable bluetooth"
+#~ msgstr "Clicar com o botão do meio para desativar o bluetooth"
 
 #~ msgid "Indicator for Bluetooth signal"
 #~ msgstr "Indicador para sinal Bluetooth"

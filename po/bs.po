@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-18 16:03+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2018-11-04 22:15+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/wingpanel/"
@@ -65,7 +65,7 @@ msgid "Connected"
 msgstr "Povezano"
 
 #: src/Widgets/DisplayWidget.vala:73
-msgid "Middle-click to disable bluetooth"
+msgid "Middle-click to turn Bluetooth off"
 msgstr ""
 
 #: src/Widgets/DisplayWidget.vala:76
@@ -87,7 +87,7 @@ msgid "Bluetooth is off"
 msgstr "Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:85
-msgid "Middle-click to enable bluetooth"
+msgid "Middle-click to turn Bluetooth on"
 msgstr ""
 
 #: src/Widgets/PopoverWidget.vala:39
