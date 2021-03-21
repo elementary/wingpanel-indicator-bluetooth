@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-20 02:16+0000\n"
-"PO-Revision-Date: 2021-03-18 18:13+0000\n"
+"PO-Revision-Date: 2021-03-21 13:45+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/he/>\n"
@@ -64,10 +64,8 @@ msgid "Connected"
 msgstr "יש חיבור"
 
 #: src/Widgets/DisplayWidget.vala:73
-#, fuzzy
-#| msgid "Middle-click to enable bluetooth"
 msgid "Middle-click to turn Bluetooth off"
-msgstr "לחיצה אמצעית להפעלת הבלוטות׳"
+msgstr "לחיצה אמצעית לכיבוי הבלוטות׳"
 
 #: src/Widgets/DisplayWidget.vala:76
 msgid "Bluetooth connected"
@@ -82,8 +80,6 @@ msgid "Bluetooth is off"
 msgstr "בלוטות׳ כבוי"
 
 #: src/Widgets/DisplayWidget.vala:85
-#, fuzzy
-#| msgid "Middle-click to enable bluetooth"
 msgid "Middle-click to turn Bluetooth on"
 msgstr "לחיצה אמצעית להפעלת הבלוטות׳"
 
