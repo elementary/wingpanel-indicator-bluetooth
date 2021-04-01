@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 18:06+0000\n"
-"PO-Revision-Date: 2020-11-22 15:15+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
+"PO-Revision-Date: 2021-03-20 09:50+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/pt/>\n"
@@ -12,12 +12,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
-msgstr "Não Ligado"
+msgstr "Não ligado"
 
 #: src/Widgets/Device.vala:92
 msgid "Connecting…"
@@ -29,7 +29,7 @@ msgstr "A desligar…"
 
 #: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
-msgstr "Impossível Ligar"
+msgstr "Incapaz de ligar"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
@@ -63,13 +63,36 @@ msgstr "Telefone"
 msgid "Connected"
 msgstr "Ligado"
 
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr "Clicar com o botão do meio para desligar o Bluetooth"
+
+#: src/Widgets/DisplayWidget.vala:76
+msgid "Bluetooth connected"
+msgstr "Bluetooth ligado"
+
+#: src/Widgets/DisplayWidget.vala:79
+msgid "Bluetooth is on"
+msgstr "O Bluetooth está ligado"
+
+#: src/Widgets/DisplayWidget.vala:84
+msgid "Bluetooth is off"
+msgstr "O Bluetooth está desligado"
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Clicar com o botão do meio para ligar o Bluetooth"
+
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:59
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Definições do bluetooth…"
+
+#~ msgid "Middle-click to disable bluetooth"
+#~ msgstr "Clicar com o botão do meio para desativar o bluetooth"
 
 #~ msgid "Indicator for Bluetooth signal"
 #~ msgstr "Indicador para sinal Bluetooth"

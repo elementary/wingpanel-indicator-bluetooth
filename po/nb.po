@@ -2,17 +2,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 18:06+0000\n"
-"PO-Revision-Date: 2019-01-11 00:07+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
+"PO-Revision-Date: 2021-03-19 01:19+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
-"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
@@ -33,43 +33,70 @@ msgstr "Kunne ikke koble til"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
-msgstr ""
+msgstr "Høytaler"
 
 #: src/Widgets/Device.vala:116
 msgid "Controller"
-msgstr ""
+msgstr "Kontroller"
 
 #: src/Widgets/Device.vala:119
 msgid "Keyboard"
-msgstr ""
+msgstr "Tastatur"
 
 #: src/Widgets/Device.vala:122
 msgid "Mouse"
-msgstr ""
+msgstr "Mus"
 
 #: src/Widgets/Device.vala:125
 msgid "Tablet"
-msgstr ""
+msgstr "Nettbrett"
 
 #: src/Widgets/Device.vala:128
 msgid "Touchpad"
-msgstr ""
+msgstr "Pekeflate"
 
 #: src/Widgets/Device.vala:131
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Tilkoblet"
 
+#: src/Widgets/DisplayWidget.vala:73
+#, fuzzy
+#| msgid "Middle-click to enable bluetooth"
+msgid "Middle-click to turn Bluetooth off"
+msgstr "Midt-klikk for å skru på Blåtann"
+
+#: src/Widgets/DisplayWidget.vala:76
+msgid "Bluetooth connected"
+msgstr "Blåtann tilkoblet"
+
+#: src/Widgets/DisplayWidget.vala:79
+msgid "Bluetooth is on"
+msgstr "Blåtann påslått"
+
+#: src/Widgets/DisplayWidget.vala:84
+msgid "Bluetooth is off"
+msgstr "Blåtann avslått"
+
+#: src/Widgets/DisplayWidget.vala:85
+#, fuzzy
+#| msgid "Middle-click to enable bluetooth"
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Midt-klikk for å skru på Blåtann"
+
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Blåtann"
 
-#: src/Widgets/PopoverWidget.vala:59
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Innstillinger for Blåtann…"
+
+#~ msgid "Middle-click to disable bluetooth"
+#~ msgstr "Midt-klikk for å skru av Blåtann"
 
 #~ msgid "bluetooth"
 #~ msgstr "Blåtann"
