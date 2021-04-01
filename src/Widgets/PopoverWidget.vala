@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2015-2021 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -22,7 +22,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
     public bool is_in_session { get; construct; }
 
-    private Wingpanel.Widgets.Switch main_switch;
+    private Granite.SwitchModelButton main_switch;
     private Gtk.ListBox devices_list;
     private Gtk.Revealer revealer;
 
@@ -36,7 +36,9 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     construct {
         orientation = Gtk.Orientation.VERTICAL;
 
-        main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
+        main_switch = new Granite.SwitchModelButton (_("Bluetooth")) {
+            active = object_manager.get_global_state ()
+        };
         main_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         devices_list = new Gtk.ListBox ();
@@ -48,8 +50,13 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll_box.add (devices_list);
 
+        var revealer_content_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+
         var revealer_content = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        revealer_content.add (new Wingpanel.Widgets.Separator ());
+        revealer_content.add (revealer_content_separator);
         revealer_content.add (scroll_box);
 
         revealer = new Gtk.Revealer ();
@@ -61,7 +68,12 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         add (main_switch);
         add (revealer);
         if (is_in_session) {
-            add (new Wingpanel.Widgets.Separator ());
+            var settings_button_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+                margin_top = 3,
+                margin_bottom = 3
+            };
+
+            add (settings_button_separator);
             add (show_settings_button);
         }
 

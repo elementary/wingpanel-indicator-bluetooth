@@ -1,7 +1,7 @@
 project(
     'bluetooth',
     'vala', 'c',
-    version: '2.1.5'
+    version: '2.1.6'
 )
 
 gettext_name = meson.project_name() + '-indicator'
@@ -20,7 +20,7 @@ gresource = gnome.compile_resources(
     source_dir: 'data'
 )
 
-wingpanel_dep = dependency('wingpanel-2.0')
+wingpanel_dep = dependency('wingpanel')
 wingpanel_indicatorsdir = wingpanel_dep.get_pkgconfig_variable('indicatorsdir', define_variable: ['libdir', libdir])
 
 shared_module(
@@ -39,7 +39,7 @@ shared_module(
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
-        dependency('granite'),
+        dependency('granite', version: '>=6.0.0'),
         dependency('gtk+-3.0'),
         dependency('libnotify'),
         wingpanel_dep
