@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2015-2021 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -65,17 +65,28 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     private void update_icon () {
         var state = object_manager.is_powered;
         var connected = object_manager.is_connected;
+        string description;
+        string context;
 
         if (state) {
             style_context.remove_class ("disabled");
+            context = _("Middle-click to turn Bluetooth off");
             if (connected) {
                 style_context.add_class ("paired");
+                description = _("Bluetooth connected");
             } else {
                 style_context.remove_class ("paired");
+                description = _("Bluetooth is on");
             }
         } else {
             style_context.remove_class ("paired");
             style_context.add_class ("disabled");
+            description = _("Bluetooth is off");
+            context = _("Middle-click to turn Bluetooth on");
         }
+
+        tooltip_markup = "%s\n%s".printf (
+            description, Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
+        );
     }
 }
