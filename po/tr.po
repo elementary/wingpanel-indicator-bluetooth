@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
-"PO-Revision-Date: 2019-04-18 22:54+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
+"PO-Revision-Date: 2021-03-22 18:25+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/tr/>\n"
@@ -12,44 +12,90 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.5.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "bluetooth"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "Bluetooth göstergesi"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Bağlı Değil"
 
-#: src/Widgets/Device.vala:69
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "Bağlanılıyor…"
 
-#: src/Widgets/Device.vala:72
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "Bağlantı kesiliyor…"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Bağlantı Kurulamıyor"
 
-#: src/Widgets/Device.vala:87
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "Hoparlör"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "Denetleyici"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "Fare"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "Tablet"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "Dokunmatik Yüzey"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "Telefon"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Bağlı"
 
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr "Orta tıklatma ile Bluetooth'u kapat"
+
+#: src/Widgets/DisplayWidget.vala:76
+msgid "Bluetooth connected"
+msgstr "Bluetooth bağlandı"
+
+#: src/Widgets/DisplayWidget.vala:79
+msgid "Bluetooth is on"
+msgstr "Bluetooth açık"
+
+#: src/Widgets/DisplayWidget.vala:84
+msgid "Bluetooth is off"
+msgstr "Bluetooth kapalı"
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Orta tıklatma ile Bluetooth'u aç"
+
+#: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth Ayarları…"
+
+#~ msgid "bluetooth"
+#~ msgstr "bluetooth"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "Bluetooth göstergesi"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "Cihazları Keşfet..."

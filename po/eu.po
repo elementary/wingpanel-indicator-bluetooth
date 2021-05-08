@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2015-11-18 21:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,38 +13,78 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr ""
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr ""
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr ""
 
-#: src/Widgets/Device.vala:69
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr ""
 
-#: src/Widgets/Device.vala:72
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr ""
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr ""
 
-#: src/Widgets/Device.vala:87
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr ""
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr ""
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr ""
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr ""
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr ""
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr ""
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr ""
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:76
+msgid "Bluetooth connected"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:79
+msgid "Bluetooth is on"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:84
+msgid "Bluetooth is off"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr ""
+
+#: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr ""

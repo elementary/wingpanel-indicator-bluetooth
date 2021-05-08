@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2017-07-06 08:13+0000\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,41 +15,93 @@ msgstr ""
 "X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "bluetooth"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "Indikator bluetooth"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Tidak Tersambung"
 
-#: src/Widgets/Device.vala:69
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "Menyambung…"
 
-#: src/Widgets/Device.vala:72
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "Memutus…"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Tidak Dapat Tersambung"
 
-#: src/Widgets/Device.vala:87
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr ""
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr ""
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr ""
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr ""
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr ""
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr ""
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr ""
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Tersambung"
 
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:76
+#, fuzzy
+#| msgid "Not Connected"
+msgid "Bluetooth connected"
+msgstr "Tidak Tersambung"
+
+#: src/Widgets/DisplayWidget.vala:79
+#, fuzzy
+#| msgid "Bluetooth"
+msgid "Bluetooth is on"
+msgstr "Bluetooth"
+
+#: src/Widgets/DisplayWidget.vala:84
+#, fuzzy
+#| msgid "Bluetooth"
+msgid "Bluetooth is off"
+msgstr "Bluetooth"
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr ""
+
+#: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Pengaturan Bluetooth…"
+
+#~ msgid "bluetooth"
+#~ msgstr "bluetooth"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "Indikator bluetooth"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "Temukan Perangkat…"

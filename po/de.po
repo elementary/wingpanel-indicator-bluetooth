@@ -2,54 +2,106 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
-"PO-Revision-Date: 2018-08-19 00:10+0000\n"
-"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/wingpanel/"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
+"PO-Revision-Date: 2021-03-21 13:45+0000\n"
+"Last-Translator: Uwe S <saabisto@gmx.de>\n"
+"Language-Team: German <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "Bluetooth"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "Der Bluetooth-Indikator"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Nicht verbunden"
 
-#: src/Widgets/Device.vala:69
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
-msgstr "Verbinden…"
+msgstr "Verbinden …"
 
-#: src/Widgets/Device.vala:72
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
-msgstr "Verbindung wird getrennt…"
+msgstr "Verbindung trennen …"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Verbindung nicht möglich"
 
-#: src/Widgets/Device.vala:87
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "Lautsprecher"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "Controller"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "Tastatur"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "Maus"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "Grafiktablett"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "Tastfeld"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "Mobiltelefon"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Verbunden"
 
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr "Bluetooth mit Mittelklick ausschalten"
+
+#: src/Widgets/DisplayWidget.vala:76
+msgid "Bluetooth connected"
+msgstr "Mittels Bluetooth verbunden"
+
+#: src/Widgets/DisplayWidget.vala:79
+msgid "Bluetooth is on"
+msgstr "Bluetooth ist eingeschaltet"
+
+#: src/Widgets/DisplayWidget.vala:84
+msgid "Bluetooth is off"
+msgstr "Bluetooth ist ausgeschaltet"
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Bluetooth mit Mittelklick einschalten"
+
+#: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
-msgstr "Bluetooth-Einstellungen…"
+msgstr "Bluetooth-Einstellungen …"
+
+#~ msgid "Middle-click to disable bluetooth"
+#~ msgstr "Bluetooth mit Mittelklick ausschalten"
+
+#~ msgid "Indicator for Bluetooth signal"
+#~ msgstr "Anzeige für das Bluetooth-Signal"
+
+#~ msgid "bluetooth"
+#~ msgstr "Bluetooth"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "Der Bluetooth-Indikator"
 
 #~ msgid "Discover Devices…"
 #~ msgstr "Geräte suchen …"

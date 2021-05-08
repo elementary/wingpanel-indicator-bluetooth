@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the extra package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: extra\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/bluetooth.appdata.xml.in:8
+msgid "Bluetooth Indicator"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:9
+msgid "Connect and disconnect paired bluetooth devices"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:14
+msgid "Prevent showing duplicate devices"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:15
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:16
+msgid "Fallback device names to their device type instead of \"(null)\""
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:27
+msgid "Updated translations"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:66
+msgid "elementary, Inc."
+msgstr ""

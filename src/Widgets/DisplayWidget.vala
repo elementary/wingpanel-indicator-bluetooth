@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2015-2021 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -18,14 +18,17 @@
 public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
 
+    private unowned Gtk.StyleContext style_context;
+
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
         Object (object_manager: object_manager);
     }
 
     construct {
-        var style_context = get_style_context ();
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
+
+        style_context = get_style_context ();
         style_context.add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
         style_context.add_class ("bluetooth-icon");
         style_context.add_class ("disabled");
@@ -55,25 +58,35 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
             update_icon ();
         } else {
             /* When called from constructor usually not realized */
-            realize.connect_after  (update_icon);
+            realize.connect_after (update_icon);
         }
     }
 
     private void update_icon () {
         var state = object_manager.is_powered;
         var connected = object_manager.is_connected;
-        var style_context = get_style_context ();
+        string description;
+        string context;
 
         if (state) {
             style_context.remove_class ("disabled");
+            context = _("Middle-click to turn Bluetooth off");
             if (connected) {
                 style_context.add_class ("paired");
+                description = _("Bluetooth connected");
             } else {
                 style_context.remove_class ("paired");
+                description = _("Bluetooth is on");
             }
         } else {
             style_context.remove_class ("paired");
             style_context.add_class ("disabled");
+            description = _("Bluetooth is off");
+            context = _("Middle-click to turn Bluetooth on");
         }
+
+        tooltip_markup = "%s\n%s".printf (
+            description, Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
+        );
     }
 }

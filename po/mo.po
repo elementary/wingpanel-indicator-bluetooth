@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluetooth-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 14:37-0700\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2018-05-31 08:03+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/wingpanel/"
@@ -19,38 +19,90 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: src/Indicator.vala:28
-msgid "bluetooth"
-msgstr "blutus"
-
-#: src/Indicator.vala:29
-msgid "The bluetooth indicator"
-msgstr "Indicador blutus"
-
-#: src/Widgets/Device.vala:37 src/Widgets/Device.vala:89
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Nu este conectat"
 
-#: src/Widgets/Device.vala:69
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "Conectare…"
 
-#: src/Widgets/Device.vala:72
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "Desconectare…"
 
-#: src/Widgets/Device.vala:77
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Imposibil de conectat"
 
-#: src/Widgets/Device.vala:87
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr ""
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr ""
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr ""
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr ""
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr ""
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr ""
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr ""
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Conectat"
 
-#: src/Widgets/PopoverWidget.vala:29
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:76
+#, fuzzy
+#| msgid "Not Connected"
+msgid "Bluetooth connected"
+msgstr "Nu este conectat"
+
+#: src/Widgets/DisplayWidget.vala:79
+#, fuzzy
+#| msgid "Bluetooth"
+msgid "Bluetooth is on"
+msgstr "Blutus"
+
+#: src/Widgets/DisplayWidget.vala:84
+#, fuzzy
+#| msgid "Bluetooth"
+msgid "Bluetooth is off"
+msgstr "Blutus"
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr ""
+
+#: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Blutus"
 
-#: src/Widgets/PopoverWidget.vala:48
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Setări Bluetooth …"
+
+#~ msgid "bluetooth"
+#~ msgstr "blutus"
+
+#~ msgid "The bluetooth indicator"
+#~ msgstr "Indicador blutus"

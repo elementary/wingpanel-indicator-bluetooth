@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
+public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private const string DEFAULT_ICON = "bluetooth";
     public signal void show_device (BluetoothIndicator.Services.Device device);
 
@@ -31,11 +31,12 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
     }
 
     construct {
-        name_label = new Gtk.Label ("<b>%s</b>".printf (Markup.escape_text(device.name)));
-        name_label.halign = Gtk.Align.START;
-        name_label.valign = Gtk.Align.END;
-        name_label.vexpand = true;
-        name_label.use_markup = true;
+        name_label = new Gtk.Label (null) {
+            halign = Gtk.Align.START,
+            use_markup = true,
+            valign = Gtk.Align.END,
+            vexpand = true
+        };
 
         status_label = new Gtk.Label (_("Not Connected"));
         status_label.halign = Gtk.Align.START;
@@ -62,25 +63,28 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
         overlay.add_overlay (status_image);
 
         var grid = new Gtk.Grid ();
+        grid.column_spacing = 6;
+        grid.margin_end = 6;
         grid.attach (overlay, 0, 0, 1, 2);
         grid.attach (name_label, 1, 0, 2, 1);
         grid.attach (status_label, 1, 1, 1, 1);
         grid.attach (spinner, 2, 1, 1, 1);
 
-        get_content_widget ().add (grid);
-
-        clicked.connect (() => {
-            if (!spinner.active) {
-                toggle_device.begin ();
-            }
-        });
+        add (grid);
 
         (device as DBusProxy).g_properties_changed.connect (update_status);
 
         update_status ();
+
+        get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        selectable = false;
     }
 
-    private async void toggle_device () {
+    public async void toggle_device () {
+        if (spinner.active) {
+            return;
+        }
+
         spinner.active = true;
         status_image.icon_name = "user-away";
         try {
@@ -101,7 +105,41 @@ public class BluetoothIndicator.Widgets.Device : Wingpanel.Widgets.Container {
     }
 
     private void update_status () {
-        name_label.label = "<b>%s</b>".printf (Markup.escape_text(device.name));
+        string? device_name = device.name;
+        if (device_name == null) {
+            if (device.icon != null) {
+                switch (device.icon) {
+                    case "audio-card":
+                        device_name = _("Speaker");
+                        break;
+                    case "input-gaming":
+                        device_name = _("Controller");
+                        break;
+                    case "input-keyboard":
+                        device_name = _("Keyboard");
+                        break;
+                    case "input-mouse":
+                        device_name = _("Mouse");
+                        break;
+                    case "input-tablet":
+                        device_name = _("Tablet");
+                        break;
+                    case "input-touchpad":
+                        device_name = _("Touchpad");
+                        break;
+                    case "phone":
+                        device_name = _("Phone");
+                        break;
+                    default:
+                        device_name = device.address;
+                        break;
+                }
+            } else {
+                device_name = device.address;
+            }
+        }
+
+        name_label.label = "<b>%s</b>".printf (Markup.escape_text (device_name));
 
         if (device.connected) {
             status_label.label = _("Connected");

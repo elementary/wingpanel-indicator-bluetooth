@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2015-2021 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -19,14 +19,26 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public signal void device_requested (BluetoothIndicator.Services.Device device);
     public signal void discovery_requested ();
 
-    private Wingpanel.Widgets.Switch main_switch;
+    public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
+    public bool is_in_session { get; construct; }
+
+    private Granite.SwitchModelButton main_switch;
     private Gtk.ListBox devices_list;
     private Gtk.Revealer revealer;
 
     public PopoverWidget (BluetoothIndicator.Services.ObjectManager object_manager, bool is_in_session) {
+        Object (
+            object_manager: object_manager,
+            is_in_session: is_in_session
+        );
+    }
+
+    construct {
         orientation = Gtk.Orientation.VERTICAL;
 
-        main_switch = new Wingpanel.Widgets.Switch (_("Bluetooth"), object_manager.get_global_state ());
+        main_switch = new Granite.SwitchModelButton (_("Bluetooth")) {
+            active = object_manager.get_global_state ()
+        };
         main_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         devices_list = new Gtk.ListBox ();
@@ -38,8 +50,13 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
         scroll_box.add (devices_list);
 
+        var revealer_content_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+
         var revealer_content = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        revealer_content.add (new Wingpanel.Widgets.Separator ());
+        revealer_content.add (revealer_content_separator);
         revealer_content.add (scroll_box);
 
         revealer = new Gtk.Revealer ();
@@ -51,7 +68,12 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         add (main_switch);
         add (revealer);
         if (is_in_session) {
-            add (new Wingpanel.Widgets.Separator ());
+            var settings_button_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+                margin_top = 3,
+                margin_bottom = 3
+            };
+
+            add (settings_button_separator);
             add (show_settings_button);
         }
 
@@ -59,6 +81,10 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
         update_ui_state (object_manager.get_global_state ());
         show_all ();
+
+        devices_list.row_activated.connect ((row) => {
+            ((Widgets.Device) row).toggle_device.begin ();
+        });
 
         main_switch.notify["active"].connect (() => {
             object_manager.set_global_state.begin (main_switch.active);
@@ -78,16 +104,15 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
 
         object_manager.device_added.connect ((device) => {
+            // Remove existing rows for this device which are no longer connected to device
+            remove_device (device);
+
+            // Add the new device so that it's status is correctly updated
             add_device (device);
         });
 
         object_manager.device_removed.connect ((device) => {
-            devices_list.get_children ().foreach ((row) => {
-                var device_child = (Widgets.Device) ((Gtk.ListBoxRow) row).get_child ();
-                if (device_child != null && Services.ObjectManager.compare_devices (device_child.device, device)) {
-                    row.destroy ();
-                }
-            });
+            remove_device (device);
 
             update_devices_box_visible ();
         });
@@ -103,8 +128,8 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
     [CCode (instance_pos = -1)]
     private int compare_rows (Gtk.ListBoxRow row1, Gtk.ListBoxRow row2) {
-        unowned Services.Device device1 = ((Widgets.Device) row1.get_child ()).device;
-        unowned Services.Device device2 = ((Widgets.Device) row2.get_child ()).device;
+        unowned Services.Device device1 = ((Widgets.Device) row1).device;
+        unowned Services.Device device2 = ((Widgets.Device) row2).device;
 
         if (device1.name != null && device2.name == null) {
             return -1;
@@ -145,6 +170,15 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
         device_widget.show_device.connect ((device_service) => {
             device_requested (device_service);
+        });
+    }
+
+    private void remove_device (BluetoothIndicator.Services.Device device) {
+        devices_list.get_children ().foreach ((row) => {
+            var device_child = (Widgets.Device) ((Gtk.ListBoxRow) row);
+            if (device_child != null && device_child.device.address == device.address) {
+                row.destroy ();
+            }
         });
     }
 }
