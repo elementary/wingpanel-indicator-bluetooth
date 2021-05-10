@@ -18,8 +18,8 @@
 public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     public bool is_in_session { get; construct; default = false; }
 
-    private BluetoothIndicator.Widgets.PopoverWidget popover_widget;
-    private Widgets.DisplayWidget? display_widget;
+    private Widgets.PopoverWidget popover_widget;
+    private Widgets.DisplayWidget dynamic_icon;
     private Services.ObjectManager object_manager;
 
     public Indicator (bool is_in_session) {
@@ -27,17 +27,6 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
             code_name: Wingpanel.Indicator.BLUETOOTH,
             is_in_session: is_in_session
         );
-
-        var settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
-        display_widget = new Widgets.DisplayWidget (object_manager);
-
-        var state = settings.get_boolean ("bluetooth-enabled");
-        update_tooltip (state, false);
-
-        object_manager.global_state_changed.connect ((state, paired) => {
-            update_tooltip (state, paired);
-        });
-
     }
 
     construct {
@@ -56,7 +45,11 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     }
 
     public override Gtk.Widget get_display_widget () {
-        return display_widget;
+        if (dynamic_icon == null) {
+            dynamic_icon = new Widgets.DisplayWidget (object_manager);
+        }
+
+        return dynamic_icon;
     }
 
     public override Gtk.Widget? get_widget () {
@@ -73,28 +66,11 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
 
     public override void closed () {
     }
-
-    private void update_tooltip (bool state, bool paired) {
-        string description = _("Bluetooth is off");
-        string context = _("Middle-click to disable bluetooth");
-
-        if (state && paired) {
-            description = _("Bluetooth connected");
-        } else if (state) {
-            description = _("Bluetooth is on");
-        } else {
-            /* Blutetooth adapter Off */
-            context = _("Middle-click to enable bluetooth");
-        }
-
-        display_widget.tooltip_markup = "%s\n%s".printf (
-            description, Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
-        );
-    }
 }
 
 public Wingpanel.Indicator get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
     debug ("Activating Bluetooth Indicator");
     var indicator = new BluetoothIndicator.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
+
     return indicator;
 }

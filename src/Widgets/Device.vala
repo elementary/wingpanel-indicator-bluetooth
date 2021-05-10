@@ -109,6 +109,9 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         if (device_name == null) {
             if (device.icon != null) {
                 switch (device.icon) {
+                    case "audio-headphones":
+                        device_name = _("Headphones");
+                        break;
                     case "audio-card":
                         device_name = _("Speaker");
                         break;
