@@ -150,5 +150,8 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         }
 
         icon_image.icon_name = device.icon == null ? DEFAULT_ICON : device.icon;
+        if (device.alias == "Redmi AirDots_R") {
+            icon_image.icon_name = "audio-headphones";
+        }
     }
 }
