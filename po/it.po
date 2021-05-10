@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 18:06+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2017-04-09 11:57+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <http://weblate.elementary.io/projects/desktop/"
@@ -63,11 +63,37 @@ msgstr ""
 msgid "Connected"
 msgstr "Connesso"
 
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:76
+#, fuzzy
+#| msgid "Not Connected"
+msgid "Bluetooth connected"
+msgstr "Non connesso"
+
+#: src/Widgets/DisplayWidget.vala:79
+#, fuzzy
+#| msgid "Bluetooth"
+msgid "Bluetooth is on"
+msgstr "Bluetooth"
+
+#: src/Widgets/DisplayWidget.vala:84
+#, fuzzy
+#| msgid "Bluetooth"
+msgid "Bluetooth is off"
+msgstr "Bluetooth"
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr ""
+
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:59
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Impostazioni del bluetooth…"
 

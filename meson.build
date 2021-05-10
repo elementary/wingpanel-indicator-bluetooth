@@ -14,6 +14,8 @@ libdir = join_paths(prefix, get_option('libdir'))
 
 add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(gettext_name), language:'c')
 
+add_project_arguments('-DG_LOG_DOMAIN="io.elementary.wingpanel.bluetooth"', language:'c')
+
 gresource = gnome.compile_resources(
     'gresource',
     join_paths('data', 'gresource.xml'),
@@ -36,7 +38,7 @@ shared_module(
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
-        dependency('granite'),
+        dependency('granite', version: '>=6.0.0'),
         dependency('gtk+-3.0'),
         dependency('libnotify'),
         wingpanel_dep

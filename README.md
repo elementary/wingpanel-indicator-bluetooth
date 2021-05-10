@@ -10,7 +10,7 @@ You'll need the following dependencies:
 
     gobject-introspection
     libglib2.0-dev
-    libgranite-dev
+    libgranite-dev >= 6.0.0
     libnotify-dev
     libwingpanel-dev
     meson

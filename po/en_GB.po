@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 18:06+0000\n"
-"PO-Revision-Date: 2021-02-14 15:56+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
+"PO-Revision-Date: 2021-04-08 15:54+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/en_GB/>\n"
@@ -63,16 +63,33 @@ msgstr "Phone"
 msgid "Connected"
 msgstr "Connected"
 
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr "Middle-click to turn Bluetooth off"
+
+#: src/Widgets/DisplayWidget.vala:76
+msgid "Bluetooth connected"
+msgstr "Bluetooth connected"
+
+#: src/Widgets/DisplayWidget.vala:79
+msgid "Bluetooth is on"
+msgstr "Bluetooth is on"
+
+#: src/Widgets/DisplayWidget.vala:84
+msgid "Bluetooth is off"
+msgstr "Bluetooth is off"
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Middle-click to turn Bluetooth on"
+
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:59
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth Settings…"
-
-#~ msgid "Indicator for Bluetooth signal"
-#~ msgstr "Indicator for Bluetooth signal"
 
 #~ msgid "bluetooth"
 #~ msgstr "bluetooth"

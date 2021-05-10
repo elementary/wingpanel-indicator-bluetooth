@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-05 22:00+0000\n"
+"POT-Creation-Date: 2021-03-20 02:16+0000\n"
 "PO-Revision-Date: 2021-01-18 13:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
@@ -37,7 +37,9 @@ msgstr "Bluetooth を無効にするときに表示されるアニメーショ�
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Fallback device names to their device type instead of \"(null)\""
-msgstr "デバイス名が利用可能ではない場合に、\"(null)\" と表示するのではなくデバイスの種類を表示するように修正"
+msgstr ""
+"デバイス名が利用可能ではない場合に、\"(null)\" と表示するのではなくデバイスの"
+"種類を表示するように修正"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27
