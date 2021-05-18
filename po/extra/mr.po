@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 02:16+0000\n"
+"POT-Creation-Date: 2021-05-18 21:20+0000\n"
 "PO-Revision-Date: 2019-11-28 16:24+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
@@ -24,7 +24,9 @@ msgid "Bluetooth Indicator"
 msgstr "ब्लूटूथ निर्देशक"
 
 #: data/bluetooth.appdata.xml.in:9
-msgid "Connect and disconnect paired bluetooth devices"
+#, fuzzy
+#| msgid "Connect and disconnect paired bluetooth devices"
+msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "जोडलेले ब्लूटूथ डिव्हाइस कनेक्ट आणि डिस्कनेक्ट करा"
 
 #: data/bluetooth.appdata.xml.in:14
@@ -36,7 +38,7 @@ msgid "Fix animated icon when disabling Bluetooth"
 msgstr ""
 
 #: data/bluetooth.appdata.xml.in:16
-msgid "Fallback device names to their device type instead of \"(null)\""
+msgid "Use device type as fallback instead of \"(null)\""
 msgstr ""
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
