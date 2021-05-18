@@ -13,7 +13,7 @@
       <description>
         <p>Prevent showing duplicate devices</p>
         <p>Fix animated icon when disabling Bluetooth</p>
-        <p>Fallback of device names to their device type instead of "(null)"</p>
+        <p>Use device type as fallback instead of "(null)"</p>
         <p>Updated translations</p>
       </description>
     </release>
