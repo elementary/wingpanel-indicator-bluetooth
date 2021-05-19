@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-18 21:20+0000\n"
-"PO-Revision-Date: 2021-05-19 09:35+0000\n"
+"PO-Revision-Date: 2021-05-19 19:30+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/ca/>\n"
@@ -36,12 +36,8 @@ msgid "Fix animated icon when disabling Bluetooth"
 msgstr "Correcció de la icona animada quan s'inhabilita el Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:16
-#, fuzzy
-#| msgid "Fallback device names to their device type instead of \"(null)\""
 msgid "Use device type as fallback instead of \"(null)\""
-msgstr ""
-"Noms alternatius de dispositius segons el tipus de dispositiu en lloc de "
-"\"(null)\""
+msgstr "Usa el tipus de dispositiu com a alternativa en lloc de (null)"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27
