@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-18 21:20+0000\n"
-"PO-Revision-Date: 2021-01-21 10:40+0000\n"
+"PO-Revision-Date: 2021-05-19 09:35+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/ca/>\n"
@@ -24,10 +24,8 @@ msgid "Bluetooth Indicator"
 msgstr "Indicador del Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
-#, fuzzy
-#| msgid "Connect and disconnect paired bluetooth devices"
 msgid "Connect and disconnect paired Bluetooth devices"
-msgstr "Connexió i desconnexió de dispositius aparellats"
+msgstr "Connexió i desconnexió de dispositius Bluetooth aparellats"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Prevent showing duplicate devices"
