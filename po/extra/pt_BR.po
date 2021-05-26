@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
+"POT-Creation-Date: 2021-05-18 21:20+0000\n"
 "PO-Revision-Date: 2019-11-23 07:24+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -24,13 +24,28 @@ msgid "Bluetooth Indicator"
 msgstr "Indicador Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
-msgid "Connect and disconnect paired bluetooth devices"
+#, fuzzy
+#| msgid "Connect and disconnect paired bluetooth devices"
+msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Conectar e desconectar dispositivos bluetooth emparelhados"
 
-#: data/bluetooth.appdata.xml.in:14 data/bluetooth.appdata.xml.in:19
+#: data/bluetooth.appdata.xml.in:14
+msgid "Prevent showing duplicate devices"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:15
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:16
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:27
 msgid "Updated translations"
 msgstr "Traduções atualizadas"
 
-#: data/bluetooth.appdata.xml.in:58
+#: data/bluetooth.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

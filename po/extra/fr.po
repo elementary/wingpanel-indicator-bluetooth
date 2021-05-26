@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
-"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
+"POT-Creation-Date: 2021-05-18 21:20+0000\n"
+"PO-Revision-Date: 2021-05-19 09:00+0000\n"
+"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/fr/>\n"
 "Language: fr\n"
@@ -17,20 +17,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
 msgstr "Indicateur Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
-msgid "Connect and disconnect paired bluetooth devices"
+msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Connectez et déconnectez des périphériques Bluetooth appairés"
 
-#: data/bluetooth.appdata.xml.in:14 data/bluetooth.appdata.xml.in:19
+#: data/bluetooth.appdata.xml.in:14
+msgid "Prevent showing duplicate devices"
+msgstr ""
+"Nous avons fait en sorte d'empêcher l'affichage de périphériques en double"
+
+#: data/bluetooth.appdata.xml.in:15
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr "Correction de l'icône animée lors de la désactivation du Bluetooth"
+
+#: data/bluetooth.appdata.xml.in:16
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr "Utilisation du type de périphérique plutôt que « (null) »"
+
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:27
 msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
-#: data/bluetooth.appdata.xml.in:58
+#: data/bluetooth.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

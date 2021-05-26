@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
-"PO-Revision-Date: 2019-11-12 15:24+0000\n"
+"POT-Creation-Date: 2021-05-18 21:20+0000\n"
+"PO-Revision-Date: 2021-05-19 19:30+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/ca/>\n"
@@ -17,20 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
 msgstr "Indicador del Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
-msgid "Connect and disconnect paired bluetooth devices"
-msgstr "Connexió i desconnexió de dispositius aparellats"
+msgid "Connect and disconnect paired Bluetooth devices"
+msgstr "Connexió i desconnexió de dispositius Bluetooth aparellats"
 
-#: data/bluetooth.appdata.xml.in:14 data/bluetooth.appdata.xml.in:19
+#: data/bluetooth.appdata.xml.in:14
+msgid "Prevent showing duplicate devices"
+msgstr "Evita mostrar dispositius duplicats."
+
+#: data/bluetooth.appdata.xml.in:15
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr "Correcció de la icona animada quan s'inhabilita el Bluetooth"
+
+#: data/bluetooth.appdata.xml.in:16
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr "Usa el tipus de dispositiu com a alternativa en lloc de (null)"
+
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:27
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/bluetooth.appdata.xml.in:58
+#: data/bluetooth.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

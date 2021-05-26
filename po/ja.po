@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
-"PO-Revision-Date: 2019-08-29 17:22+0000\n"
+"POT-Creation-Date: 2021-05-18 21:20+0000\n"
+"PO-Revision-Date: 2021-03-20 12:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ja/>\n"
@@ -12,39 +12,84 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "接続していません"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "接続しています…"
 
-#: src/Widgets/Device.vala:94
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "切断しています…"
 
-#: src/Widgets/Device.vala:99
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "接続できません"
 
-#: src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "スピーカー"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "コントローラー"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "キーボード"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "マウス"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "タブレット"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "タッチパッド"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "電話"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "接続済み"
+
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr "Bluetooth をオフにするには中クリックしてください"
+
+#: src/Widgets/DisplayWidget.vala:76
+msgid "Bluetooth connected"
+msgstr "Bluetooth は接続済みです"
+
+#: src/Widgets/DisplayWidget.vala:79
+msgid "Bluetooth is on"
+msgstr "Bluetooth は有効です"
+
+#: src/Widgets/DisplayWidget.vala:84
+msgid "Bluetooth is off"
+msgstr "Bluetooth はオフです"
+
+#: src/Widgets/DisplayWidget.vala:85
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Bluetooth をオンにするには中クリックしてください"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:59
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth の設定…"
-
-#~ msgid "Indicator for Bluetooth signal"
-#~ msgstr "Bluetooth インジケーター"
 
 #~ msgid "bluetooth"
 #~ msgstr "Bluetooth"

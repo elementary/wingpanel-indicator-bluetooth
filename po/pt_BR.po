@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-26 22:00+0000\n"
-"PO-Revision-Date: 2019-08-29 17:23+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"POT-Creation-Date: 2021-05-18 21:20+0000\n"
+"PO-Revision-Date: 2021-03-12 20:18+0000\n"
+"Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -12,39 +12,92 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Widgets/Device.vala:40 src/Widgets/Device.vala:113
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
 msgid "Not Connected"
 msgstr "Desconectado"
 
-#: src/Widgets/Device.vala:91
+#: src/Widgets/Device.vala:92
 msgid "Connecting…"
 msgstr "Conectando…"
 
-#: src/Widgets/Device.vala:94
+#: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
 msgstr "Desconectando…"
 
-#: src/Widgets/Device.vala:99
+#: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
 msgstr "Não foi possível conectar"
 
-#: src/Widgets/Device.vala:110
+#: src/Widgets/Device.vala:113
+msgid "Speaker"
+msgstr "Auto-falantes"
+
+#: src/Widgets/Device.vala:116
+msgid "Controller"
+msgstr "Controlador"
+
+#: src/Widgets/Device.vala:119
+msgid "Keyboard"
+msgstr "Teclado"
+
+#: src/Widgets/Device.vala:122
+msgid "Mouse"
+msgstr "Mouse"
+
+#: src/Widgets/Device.vala:125
+msgid "Tablet"
+msgstr "Tablet"
+
+#: src/Widgets/Device.vala:128
+msgid "Touchpad"
+msgstr "Touchpad"
+
+#: src/Widgets/Device.vala:131
+msgid "Phone"
+msgstr "Telefone"
+
+#: src/Widgets/Device.vala:145
 msgid "Connected"
 msgstr "Conectado"
+
+#: src/Widgets/DisplayWidget.vala:73
+msgid "Middle-click to turn Bluetooth off"
+msgstr ""
+
+#: src/Widgets/DisplayWidget.vala:76
+#, fuzzy
+#| msgid "Not Connected"
+msgid "Bluetooth connected"
+msgstr "Desconectado"
+
+#: src/Widgets/DisplayWidget.vala:79
+#, fuzzy
+#| msgid "Bluetooth"
+msgid "Bluetooth is on"
+msgstr "Bluetooth"
+
+#: src/Widgets/DisplayWidget.vala:84
+#, fuzzy
+#| msgid "Bluetooth"
+msgid "Bluetooth is off"
+msgstr "Bluetooth"
+
+#: src/Widgets/DisplayWidget.vala:85
+#, fuzzy
+#| msgid "Indicator for Bluetooth signal"
+msgid "Middle-click to turn Bluetooth on"
+msgstr "Indicador de sinal Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: src/Widgets/PopoverWidget.vala:59
+#: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Configurações de Bluetooth…"
-
-#~ msgid "Indicator for Bluetooth signal"
-#~ msgstr "Indicador de sinal Bluetooth"
 
 #~ msgid "bluetooth"
 #~ msgstr "bluetooth"
