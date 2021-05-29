@@ -33,9 +33,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
         style_context.add_class ("bluetooth-icon");
         style_context.add_class ("disabled");
 
-        object_manager.global_state_changed.connect ((state, connected) => {
-            set_icon ();
-        });
+        object_manager.global_state_changed.connect (set_icon);
 
         if (object_manager.has_object && object_manager.retrieve_finished) {
             set_icon ();
@@ -44,7 +42,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
         }
 
         button_press_event.connect ((e) => {
-            if (e.button == Gdk.BUTTON_MIDDLE) {
+            if (object_manager.is_in_session && e.button == Gdk.BUTTON_MIDDLE) {
                 object_manager.set_global_state.begin (!object_manager.get_global_state ());
                 return Gdk.EVENT_STOP;
             }
@@ -85,8 +83,12 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
             context = _("Middle-click to turn Bluetooth on");
         }
 
-        tooltip_markup = "%s\n%s".printf (
-            description, Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
-        );
+        if (!object_manager.is_in_session) {
+            tooltip_markup = description;
+        } else {
+            tooltip_markup = "%s\n%s".printf (
+                description, Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (context)
+            );
+        }
     }
 }

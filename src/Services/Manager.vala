@@ -16,17 +16,24 @@
  */
 
 public class BluetoothIndicator.Services.ObjectManager : Object {
-    public signal void global_state_changed (bool enabled, bool connected);
+    public signal void global_state_changed ();
     public signal void device_added (BluetoothIndicator.Services.Device adapter);
     public signal void device_removed (BluetoothIndicator.Services.Device adapter);
 
     public bool has_object { get; private set; default = false; }
     public bool retrieve_finished { get; private set; default = false; }
+    public bool is_in_session { get; construct; }
     private Settings settings;
     private GLib.DBusObjectManagerClient object_manager;
 
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
+
+    public ObjectManager (bool is_in_session) {
+        Object (
+            is_in_session: is_in_session
+        );
+    }
 
     construct {
         settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
@@ -167,7 +174,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             if (powered != is_powered || connected != is_connected) {
                 is_powered = powered;
                 is_connected = connected;
-                global_state_changed (is_powered, is_connected);
+                global_state_changed ();
             }
             return false;
         });
@@ -196,9 +203,12 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     public async void set_global_state (bool state) {
+        // Do not change settings while in greeter
+        if (!is_in_session) {
+            return;
+        }
         /* `is_powered` and `connected` properties will be set by the check_global state () callback when adapter or device
          * properties change.  Do not set now so that global_state_changed signal will be emitted. */
-
         var adapters = get_adapters ();
         foreach (var adapter in adapters) {
             adapter.powered = state;
@@ -212,6 +222,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                         yield device.disconnect ();
                     } catch (Error e) {
                         critical (e.message);
+                        global_state_changed (); // Uncertain whether UI is correct so force an update
                     }
                 }
             }
@@ -221,13 +232,15 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     public async void set_last_state () {
+        if (!is_in_session) { // Do not refer to settings while in greeter
+            return;
+        }
+
         bool last_state = settings.get_boolean ("bluetooth-enabled");
 
         if (get_global_state () != last_state) {
             yield set_global_state (last_state);
         }
-
-        check_global_state ();
     }
 
     public static bool compare_devices (Device device, Device other) {

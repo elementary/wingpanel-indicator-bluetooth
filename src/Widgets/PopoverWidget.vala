@@ -20,24 +20,22 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public signal void discovery_requested ();
 
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
-    public bool is_in_session { get; construct; }
 
     private Granite.SwitchModelButton main_switch;
     private Gtk.ListBox devices_list;
     private Gtk.Revealer revealer;
 
-    public PopoverWidget (BluetoothIndicator.Services.ObjectManager object_manager, bool is_in_session) {
+    public PopoverWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
         Object (
-            object_manager: object_manager,
-            is_in_session: is_in_session
+            object_manager: object_manager
         );
     }
 
     construct {
         orientation = Gtk.Orientation.VERTICAL;
-
         main_switch = new Granite.SwitchModelButton (_("Bluetooth")) {
-            active = object_manager.get_global_state ()
+            active = object_manager.get_global_state (),
+            sensitive = object_manager.is_in_session
         };
         main_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
@@ -58,7 +56,6 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         var revealer_content = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         revealer_content.add (revealer_content_separator);
         revealer_content.add (scroll_box);
-
         revealer = new Gtk.Revealer ();
         revealer.add (revealer_content);
 
@@ -67,7 +64,8 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
         add (main_switch);
         add (revealer);
-        if (is_in_session) {
+
+        if (object_manager.is_in_session) {
             var settings_button_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
                 margin_top = 3,
                 margin_bottom = 3
@@ -77,30 +75,28 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
             add (show_settings_button);
         }
 
-        main_switch.active = object_manager.get_global_state ();
-
-        update_ui_state (object_manager.get_global_state ());
+        update_ui_state ();
         show_all ();
 
-        devices_list.row_activated.connect ((row) => {
-            ((Widgets.Device) row).toggle_device.begin ();
-        });
+        if (object_manager.is_in_session) {
+            devices_list.row_activated.connect ((row) => {
+                ((Widgets.Device) row).toggle_device.begin ();
+            });
 
-        main_switch.notify["active"].connect (() => {
-            object_manager.set_global_state.begin (main_switch.active);
-        });
+            main_switch.notify["active"].connect (() => {
+                object_manager.set_global_state.begin (main_switch.active);
+            });
 
-        show_settings_button.clicked.connect (() => {
-            try {
-                AppInfo.launch_default_for_uri ("settings://network/bluetooth", null);
-            } catch (Error e) {
-                warning ("Failed to open bluetooth settings: %s", e.message);
-            }
-        });
+            show_settings_button.clicked.connect (() => {
+                try {
+                    AppInfo.launch_default_for_uri ("settings://network/bluetooth", null);
+                } catch (Error e) {
+                    warning ("Failed to open bluetooth settings: %s", e.message);
+                }
+            });
+        }
 
-        object_manager.global_state_changed.connect ((state, paired) => {
-            update_ui_state (state);
-        });
+        object_manager.global_state_changed.connect (update_ui_state);
 
 
         object_manager.device_added.connect ((device) => {
@@ -144,7 +140,9 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         return name1.collate (name2);
     }
 
-    private void update_ui_state (bool state) {
+    private void update_ui_state () {
+        var state = object_manager.is_powered;
+
         if (main_switch.active != state) {
             main_switch.active = state;
         }
