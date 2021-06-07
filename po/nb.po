@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-18 21:20+0000\n"
-"PO-Revision-Date: 2021-03-19 01:19+0000\n"
+"PO-Revision-Date: 2021-06-03 10:17+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/nb/>\n"
@@ -64,10 +64,8 @@ msgid "Connected"
 msgstr "Tilkoblet"
 
 #: src/Widgets/DisplayWidget.vala:73
-#, fuzzy
-#| msgid "Middle-click to enable bluetooth"
 msgid "Middle-click to turn Bluetooth off"
-msgstr "Midt-klikk for å skru på Blåtann"
+msgstr "Midt-klikk for å skru av Blåtann"
 
 #: src/Widgets/DisplayWidget.vala:76
 msgid "Bluetooth connected"
@@ -82,8 +80,6 @@ msgid "Bluetooth is off"
 msgstr "Blåtann avslått"
 
 #: src/Widgets/DisplayWidget.vala:85
-#, fuzzy
-#| msgid "Middle-click to enable bluetooth"
 msgid "Middle-click to turn Bluetooth on"
 msgstr "Midt-klikk for å skru på Blåtann"
 
