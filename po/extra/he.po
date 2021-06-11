@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 02:16+0000\n"
-"PO-Revision-Date: 2021-01-19 01:11+0000\n"
+"POT-Creation-Date: 2021-05-18 21:20+0000\n"
+"PO-Revision-Date: 2021-05-19 09:00+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/he/>\n"
@@ -24,8 +24,8 @@ msgid "Bluetooth Indicator"
 msgstr "מחוון Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
-msgid "Connect and disconnect paired bluetooth devices"
-msgstr "חיבור וניתוק התקני bluetooth מצומדים"
+msgid "Connect and disconnect paired Bluetooth devices"
+msgstr "חיבור וניתוק התקני Bluetooth מצומדים"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Prevent showing duplicate devices"
@@ -36,8 +36,8 @@ msgid "Fix animated icon when disabling Bluetooth"
 msgstr "תוקן הסמל המונפש בעת השבתת Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:16
-msgid "Fallback device names to their device type instead of \"(null)\""
-msgstr "שמות ההתקנים יסוגו לסוג ההתקן שלהם במקום ל־„(ריק)”"
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr "להשתמש בסוג ההתקן אם לא זוהה במקום ב־„(ריק)”"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27
