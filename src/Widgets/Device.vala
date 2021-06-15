@@ -112,6 +112,9 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
                     case "audio-card":
                         device_name = _("Speaker");
                         break;
+                    case "audio-headphones":
+                        device_name = _("Headphones");
+                        break;
                     case "input-gaming":
                         device_name = _("Controller");
                         break;
