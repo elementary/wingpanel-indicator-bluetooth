@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 21:20+0000\n"
+"POT-Creation-Date: 2021-06-15 21:27+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -14,7 +14,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:151
 msgid "Not Connected"
 msgstr "Niypołōnczone"
 
@@ -35,30 +35,34 @@ msgid "Speaker"
 msgstr ""
 
 #: src/Widgets/Device.vala:116
-msgid "Controller"
+msgid "Headphones"
 msgstr ""
 
 #: src/Widgets/Device.vala:119
-msgid "Keyboard"
+msgid "Controller"
 msgstr ""
 
 #: src/Widgets/Device.vala:122
-msgid "Mouse"
+msgid "Keyboard"
 msgstr ""
 
 #: src/Widgets/Device.vala:125
-msgid "Tablet"
+msgid "Mouse"
 msgstr ""
 
 #: src/Widgets/Device.vala:128
-msgid "Touchpad"
+msgid "Tablet"
 msgstr ""
 
 #: src/Widgets/Device.vala:131
+msgid "Touchpad"
+msgstr ""
+
+#: src/Widgets/Device.vala:134
 msgid "Phone"
 msgstr ""
 
-#: src/Widgets/Device.vala:145
+#: src/Widgets/Device.vala:148
 msgid "Connected"
 msgstr "Połōnczōne"
 

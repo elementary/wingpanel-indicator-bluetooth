@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-bluetooth\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 21:20+0000\n"
+"POT-Creation-Date: 2021-06-15 21:27+0000\n"
 "PO-Revision-Date: 2016-12-30 14:28+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:151
 msgid "Not Connected"
 msgstr "ئۇلانمىدى"
 
@@ -39,30 +39,34 @@ msgid "Speaker"
 msgstr ""
 
 #: src/Widgets/Device.vala:116
-msgid "Controller"
+msgid "Headphones"
 msgstr ""
 
 #: src/Widgets/Device.vala:119
-msgid "Keyboard"
+msgid "Controller"
 msgstr ""
 
 #: src/Widgets/Device.vala:122
-msgid "Mouse"
+msgid "Keyboard"
 msgstr ""
 
 #: src/Widgets/Device.vala:125
-msgid "Tablet"
+msgid "Mouse"
 msgstr ""
 
 #: src/Widgets/Device.vala:128
-msgid "Touchpad"
+msgid "Tablet"
 msgstr ""
 
 #: src/Widgets/Device.vala:131
+msgid "Touchpad"
+msgstr ""
+
+#: src/Widgets/Device.vala:134
 msgid "Phone"
 msgstr ""
 
-#: src/Widgets/Device.vala:145
+#: src/Widgets/Device.vala:148
 msgid "Connected"
 msgstr "ئۇلاندى"
 
