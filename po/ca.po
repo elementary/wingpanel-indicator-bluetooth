@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-15 21:27+0000\n"
-"PO-Revision-Date: 2021-03-23 01:18+0000\n"
+"PO-Revision-Date: 2021-06-17 16:09+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ca/>\n"
@@ -37,7 +37,7 @@ msgstr "Altaveu"
 
 #: src/Widgets/Device.vala:116
 msgid "Headphones"
-msgstr ""
+msgstr "Auriculars"
 
 #: src/Widgets/Device.vala:119
 msgid "Controller"
