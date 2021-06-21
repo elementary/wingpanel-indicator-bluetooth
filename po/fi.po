@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 02:16+0000\n"
-"PO-Revision-Date: 2021-02-09 10:43+0000\n"
+"POT-Creation-Date: 2021-06-15 21:27+0000\n"
+"PO-Revision-Date: 2021-06-18 10:23+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/fi/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:151
 msgid "Not Connected"
 msgstr "Ei yhdistetty"
 
@@ -36,60 +36,56 @@ msgid "Speaker"
 msgstr "Kaiutin"
 
 #: src/Widgets/Device.vala:116
+msgid "Headphones"
+msgstr "Kuulokkeet"
+
+#: src/Widgets/Device.vala:119
 msgid "Controller"
 msgstr "Ohjain"
 
-#: src/Widgets/Device.vala:119
+#: src/Widgets/Device.vala:122
 msgid "Keyboard"
 msgstr "Näppäimistö"
 
-#: src/Widgets/Device.vala:122
+#: src/Widgets/Device.vala:125
 msgid "Mouse"
 msgstr "Hiiri"
 
-#: src/Widgets/Device.vala:125
+#: src/Widgets/Device.vala:128
 msgid "Tablet"
 msgstr "Tabletti"
 
-#: src/Widgets/Device.vala:128
+#: src/Widgets/Device.vala:131
 msgid "Touchpad"
 msgstr "Kosketuslevy"
 
-#: src/Widgets/Device.vala:131
+#: src/Widgets/Device.vala:134
 msgid "Phone"
 msgstr "Puhelin"
 
-#: src/Widgets/Device.vala:145
+#: src/Widgets/Device.vala:148
 msgid "Connected"
 msgstr "Yhdistetty"
 
 #: src/Widgets/DisplayWidget.vala:73
 msgid "Middle-click to turn Bluetooth off"
-msgstr ""
+msgstr "Sammuta Bluetooth hiiren keskimmäisen painikkeen napsautuksella"
 
 #: src/Widgets/DisplayWidget.vala:76
-#, fuzzy
-#| msgid "Not Connected"
 msgid "Bluetooth connected"
-msgstr "Ei yhdistetty"
+msgstr "Bluetooth yhdistetty"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "Bluetooth"
+msgstr "Bluetooth on päällä"
 
 #: src/Widgets/DisplayWidget.vala:84
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "Bluetooth"
+msgstr "Bluetooth on pois päältä"
 
 #: src/Widgets/DisplayWidget.vala:85
-#, fuzzy
-#| msgid "Indicator for Bluetooth signal"
 msgid "Middle-click to turn Bluetooth on"
-msgstr "Bluetooth-signaalin ilmaisin"
+msgstr "Aseta Bluetooth päälle hiiren keskimmäisen painikkeen napsautuksella"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"

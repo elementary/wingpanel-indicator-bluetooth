@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 02:16+0000\n"
-"PO-Revision-Date: 2021-03-11 08:34+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"POT-Creation-Date: 2021-06-15 21:27+0000\n"
+"PO-Revision-Date: 2021-05-19 03:35+0000\n"
+"Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/uk/>\n"
 "Language: uk\n"
@@ -25,7 +25,7 @@ msgid "Bluetooth Indicator"
 msgstr "Індикатор Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
-msgid "Connect and disconnect paired bluetooth devices"
+msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Підʼєднайте та від'єднайте сполучені пристрої Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:14
@@ -37,8 +37,8 @@ msgid "Fix animated icon when disabling Bluetooth"
 msgstr "Виправлено анімацію піктограми вимкнення Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:16
-msgid "Fallback device names to their device type instead of \"(null)\""
-msgstr "Резервні назви пристроїв для типу їхнього пристрою замість «(null)»"
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr "Застосовувати тип пристрою запасним замість «(null)»"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27

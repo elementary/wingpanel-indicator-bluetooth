@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 02:16+0000\n"
-"PO-Revision-Date: 2021-01-21 16:53+0000\n"
+"POT-Creation-Date: 2021-06-15 21:27+0000\n"
+"PO-Revision-Date: 2021-05-19 19:30+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/pt/>\n"
@@ -24,8 +24,8 @@ msgid "Bluetooth Indicator"
 msgstr "Indicador Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
-msgid "Connect and disconnect paired bluetooth devices"
-msgstr "Conectar e desconectar dispositivos bluetooth emparelhados"
+msgid "Connect and disconnect paired Bluetooth devices"
+msgstr "Ligar e desligar dispositivos Bluetooth emparelhados"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Prevent showing duplicate devices"
@@ -36,10 +36,8 @@ msgid "Fix animated icon when disabling Bluetooth"
 msgstr "Corrige ícone animado ao desativar o Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:16
-msgid "Fallback device names to their device type instead of \"(null)\""
-msgstr ""
-"Repõe os nomes dos dispositivos para o seu tipo de dispositivo em vez de "
-"\"(nulo)\""
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr "Usar o tipo de dispositivo como fallback em vez de \"(null)\""
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
 #: data/bluetooth.appdata.xml.in:27

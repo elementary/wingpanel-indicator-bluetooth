@@ -6,14 +6,14 @@
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1</project_license>
   <name>Bluetooth Indicator</name>
-  <summary>Connect and disconnect paired bluetooth devices</summary>
+  <summary>Connect and disconnect paired Bluetooth devices</summary>
   <icon type="stock">preferences-bluetooth</icon>
   <releases>
     <release version="2.1.6" date="2020-12-23" urgency="medium">
       <description>
         <p>Prevent showing duplicate devices</p>
         <p>Fix animated icon when disabling Bluetooth</p>
-        <p>Fallback device names to their device type instead of "(null)"</p>
+        <p>Use device type as fallback instead of "(null)"</p>
         <p>Updated translations</p>
       </description>
     </release>
