@@ -67,11 +67,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
         retrieve_finished = true;
 
-        setup_dbus_rfkill.begin (() => {
-            if (killer == null) {
-                return;
-            }
-        });
+        setup_dbus_rfkill.begin ();
 
     }
 
@@ -218,7 +214,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             adapter.powered = state;
         }
 
-        if (state == false) {
+        if (!state) {
             var devices = get_devices ();
             foreach (var device in devices) {
                 if (device.connected) {
@@ -229,13 +225,10 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                     }
                 }
             }
-            if (killer != null) {
-                killer.BluetoothAirplaneMode = true;
-            }
-        } else {
-            if (killer != null) {
-                killer.BluetoothAirplaneMode = false;
-            }
+        }
+
+        if (killer != null) {
+            killer.BluetoothAirplaneMode = !state;
         }
 
         settings.set_boolean ("bluetooth-enabled", state);
