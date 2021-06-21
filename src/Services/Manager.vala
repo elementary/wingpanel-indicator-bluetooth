@@ -264,7 +264,6 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             );
         } catch (Error e) {
             killer = null;
-            return;
         }
     }
 
