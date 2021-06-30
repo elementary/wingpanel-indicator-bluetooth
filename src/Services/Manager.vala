@@ -25,8 +25,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public bool is_in_session { get; construct; }
     private Settings settings;
     private GLib.DBusObjectManagerClient object_manager;
-
-    public bool is_powered {get; private set; default = false; }
+    public bool is_powered { get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
 
     public ObjectManager (bool is_in_session) {
@@ -172,10 +171,15 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
             /* Only signal if actually changed */
             if (powered != is_powered || connected != is_connected) {
-                is_powered = powered;
+                is_powered = powered; // The only place this is set
                 is_connected = connected;
+                if (is_in_session) {
+                    settings.set_boolean ("bluetooth-enabled", is_powered);
+                }
+
                 global_state_changed ();
             }
+
             return false;
         });
     }
@@ -203,10 +207,6 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     public async void set_global_state (bool state) {
-        // Do not change settings while in greeter
-        if (!is_in_session) {
-            return;
-        }
         /* `is_powered` and `connected` properties will be set by the check_global state () callback when adapter or device
          * properties change.  Do not set now so that global_state_changed signal will be emitted. */
         var adapters = get_adapters ();
@@ -227,20 +227,15 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 }
             }
         }
-
-        settings.set_boolean ("bluetooth-enabled", state);
     }
 
-    public async void set_last_state () {
-        if (!is_in_session) { // Do not refer to settings while in greeter
+    public async void restore_last_state () {
+        if (!is_in_session) { // Do not refer to settings while in greeter - last state will be restored after logging in
             return;
         }
 
         bool last_state = settings.get_boolean ("bluetooth-enabled");
-
-        if (get_global_state () != last_state) {
-            yield set_global_state (last_state);
-        }
+        yield set_global_state (last_state);
     }
 
     public static bool compare_devices (Device device, Device other) {
