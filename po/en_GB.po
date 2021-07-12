@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 21:20+0000\n"
-"PO-Revision-Date: 2021-04-08 15:54+0000\n"
+"POT-Creation-Date: 2021-06-15 21:27+0000\n"
+"PO-Revision-Date: 2021-07-05 09:14+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/en_GB/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:148
+#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:151
 msgid "Not Connected"
 msgstr "Not Connected"
 
@@ -36,30 +36,34 @@ msgid "Speaker"
 msgstr "Speaker"
 
 #: src/Widgets/Device.vala:116
+msgid "Headphones"
+msgstr "Headphones"
+
+#: src/Widgets/Device.vala:119
 msgid "Controller"
 msgstr "Controller"
 
-#: src/Widgets/Device.vala:119
+#: src/Widgets/Device.vala:122
 msgid "Keyboard"
 msgstr "Keyboard"
 
-#: src/Widgets/Device.vala:122
+#: src/Widgets/Device.vala:125
 msgid "Mouse"
 msgstr "Mouse"
 
-#: src/Widgets/Device.vala:125
+#: src/Widgets/Device.vala:128
 msgid "Tablet"
 msgstr "Tablet"
 
-#: src/Widgets/Device.vala:128
+#: src/Widgets/Device.vala:131
 msgid "Touchpad"
 msgstr "Touchpad"
 
-#: src/Widgets/Device.vala:131
+#: src/Widgets/Device.vala:134
 msgid "Phone"
 msgstr "Phone"
 
-#: src/Widgets/Device.vala:145
+#: src/Widgets/Device.vala:148
 msgid "Connected"
 msgstr "Connected"
 
