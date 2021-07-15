@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2021-05-18 23:15+0000\n"
+"PO-Revision-Date: 2021-07-15 17:09+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/ja/>\n"
@@ -29,11 +29,11 @@ msgstr "ペアリングした Bluetooth デバイスを接続したり切断し�
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Add tooltip on hover"
-msgstr ""
+msgstr "ホバー時のツールチップを追加"
 
 #: data/bluetooth.appdata.xml.in:15
 msgid "Add a fallback device name for headphones"
-msgstr ""
+msgstr "ヘッドフォンの製品名が検出できない場合に”ヘッドフォン”と表示するように修正"
 
 #: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
 #: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
