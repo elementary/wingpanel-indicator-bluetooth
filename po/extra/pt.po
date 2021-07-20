@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-15 21:27+0000\n"
-"PO-Revision-Date: 2021-05-19 19:30+0000\n"
+"POT-Creation-Date: 2021-07-14 20:11+0000\n"
+"PO-Revision-Date: 2021-07-15 17:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/pt/>\n"
@@ -28,22 +28,30 @@ msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Ligar e desligar dispositivos Bluetooth emparelhados"
 
 #: data/bluetooth.appdata.xml.in:14
-msgid "Prevent showing duplicate devices"
-msgstr "Evitar mostrar dispositivos duplicados"
+msgid "Add tooltip on hover"
+msgstr "Adiciona dica ao pairar"
 
 #: data/bluetooth.appdata.xml.in:15
-msgid "Fix animated icon when disabling Bluetooth"
-msgstr "Corrige ícone animado ao desativar o Bluetooth"
+msgid "Add a fallback device name for headphones"
+msgstr "Adiciona um nome de dispositivo substituto para auscultadores"
 
-#: data/bluetooth.appdata.xml.in:16
-msgid "Use device type as fallback instead of \"(null)\""
-msgstr "Usar o tipo de dispositivo como fallback em vez de \"(null)\""
-
-#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
-#: data/bluetooth.appdata.xml.in:27
+#: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
+#: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
 msgid "Updated translations"
 msgstr "Traduções atualizadas"
 
-#: data/bluetooth.appdata.xml.in:66
+#: data/bluetooth.appdata.xml.in:21
+msgid "Prevent showing duplicate devices"
+msgstr "Evitar mostrar dispositivos duplicados"
+
+#: data/bluetooth.appdata.xml.in:22
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr "Corrige ícone animado ao desativar o Bluetooth"
+
+#: data/bluetooth.appdata.xml.in:23
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr "Usar o tipo de dispositivo como fallback em vez de \"(null)\""
+
+#: data/bluetooth.appdata.xml.in:73
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
