@@ -15,6 +15,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+[DBus (name="org.gnome.SettingsDaemon.Rfkill")]
+public interface BluetoothIndicator.Services.Rfkill : Object {
+    public abstract bool BluetoothAirplaneMode { set; get; }
+}
+
 public class BluetoothIndicator.Services.ObjectManager : Object {
     public signal void global_state_changed (bool enabled, bool connected);
     public signal void device_added (BluetoothIndicator.Services.Device adapter);
@@ -27,6 +32,8 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
+
+    private Rfkill? killer = null;
 
     construct {
         settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
@@ -59,6 +66,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         }
 
         retrieve_finished = true;
+
+        setup_dbus_rfkill.begin ();
+
     }
 
     //TODO: Do not rely on this when it is possible to do it natively in Vala
@@ -204,7 +214,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             adapter.powered = state;
         }
 
-        if (state == false) {
+        if (!state) {
             var devices = get_devices ();
             foreach (var device in devices) {
                 if (device.connected) {
@@ -215,6 +225,10 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                     }
                 }
             }
+        }
+
+        if (killer != null) {
+            killer.BluetoothAirplaneMode = !state;
         }
 
         settings.set_boolean ("bluetooth-enabled", state);
@@ -230,5 +244,17 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
     public static bool compare_devices (Device device, Device other) {
         return device.modalias == other.modalias;
+    }
+
+    private async void setup_dbus_rfkill () {
+        try {
+            killer = yield Bus.get_proxy (
+                BusType.SESSION,
+                "org.gnome.SettingsDaemon.Rfkill",
+                "/org/gnome/SettingsDaemon/Rfkill"
+            );
+        } catch (Error e) {
+            killer = null;
+        }
     }
 }
