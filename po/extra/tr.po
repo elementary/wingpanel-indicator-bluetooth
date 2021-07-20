@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 21:20+0000\n"
-"PO-Revision-Date: 2021-05-22 00:37+0000\n"
+"POT-Creation-Date: 2021-07-14 20:11+0000\n"
+"PO-Revision-Date: 2021-07-15 17:09+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/tr/>\n"
@@ -28,22 +28,30 @@ msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Eşleştirilmiş Bluetooth cihazlarını bağlayın ve bağlantısını kesin"
 
 #: data/bluetooth.appdata.xml.in:14
-msgid "Prevent showing duplicate devices"
-msgstr "Yinelenen cihazların gösterilmesi önlendi"
+msgid "Add tooltip on hover"
+msgstr "Üzerine gelindiğinde göstermek için araç ipucu eklendi"
 
 #: data/bluetooth.appdata.xml.in:15
-msgid "Fix animated icon when disabling Bluetooth"
-msgstr "Bluetooth'u devre dışı bırakma simge animasyonu düzeltildi"
+msgid "Add a fallback device name for headphones"
+msgstr "Kulaklıklar için yedek bir cihaz adı eklendi"
 
-#: data/bluetooth.appdata.xml.in:16
-msgid "Use device type as fallback instead of \"(null)\""
-msgstr "Yedek cihaz adı \"(null)\" yerine cihazın türü olarak ayarlandı"
-
-#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
-#: data/bluetooth.appdata.xml.in:27
+#: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
+#: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
 msgid "Updated translations"
 msgstr "Çeviriler güncellendi"
 
-#: data/bluetooth.appdata.xml.in:66
+#: data/bluetooth.appdata.xml.in:21
+msgid "Prevent showing duplicate devices"
+msgstr "Yinelenen cihazların gösterilmesi önlendi"
+
+#: data/bluetooth.appdata.xml.in:22
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr "Bluetooth'u devre dışı bırakma simge animasyonu düzeltildi"
+
+#: data/bluetooth.appdata.xml.in:23
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr "Yedek cihaz adı \"(null)\" yerine cihazın türü olarak ayarlandı"
+
+#: data/bluetooth.appdata.xml.in:73
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
