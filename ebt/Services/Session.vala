@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015-2018 elementary LLC. (https://elementary.io)
+ * Copyright 2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -16,7 +16,7 @@
  */
 
 [DBus (name = "org.bluez.obex.Session1")]
-public interface BluetoothIndicator.Services.Obex.Session : Object {
+public interface Bluetooth.Obex.Session : Object {
     public abstract string get_capabilities () throws GLib.Error;
     public abstract string source { owned get; }
     public abstract string destination { owned get; }

@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015-2018 elementary LLC. (https://elementary.io)
+ * Copyright 2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -16,8 +16,10 @@
  */
 
 [DBus (name = "org.bluez.obex.Transfer1")]
-public interface BluetoothIndicator.Services.Obex.Transfer : Object {
+public interface Bluetooth.Obex.Transfer : Object {
     public abstract void cancel () throws GLib.Error;
+    public abstract void resume () throws GLib.Error;
+    public abstract void suspend () throws GLib.Error;
     public abstract string status { owned get; }
     public abstract ObjectPath session { owned get; }
     public abstract string name { owned get; }

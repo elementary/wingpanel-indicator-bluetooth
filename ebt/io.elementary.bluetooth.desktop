@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Bluetooth
+Comment=Bluetooth obex
+Exec=io.elementary.bluetooth
+Icon=bluetooth
+Type=Application
+NoDisplay=true
+Categories=System;
+OnlyShowIn=Pantheon;

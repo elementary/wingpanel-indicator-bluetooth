@@ -31,7 +31,7 @@ shared_module(
     'src/Services/Adapter.vala',
     'src/Services/Device.vala',
     'src/Services/Manager.vala',
-    'src/Services/ObexAgent.vala',
+    'src/Services/ObexManager.vala',
     'src/Services/Session.vala',
     'src/Services/Transfer.vala',
     'src/Widgets/Device.vala',
@@ -52,5 +52,6 @@ shared_module(
 
 subdir('data')
 subdir('po')
+subdir('ebt')
 
 meson.add_install_script('meson/post_install.py')
