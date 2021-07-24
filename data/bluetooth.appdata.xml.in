@@ -9,6 +9,13 @@
   <summary>Connect and disconnect paired Bluetooth devices</summary>
   <icon type="stock">preferences-bluetooth</icon>
   <releases>
+    <release version="2.1.7" date="2021-07-14" urgency="medium">
+      <description>
+        <p>Add tooltip on hover</p>
+        <p>Add a fallback device name for headphones</p>
+        <p>Updated translations</p>
+      </description>
+    </release>
     <release version="2.1.6" date="2020-12-23" urgency="medium">
       <description>
         <p>Prevent showing duplicate devices</p>
