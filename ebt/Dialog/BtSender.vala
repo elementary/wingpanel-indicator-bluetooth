@@ -21,8 +21,9 @@
  */
 
 public class BtSender : Granite.Dialog {
-    private Bluetooth.Obex.Transfer transfer;
-    private Bluetooth.Device device;
+    public signal void remove_list (Bluetooth.Device device);
+    public Bluetooth.Obex.Transfer transfer;
+    public Bluetooth.Device device;
     private Gtk.ProgressBar progressbar;
     private Gtk.Label path_label;
     private Gtk.Label device_label;
@@ -50,7 +51,7 @@ public class BtSender : Granite.Dialog {
     }
 
     construct {
-        liststore = new Gtk.ListStore (2, typeof (File), typeof (Bluetooth.Device));
+        liststore = new Gtk.ListStore (1, typeof (File));
 
         var icon_image = new Gtk.Image.from_icon_name ("bluetooth", Gtk.IconSize.DIALOG) {
             valign = Gtk.Align.END,
@@ -128,6 +129,7 @@ public class BtSender : Granite.Dialog {
             if (response_id == Gtk.ResponseType.ACCEPT) {
                 create_season.begin ();
             } else if (response_id == Gtk.ResponseType.CANCEL) {
+                remove_list (device);
                 if (transfer != null) {
                     if (transfer.status == "active") {
                         try {
@@ -149,7 +151,7 @@ public class BtSender : Granite.Dialog {
         foreach (var file in files) {
             Gtk.TreeIter iter;
             liststore.append (out iter);
-            liststore.set (iter, 0, file, 1, device);
+            liststore.set (iter, 0, file);
         }
         this.device = device;
 
@@ -161,14 +163,13 @@ public class BtSender : Granite.Dialog {
         create_season.begin ();
     }
 
-    public void insert_files (File [] files, Bluetooth.Device device) {
+    public void insert_files (File [] files) {
         foreach (var file in files) {
             bool exist = false;
             liststore.foreach ((model, path, iter) => {
             File filename;
-            Bluetooth.Device d_device;
-            model.get (iter, 0, out filename, 1, out d_device);
-                if (filename == file && d_device == device) {
+            model.get (iter, 0, out filename);
+                if (filename == file) {
                     exist = true;
                 }
                 return false;
@@ -178,21 +179,15 @@ public class BtSender : Granite.Dialog {
             }
             Gtk.TreeIter iter;
             liststore.append (out iter);
-            liststore.set (iter, 0, file, 1, device);
+            liststore.set (iter, 0, file);
             total_n_current (true);
         }
     }
     private bool next_file () {
-        Bluetooth.Device d_device;
         Gtk.TreeIter iter;
         if (liststore.get_iter_from_string (out iter, current_file.to_string ())){
-            liststore.get (iter, 0, out file_path, 1, out d_device);
-            if (device == d_device) {
-                send_file.begin ();
-            } else {
-                this.device = d_device;
-                create_season.begin ();
-            }
+            liststore.get (iter, 0, out file_path);
+            send_file.begin ();
             total_n_current ();
             return true;
         }
@@ -276,6 +271,7 @@ public class BtSender : Granite.Dialog {
             case "complete":
                 send_notify ();
                 if (!next_file ()) {
+                    remove_list (device);
                     remove_session.begin ();
                     destroy ();
                 }

@@ -32,9 +32,11 @@ public class BluetoothApp : Gtk.Application {
     public Bluetooth.Obex.Agent agent_obex;
     public Bluetooth.Obex.Transfer transfer;
     public BtResponse bt_response = null;
-    public BtReciever bt_reciever = null;
-    public BtSender bt_sender = null;
+    public BtReciever bt_reciever;
+    public BtSender bt_sender;
     public BtScan bt_scan = null;
+    public GLib.List<BtReciever> bt_recievers;
+    public GLib.List<BtSender> bt_senders;
     public static bool silent;
     public static bool send;
     public static bool active_once;
@@ -77,17 +79,19 @@ public class BluetoothApp : Gtk.Application {
                     bt_scan = null;
                 });
                 bt_scan.send_file.connect ((device) => {
-                    if (bt_sender == null) {
+                    if (!insert_sender (files, device)) {
                         bt_sender = new BtSender (this);
                         bt_sender.add_files (files, device);
+                        bt_senders.append (bt_sender);
                         bt_sender.show_all ();
-                    } else {
-                        bt_sender.present ();
-                        bt_sender.insert_files (files, device);
+                        bt_sender.remove_list.connect ((d_device) => {
+                            bt_senders.foreach ((sender)=>{
+                                if (sender.device == d_device) {
+                                    bt_senders.remove_link (bt_senders.find (sender));
+                                }
+                            });
+                        });
                     }
-                    bt_sender.destroy.connect (() => {
-                        bt_sender = null;
-                    });
                 });
                 arg_files = {};
             }
@@ -110,6 +114,8 @@ public class BluetoothApp : Gtk.Application {
 
         if (silent) {
             hold ();
+            bt_recievers = new GLib.List<BtReciever> ();
+            bt_senders = new GLib.List<BtSender> ();
             object_manager = new Bluetooth.ObjectManager ();
             object_manager.notify["has-object"].connect (() => {
                 if (object_manager.has_object) {
@@ -128,21 +134,33 @@ public class BluetoothApp : Gtk.Application {
             });
             silent = false;
         }
-        if (bt_response != null & bt_reciever == null ) {
+        if (bt_response != null ) {
             bt_response.show_all ();
-            bt_response.present ();
         }
     }
 
-    private void dialog_active () {
-        if (bt_reciever != null) {
-            bt_reciever.show_all ();
-            bt_reciever.present ();
-        }
-        if (bt_sender != null) {
-            bt_sender.show_all ();
-            bt_sender.present ();
-        }
+    private bool insert_sender (File[] files, Bluetooth.Device device) {
+        bool exist = false;
+        bt_senders.foreach ((sender)=>{
+            if (sender.device == device) {
+                sender.insert_files (files);
+                sender.present ();
+                exist = true;
+            }
+        });
+        return exist;
+    }
+    private void dialog_active (string session_path) {
+        bt_recievers.foreach ((reciever)=>{
+            if (reciever.transfer.session == session_path) {
+                reciever.show_all ();
+            }
+        });
+        bt_senders.foreach ((sender)=>{
+            if (sender.transfer.session == session_path) {
+                sender.show_all ();
+            }
+        });
     }
 
     private void response_accepted (string address, string objectpath) {
@@ -155,13 +173,14 @@ public class BluetoothApp : Gtk.Application {
             return;
         }
         dialog_destroy ();
-        if (bt_reciever == null) {
-            bt_reciever = new BtReciever (this);
-        } else {
-            bt_reciever.present ();
-        }
-        bt_reciever.destroy.connect (() => {
-            bt_reciever = null;
+        bt_reciever = new BtReciever (this);
+        bt_recievers.append (bt_reciever);
+        bt_reciever.remove_list.connect ((session_path) => {
+            bt_recievers.foreach ((reciever)=>{
+                if (reciever.transfer.session == session_path) {
+                    bt_recievers.remove_link (bt_recievers.find (reciever));
+                }
+            });
         });
         string devicename = object_manager.get_device (address).name;
         string deviceicon = object_manager.get_device (address).icon;
@@ -189,7 +208,6 @@ public class BluetoothApp : Gtk.Application {
         if (bt_response == null) {
             bt_response = new BtResponse (this);
         } else {
-            bt_response.show_all ();
             bt_response.present ();
         }
         bt_response.response.connect ((response_id) => {

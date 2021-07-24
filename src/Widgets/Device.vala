@@ -183,7 +183,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         if (progress_revealer.child_revealed) {
             try {
                 var connection = yield GLib.Bus.get (BusType.SESSION);
-                yield connection.call (OBEX_AGENT, OBEX_PATH, OBEX_AGENT, "TransferActive", new Variant ("()", ""), null, GLib.DBusCallFlags.NONE, -1);
+                yield connection.call (OBEX_AGENT, OBEX_PATH, OBEX_AGENT, "TransferActive", new Variant ("(s)", transfer.session), null, GLib.DBusCallFlags.NONE, -1);
             } catch (Error e) {
                 critical (e.message);
             }

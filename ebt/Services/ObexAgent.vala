@@ -30,7 +30,7 @@ public errordomain BluezObexError {
 public class Bluetooth.Obex.Agent : GLib.Object {
     public signal void response_notify (string address, string objectpath);
     public signal void response_accepted (string address, string objectpath);
-    public signal void transfer_view ();
+    public signal void transfer_view (string session_path);
     public signal void response_canceled ();
     /*one confirmation for many files in one session */
     private string many_files;
@@ -50,8 +50,8 @@ public class Bluetooth.Obex.Agent : GLib.Object {
         );
 
     }
-    public void transfer_active () throws GLib.Error {
-        transfer_view ();
+    public void transfer_active (string session_path) throws GLib.Error {
+        transfer_view (session_path);
     }
     public void release () throws GLib.Error {
     }

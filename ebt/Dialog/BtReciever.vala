@@ -21,6 +21,7 @@
  */
 
 public class BtReciever : Granite.Dialog {
+    public signal void remove_list (string session);
     public Bluetooth.Obex.Transfer transfer;
     private Gtk.ProgressBar progressbar;
     private Gtk.Label device_label;
@@ -108,6 +109,7 @@ public class BtReciever : Granite.Dialog {
         suggested_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.ACCEPT) {
+                remove_list (transfer.session);
                 try {
                     transfer.cancel ();
                 } catch (Error e) {
@@ -152,6 +154,7 @@ public class BtReciever : Granite.Dialog {
                     on_transfer_progress (transfer.transferred);
                     break;
                 case "complete":
+                    remove_list (transfer.session);
                     move_to_folder (path_folder);
                     destroy ();
                     break;
