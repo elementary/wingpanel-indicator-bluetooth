@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 21:20+0000\n"
+"POT-Creation-Date: 2021-07-14 20:11+0000\n"
 "PO-Revision-Date: 2019-11-07 13:58-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -28,22 +28,30 @@ msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Connect and disconnect paired bluetooth devices"
 
 #: data/bluetooth.appdata.xml.in:14
-msgid "Prevent showing duplicate devices"
+msgid "Add tooltip on hover"
 msgstr ""
 
 #: data/bluetooth.appdata.xml.in:15
-msgid "Fix animated icon when disabling Bluetooth"
+msgid "Add a fallback device name for headphones"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:16
-msgid "Use device type as fallback instead of \"(null)\""
-msgstr ""
-
-#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:22
-#: data/bluetooth.appdata.xml.in:27
+#: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
+#: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
 msgid "Updated translations"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:66
+#: data/bluetooth.appdata.xml.in:21
+msgid "Prevent showing duplicate devices"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:22
+msgid "Fix animated icon when disabling Bluetooth"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:23
+msgid "Use device type as fallback instead of \"(null)\""
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:73
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

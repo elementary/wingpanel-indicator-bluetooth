@@ -115,7 +115,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             ((DBusProxy) adapter).g_properties_changed.connect ((changed, invalid) => {
                 var powered = changed.lookup_value ("Powered", new VariantType ("b"));
                 if (powered != null) {
-                    check_global_state ();
+                    set_last_state.begin ();
                 }
             });
         }
@@ -222,9 +222,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public async void set_last_state () {
         bool last_state = settings.get_boolean ("bluetooth-enabled");
 
-        if (get_global_state () != last_state) {
-            yield set_global_state (last_state);
-        }
+        yield set_global_state (last_state);
 
         check_global_state ();
     }
