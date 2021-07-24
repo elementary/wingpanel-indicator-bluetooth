@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2021-05-20 12:31+0000\n"
+"PO-Revision-Date: 2021-07-24 19:23+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/ru/>\n"
@@ -30,11 +30,11 @@ msgstr "Подключайте и отсоединяйте сопряженны�
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Add tooltip on hover"
-msgstr ""
+msgstr "Добавлена всплывающая подсказка при наведении"
 
 #: data/bluetooth.appdata.xml.in:15
 msgid "Add a fallback device name for headphones"
-msgstr ""
+msgstr "Добавлено запасное имя устройства для наушников"
 
 #: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
 #: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
