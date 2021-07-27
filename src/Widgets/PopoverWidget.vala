@@ -63,7 +63,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         revealer.add (revealer_content);
 
         var show_settings_button = new Gtk.ModelButton ();
-        show_settings_button.text = _("Bluetooth Settings…");
+        show_settings_button.text = _("Manage Devices…");
 
         add (main_switch);
         add (revealer);
