@@ -20,7 +20,7 @@
  *
  */
 
-public class BtReciever : Granite.Dialog {
+public class BtReceiver : Granite.Dialog {
     public signal void remove_list (string session);
     public Bluetooth.Obex.Transfer transfer;
     private Gtk.ProgressBar progressbar;
@@ -30,17 +30,21 @@ public class BtReciever : Granite.Dialog {
     private Gtk.Label filename_label;
     private Gtk.Label rate_label;
     private Gtk.Image device_image;
+    private GLib.Notification notification;
     private string path_folder = "";
     private int start_time = 0;
     private uint64 total_size = 0;
 
-    public BtReciever (Gtk.Application application) {
+    public BtReceiver (Gtk.Application application) {
         Object (application: application,
                 resizable :false
         );
     }
 
     construct {
+        notification = new GLib.Notification ("bluetooth");
+        notification.set_priority (NotificationPriority.NORMAL);
+
         var icon_image = new Gtk.Image.from_icon_name ("bluetooth", Gtk.IconSize.DIALOG) {
             valign = Gtk.Align.END,
             halign = Gtk.Align.CENTER
@@ -75,13 +79,13 @@ public class BtReciever : Granite.Dialog {
             wrap = true,
             xalign = 0
         };
-        rate_label = new Gtk.Label (_("<b>Rate:</b>")) {
+        rate_label = new Gtk.Label (_("<b>Transfer rate:</b>")) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        progressbar = new Gtk.ProgressBar (){
+        progressbar = new Gtk.ProgressBar () {
             hexpand = true,
             margin_end = 15
         };
@@ -142,6 +146,10 @@ public class BtReciever : Granite.Dialog {
         try {
             switch (transfer.status) {
                 case "error":
+                    notification.set_icon (device_image.gicon);
+                    notification.set_title (_("File transfer failed"));
+                    notification.set_body (_("%s <b>File:</b> %s not received").printf (device_label.get_label (), transfer.name));
+                    ((Gtk.Window) get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
                     destroy ();
                     break;
                 case "queued":
@@ -167,12 +175,10 @@ public class BtReciever : Granite.Dialog {
         var src = File.new_for_path (file);
         var dest = change_name (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD) + GLib.Path.DIR_SEPARATOR_S + src.get_basename ());
         src.move (dest, FileCopyFlags.ALL_METADATA);
-        var notification = new GLib.Notification ("bluetooth");
         notification.set_icon (device_image.gicon);
-        notification.set_priority (NotificationPriority.NORMAL);
-        notification.set_title (_("File transferred successfully "));
+        notification.set_title (_("File transferred successfully"));
         notification.set_body (_("%s <b>Save to:</b> %s").printf (device_label.get_label (), dest.get_path ()));
-        ((Gtk.Window)get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
+        ((Gtk.Window) get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
     }
 
     private File? change_name (string uri) {
@@ -203,36 +209,37 @@ public class BtReciever : Granite.Dialog {
             return;
         }
         if (elapsed_time == 0) {
-		    return;
-		}
-		uint64 transfer_rate = transferred / elapsed_time;
-		if (transfer_rate == 0) {
-		    return;
-		}
-		rate_label.label = _("<b>Rate:</b> %s").printf (GLib.format_size (transfer_rate));
-		uint64 remaining_time = (total_size - transferred) / transfer_rate;
-		progress_label.label = _("Receiving…  %s of %s remaining %s").printf (GLib.format_size (transferred), GLib.format_size (total_size), format_time((int)remaining_time));
+            return;
+        }
+        uint64 transfer_rate = transferred / elapsed_time;
+        if (transfer_rate == 0) {
+            return;
+        }
+        rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
+        uint64 remaining_time = (total_size - transferred) / transfer_rate;
+        progress_label.label = _("Receiving… %s of Size: %s, remaining time %s").printf (GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));
         }
 
     private string format_time (int seconds) {
-	    int minutes;
-	    if (seconds < 0) {
-		    seconds = 0;
-		}
-	    if (seconds < 60) {
-		    return ngettext("%'d second", "%'d seconds", seconds).printf (seconds);
-		}
-	    if (seconds < 60 * 60) {
-		    minutes = (seconds + 30) / 60;
-		    return ngettext("%'d minute", "%'d minutes", minutes).printf (minutes);
-	    }
-	    int hours = seconds / (60 * 60);
-	    if (seconds < 60 * 60 * 4) {
-		    minutes = (seconds - hours * 60 * 60 + 30) / 60;
-		    string h = ngettext("%'u hour", "%'u hours", hours).printf (hours);
-		    string m = ngettext("%'u minute", "%'u minutes", minutes).printf (minutes);
-		    return h.concat(", ", m);
-	    }
-	    return ngettext("approximately %'d hour", "approximately %'d hours", hours).printf (hours);
+        int minutes;
+        if (seconds < 0) {
+            seconds = 0;
+        }
+        if (seconds < 60) {
+            return ngettext ("%'d second", "%'d seconds", seconds).printf (seconds);
+
+        }
+        if (seconds < 60 * 60) {
+            minutes = (seconds + 30) / 60;
+            return ngettext ("%'d minute", "%'d minutes", minutes).printf (minutes);
+        }
+        int hours = seconds / (60 * 60);
+        if (seconds < 60 * 60 * 4) {
+            minutes = (seconds - hours * 60 * 60 + 30) / 60;
+            string h = ngettext ("%'u hour", "%'u hours", hours).printf (hours);
+            string m = ngettext ("%'u minute", "%'u minutes", minutes).printf (minutes);
+            return h.concat (", ", m);
+        }
+        return ngettext ("approximately %'d hour", "approximately %'d hours", hours).printf (hours);
     }
 }

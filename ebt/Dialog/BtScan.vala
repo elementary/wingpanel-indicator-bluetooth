@@ -67,7 +67,7 @@ public class BtScan : Granite.Dialog {
         list_box.set_header_func ((Gtk.ListBoxUpdateHeaderFunc) title_rows);
         list_box.set_placeholder (empty_alert);
 
-        var scrolled = new Gtk.ScrolledWindow (null, null){
+        var scrolled = new Gtk.ScrolledWindow (null, null) {
             expand = true,
         };
         scrolled.add (list_box);

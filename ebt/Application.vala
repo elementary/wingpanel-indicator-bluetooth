@@ -32,10 +32,10 @@ public class BluetoothApp : Gtk.Application {
     public Bluetooth.Obex.Agent agent_obex;
     public Bluetooth.Obex.Transfer transfer;
     public BtResponse bt_response = null;
-    public BtReciever bt_reciever;
+    public BtReceiver bt_receiver;
     public BtSender bt_sender;
     public BtScan bt_scan = null;
-    public GLib.List<BtReciever> bt_recievers;
+    public GLib.List<BtReceiver> bt_receivers;
     public GLib.List<BtSender> bt_senders;
     public static bool silent;
     public static bool send;
@@ -114,7 +114,7 @@ public class BluetoothApp : Gtk.Application {
 
         if (silent) {
             hold ();
-            bt_recievers = new GLib.List<BtReciever> ();
+            bt_receivers = new GLib.List<BtReceiver> ();
             bt_senders = new GLib.List<BtSender> ();
             object_manager = new Bluetooth.ObjectManager ();
             object_manager.notify["has-object"].connect (() => {
@@ -151,7 +151,7 @@ public class BluetoothApp : Gtk.Application {
         return exist;
     }
     private void dialog_active (string session_path) {
-        bt_recievers.foreach ((reciever)=>{
+        bt_receivers.foreach ((reciever)=>{
             if (reciever.transfer.session == session_path) {
                 reciever.show_all ();
             }
@@ -163,7 +163,7 @@ public class BluetoothApp : Gtk.Application {
         });
     }
 
-    private void response_accepted (string address, string objectpath) {
+    private void response_accepted (string address, GLib.ObjectPath objectpath) {
         try {
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
         } catch (Error e) {
@@ -173,21 +173,21 @@ public class BluetoothApp : Gtk.Application {
             return;
         }
         dialog_destroy ();
-        bt_reciever = new BtReciever (this);
-        bt_recievers.append (bt_reciever);
-        bt_reciever.remove_list.connect ((session_path) => {
-            bt_recievers.foreach ((reciever)=>{
+        bt_receiver = new BtReceiver (this);
+        bt_receivers.append (bt_receiver);
+        bt_receiver.remove_list.connect ((session_path) => {
+            bt_receivers.foreach ((reciever)=>{
                 if (reciever.transfer.session == session_path) {
-                    bt_recievers.remove_link (bt_recievers.find (reciever));
+                    bt_receivers.remove_link (bt_receivers.find (reciever));
                 }
             });
         });
         string devicename = object_manager.get_device (address).name;
         string deviceicon = object_manager.get_device (address).icon;
-        bt_reciever.set_tranfer (devicename, deviceicon, objectpath);
+        bt_receiver.set_tranfer (devicename, deviceicon, objectpath);
     }
 
-    private void response_notify (string address, string objectpath) {
+    private void response_notify (string address, GLib.ObjectPath objectpath) {
         string devicename = object_manager.get_device (address).name;
         string deviceicon = object_manager.get_device (address).icon;
         try {
@@ -212,9 +212,9 @@ public class BluetoothApp : Gtk.Application {
         }
         bt_response.response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.ACCEPT) {
-		        activate_action ("btaccept", new Variant.string ("Accept"));
+                activate_action ("btaccept", new Variant.string ("Accept"));
             } else {
-		        activate_action ("btcancel", new Variant.string ("Cancel"));
+                activate_action ("btcancel", new Variant.string ("Cancel"));
             }
             dialog_destroy ();
         });
@@ -258,7 +258,7 @@ public class BluetoothApp : Gtk.Application {
     }
     private string contract_dir () {
         string build_path = Path.build_filename (Environment.get_home_dir (), ".local", "share", "contractor");
-        if (!File.new_for_path(build_path).query_exists ()) {
+        if (!File.new_for_path (build_path).query_exists ()) {
             DirUtils.create (build_path, 0700);
         }
         return build_path;
@@ -274,7 +274,7 @@ public class BluetoothApp : Gtk.Application {
             string str_contract = "[Contractor Entry]\n";
             string str_name = _("Name=%s").printf ("Send Files via Bluetooth\n");
             string str_icon = _("Icon=bluetooth\n");
-            string str_desc = _("Description=%s").printf("Send files to device...\n");
+            string str_desc = _("Description=%s").printf ("Send files to device…\n");
             string str_command = "Exec=io.elementary.bluetooth -f %F \n";
             string mimetype = _("MimeType=!inode;\n");
             out_stream.write (str_contract.data);
@@ -284,7 +284,7 @@ public class BluetoothApp : Gtk.Application {
             out_stream.write (str_command.data);
             out_stream.write (mimetype.data);
         } catch (Error e) {
-        	warning ("Error: %s\n", e.message);
+            warning ("Error: %s\n", e.message);
         }
     }
 

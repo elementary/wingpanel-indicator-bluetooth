@@ -28,12 +28,12 @@ public errordomain BluezObexError {
 
 [DBus (name = "org.bluez.obex.Agent1")]
 public class Bluetooth.Obex.Agent : GLib.Object {
-    public signal void response_notify (string address, string objectpath);
-    public signal void response_accepted (string address, string objectpath);
+    public signal void response_notify (string address, GLib.ObjectPath objectpath);
+    public signal void response_accepted (string address, GLib.ObjectPath objectpath);
     public signal void transfer_view (string session_path);
     public signal void response_canceled ();
     /*one confirmation for many files in one session */
-    private string many_files;
+    private GLib.ObjectPath many_files;
 
     public Agent () {
         Bus.own_name (
