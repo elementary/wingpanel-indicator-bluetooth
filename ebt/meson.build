@@ -7,7 +7,7 @@ executable(
     'Services/ObexAgent.vala',
     'Services/Session.vala',
     'Services/Transfer.vala',
-    'Dialog/BtReciever.vala',
+    'Dialog/BtReceiver.vala',
     'Dialog/BtSender.vala',
     'Dialog/BtScan.vala',
     'Dialog/DeviceRow.vala',

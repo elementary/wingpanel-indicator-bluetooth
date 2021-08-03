@@ -54,7 +54,7 @@ public class BtSender : Granite.Dialog {
 
         var icon_image = new Gtk.Image.from_icon_name ("bluetooth", Gtk.IconSize.DIALOG) {
             valign = Gtk.Align.END,
-            halign = Gtk.Align.CENTER
+            halign = Gtk.Align.END
         };
 
         icon_label = new Gtk.Image () {
@@ -104,6 +104,7 @@ public class BtSender : Granite.Dialog {
             xalign = 0
         };
         var message_grid = new Gtk.Grid () {
+            column_spacing = 0,
             width_request = 450
         };
         message_grid.attach (overlay, 0, 0, 1, 6);
@@ -312,22 +313,24 @@ public class BtSender : Granite.Dialog {
         }
         rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
-        progress_label.label = _("Sending… (%i/%i) %s of Size: %s, remaining time %s").printf (current_file, total_file, GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));
+        progress_label.label = _("(%i/%i) %s of %s sent, time remaining %s").printf (current_file, total_file, GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));
     }
 
     private string format_time (int seconds) {
-        int minutes;
         if (seconds < 0) {
             seconds = 0;
         }
+
         if (seconds < 60) {
             return ngettext ("%'d second", "%'d seconds", seconds).printf (seconds);
-
         }
+
+        int minutes;
         if (seconds < 60 * 60) {
             minutes = (seconds + 30) / 60;
             return ngettext ("%'d minute", "%'d minutes", minutes).printf (minutes);
         }
+
         int hours = seconds / (60 * 60);
         if (seconds < 60 * 60 * 4) {
             minutes = (seconds - hours * 60 * 60 + 30) / 60;
@@ -335,6 +338,7 @@ public class BtSender : Granite.Dialog {
             string m = ngettext ("%'u minute", "%'u minutes", minutes).printf (minutes);
             return h.concat (", ", m);
         }
+
         return ngettext ("approximately %'d hour", "approximately %'d hours", hours).printf (hours);
     }
 }

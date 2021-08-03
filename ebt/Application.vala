@@ -223,7 +223,7 @@ public class BluetoothApp : Gtk.Application {
         });
         if (object_manager.settings.get_int ("bluetooth-accept-files") == 0) {
             notification.set_title (_("Incoming file"));
-            notification.set_body (_("<b>%s</b> is ready to send %s size: %s").printf (devicename, transfer.name, GLib.format_size (transfer.size)));
+            notification.set_body (_("<b>%s</b> is ready to send file: %s size: %s").printf (devicename, transfer.name, GLib.format_size (transfer.size)));
             notification.add_button (_("Accept"), GLib.Action.print_detailed_name ("app.btaccept", new Variant ("s", "Accept")));
             notification.add_button (_("Cancel"), GLib.Action.print_detailed_name ("app.btcancel", new Variant ("s", "Cancel")));
             bt_response.update_device (devicename);
@@ -232,7 +232,7 @@ public class BluetoothApp : Gtk.Application {
             bt_response.update_icon (deviceicon);
         } else {
             notification.set_title (_("Receiving file"));
-            notification.set_body (_("%s sending file %s size: %s").printf (devicename, transfer.name, GLib.format_size (transfer.size)));
+            notification.set_body (_("%s sending file: %s size: %s").printf (devicename, transfer.name, GLib.format_size (transfer.size)));
             Idle.add (()=>{ activate_action ("btaccept", new Variant.string ("Accept")); return false;});
         }
         send_notification ("io.elementary.bluetooth", notification);
