@@ -60,7 +60,7 @@ public class Bluetooth.Obex.Agent : GLib.Object {
         BluezObexError? btobexerror = null;
         Bluetooth.Obex.Transfer transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
         if (transfer.name == null) {
-            return "";
+            throw new BluezObexError.REJECTED ("Authorize Reject");
         }
         Bluetooth.Obex.Session session = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", transfer.session);
         var accept_action = new SimpleAction ("btaccept", VariantType.STRING);

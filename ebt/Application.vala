@@ -197,7 +197,6 @@ public class BluetoothApp : Gtk.Application {
         }
         var notification = new GLib.Notification ("bluetooth");
         notification.set_icon (new ThemedIcon (deviceicon));
-        notification.set_priority (NotificationPriority.URGENT);
         if (reject_if_exist (transfer.name, transfer.size)) {
             notification.set_title (_("Rejected file"));
             notification.set_body ( _("<b>File:</b> %s <b>Size: </b>%s already exist").printf (transfer.name, GLib.format_size (transfer.size)));
@@ -222,6 +221,7 @@ public class BluetoothApp : Gtk.Application {
             bt_response = null;
         });
         if (object_manager.settings.get_int ("bluetooth-accept-files") == 0) {
+            notification.set_priority (NotificationPriority.URGENT);
             notification.set_title (_("Incoming file"));
             notification.set_body (_("<b>%s</b> is ready to send file: %s size: %s").printf (devicename, transfer.name, GLib.format_size (transfer.size)));
             notification.add_button (_("Accept"), GLib.Action.print_detailed_name ("app.btaccept", new Variant ("s", "Accept")));
