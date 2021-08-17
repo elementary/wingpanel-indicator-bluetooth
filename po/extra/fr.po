@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2021-05-19 09:00+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"PO-Revision-Date: 2021-07-30 20:31+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/fr/>\n"
 "Language: fr\n"
@@ -29,11 +29,11 @@ msgstr "Connectez et déconnectez des périphériques Bluetooth appairés"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Add tooltip on hover"
-msgstr ""
+msgstr "Ajout d'une infobulle au survol"
 
 #: data/bluetooth.appdata.xml.in:15
 msgid "Add a fallback device name for headphones"
-msgstr ""
+msgstr "Ajout d'un nom de périphérique par défaut pour les écouteurs"
 
 #: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
 #: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
