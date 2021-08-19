@@ -8,48 +8,50 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2019-11-07 13:58-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-08-20 01:13+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
+"indicator-bluetooth-extra/sk/>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
-msgstr ""
+msgstr "Indikátor Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
 msgid "Connect and disconnect paired Bluetooth devices"
-msgstr ""
+msgstr "Pripojte a odpojte spárované Bluetooth zariadenia"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Add tooltip on hover"
-msgstr ""
+msgstr "Pridaný popis po umiestnení kurzora"
 
 #: data/bluetooth.appdata.xml.in:15
 msgid "Add a fallback device name for headphones"
-msgstr ""
+msgstr "Pridaný záložný názov zariadenia pre slúchadlá"
 
 #: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
 #: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
 msgid "Updated translations"
-msgstr ""
+msgstr "Aktualizované preklady"
 
 #: data/bluetooth.appdata.xml.in:21
 msgid "Prevent showing duplicate devices"
-msgstr ""
+msgstr "Prevencia zobrazenia duplikovaných zariadení"
 
 #: data/bluetooth.appdata.xml.in:22
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr ""
+msgstr "Opravená animovaná ikonka pri vypnutí Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:23
 msgid "Use device type as fallback instead of \"(null)\""
-msgstr ""
+msgstr "Použiť typ zariadenia ako zálohu namiesto „(null)“"
 
 #: data/bluetooth.appdata.xml.in:73
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
