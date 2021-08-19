@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2016-01-10 09:57+0000\n"
-"Last-Translator: Lukáš Papík <stereo839@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2021-08-19 13:54+0000\n"
+"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
+"wingpanel-indicator-bluetooth/sk/>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:151
 msgid "Not Connected"
@@ -19,35 +21,35 @@ msgstr ""
 
 #: src/Widgets/Device.vala:92
 msgid "Connecting…"
-msgstr ""
+msgstr "Pripájanie…"
 
 #: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
-msgstr ""
+msgstr "Odpájanie…"
 
 #: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
-msgstr ""
+msgstr "Nepodarilo sa pripojiť"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
-msgstr ""
+msgstr "Reproduktor"
 
 #: src/Widgets/Device.vala:116
 msgid "Headphones"
-msgstr ""
+msgstr "Slúchadlá"
 
 #: src/Widgets/Device.vala:119
 msgid "Controller"
-msgstr ""
+msgstr "Ovládač"
 
 #: src/Widgets/Device.vala:122
 msgid "Keyboard"
-msgstr ""
+msgstr "Klávesnica"
 
 #: src/Widgets/Device.vala:125
 msgid "Mouse"
-msgstr ""
+msgstr "Myš"
 
 #: src/Widgets/Device.vala:128
 msgid "Tablet"
@@ -55,41 +57,35 @@ msgstr ""
 
 #: src/Widgets/Device.vala:131
 msgid "Touchpad"
-msgstr ""
+msgstr "Touchpad"
 
 #: src/Widgets/Device.vala:134
 msgid "Phone"
-msgstr ""
+msgstr "Telefón"
 
 #: src/Widgets/Device.vala:148
 msgid "Connected"
-msgstr ""
+msgstr "Pripojené"
 
 #: src/Widgets/DisplayWidget.vala:73
 msgid "Middle-click to turn Bluetooth off"
-msgstr ""
+msgstr "Stlačením kolieska vypnúť Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:76
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth connected"
-msgstr "Bluetooth"
+msgstr "Bluetooth pripojený"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "Bluetooth"
+msgstr "Bluetooth je zapnutý"
 
 #: src/Widgets/DisplayWidget.vala:84
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "Bluetooth"
+msgstr "Bluetooth je vypnutý"
 
 #: src/Widgets/DisplayWidget.vala:85
 msgid "Middle-click to turn Bluetooth on"
-msgstr ""
+msgstr "Stlačením kolieska zapnúť Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
