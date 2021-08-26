@@ -9,7 +9,7 @@
   <summary>Connect and disconnect paired Bluetooth devices</summary>
   <icon type="stock">preferences-bluetooth</icon>
   <releases>
-    <release version="2.1.8" date="2021-08-19" urgency="medium">
+    <release version="2.1.8" date="2021-08-25" urgency="medium">
       <description>
         <p>Minor updates:</p>
         <ul>
