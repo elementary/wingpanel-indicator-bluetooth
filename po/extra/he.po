@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2021-07-15 17:09+0000\n"
+"PO-Revision-Date: 2021-08-26 12:26+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/he/>\n"
@@ -29,11 +29,11 @@ msgstr "חיבור וניתוק התקני Bluetooth מצומדים"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Minor updates:"
-msgstr ""
+msgstr "עדכונים משניים:"
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
-msgstr ""
+msgstr "שיפור שחזור מצב ה־Bluetooth עם הפעלה מחדש וחזרה מהשהיה"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
 #: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
