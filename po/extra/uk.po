@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2021-07-15 06:10+0000\n"
+"PO-Revision-Date: 2021-08-26 05:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/uk/>\n"
@@ -30,11 +30,13 @@ msgstr "Підʼєднайте та від'єднайте сполучені п�
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Minor updates:"
-msgstr ""
+msgstr "Незначні оновлення:"
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
 msgstr ""
+"Поліпшено відновлення стану Bluetooth під час перезапуску та відновлення "
+"після призупинення"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
 #: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
