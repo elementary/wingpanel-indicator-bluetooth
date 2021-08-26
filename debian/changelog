@@ -1,3 +1,13 @@
+wingpanel-indicator-bluetooth (2.1.8) bionic; urgency=medium
+
+  * Release 2.1.8 (#167)
+  * l10n: Correctly setup the locales (#166)
+  * Fix indicator status after restart or resume (#143)
+  * Update translation files
+  * Update translation template
+
+ -- elementary LLC <builds@elementary.io>  Thu, 26 Aug 2021 02:02:15 +0000
+
 wingpanel-indicator-bluetooth (2.1.7) bionic; urgency=medium
 
   * Release 2.1.7 (#163)
