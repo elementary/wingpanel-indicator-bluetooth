@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 20:11+0000\n"
+"POT-Creation-Date: 2021-08-26 02:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -25,30 +25,39 @@ msgid "Connect and disconnect paired Bluetooth devices"
 msgstr ""
 
 #: data/bluetooth.appdata.xml.in:14
-msgid "Add tooltip on hover"
+msgid "Minor updates:"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:15
-msgid "Add a fallback device name for headphones"
+#: data/bluetooth.appdata.xml.in:16
+msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
-#: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
+#: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
+#: data/bluetooth.appdata.xml.in:43
 msgid "Updated translations"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:21
+#: data/bluetooth.appdata.xml.in:23
+msgid "Add tooltip on hover"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:24
+msgid "Add a fallback device name for headphones"
+msgstr ""
+
+#: data/bluetooth.appdata.xml.in:30
 msgid "Prevent showing duplicate devices"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:31
 msgid "Fix animated icon when disabling Bluetooth"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:23
+#: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:73
+#: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."
 msgstr ""
