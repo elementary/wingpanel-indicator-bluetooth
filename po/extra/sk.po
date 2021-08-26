@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2021-08-20 01:13+0000\n"
+"PO-Revision-Date: 2021-08-26 12:26+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/sk/>\n"
@@ -29,11 +29,11 @@ msgstr "Pripojte a odpojte spárované Bluetooth zariadenia"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Minor updates:"
-msgstr ""
+msgstr "Menšie aktualizácie:"
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
-msgstr ""
+msgstr "Vylepšenie obnovenia stavu Bluetooth po reštarte a zobudení z uspatia"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
 #: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
