@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
 "PO-Revision-Date: 2021-08-28 21:10+0000\n"
-"Last-Translator: Dananay <Pr1m3l1ght@gmail.com>\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/hu/>\n"
 "Language: hu\n"
@@ -39,7 +39,7 @@ msgstr ""
 #: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
 #: data/bluetooth.appdata.xml.in:43
 msgid "Updated translations"
-msgstr "Frissített fordítások"
+msgstr "Fordítási frissítések"
 
 #: data/bluetooth.appdata.xml.in:23
 msgid "Add tooltip on hover"
@@ -63,4 +63,4 @@ msgstr ""
 
 #: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
