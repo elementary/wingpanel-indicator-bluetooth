@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2021-09-02 21:24+0000\n"
+"PO-Revision-Date: 2021-09-02 21:53+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/hu/>\n"
@@ -55,7 +55,7 @@ msgstr "Eszközduplikációk megjelenítésének megakadályozása"
 
 #: data/bluetooth.appdata.xml.in:31
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr "Ikon animáció javítása a Bluetooth kikapcsolásakor"
+msgstr "Ikonanimáció javítása a Bluetooth kikapcsolásakor"
 
 #: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
