@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2021-07-31 10:55+0000\n"
-"Last-Translator: Reinaldo <reinaldoplacetas@tutanota.com>\n"
+"PO-Revision-Date: 2021-09-21 18:27+0000\n"
+"Last-Translator: Rafael Bautista Martínez <iuninefrendor@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/es/>\n"
 "Language: es\n"
@@ -29,7 +29,7 @@ msgstr "Conecte y desconecte dispositivos Bluetooth emparejados"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Minor updates:"
-msgstr ""
+msgstr "Actualizaciones menores:"
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
