@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2021-11-03 07:04+0000\n"
+"PO-Revision-Date: 2021-11-13 19:03+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/pl/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
-msgstr ""
+msgstr "Wskaźnik Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
 msgid "Connect and disconnect paired Bluetooth devices"
-msgstr ""
+msgstr "Połącz i rozłącz się ze sparowanymi urządzeniami Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Minor updates:"
@@ -35,6 +35,8 @@ msgstr "Mniejsze aktualizacje:"
 #: data/bluetooth.appdata.xml.in:16
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
 msgstr ""
+"Ulepszenie przywracania stanu Bluetooth przy ponownym uruchomieniu i "
+"obudzeniu urządzenia"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
 #: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
@@ -44,23 +46,23 @@ msgstr "Zaktualizowano tłumaczenia"
 
 #: data/bluetooth.appdata.xml.in:23
 msgid "Add tooltip on hover"
-msgstr ""
+msgstr "Dodano tooltip przy najechaniu"
 
 #: data/bluetooth.appdata.xml.in:24
 msgid "Add a fallback device name for headphones"
-msgstr ""
+msgstr "Dodano zastępczą nazwę urządzenia dla słuchawek"
 
 #: data/bluetooth.appdata.xml.in:30
 msgid "Prevent showing duplicate devices"
-msgstr ""
+msgstr "Zapobiegnięto pokazywaniu zduplikowanych urządzeń"
 
 #: data/bluetooth.appdata.xml.in:31
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr ""
+msgstr "Naprawiono animowaną ikonę przy wyłączaniu Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
-msgstr ""
+msgstr "Użycie typu urządzenia jako nazwy zastępczej zamiast „(null)”"
 
 #: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."
