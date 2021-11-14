@@ -21,7 +21,6 @@
  */
 
 public class BtReceiver : Granite.Dialog {
-    public signal void remove_list (string session);
     public Bluetooth.Obex.Transfer transfer;
     private Gtk.ProgressBar progressbar;
     private Gtk.Label device_label;
@@ -32,6 +31,7 @@ public class BtReceiver : Granite.Dialog {
     private Gtk.Image device_image;
     private GLib.Notification notification;
     private string path_folder = "";
+    public string session {get; set;}
     private int start_time = 0;
     private uint64 total_size = 0;
 
@@ -86,21 +86,21 @@ public class BtReceiver : Granite.Dialog {
             xalign = 0
         };
         progressbar = new Gtk.ProgressBar () {
-            hexpand = true,
-            margin_end = 15
+            hexpand = true
         };
         progress_label = new Gtk.Label (null) {
             max_width_chars = 45,
             hexpand = false,
             wrap = true,
-            margin_end = 15,
             xalign = 0
         };
         var message_grid = new Gtk.Grid () {
             column_spacing = 0,
-            width_request = 450
+            width_request = 450,
+            margin_end = 15,
+            margin_start = 10
         };
-        message_grid.attach (overlay, 0, 0, 1, 6);
+        message_grid.attach (overlay, 0, 0, 1, 3);
         message_grid.attach (device_label, 1, 0, 1, 1);
         message_grid.attach (directory_label, 1, 1, 1, 1);
         message_grid.attach (filename_label, 1, 2, 1, 1);
@@ -114,7 +114,6 @@ public class BtReceiver : Granite.Dialog {
         suggested_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.ACCEPT) {
-                remove_list (transfer.session);
                 try {
                     transfer.cancel ();
                 } catch (Error e) {
@@ -123,6 +122,13 @@ public class BtReceiver : Granite.Dialog {
                 destroy ();
             } else {
                 hide_on_delete ();
+            }
+        });
+        delete_event.connect (() => {
+            if (transfer.status == "active") {
+                return hide_on_delete ();
+            } else {
+                return false;
             }
         });
     }
@@ -138,6 +144,7 @@ public class BtReceiver : Granite.Dialog {
                 tranfer_progress ();
             });
             total_size = transfer.size;
+            session = transfer.session;
             filename_label.set_markup (_("<b>Filename</b>: %s").printf (GLib.Markup.escape_text (transfer.name)));
         } catch (Error e) {
             GLib.warning (e.message);
@@ -151,7 +158,6 @@ public class BtReceiver : Granite.Dialog {
                     notification.set_title (_("File transfer failed"));
                     notification.set_body (_("%s <b>File:</b> %s not received").printf (device_label.get_label (), transfer.name));
                     ((Gtk.Window) get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
-                    remove_list (transfer.session);
                     destroy ();
                     break;
                 case "queued":
@@ -164,7 +170,6 @@ public class BtReceiver : Granite.Dialog {
                     on_transfer_progress (transfer.transferred);
                     break;
                 case "complete":
-                    remove_list (transfer.session);
                     move_to_folder (path_folder);
                     destroy ();
                     break;

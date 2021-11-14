@@ -76,9 +76,10 @@ public class BtRetry : Granite.Dialog {
         var box_grid = new Gtk.Grid () {
             halign = Gtk.Align.CENTER,
             margin_end = 15,
+            margin_start = 10,
             width_request = 400
         };
-        box_grid.attach (overlay, 0, 0, 1, 5);
+        box_grid.attach (overlay, 0, 0, 1, 3);
         box_grid.attach (warning_label, 1, 0, 1, 1);
         box_grid.attach (device_label, 1, 1, 1, 1);
         box_grid.attach (filename_label, 1, 2, 1, 1);

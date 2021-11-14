@@ -21,7 +21,6 @@
  */
 
 public class BtSender : Granite.Dialog {
-    public signal void remove_list (Bluetooth.Device device);
     public Bluetooth.Obex.Transfer transfer;
     public Bluetooth.Device device;
     private Gtk.ProgressBar progressbar;
@@ -93,21 +92,21 @@ public class BtSender : Granite.Dialog {
             xalign = 0
         };
         progressbar = new Gtk.ProgressBar () {
-            hexpand = true,
-            margin_end = 15
+            hexpand = true
         };
         progress_label = new Gtk.Label (null) {
             max_width_chars = 45,
             hexpand = false,
             wrap = true,
-            margin_end = 15,
             xalign = 0
         };
         var message_grid = new Gtk.Grid () {
             column_spacing = 0,
-            width_request = 450
+            width_request = 450,
+            margin_start = 10,
+            margin_end = 15
         };
-        message_grid.attach (overlay, 0, 0, 1, 6);
+        message_grid.attach (overlay, 0, 0, 1, 3);
         message_grid.attach (path_label, 1, 0, 1, 1);
         message_grid.attach (device_label, 1, 1, 1, 1);
         message_grid.attach (filename_label, 1, 2, 1, 1);
@@ -122,7 +121,6 @@ public class BtSender : Granite.Dialog {
 
         response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.CANCEL) {
-                remove_list (device);
                 if (transfer != null) {
                     if (transfer.status == "active") {
                         try {
@@ -135,7 +133,18 @@ public class BtSender : Granite.Dialog {
                 }
                 destroy ();
             } else {
-                hide_on_delete ();
+                if (transfer.status == "active") {
+                    hide_on_delete ();
+                } else {
+                    destroy ();
+                }
+            }
+        });
+        delete_event.connect (() => {
+            if (transfer.status == "active") {
+                return hide_on_delete ();
+            } else {
+                return false;
             }
         });
     }
@@ -262,7 +271,6 @@ public class BtSender : Granite.Dialog {
                             present ();
                             bt_retry.destroy ();
                         } else {
-                            remove_list (device);
                             destroy ();
                         }
                     });
@@ -281,7 +289,6 @@ public class BtSender : Granite.Dialog {
             case "complete":
                 send_notify ();
                 if (!next_file ()) {
-                    remove_list (device);
                     remove_session.begin ();
                     destroy ();
                 }

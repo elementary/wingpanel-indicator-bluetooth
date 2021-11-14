@@ -84,9 +84,9 @@ public class BluetoothApp : Gtk.Application {
                         bt_sender.add_files (files, device);
                         bt_senders.append (bt_sender);
                         bt_sender.show_all ();
-                        bt_sender.remove_list.connect ((d_device) => {
+                        bt_sender.destroy.connect (()=> {
                             bt_senders.foreach ((sender)=>{
-                                if (sender.device == d_device) {
+                                if (sender.device == bt_sender.device) {
                                     bt_senders.remove_link (bt_senders.find (sender));
                                 }
                             });
@@ -175,21 +175,23 @@ public class BluetoothApp : Gtk.Application {
         dialog_destroy ();
         bt_receiver = new BtReceiver (this);
         bt_receivers.append (bt_receiver);
-        bt_receiver.remove_list.connect ((session_path) => {
+        bt_receiver.destroy.connect (()=> {
             bt_receivers.foreach ((reciever)=>{
-                if (reciever.transfer.session == session_path) {
+                if (reciever.transfer.session == bt_receiver.session) {
                     bt_receivers.remove_link (bt_receivers.find (reciever));
                 }
             });
         });
-        string devicename = object_manager.get_device (address).name;
-        string deviceicon = object_manager.get_device (address).icon;
-        bt_receiver.set_tranfer (devicename, deviceicon, objectpath);
+        Bluetooth.Device device = object_manager.get_device (address);
+        string devicename = device.name;
+        string deviceicon = device.icon;
+        bt_receiver.set_tranfer (devicename == null? device_icon (device) : devicename, deviceicon, objectpath);
     }
 
     private void response_notify (string address, GLib.ObjectPath objectpath) {
-        string devicename = object_manager.get_device (address).name;
-        string deviceicon = object_manager.get_device (address).icon;
+        Bluetooth.Device device = object_manager.get_device (address);
+        string devicename = device.name;
+        string deviceicon = device.icon;
         try {
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
         } catch (Error e) {
@@ -206,8 +208,6 @@ public class BluetoothApp : Gtk.Application {
         }
         if (bt_response == null) {
             bt_response = new BtResponse (this);
-        } else {
-            bt_response.present ();
         }
         bt_response.response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.ACCEPT) {
@@ -223,10 +223,10 @@ public class BluetoothApp : Gtk.Application {
         if (object_manager.settings.get_int ("bluetooth-accept-files") == 0) {
             notification.set_priority (NotificationPriority.URGENT);
             notification.set_title (_("Incoming file"));
-            notification.set_body (_("<b>%s</b> is ready to send file: %s size: %s").printf (devicename, transfer.name, GLib.format_size (transfer.size)));
+            notification.set_body (_("<b>%s</b> is ready to send file: %s size: %s").printf (devicename == null? device_icon (device) : devicename, transfer.name, GLib.format_size (transfer.size)));
             notification.add_button (_("Accept"), GLib.Action.print_detailed_name ("app.btaccept", new Variant ("s", "Accept")));
             notification.add_button (_("Cancel"), GLib.Action.print_detailed_name ("app.btcancel", new Variant ("s", "Cancel")));
-            bt_response.update_device (devicename);
+            bt_response.update_device (devicename == null? device_icon (device) : devicename);
             bt_response.update_filename (transfer.name);
             bt_response.update_size (transfer.size);
             bt_response.update_icon (deviceicon);
@@ -236,6 +236,27 @@ public class BluetoothApp : Gtk.Application {
             Idle.add (()=>{ activate_action ("btaccept", new Variant.string ("Accept")); return false;});
         }
         send_notification ("io.elementary.bluetooth", notification);
+    }
+
+    private string device_icon (Bluetooth.Device device) {
+        switch (device.icon) {
+            case "audio-card":
+                return _("Speaker");
+            case "input-gaming":
+                return _("Controller");
+            case "input-keyboard":
+                return _("Keyboard");
+            case "input-mouse":
+                return _("Mouse");
+            case "input-tablet":
+                return _("Tablet");
+            case "input-touchpad":
+                return _("Touchpad");
+            case "phone":
+                return _("Phone");
+            default:
+                return device.address;
+        }
     }
 
     private void dialog_destroy () {
