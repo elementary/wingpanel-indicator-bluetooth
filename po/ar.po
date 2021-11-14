@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2019-08-29 17:22+0000\n"
-"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"POT-Creation-Date: 2021-08-26 02:02+0000\n"
+"PO-Revision-Date: 2021-08-26 22:37+0000\n"
+"Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ar/>\n"
 "Language: ar\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:151
@@ -22,47 +22,47 @@ msgstr "غير متصل"
 
 #: src/Widgets/Device.vala:92
 msgid "Connecting…"
-msgstr "يتصل…"
+msgstr "قيد الاتصال…"
 
 #: src/Widgets/Device.vala:95
 msgid "Disconnecting…"
-msgstr "يقطع الإتصال…"
+msgstr "قيد قطع الاتصال…"
 
 #: src/Widgets/Device.vala:100
 msgid "Unable to Connect"
-msgstr "غير قادر على الإتصال"
+msgstr "غير قادر على الاتصال"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
-msgstr ""
+msgstr "سماعة"
 
 #: src/Widgets/Device.vala:116
 msgid "Headphones"
-msgstr ""
+msgstr "سماعات أذن"
 
 #: src/Widgets/Device.vala:119
 msgid "Controller"
-msgstr ""
+msgstr "جهاز تحكم"
 
 #: src/Widgets/Device.vala:122
 msgid "Keyboard"
-msgstr ""
+msgstr "لوحة مفاتيح"
 
 #: src/Widgets/Device.vala:125
 msgid "Mouse"
-msgstr ""
+msgstr "فأرة"
 
 #: src/Widgets/Device.vala:128
 msgid "Tablet"
-msgstr ""
+msgstr "جهاز لوحي"
 
 #: src/Widgets/Device.vala:131
 msgid "Touchpad"
-msgstr ""
+msgstr "لوحة لمس"
 
 #: src/Widgets/Device.vala:134
 msgid "Phone"
-msgstr ""
+msgstr "هاتف"
 
 #: src/Widgets/Device.vala:148
 msgid "Connected"
@@ -70,35 +70,27 @@ msgstr "متصل"
 
 #: src/Widgets/DisplayWidget.vala:73
 msgid "Middle-click to turn Bluetooth off"
-msgstr ""
+msgstr "اضغط الضغطة الوسطى لإيقاف تشغيل البلوتوث"
 
 #: src/Widgets/DisplayWidget.vala:76
-#, fuzzy
-#| msgid "Not Connected"
 msgid "Bluetooth connected"
-msgstr "غير متصل"
+msgstr "البلوتوث متصل"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "بلوتوث"
+msgstr "البلوتوث يعمل"
 
 #: src/Widgets/DisplayWidget.vala:84
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "بلوتوث"
+msgstr "البلوتوث مطفأ"
 
 #: src/Widgets/DisplayWidget.vala:85
-#, fuzzy
-#| msgid "Indicator for Bluetooth signal"
 msgid "Middle-click to turn Bluetooth on"
-msgstr "مؤشر لإشارة البلوتوث"
+msgstr "اضغط الضغطة الوسطى لتشغيل البلوتوث"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
-msgstr "بلوتوث"
+msgstr "البلوتوث"
 
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"

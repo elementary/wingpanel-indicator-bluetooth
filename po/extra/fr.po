@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2021-07-30 20:31+0000\n"
+"POT-Creation-Date: 2021-08-26 02:02+0000\n"
+"PO-Revision-Date: 2021-08-26 12:26+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/fr/>\n"
@@ -28,31 +28,42 @@ msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Connectez et déconnectez des périphériques Bluetooth appairés"
 
 #: data/bluetooth.appdata.xml.in:14
-msgid "Add tooltip on hover"
-msgstr "Ajout d'une infobulle au survol"
+msgid "Minor updates:"
+msgstr "Mises à jour mineures :"
 
-#: data/bluetooth.appdata.xml.in:15
-msgid "Add a fallback device name for headphones"
-msgstr "Ajout d'un nom de périphérique par défaut pour les écouteurs"
+#: data/bluetooth.appdata.xml.in:16
+msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
+msgstr ""
+"Amélioration de la restauration de l'état du Bluetooth au redémarrage ou à "
+"la sortie de veille"
 
-#: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
-#: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
+#: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
+#: data/bluetooth.appdata.xml.in:43
 msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
-#: data/bluetooth.appdata.xml.in:21
+#: data/bluetooth.appdata.xml.in:23
+msgid "Add tooltip on hover"
+msgstr "Ajout d'une infobulle au survol"
+
+#: data/bluetooth.appdata.xml.in:24
+msgid "Add a fallback device name for headphones"
+msgstr "Ajout d'un nom de périphérique par défaut pour les écouteurs"
+
+#: data/bluetooth.appdata.xml.in:30
 msgid "Prevent showing duplicate devices"
 msgstr ""
 "Nous avons fait en sorte d'empêcher l'affichage de périphériques en double"
 
-#: data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:31
 msgid "Fix animated icon when disabling Bluetooth"
 msgstr "Correction de l'icône animée lors de la désactivation du Bluetooth"
 
-#: data/bluetooth.appdata.xml.in:23
+#: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
 msgstr "Utilisation du type de périphérique plutôt que « (null) »"
 
-#: data/bluetooth.appdata.xml.in:73
+#: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
