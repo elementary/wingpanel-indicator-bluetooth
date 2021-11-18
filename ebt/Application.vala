@@ -61,7 +61,7 @@ public class BluetoothApp : Gtk.Application {
         }
 
         File [] files = null;
-        foreach (string arg_file in arg_files) {
+        foreach (unowned string arg_file in arg_files) {
             if (GLib.FileUtils.test (arg_file, GLib.FileTest.EXISTS)) {
                 files += (File.new_for_path (arg_file));
             }
