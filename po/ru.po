@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2021-06-16 12:16+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"POT-Creation-Date: 2021-08-26 02:02+0000\n"
+"PO-Revision-Date: 2021-08-28 01:44+0000\n"
+"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ru/>\n"
 "Language: ru\n"
@@ -70,7 +70,7 @@ msgstr "Подключено"
 
 #: src/Widgets/DisplayWidget.vala:73
 msgid "Middle-click to turn Bluetooth off"
-msgstr "Нажмите средней кнопкой мыши, чтобы выключить Bluetooth"
+msgstr "Нажмите средней кнопкой, чтобы выключить Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:76
 msgid "Bluetooth connected"
@@ -86,7 +86,7 @@ msgstr "Bluetooth отключён"
 
 #: src/Widgets/DisplayWidget.vala:85
 msgid "Middle-click to turn Bluetooth on"
-msgstr "Нажмите средней кнопкой мыши, чтобы включить Bluetooth"
+msgstr "Нажмите средней кнопкой, чтобы включить Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"

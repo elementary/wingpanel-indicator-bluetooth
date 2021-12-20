@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2021-07-15 17:09+0000\n"
+"POT-Creation-Date: 2021-08-26 02:02+0000\n"
+"PO-Revision-Date: 2021-08-26 12:26+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/he/>\n"
@@ -28,30 +28,39 @@ msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "חיבור וניתוק התקני Bluetooth מצומדים"
 
 #: data/bluetooth.appdata.xml.in:14
-msgid "Add tooltip on hover"
-msgstr "נוספה חלונית עצה בעת מעבר עם העכבר"
+msgid "Minor updates:"
+msgstr "עדכונים משניים:"
 
-#: data/bluetooth.appdata.xml.in:15
-msgid "Add a fallback device name for headphones"
-msgstr "הוספת שם מכשיר כגיבוי לאוזניות"
+#: data/bluetooth.appdata.xml.in:16
+msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
+msgstr "שיפור שחזור מצב ה־Bluetooth עם הפעלה מחדש וחזרה מהשהיה"
 
-#: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
-#: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
+#: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
+#: data/bluetooth.appdata.xml.in:43
 msgid "Updated translations"
 msgstr "התרגומים עודכנו"
 
-#: data/bluetooth.appdata.xml.in:21
+#: data/bluetooth.appdata.xml.in:23
+msgid "Add tooltip on hover"
+msgstr "נוספה חלונית עצה בעת מעבר עם העכבר"
+
+#: data/bluetooth.appdata.xml.in:24
+msgid "Add a fallback device name for headphones"
+msgstr "הוספת שם מכשיר כגיבוי לאוזניות"
+
+#: data/bluetooth.appdata.xml.in:30
 msgid "Prevent showing duplicate devices"
 msgstr "נמנעה הצגת התקנים פעמיים"
 
-#: data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:31
 msgid "Fix animated icon when disabling Bluetooth"
 msgstr "תוקן הסמל המונפש בעת השבתת Bluetooth"
 
-#: data/bluetooth.appdata.xml.in:23
+#: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
 msgstr "להשתמש בסוג ההתקן אם לא זוהה במקום ב־„(ריק)”"
 
-#: data/bluetooth.appdata.xml.in:73
+#: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"

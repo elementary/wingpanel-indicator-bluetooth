@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 20:11+0000\n"
-"PO-Revision-Date: 2021-07-15 06:10+0000\n"
+"POT-Creation-Date: 2021-08-26 02:02+0000\n"
+"PO-Revision-Date: 2021-08-26 05:14+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/uk/>\n"
@@ -29,30 +29,41 @@ msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Підʼєднайте та від'єднайте сполучені пристрої Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:14
-msgid "Add tooltip on hover"
-msgstr "Додано підказку під час наведення"
+msgid "Minor updates:"
+msgstr "Незначні оновлення:"
 
-#: data/bluetooth.appdata.xml.in:15
-msgid "Add a fallback device name for headphones"
-msgstr "Додано назву показ назви пристрою для навушників"
+#: data/bluetooth.appdata.xml.in:16
+msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
+msgstr ""
+"Поліпшено відновлення стану Bluetooth під час перезапуску та відновлення "
+"після призупинення"
 
-#: data/bluetooth.appdata.xml.in:16 data/bluetooth.appdata.xml.in:24
-#: data/bluetooth.appdata.xml.in:29 data/bluetooth.appdata.xml.in:34
+#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
+#: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
+#: data/bluetooth.appdata.xml.in:43
 msgid "Updated translations"
 msgstr "Оновлено переклади"
 
-#: data/bluetooth.appdata.xml.in:21
+#: data/bluetooth.appdata.xml.in:23
+msgid "Add tooltip on hover"
+msgstr "Додано підказку під час наведення"
+
+#: data/bluetooth.appdata.xml.in:24
+msgid "Add a fallback device name for headphones"
+msgstr "Додано назву показ назви пристрою для навушників"
+
+#: data/bluetooth.appdata.xml.in:30
 msgid "Prevent showing duplicate devices"
 msgstr "Запобігання повторюваному показу пристроїв"
 
-#: data/bluetooth.appdata.xml.in:22
+#: data/bluetooth.appdata.xml.in:31
 msgid "Fix animated icon when disabling Bluetooth"
 msgstr "Виправлено анімацію піктограми вимкнення Bluetooth"
 
-#: data/bluetooth.appdata.xml.in:23
+#: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
 msgstr "Застосовувати тип пристрою запасним замість «(null)»"
 
-#: data/bluetooth.appdata.xml.in:73
+#: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
