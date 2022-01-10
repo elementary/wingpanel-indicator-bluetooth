@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2022-01-10 01:06+0000\n"
+"PO-Revision-Date: 2022-01-10 17:06+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/cs/>\n"
@@ -24,8 +24,6 @@ msgid "Bluetooth Indicator"
 msgstr "Indikátor bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
-#, fuzzy
-#| msgid "Connect and disconnect paired bluetooth devices"
 msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Připojit a odpojit spárovaná bluetooth zařízení"
 
@@ -35,7 +33,7 @@ msgstr "Drobné aktualizace:"
 
 #: data/bluetooth.appdata.xml.in:16
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
-msgstr ""
+msgstr "Vylepšen návrat k předchozímu stavu Bluetooth po restartu a probuzení"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
 #: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
@@ -45,23 +43,25 @@ msgstr "Aktualizovány překlady"
 
 #: data/bluetooth.appdata.xml.in:23
 msgid "Add tooltip on hover"
-msgstr ""
+msgstr "Přidána bublinová nápověda při najetí ukazatelem"
 
 #: data/bluetooth.appdata.xml.in:24
 msgid "Add a fallback device name for headphones"
-msgstr ""
+msgstr "Přidán náhradní název pro zařízení pro sluchátka"
 
 #: data/bluetooth.appdata.xml.in:30
 msgid "Prevent showing duplicate devices"
-msgstr ""
+msgstr "Zabráněno zobrazování duplicitních zařízení"
 
 #: data/bluetooth.appdata.xml.in:31
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr ""
+msgstr "Opravena animovaná ikona při vypnutí Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
 msgstr ""
+"Pokud není k dispozici nic lepšího, náhradně se použije název zařízení "
+"namísto „(null)“"
 
 #: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."
