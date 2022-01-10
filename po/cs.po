@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
 "PO-Revision-Date: 2022-01-10 17:06+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/cs/>\n"
 "Language: cs\n"
@@ -69,31 +69,23 @@ msgstr "Připojeno"
 
 #: src/Widgets/DisplayWidget.vala:73
 msgid "Middle-click to turn Bluetooth off"
-msgstr ""
+msgstr "Klikněte kolečkem pro vypnutí Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:76
-#, fuzzy
-#| msgid "Not Connected"
 msgid "Bluetooth connected"
-msgstr "Nepřipojeno"
+msgstr "Bluetooth připojeno"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "Bluetooth"
+msgstr "Bluetooth je zapnuté"
 
 #: src/Widgets/DisplayWidget.vala:84
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "Bluetooth"
+msgstr "Bluetooth je vypnuté"
 
 #: src/Widgets/DisplayWidget.vala:85
-#, fuzzy
-#| msgid "Indicator for Bluetooth signal"
 msgid "Middle-click to turn Bluetooth on"
-msgstr "Indikátor pro signál Bluetooth"
+msgstr "Klikněte kolečkem pro zapnutí Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
