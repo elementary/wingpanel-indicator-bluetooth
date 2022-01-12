@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2022-01-10 17:06+0000\n"
-"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"PO-Revision-Date: 2022-01-12 19:06+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/cs/>\n"
 "Language: cs\n"
@@ -85,7 +85,7 @@ msgstr "Bluetooth je vypnuté"
 
 #: src/Widgets/DisplayWidget.vala:85
 msgid "Middle-click to turn Bluetooth on"
-msgstr "Klikněte kolečkem pro zapnutí Bluetooth"
+msgstr "Bluetooth zapnete kliknutím prostředním tlačítkem"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
