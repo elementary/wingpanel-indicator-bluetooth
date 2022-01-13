@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2022-01-13 20:30+0000\n"
-"Last-Translator: MB <barendregt@fastmail.com>\n"
+"PO-Revision-Date: 2022-01-13 21:09+0000\n"
+"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/nl/>\n"
 "Language: nl\n"
@@ -72,28 +72,20 @@ msgid "Middle-click to turn Bluetooth off"
 msgstr "Middelklik om Bluetooth uit te zetten"
 
 #: src/Widgets/DisplayWidget.vala:76
-#, fuzzy
-#| msgid "Not Connected"
 msgid "Bluetooth connected"
-msgstr "Niet verbonden"
+msgstr "Bluetooth verbonden"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "Bluetooth"
+msgstr "Bluetooth staat aan"
 
 #: src/Widgets/DisplayWidget.vala:84
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "Bluetooth"
+msgstr "Bluetooth staat uit"
 
 #: src/Widgets/DisplayWidget.vala:85
-#, fuzzy
-#| msgid "Indicator for Bluetooth signal"
 msgid "Middle-click to turn Bluetooth on"
-msgstr "Indicator voor Bluetooth signaal"
+msgstr "Middelklik om Bluetooth aan te zetten"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
