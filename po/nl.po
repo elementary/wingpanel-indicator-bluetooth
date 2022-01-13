@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
 "PO-Revision-Date: 2022-01-13 20:30+0000\n"
-"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/nl/>\n"
 "Language: nl\n"
@@ -37,23 +37,23 @@ msgstr ""
 
 #: src/Widgets/Device.vala:116
 msgid "Headphones"
-msgstr ""
+msgstr "Koptelefoon"
 
 #: src/Widgets/Device.vala:119
 msgid "Controller"
-msgstr ""
+msgstr "Controller"
 
 #: src/Widgets/Device.vala:122
 msgid "Keyboard"
-msgstr ""
+msgstr "Toetsenbord"
 
 #: src/Widgets/Device.vala:125
 msgid "Mouse"
-msgstr ""
+msgstr "Muis"
 
 #: src/Widgets/Device.vala:128
 msgid "Tablet"
-msgstr ""
+msgstr "Tablet"
 
 #: src/Widgets/Device.vala:131
 msgid "Touchpad"
@@ -61,7 +61,7 @@ msgstr "Touchpad"
 
 #: src/Widgets/Device.vala:134
 msgid "Phone"
-msgstr ""
+msgstr "Telefoon"
 
 #: src/Widgets/Device.vala:148
 msgid "Connected"
