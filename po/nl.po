@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2020-01-03 21:07+0000\n"
-"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
+"PO-Revision-Date: 2022-01-13 21:09+0000\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/nl/>\n"
 "Language: nl\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:41 src/Widgets/Device.vala:151
@@ -33,35 +33,35 @@ msgstr "Niet mogelijk om te verbinden"
 
 #: src/Widgets/Device.vala:113
 msgid "Speaker"
-msgstr ""
+msgstr "Luidspreker"
 
 #: src/Widgets/Device.vala:116
 msgid "Headphones"
-msgstr ""
+msgstr "Koptelefoon"
 
 #: src/Widgets/Device.vala:119
 msgid "Controller"
-msgstr ""
+msgstr "Controller"
 
 #: src/Widgets/Device.vala:122
 msgid "Keyboard"
-msgstr ""
+msgstr "Toetsenbord"
 
 #: src/Widgets/Device.vala:125
 msgid "Mouse"
-msgstr ""
+msgstr "Muis"
 
 #: src/Widgets/Device.vala:128
 msgid "Tablet"
-msgstr ""
+msgstr "Tablet"
 
 #: src/Widgets/Device.vala:131
 msgid "Touchpad"
-msgstr ""
+msgstr "Touchpad"
 
 #: src/Widgets/Device.vala:134
 msgid "Phone"
-msgstr ""
+msgstr "Telefoon"
 
 #: src/Widgets/Device.vala:148
 msgid "Connected"
@@ -69,31 +69,23 @@ msgstr "Verbonden"
 
 #: src/Widgets/DisplayWidget.vala:73
 msgid "Middle-click to turn Bluetooth off"
-msgstr ""
+msgstr "Middelklik om Bluetooth uit te schakelen"
 
 #: src/Widgets/DisplayWidget.vala:76
-#, fuzzy
-#| msgid "Not Connected"
 msgid "Bluetooth connected"
-msgstr "Niet verbonden"
+msgstr "Bluetooth verbonden"
 
 #: src/Widgets/DisplayWidget.vala:79
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "Bluetooth"
+msgstr "Bluetooth staat aan"
 
 #: src/Widgets/DisplayWidget.vala:84
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "Bluetooth"
+msgstr "Bluetooth staat uit"
 
 #: src/Widgets/DisplayWidget.vala:85
-#, fuzzy
-#| msgid "Indicator for Bluetooth signal"
 msgid "Middle-click to turn Bluetooth on"
-msgstr "Indicator voor Bluetooth signaal"
+msgstr "Middelklik om Bluetooth aan te zetten"
 
 #: src/Widgets/PopoverWidget.vala:39
 msgid "Bluetooth"
