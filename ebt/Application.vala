@@ -172,6 +172,7 @@ public class BluetoothApp : Gtk.Application {
         if (transfer.name == null) {
             return;
         }
+
         dialog_destroy ();
         bt_receiver = new BtReceiver (this);
         bt_receivers.append (bt_receiver);
