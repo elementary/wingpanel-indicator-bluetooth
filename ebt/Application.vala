@@ -280,7 +280,7 @@ public class BluetoothApp : Gtk.Application {
                 GLib.warning (e.message);
             }
         }
-        return input_file.query_exists () && size == size_file;
+        return size == size_file && input_file.query_exists ();
     }
     private string contract_dir () {
         string build_path = Path.build_filename (Environment.get_home_dir (), ".local", "share", "contractor");
