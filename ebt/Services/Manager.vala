@@ -64,8 +64,9 @@ public class Bluetooth.ObjectManager : Object {
     extern static GLib.Type get_adapter_proxy_type ();
 
     private GLib.Type object_manager_proxy_get_type (DBusObjectManagerClient manager, string object_path, string? interface_name) {
-        if (interface_name == null)
+        if (interface_name == null) {
             return typeof (GLib.DBusObjectProxy);
+        }
 
         switch (interface_name) {
             case "org.bluez.Device1":
