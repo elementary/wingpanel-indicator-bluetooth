@@ -131,11 +131,13 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private void transfer_removed (BluetoothIndicator.Services.Obex.Transfer transfer) {
         hide_action ();
     }
+
     private void transfer_active (string address) {
         if (address == device.address) {
             tranfer_progress ();
         }
     }
+
     private void transfer_added (string address, BluetoothIndicator.Services.Obex.Transfer transfer) {
         if (address == device.address) {
             this.transfer = transfer;
@@ -160,9 +162,13 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
                 string filename = transfer.filename;
                 if (filename != null) {
                     if (bt_status (filename)) {
-                        progress_label.label = _("Receiving… %s of %s").printf (format_size (transfer.transferred), format_size (transfer.size));
+                        progress_label.label = _("Receiving… %s of %s").printf (
+                            format_size (transfer.transferred), format_size (transfer.size)
+                        );
                     } else {
-                        progress_label.label = _("Sending… %s of %s").printf (format_size (transfer.transferred), format_size (transfer.size));
+                        progress_label.label = _("Sending… %s of %s").printf (
+                            format_size (transfer.transferred), format_size (transfer.size)
+                        );
                     }
                 }
                 break;
@@ -183,7 +189,17 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         if (progress_revealer.child_revealed) {
             try {
                 var connection = yield GLib.Bus.get (BusType.SESSION);
-                yield connection.call (OBEX_AGENT, OBEX_PATH, OBEX_AGENT, "TransferActive", new Variant ("(s)", transfer.session), null, GLib.DBusCallFlags.NONE, -1);
+                yield connection.call (
+                    OBEX_AGENT,
+                    OBEX_PATH,
+                    OBEX_AGENT,
+                    "TransferActive",
+                    new Variant ("(s)",
+                    transfer.session),
+                    null,
+                    GLib.DBusCallFlags.NONE,
+                    -1
+                );
             } catch (Error e) {
                 critical (e.message);
             }

@@ -215,13 +215,27 @@ public class BtSender : Granite.Dialog {
     private async void create_session () {
         try {
             connection = yield GLib.Bus.get (BusType.SESSION);
-            client_proxy = yield new GLib.DBusProxy (connection, GLib.DBusProxyFlags.DO_NOT_LOAD_PROPERTIES | GLib.DBusProxyFlags.DO_NOT_CONNECT_SIGNALS, null, "org.bluez.obex", "/org/bluez/obex", "org.bluez.obex.Client1");
+            client_proxy = yield new GLib.DBusProxy (
+                connection,
+                GLib.DBusProxyFlags.DO_NOT_LOAD_PROPERTIES | GLib.DBusProxyFlags.DO_NOT_CONNECT_SIGNALS,
+                null,
+                "org.bluez.obex",
+                "/org/bluez/obex",
+                "org.bluez.obex.Client1"
+            );
             VariantBuilder builder = new VariantBuilder (VariantType.DICTIONARY);
             builder.add ("{sv}", "Target", new Variant.string ("opp"));
             Variant parameters = new Variant ("(sa{sv})", device.address, builder);
             Variant variant_client = yield client_proxy.call ("CreateSession", parameters, GLib.DBusCallFlags.NONE, -1);
             variant_client.get ("(o)", out s_session);
-            session = yield new GLib.DBusProxy (connection, GLib.DBusProxyFlags.NONE, null, "org.bluez.obex", s_session, "org.bluez.obex.ObjectPush1");
+            session = yield new GLib.DBusProxy (
+                connection,
+                GLib.DBusProxyFlags.NONE,
+                null,
+                "org.bluez.obex",
+                s_session,
+                "org.bluez.obex.ObjectPush1"
+            );
             send_file.begin ();
         } catch (Error e) {
             GLib.warning (e.message);

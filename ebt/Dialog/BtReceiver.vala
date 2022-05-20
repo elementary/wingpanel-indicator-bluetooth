@@ -180,7 +180,7 @@ public class BtReceiver : Granite.Dialog {
     }
     private void move_to_folder (string file) throws GLib.Error {
         var src = File.new_for_path (file);
-        var dest = change_name (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD) + GLib.Path.DIR_SEPARATOR_S + src.get_basename ());
+        var dest = change_name (Path.build_filename (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD), src.get_basename ()));
         src.move (dest, FileCopyFlags.ALL_METADATA);
         notification.set_icon (device_image.gicon);
         notification.set_title (_("File transferred successfully"));

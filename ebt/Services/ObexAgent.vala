@@ -50,11 +50,13 @@ public class Bluetooth.Obex.Agent : GLib.Object {
         );
 
     }
+
     public void transfer_active (string session_path) throws GLib.Error {
         transfer_view (session_path);
     }
-    public void release () throws GLib.Error {
-    }
+
+    public void release () throws GLib.Error {}
+
     public async string authorize_push (GLib.ObjectPath objectpath) throws Error {
         SourceFunc callback = authorize_push.callback;
         BluezObexError? btobexerror = null;
