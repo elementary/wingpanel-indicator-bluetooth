@@ -206,7 +206,7 @@ public class BluetoothApp : Gtk.Application {
             notification.set_title (_("Rejected file"));
             notification.set_body ( _("<b>File:</b> %s <b>Size: </b>%s already exist").printf (transfer.name, GLib.format_size (transfer.size)));
             send_notification ("io.elementary.bluetooth", notification);
-            Idle.add (()=>{activate_action ("btcancel", new Variant.string ("Cancel")); return false;});
+            Idle.add (() => {activate_action ("btcancel", new Variant.string ("Cancel")); return false;});
             return;
         }
         if (bt_response == null) {
