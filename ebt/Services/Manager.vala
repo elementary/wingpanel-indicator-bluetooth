@@ -91,7 +91,7 @@ public class Bluetooth.ObjectManager : Object {
             unowned Bluetooth.Device device = (Bluetooth.Device) iface;
             device_added (device);
         } else if (iface is Bluetooth.Adapter) {
-            unowned Bluetooth.Adapter adapter = (Bluetooth.Adapter) iface;
+            unowned var adapter = (Bluetooth.Adapter) iface;
             has_object = true;
             ((DBusProxy) adapter).g_properties_changed.connect ((changed, invalid) => {
                 var discovering = changed.lookup_value ("Discovering", GLib.VariantType.BOOLEAN);
