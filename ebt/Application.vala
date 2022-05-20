@@ -179,9 +179,9 @@ public class BluetoothApp : Gtk.Application {
         bt_receiver = new BtReceiver (this);
         bt_receivers.append (bt_receiver);
         bt_receiver.destroy.connect (()=> {
-            bt_receivers.foreach ((reciever)=>{
-                if (reciever.transfer.session == bt_receiver.session) {
-                    bt_receivers.remove_link (bt_receivers.find (reciever));
+            bt_receivers.foreach ((receiver)=>{
+                if (receiver.transfer.session == bt_receiver.session) {
+                    bt_receivers.remove_link (bt_receivers.find (receiver));
                 }
             });
         });
