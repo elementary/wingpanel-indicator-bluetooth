@@ -95,6 +95,7 @@ public class BluetoothApp : Gtk.Application {
                 });
                 arg_files = {};
             }
+
             send = false;
         }
         return 0;
