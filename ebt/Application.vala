@@ -193,8 +193,8 @@ public class BluetoothApp : Gtk.Application {
 
     private void response_notify (string address, GLib.ObjectPath objectpath) {
         Bluetooth.Device device = object_manager.get_device (address);
-        string devicename = device.name;
-        string deviceicon = device.icon;
+        unowned var devicename = device.name;
+        unowned var deviceicon = device.icon;
         try {
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
         } catch (Error e) {
