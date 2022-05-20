@@ -65,7 +65,7 @@ public class BtSender : Granite.Dialog {
         overlay.add (icon_image);
         overlay.add_overlay (icon_label);
 
-        path_label = new Gtk.Label ("<b>From</b>:") {
+        path_label = new Gtk.Label ("<b>%s</b>:".printf (_("From")) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
