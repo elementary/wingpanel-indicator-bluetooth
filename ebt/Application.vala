@@ -98,6 +98,7 @@ public class BluetoothApp : Gtk.Application {
 
             send = false;
         }
+
         return 0;
     }
 
