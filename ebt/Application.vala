@@ -270,7 +270,7 @@ public class BluetoothApp : Gtk.Application {
         }
     }
     private bool reject_if_exist (string name, uint64 size) {
-        var input_file = File.new_for_path (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD) + GLib.Path.DIR_SEPARATOR_S + name);
+        var input_file = File.new_for_path (Path.build_filename (Environment.get_user_special_dir (UserDirectory.DOWNLOAD), name));
         uint64 size_file = 0;
         if (input_file.query_exists ()) {
            try {
