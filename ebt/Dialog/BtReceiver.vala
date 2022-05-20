@@ -247,7 +247,7 @@ public class BtReceiver : Granite.Dialog {
             minutes = (seconds - hours * 60 * 60 + 30) / 60;
             string h = ngettext ("%'u hour", "%'u hours", hours).printf (hours);
             string m = ngettext ("%'u minute", "%'u minutes", minutes).printf (minutes);
-            return h.concat (", ", m);
+            return _("%s, %s").printf (h, m); ///TRANSLATORS For example "1 hour, 8 minutes".
         }
 
         return ngettext ("approximately %'d hour", "approximately %'d hours", hours).printf (hours);
