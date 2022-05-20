@@ -186,15 +186,15 @@ public class BluetoothApp : Gtk.Application {
             });
         });
         Bluetooth.Device device = object_manager.get_device (address);
-        unowned var devicename = device.name;
-        unowned var deviceicon = device.icon;
-        bt_receiver.set_tranfer (devicename == null? device_icon (device) : devicename, deviceicon, objectpath);
+        var devicename = device.name;
+        var deviceicon = device.icon;
+        bt_receiver.set_transfer (devicename == null? device_icon (device) : devicename, deviceicon, objectpath);
     }
 
     private void response_notify (string address, GLib.ObjectPath objectpath) {
         Bluetooth.Device device = object_manager.get_device (address);
-        unowned var devicename = device.name;
-        unowned var deviceicon = device.icon;
+        var devicename = device.name;
+        var deviceicon = device.icon;
         try {
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
         } catch (Error e) {

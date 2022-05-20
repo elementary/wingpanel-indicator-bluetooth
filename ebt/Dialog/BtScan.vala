@@ -38,13 +38,13 @@ public class BtScan : Granite.Dialog {
             halign = Gtk.Align.CENTER
         };
 
-        var tittle_label = new Gtk.Label (_("Bluetooth File Transfer")) {
+        var title_label = new Gtk.Label (_("Bluetooth File Transfer")) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        tittle_label.get_style_context ().add_class ("primary");
+        title_label.get_style_context ().add_class ("primary");
 
         var info_label = new Gtk.Label (_("Select a Bluetooth Device Below to Send Files")) {
             max_width_chars = 45,
@@ -90,7 +90,7 @@ public class BtScan : Granite.Dialog {
             margin_bottom = 5
         };
         image_label.attach (icon_image, 0, 0, 1, 2);
-        image_label.attach (tittle_label, 1, 0, 1, 1);
+        image_label.attach (title_label, 1, 0, 1, 1);
         image_label.attach (info_label, 1, 1, 1, 1);
         var frame_device = new Gtk.Grid () {
             orientation = Gtk.Orientation.VERTICAL,

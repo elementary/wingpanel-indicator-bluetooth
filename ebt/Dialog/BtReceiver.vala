@@ -133,7 +133,7 @@ public class BtReceiver : Granite.Dialog {
         });
     }
 
-    public void set_tranfer (string devicename, string deviceicon, string objectpath) {
+    public void set_transfer (string devicename, string deviceicon, string objectpath) {
         device_label.set_markup (_("<b>From</b>: %s").printf (GLib.Markup.escape_text (devicename)));
         directory_label.label = _("<b>To</b>: %s").printf (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD));
         device_image.set_from_gicon (new ThemedIcon (deviceicon == null? "bluetooth" : deviceicon), Gtk.IconSize.LARGE_TOOLBAR);

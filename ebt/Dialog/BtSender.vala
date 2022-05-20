@@ -65,7 +65,7 @@ public class BtSender : Granite.Dialog {
         overlay.add (icon_image);
         overlay.add_overlay (icon_label);
 
-        path_label = new Gtk.Label ("<b>%s</b>:".printf (_("From")) {
+        path_label = new Gtk.Label ("<b>%s</b>:".printf (_("From"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
@@ -162,7 +162,7 @@ public class BtSender : Granite.Dialog {
         liststore.get (iter, 0, out file_path);
 
         total_n_current ();
-        create_season.begin ();
+        create_session.begin ();
     }
 
     public void insert_files (File [] files) {
@@ -212,7 +212,7 @@ public class BtSender : Granite.Dialog {
         }
     }
 
-    private async void create_season () {
+    private async void create_session () {
         try {
             connection = yield GLib.Bus.get (BusType.SESSION);
             client_proxy = yield new GLib.DBusProxy (connection, GLib.DBusProxyFlags.DO_NOT_LOAD_PROPERTIES | GLib.DBusProxyFlags.DO_NOT_CONNECT_SIGNALS, null, "org.bluez.obex", "/org/bluez/obex", "org.bluez.obex.Client1");
@@ -267,7 +267,7 @@ public class BtSender : Granite.Dialog {
                     bt_retry.show_all ();
                     bt_retry.response.connect ((response_id) => {
                         if (response_id == Gtk.ResponseType.ACCEPT) {
-                            create_season.begin ();
+                            create_session.begin ();
                             present ();
                             bt_retry.destroy ();
                         } else {

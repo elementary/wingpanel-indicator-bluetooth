@@ -28,7 +28,7 @@ public class BtRetry : Granite.Dialog {
     public BtRetry (Gtk.Widget widget) {
         Object (transient_for: (Gtk.Window) widget.get_toplevel (),
                 destroy_with_parent: true,
-                resizable :false
+                resizable : false
         );
     }
 
