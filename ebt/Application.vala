@@ -284,7 +284,7 @@ public class BluetoothApp : Gtk.Application {
     }
 
     private string contract_dir () {
-        string build_path = Path.build_filename (Environment.get_home_dir (), ".local", "share", "contractor");
+        var build_path = Path.build_filename (Environment.get_home_dir (), ".local", "share", "contractor");
         if (!File.new_for_path (build_path).query_exists ()) {
             DirUtils.create (build_path, 0700);
         }
