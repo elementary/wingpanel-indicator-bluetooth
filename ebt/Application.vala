@@ -238,7 +238,7 @@ public class BluetoothApp : Gtk.Application {
         } else {
             notification.set_title (_("Receiving file"));
             notification.set_body (_("%s sending file: %s size: %s").printf (devicename, transfer.name, GLib.format_size (transfer.size)));
-            Idle.add (()=>{ activate_action ("btaccept", new Variant.string ("Accept")); return false;});
+            Idle.add (() => { activate_action ("btaccept", new Variant.string ("Accept")); return false;});
         }
         send_notification ("io.elementary.bluetooth", notification);
     }
