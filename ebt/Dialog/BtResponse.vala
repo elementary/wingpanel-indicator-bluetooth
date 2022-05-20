@@ -28,7 +28,7 @@ public class BtResponse : Granite.Dialog {
 
     public BtResponse (Gtk.Application application) {
         Object (application: application,
-                resizable :false
+                resizable : false
         );
     }
 
