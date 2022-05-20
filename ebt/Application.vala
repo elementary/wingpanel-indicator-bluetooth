@@ -186,8 +186,8 @@ public class BluetoothApp : Gtk.Application {
             });
         });
         Bluetooth.Device device = object_manager.get_device (address);
-        string devicename = device.name;
-        string deviceicon = device.icon;
+        unowned var devicename = device.name;
+        unowned var deviceicon = device.icon;
         bt_receiver.set_tranfer (devicename == null? device_icon (device) : devicename, deviceicon, objectpath);
     }
 
