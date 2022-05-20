@@ -88,7 +88,7 @@ public class Bluetooth.ObjectManager : Object {
 
     private void on_interface_added (GLib.DBusObject object, GLib.DBusInterface iface) {
         if (iface is Bluetooth.Device) {
-            unowned Bluetooth.Device device = (Bluetooth.Device) iface;
+            unowned var device = (Bluetooth.Device) iface;
             device_added (device);
         } else if (iface is Bluetooth.Adapter) {
             unowned var adapter = (Bluetooth.Adapter) iface;
