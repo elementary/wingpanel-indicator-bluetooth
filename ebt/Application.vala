@@ -37,8 +37,8 @@ public class BluetoothApp : Gtk.Application {
     public BtScan bt_scan = null;
     public GLib.List<BtReceiver> bt_receivers;
     public GLib.List<BtSender> bt_senders;
-    public static bool silent;
-    public static bool send;
+    public static bool silent = true;
+    public static bool send = false;
     public static bool active_once;
     [CCode (array_length = false, array_null_terminated = true)]
     public static string[]? arg_files = {};
@@ -61,23 +61,43 @@ public class BluetoothApp : Gtk.Application {
         }
 
         File [] files = null;
-        foreach (unowned string arg_file in arg_files) {
-            if (GLib.FileUtils.test (arg_file, GLib.FileTest.EXISTS)) {
-                files += (File.new_for_path (arg_file));
+        foreach (string arg_file in arg_files) {
+            Uri? abs_uri = null, current_uri = null;
+            try {
+                var current_dir = "file://" + Environment.get_current_dir () + "/";
+                current_uri = Uri.parse (current_dir, UriFlags.NONE);
+                abs_uri = Uri.parse_relative (current_uri, arg_file, UriFlags.NONE);
+            } catch (Error e) {
+                critical ("Invalid uri %s ignored - %s", arg_file, e.message);
+                continue;
+            }
+
+            if (GLib.FileUtils.test (abs_uri.get_path (), GLib.FileTest.EXISTS)) {
+                files += (File.new_for_path (abs_uri.get_path ()));
+            } else {
+                warning ("%s does not exist - ignoring", abs_uri.get_path ());
             }
         }
-        activate ();
+
         if (send) {
+            silent = true; // Ensure object_manager is created
+            activate ();
+
             if (files != null) {
                 if (bt_scan == null) {
                     bt_scan = new BtScan (this, object_manager);
-                    bt_scan.show_all ();
+                    Idle.add (() => { // Wait for async BtScan initialisation
+                        bt_scan.show_all ();
+                        return Source.REMOVE;
+                    });
                 } else {
                     bt_scan.present ();
                 }
+
                 bt_scan.destroy.connect (() => {
                     bt_scan = null;
                 });
+
                 bt_scan.send_file.connect ((device) => {
                     if (!insert_sender (files, device)) {
                         bt_sender = new BtSender (this);
@@ -97,6 +117,8 @@ public class BluetoothApp : Gtk.Application {
             }
 
             send = false;
+        } else {
+            activate ();
         }
 
         return 0;
