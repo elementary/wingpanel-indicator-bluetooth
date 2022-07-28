@@ -62,20 +62,11 @@ public class BluetoothApp : Gtk.Application {
 
         File [] files = null;
         foreach (string arg_file in arg_files) {
-            Uri? abs_uri = null, current_uri = null;
-            try {
-                var current_dir = "file://" + Environment.get_current_dir () + "/";
-                current_uri = Uri.parse (current_dir, UriFlags.NONE);
-                abs_uri = Uri.parse_relative (current_uri, arg_file, UriFlags.NONE);
-            } catch (Error e) {
-                critical ("Invalid uri %s ignored - %s", arg_file, e.message);
-                continue;
-            }
-
-            if (GLib.FileUtils.test (abs_uri.get_path (), GLib.FileTest.EXISTS)) {
-                files += (File.new_for_path (abs_uri.get_path ()));
+            var file = command.create_file_for_arg (arg_file);
+            if (file.query_exists ()) {
+                files += file;
             } else {
-                warning ("%s does not exist - ignoring", abs_uri.get_path ());
+                warning ("%s does not exist - ignoring", file.get_path ());
             }
         }
 
