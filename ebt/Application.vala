@@ -60,21 +60,20 @@ public class BluetoothApp : Gtk.Application {
             warning (err.message);
         }
 
-        File [] files = null;
-        foreach (string arg_file in arg_files) {
-            var file = command.create_file_for_arg (arg_file);
-            if (file.query_exists ()) {
-                files += file;
-            } else {
-                warning ("%s does not exist - ignoring", file.get_path ());
-            }
-        }
+        activate ();
 
         if (send) {
-            silent = true; // Ensure object_manager is created
-            activate ();
+            File [] files = {};
+            foreach (string arg_file in arg_files) {
+                var file = command.create_file_for_arg (arg_file);
+                if (file.query_exists ()) {
+                    files += file;
+                } else {
+                    stderr.printf ("The file %s was not found and will not be sent.\n", file.get_path ());
+                }
+            }
 
-            if (files != null) {
+            if (files.length > 0) {
                 if (bt_scan == null) {
                     bt_scan = new BtScan (this, object_manager);
                     Idle.add (() => { // Wait for async BtScan initialisation
@@ -104,12 +103,10 @@ public class BluetoothApp : Gtk.Application {
                         });
                     }
                 });
-                arg_files = {};
-            }
 
-            send = false;
-        } else {
-            activate ();
+                arg_files = {};
+                send = false;
+            }
         }
 
         return 0;
@@ -128,7 +125,12 @@ public class BluetoothApp : Gtk.Application {
         });
 
         if (silent) {
+            release (); // Protect from multiple holds. Has no effect if not already held.
             hold ();
+            silent = false;
+        }
+
+        if (object_manager == null) {
             bt_receivers = new GLib.List<BtReceiver> ();
             bt_senders = new GLib.List<BtSender> ();
             object_manager = new Bluetooth.ObjectManager ();
@@ -147,8 +149,8 @@ public class BluetoothApp : Gtk.Application {
                     remove_contract ();
                 }
             });
-            silent = false;
         }
+
         if (bt_response != null ) {
             bt_response.show_all ();
         }
