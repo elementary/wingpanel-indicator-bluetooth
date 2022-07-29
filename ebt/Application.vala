@@ -168,9 +168,9 @@ public class BluetoothApp : Gtk.Application {
         return exist;
     }
     private void dialog_active (string session_path) {
-        bt_receivers.foreach ((reciever)=>{
-            if (reciever.transfer.session == session_path) {
-                reciever.show_all ();
+        bt_receivers.foreach ((receiver)=>{
+            if (receiver.transfer.session == session_path) {
+                receiver.show_all ();
             }
         });
         bt_senders.foreach ((sender)=>{
