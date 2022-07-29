@@ -48,7 +48,7 @@ public class BtRetry : Granite.Dialog {
         overlay.add (icon_image);
         overlay.add_overlay (status_image);
 
-        var warning_label = new Gtk.Label (_("File transfer failed")) {
+        var warning_label = new Gtk.Label (_("File transfer failed or was declined")) {
             max_width_chars = 45,
             wrap = true,
             xalign = 0
