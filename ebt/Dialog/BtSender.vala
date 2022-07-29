@@ -252,7 +252,7 @@ public class BtSender : Granite.Dialog {
         path_label.set_markup (_("<b>From</b>: %s").printf (file_path.get_parent ().get_path ()));
         device_label.set_markup (_("<b>To</b>: %s").printf (GLib.Markup.escape_text (device.name)));
         icon_label.set_from_gicon (new ThemedIcon (device.icon == null? "bluetooth" : device.icon), Gtk.IconSize.LARGE_TOOLBAR);
-        progress_label.label = _("Sending… (%i/%i)").printf (current_file, total_file);
+        progress_label.label = _("Waiting for acceptance on %s…").printf (device.name);
         try {
             Variant variant = yield session.call ("SendFile", new Variant ("(s)", file_path.get_path ()), GLib.DBusCallFlags.NONE, -1);
             start_time = (int) get_real_time ();
