@@ -31,7 +31,6 @@ public class BluetoothApp : Gtk.Application {
     public Bluetooth.ObjectManager object_manager;
     public Bluetooth.Obex.Agent agent_obex;
     public Bluetooth.Obex.Transfer transfer;
-    public BtResponse bt_response = null;
     public BtReceiver bt_receiver;
     public BtSender bt_sender;
     public BtScan bt_scan = null;
@@ -141,9 +140,7 @@ public class BluetoothApp : Gtk.Application {
                 if (object_manager.has_object) {
                     if (!active_once) {
                         agent_obex = new Bluetooth.Obex.Agent ();
-                        agent_obex.transfer_view.connect (dialog_active);
                         agent_obex.response_accepted.connect (response_accepted);
-                        agent_obex.response_canceled.connect (dialog_destroy);
                         agent_obex.response_notify.connect (response_notify);
                         active_once = true;
                     }
@@ -152,10 +149,6 @@ public class BluetoothApp : Gtk.Application {
                     remove_contract ();
                 }
             });
-        }
-
-        if (bt_response != null ) {
-            bt_response.show_all ();
         }
     }
 
@@ -170,18 +163,6 @@ public class BluetoothApp : Gtk.Application {
         });
         return exist;
     }
-    private void dialog_active (string session_path) {
-        bt_receivers.foreach ((receiver)=>{
-            if (receiver.transfer.session == session_path) {
-                receiver.show_all ();
-            }
-        });
-        bt_senders.foreach ((sender)=>{
-            if (sender.transfer.session == session_path) {
-                sender.show_all ();
-            }
-        });
-    }
 
     private void response_accepted (string address, GLib.ObjectPath objectpath) {
         try {
@@ -193,7 +174,6 @@ public class BluetoothApp : Gtk.Application {
             return;
         }
 
-        dialog_destroy ();
         bt_receiver = new BtReceiver (this);
         bt_receivers.append (bt_receiver);
         bt_receiver.destroy.connect (()=> {
@@ -239,20 +219,7 @@ public class BluetoothApp : Gtk.Application {
             });
             return;
         }
-        if (bt_response == null) {
-            bt_response = new BtResponse (this);
-        }
-        bt_response.response.connect ((response_id) => {
-            if (response_id == Gtk.ResponseType.ACCEPT) {
-                activate_action ("btaccept", new Variant.string ("Accept"));
-            } else {
-                activate_action ("btcancel", new Variant.string ("Cancel"));
-            }
-            dialog_destroy ();
-        });
-        bt_response.destroy.connect (() => {
-            bt_response = null;
-        });
+
         if (object_manager.settings.get_int ("bluetooth-accept-files") == 0) {
             notification.set_priority (NotificationPriority.URGENT);
             notification.set_title (_("Incoming file"));
@@ -271,12 +238,6 @@ public class BluetoothApp : Gtk.Application {
                 _("Cancel"),
                 GLib.Action.print_detailed_name ("app.btcancel", new Variant ("s", "Cancel"))
             );
-            bt_response.update_device (
-                devicename == null? get_device_description_from_icon (device) : devicename
-            );
-            bt_response.update_filename (transfer.name);
-            bt_response.update_size (transfer.size);
-            bt_response.update_icon (deviceicon);
         } else {
             notification.set_title (_("Receiving file"));
             notification.set_body (_("%s is sending file: %s size: %s").printf (
@@ -313,11 +274,6 @@ public class BluetoothApp : Gtk.Application {
         }
     }
 
-    private void dialog_destroy () {
-        if (bt_response != null) {
-            bt_response.destroy ();
-        }
-    }
     private bool reject_if_exist (string name, uint64 size) {
         var input_file = File.new_for_path (
             Path.build_filename (

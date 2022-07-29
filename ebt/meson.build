@@ -11,7 +11,6 @@ executable(
     'Dialog/BtSender.vala',
     'Dialog/BtScan.vala',
     'Dialog/DeviceRow.vala',
-    'Dialog/BtResponse.vala',
     dependencies : [
         dependency ('granite'),
         dependency ('gtk+-3.0'),
