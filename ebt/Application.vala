@@ -293,19 +293,18 @@ public class BluetoothApp : Gtk.Application {
         return size == size_file && input_file.query_exists ();
     }
 
-    private string contract_dir () {
+    private File file_contract () {
         var build_path = Path.build_filename (
             Environment.get_home_dir (), ".local", "share", "contractor"
         );
+
         if (!File.new_for_path (build_path).query_exists ()) {
             DirUtils.create (build_path, 0700);
         }
-        return build_path;
-    }
-    private File file_contract () {
+
         return File.new_for_path (
                 Path.build_filename (
-                    contract_dir (),
+                    build_path,
                     Environment.get_application_name () + ".contract"
                 )
         );
