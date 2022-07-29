@@ -227,7 +227,7 @@ public class BluetoothApp : Gtk.Application {
         if (reject_if_exist (transfer.name, transfer.size)) {
             notification.set_title (_("Rejected file"));
             notification.set_body (
-                _("<b>File:</b> %s <b>Size: </b>%s already exist").printf (
+                _("<b>File:</b> %s <b>Size: </b>%s already exists").printf (
                     transfer.name,
                     GLib.format_size (transfer.size)
                 )
@@ -279,7 +279,7 @@ public class BluetoothApp : Gtk.Application {
             bt_response.update_icon (deviceicon);
         } else {
             notification.set_title (_("Receiving file"));
-            notification.set_body (_("%s sending file: %s size: %s").printf (
+            notification.set_body (_("%s is sending file: %s size: %s").printf (
                 devicename,
                 transfer.name,
                 GLib.format_size (transfer.size)
