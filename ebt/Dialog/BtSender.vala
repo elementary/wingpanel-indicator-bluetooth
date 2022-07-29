@@ -31,7 +31,6 @@ public class BtSender : Granite.Dialog {
     private Gtk.Label rate_label;
     private Gtk.Image icon_label;
     private Gtk.ListStore liststore;
-    private BtRetry bt_retry = null;
     private int start_time = 0;
     private int current_file = 0;
     private int total_file = 0;
@@ -272,26 +271,33 @@ public class BtSender : Granite.Dialog {
     private void tranfer_progress () {
         switch (transfer.status) {
             case "error":
-                if (bt_retry == null) {
-                    hide_on_delete ();
-                    bt_retry = new BtRetry (this);
-                    bt_retry.update_device (device.name);
-                    bt_retry.update_filename (file_path.get_basename ());
-                    bt_retry.update_result (device.name);
-                    bt_retry.show_all ();
-                    bt_retry.response.connect ((response_id) => {
-                        if (response_id == Gtk.ResponseType.ACCEPT) {
-                            create_session.begin ();
-                            present ();
-                            bt_retry.destroy ();
-                        } else {
-                            destroy ();
-                        }
-                    });
-                    bt_retry.destroy.connect (()=> {
-                        bt_retry = null;
-                    });
-                }
+                hide_on_delete ();
+                var bt_retry = new Granite.MessageDialog (
+                    _("The transfer of '%s' failed.").printf (file_path.get_basename ()),
+                    "%s\n%s".printf (
+                        _("The transfer was interrupted or it was declined by %s.").printf (
+                            device.name
+                        ),
+                        _("The file has not been transferred")
+                    ),
+                    new ThemedIcon ("bluetooth"),
+                    Gtk.ButtonsType.NONE
+                ) {
+                    badge_icon = new ThemedIcon ("process-error")
+                };
+                bt_retry.add_button ("Cancel", Gtk.ResponseType.CANCEL);
+                var suggested_button = bt_retry.add_button ("Retry", Gtk.ResponseType.ACCEPT);
+                suggested_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+                bt_retry.response.connect ((response_id) => {
+                    if (response_id == Gtk.ResponseType.ACCEPT) {
+                        create_session.begin ();
+                        present ();
+                    }
+
+                    bt_retry.destroy ();
+                });
+                bt_retry.show_all ();
                 progressbar.fraction = 0.0;
                 remove_session.begin ();
                 break;
