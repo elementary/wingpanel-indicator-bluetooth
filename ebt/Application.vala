@@ -69,7 +69,10 @@ public class BluetoothApp : Gtk.Application {
                 if (file.query_exists ()) {
                     files += file;
                 } else {
-                    stderr.printf ("The file %s was not found and will not be sent.\n", file.get_path ());
+                    stderr.printf (
+                        "The file %s was not found and will not be sent.\n",
+                        file.get_path ()
+                    );
                 }
             }
 
@@ -203,7 +206,11 @@ public class BluetoothApp : Gtk.Application {
         Bluetooth.Device device = object_manager.get_device (address);
         var devicename = device.name;
         var deviceicon = device.icon;
-        bt_receiver.set_transfer (devicename == null? device_icon (device) : devicename, deviceicon, objectpath);
+        bt_receiver.set_transfer (
+            devicename == null ? get_device_description_from_icon (device) : devicename,
+            deviceicon,
+            objectpath
+        );
     }
 
     private void response_notify (string address, GLib.ObjectPath objectpath) {
@@ -219,9 +226,17 @@ public class BluetoothApp : Gtk.Application {
         notification.set_icon (new ThemedIcon (deviceicon));
         if (reject_if_exist (transfer.name, transfer.size)) {
             notification.set_title (_("Rejected file"));
-            notification.set_body ( _("<b>File:</b> %s <b>Size: </b>%s already exist").printf (transfer.name, GLib.format_size (transfer.size)));
+            notification.set_body (
+                _("<b>File:</b> %s <b>Size: </b>%s already exist").printf (
+                    transfer.name,
+                    GLib.format_size (transfer.size)
+                )
+            );
             send_notification ("io.elementary.bluetooth", notification);
-            Idle.add (() => {activate_action ("btcancel", new Variant.string ("Cancel")); return false;});
+            Idle.add (() => {
+                activate_action ("btcancel", new Variant.string ("Cancel"));
+                return false;
+            });
             return;
         }
         if (bt_response == null) {
@@ -241,24 +256,43 @@ public class BluetoothApp : Gtk.Application {
         if (object_manager.settings.get_int ("bluetooth-accept-files") == 0) {
             notification.set_priority (NotificationPriority.URGENT);
             notification.set_title (_("Incoming file"));
-            notification.set_body (_("<b>%s</b> is ready to send file: %s size: %s").printf (
-                devicename == null? device_icon (device) : devicename, transfer.name, GLib.format_size (transfer.size))
+            notification.set_body (
+                _("<b>%s</b> is ready to send file: %s size: %s").printf (
+                    devicename == null? get_device_description_from_icon (device) : devicename,
+                    transfer.name,
+                    GLib.format_size (transfer.size)
+                )
             );
-            notification.add_button (_("Accept"), GLib.Action.print_detailed_name ("app.btaccept", new Variant ("s", "Accept")));
-            notification.add_button (_("Cancel"), GLib.Action.print_detailed_name ("app.btcancel", new Variant ("s", "Cancel")));
-            bt_response.update_device (devicename == null? device_icon (device) : devicename);
+            notification.add_button (
+                _("Accept"),
+                GLib.Action.print_detailed_name ("app.btaccept", new Variant ("s", "Accept"))
+            );
+            notification.add_button (
+                _("Cancel"),
+                GLib.Action.print_detailed_name ("app.btcancel", new Variant ("s", "Cancel"))
+            );
+            bt_response.update_device (
+                devicename == null? get_device_description_from_icon (device) : devicename
+            );
             bt_response.update_filename (transfer.name);
             bt_response.update_size (transfer.size);
             bt_response.update_icon (deviceicon);
         } else {
             notification.set_title (_("Receiving file"));
-            notification.set_body (_("%s sending file: %s size: %s").printf (devicename, transfer.name, GLib.format_size (transfer.size)));
-            Idle.add (() => { activate_action ("btaccept", new Variant.string ("Accept")); return false;});
+            notification.set_body (_("%s sending file: %s size: %s").printf (
+                devicename,
+                transfer.name,
+                GLib.format_size (transfer.size)
+            ));
+            Idle.add (() => {
+                activate_action ("btaccept", new Variant.string ("Accept"));
+                 return false;
+            });
         }
         send_notification ("io.elementary.bluetooth", notification);
     }
 
-    private string device_icon (Bluetooth.Device device) {
+    private string get_device_description_from_icon (Bluetooth.Device device) {
         switch (device.icon) {
             case "audio-card":
                 return _("Speaker");
@@ -285,7 +319,12 @@ public class BluetoothApp : Gtk.Application {
         }
     }
     private bool reject_if_exist (string name, uint64 size) {
-        var input_file = File.new_for_path (Path.build_filename (Environment.get_user_special_dir (UserDirectory.DOWNLOAD), name));
+        var input_file = File.new_for_path (
+            Path.build_filename (
+                Environment.get_user_special_dir (UserDirectory.DOWNLOAD),
+                name
+            )
+        );
         uint64 size_file = 0;
         if (input_file.query_exists ()) {
            try {
@@ -299,14 +338,21 @@ public class BluetoothApp : Gtk.Application {
     }
 
     private string contract_dir () {
-        var build_path = Path.build_filename (Environment.get_home_dir (), ".local", "share", "contractor");
+        var build_path = Path.build_filename (
+            Environment.get_home_dir (), ".local", "share", "contractor"
+        );
         if (!File.new_for_path (build_path).query_exists ()) {
             DirUtils.create (build_path, 0700);
         }
         return build_path;
     }
     private File file_contract () {
-        return File.new_for_path (Path.build_filename (contract_dir (), Environment.get_application_name () + ".contract"));
+        return File.new_for_path (
+                Path.build_filename (
+                    contract_dir (),
+                    Environment.get_application_name () + ".contract"
+                )
+        );
     }
     private void create_contract () {
         try {
