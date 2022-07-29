@@ -235,7 +235,8 @@ public class BluetoothApp : Gtk.Application {
                 GLib.Action.print_detailed_name ("app.btaccept", new Variant ("s", "Accept"))
             );
             notification.add_button (
-                _("Cancel"),
+                ///Translators response to refuse a file transfer
+                _("Decline"),
                 GLib.Action.print_detailed_name ("app.btcancel", new Variant ("s", "Cancel"))
             );
         } else {
