@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2021-08-28 01:44+0000\n"
-"Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
+"PO-Revision-Date: 2022-09-30 09:26+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ru/>\n"
 "Language: ru\n"
@@ -78,7 +78,7 @@ msgstr "Bluetooth подключён"
 
 #: src/Widgets/DisplayWidget.vala:79
 msgid "Bluetooth is on"
-msgstr "Bluetooth включен"
+msgstr "Bluetooth включён"
 
 #: src/Widgets/DisplayWidget.vala:84
 msgid "Bluetooth is off"
