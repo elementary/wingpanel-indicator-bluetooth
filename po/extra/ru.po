@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-08-26 02:02+0000\n"
-"PO-Revision-Date: 2021-08-26 22:37+0000\n"
-"Last-Translator: asdffdsdaf <asdffdsdaf@gmail.com>\n"
+"PO-Revision-Date: 2022-09-30 09:41+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/ru/>\n"
 "Language: ru\n"
@@ -26,7 +26,7 @@ msgstr "Индикатор Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:9
 msgid "Connect and disconnect paired Bluetooth devices"
-msgstr "Подключайте и отсоединяйте сопряженные устройства Bluetooth"
+msgstr "Подключайте и отсоединяйте сопряжённые устройства Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:14
 msgid "Minor updates:"
@@ -58,7 +58,7 @@ msgstr "Предотвращение повторяющегося показа �
 
 #: data/bluetooth.appdata.xml.in:31
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr "Исправлено анимацию пиктограммы отключения Bluetooth"
+msgstr "Исправлена анимация иконки при отключении Bluetooth"
 
 #: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
