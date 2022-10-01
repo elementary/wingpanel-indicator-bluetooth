@@ -109,7 +109,13 @@ public class BluetoothApp : Gtk.Application {
 
                 arg_files = {};
                 send = false;
+            } else {
+                stderr.printf ("\n" + _("Must supply at least one file to send") + "\n\n");
             }
+        } else if (!silent) {
+            stderr.printf ("\n" + _("Must supply at least one option") + "\n\n");
+            var help = opt_context.get_help (true, null);
+            stderr.printf (help);
         }
 
         return 0;
