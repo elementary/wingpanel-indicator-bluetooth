@@ -103,6 +103,8 @@ public class BluetoothApp : Gtk.Application {
                                     bt_senders.remove_link (bt_senders.find (sender));
                                 }
                             });
+
+                            check_quit ();
                         });
                     }
                 });
@@ -189,6 +191,8 @@ public class BluetoothApp : Gtk.Application {
                     bt_receivers.remove_link (bt_receivers.find (receiver));
                 }
             });
+
+            check_quit ();
         });
         Bluetooth.Device device = object_manager.get_device (address);
         var devicename = device.name;
@@ -352,6 +356,16 @@ public class BluetoothApp : Gtk.Application {
             warning ("Error: %s\n", e.message);
         }
     }
+
+    private void check_quit () {
+        if (!is_held && bt_receivers.length () == 0 && bt_senders.length () == 0) {
+            Idle.add (() => {
+                quit ();
+                return Source.REMOVE;
+            });
+        }
+    }
+
     public static int main (string[] args) {
         var app = new BluetoothApp ();
         return app.run (args);
