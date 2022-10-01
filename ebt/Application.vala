@@ -24,7 +24,7 @@ public class BluetoothApp : Gtk.Application {
     public const OptionEntry[] OPTIONS_BLUETOOTH = {
         { "silent", 's', 0, OptionArg.NONE, out silent, "Run the Application in background", null},
         { "send", 'f', 0, OptionArg.NONE, out send, "Open file to send via bluetooth", null },
-        { "", 0, 0, OptionArg.STRING_ARRAY, out arg_files, "Get files", null },
+        { "", 0, 0, OptionArg.STRING_ARRAY, out arg_files, null, N_("[URI…]") },
         { null }
     };
 
