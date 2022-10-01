@@ -202,6 +202,7 @@ public class BluetoothApp : Gtk.Application {
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
         } catch (Error e) {
             GLib.warning (e.message);
+            return;
         }
         var notification = new GLib.Notification ("bluetooth");
         notification.set_icon (new ThemedIcon (deviceicon));
