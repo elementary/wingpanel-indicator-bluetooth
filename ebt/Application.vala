@@ -36,7 +36,8 @@ public class BluetoothApp : Gtk.Application {
     public BtScan bt_scan = null;
     public GLib.List<BtReceiver> bt_receivers;
     public GLib.List<BtSender> bt_senders;
-    public static bool silent = true;
+    public static bool silent = false;
+    private static bool is_held = false;
     public static bool send = false;
     public static bool active_once;
     [CCode (array_length = false, array_null_terminated = true)]
@@ -126,10 +127,10 @@ public class BluetoothApp : Gtk.Application {
             granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
         });
 
-        if (silent) {
-            release (); // Protect from multiple holds. Has no effect if not already held.
+        if (silent && !is_held) {
             hold ();
             silent = false;
+            is_held = true;
         }
 
         if (object_manager == null) {
