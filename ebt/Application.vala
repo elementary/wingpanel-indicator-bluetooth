@@ -163,13 +163,14 @@ public class BluetoothApp : Gtk.Application {
 
     private bool insert_sender (File[] files, Bluetooth.Device device) {
         bool exist = false;
-        bt_senders.foreach ((sender)=>{
+        bt_senders.foreach ((sender) => {
             if (sender.device == device) {
                 sender.insert_files (files);
                 sender.present ();
                 exist = true;
             }
         });
+
         return exist;
     }
 
@@ -179,14 +180,15 @@ public class BluetoothApp : Gtk.Application {
         } catch (Error e) {
             GLib.warning (e.message);
         }
+
         if (transfer.name == null) {
             return;
         }
 
         bt_receiver = new BtReceiver (this);
         bt_receivers.append (bt_receiver);
-        bt_receiver.destroy.connect (()=> {
-            bt_receivers.foreach ((receiver)=>{
+        bt_receiver.destroy.connect (() => {
+            bt_receivers.foreach ((receiver) => {
                 if (receiver.transfer.session == bt_receiver.session) {
                     bt_receivers.remove_link (bt_receivers.find (receiver));
                 }
@@ -214,6 +216,7 @@ public class BluetoothApp : Gtk.Application {
             GLib.warning (e.message);
             return;
         }
+
         var notification = new GLib.Notification ("bluetooth");
         notification.set_icon (new ThemedIcon (deviceicon));
         if (reject_if_exist (transfer.name, transfer.size)) {
@@ -263,6 +266,7 @@ public class BluetoothApp : Gtk.Application {
                  return false;
             });
         }
+
         send_notification ("io.elementary.bluetooth", notification);
     }
 
@@ -303,6 +307,7 @@ public class BluetoothApp : Gtk.Application {
                 GLib.warning (e.message);
             }
         }
+
         return size == size_file && input_file.query_exists ();
     }
 
@@ -347,6 +352,7 @@ public class BluetoothApp : Gtk.Application {
     private void remove_contract () {
         permanent_delete (file_contract ());
     }
+
     private void permanent_delete (File file) {
         try {
             if (file.query_exists ()) {
