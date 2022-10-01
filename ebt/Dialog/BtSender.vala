@@ -36,7 +36,7 @@ public class BtSender : Granite.Dialog {
     private int total_file = 0;
     private uint64 total_size = 0;
     private GLib.ObjectPath s_session;
-    private GLib.File file_path;
+    private GLib.File file_to_send;
     private GLib.DBusConnection connection;
     private GLib.DBusProxy client_proxy;
     private GLib.DBusProxy session;
@@ -158,7 +158,7 @@ public class BtSender : Granite.Dialog {
 
         Gtk.TreeIter iter;
         liststore.get_iter_first (out iter);
-        liststore.get (iter, 0, out file_path);
+        liststore.get (iter, 0, out file_to_send);
 
         total_n_current ();
         create_session.begin ();
@@ -187,7 +187,7 @@ public class BtSender : Granite.Dialog {
     private bool next_file () {
         Gtk.TreeIter iter;
         if (liststore.get_iter_from_string (out iter, current_file.to_string ())) {
-            liststore.get (iter, 0, out file_path);
+            liststore.get (iter, 0, out file_to_send);
             send_file.begin ();
             total_n_current ();
             return true;
@@ -200,7 +200,7 @@ public class BtSender : Granite.Dialog {
         liststore.foreach ((model, path, iter) => {
             File file;
             model.get (iter, 0, out file);
-            if (file == file_path) {
+            if (file == file_to_send) {
                 current = total_file;
             }
             total_file++;
@@ -248,12 +248,12 @@ public class BtSender : Granite.Dialog {
         }
     }
     private async void send_file () {
-        path_label.set_markup (_("<b>From</b>: %s").printf (file_path.get_parent ().get_path ()));
+        path_label.set_markup (_("<b>From</b>: %s").printf (file_to_send.get_parent ().get_path ()));
         device_label.set_markup (_("<b>To</b>: %s").printf (GLib.Markup.escape_text (device.name)));
         icon_label.set_from_gicon (new ThemedIcon (device.icon == null? "bluetooth" : device.icon), Gtk.IconSize.LARGE_TOOLBAR);
         progress_label.label = _("Waiting for acceptance on %s…").printf (device.name);
         try {
-            Variant variant = yield session.call ("SendFile", new Variant ("(s)", file_path.get_path ()), GLib.DBusCallFlags.NONE, -1);
+            Variant variant = yield session.call ("SendFile", new Variant ("(s)", file_to_send.get_path ()), GLib.DBusCallFlags.NONE, -1);
             start_time = (int) get_real_time ();
             GLib.ObjectPath objectpath;
             variant.get ("(oa{sv})", out objectpath, null);
@@ -273,7 +273,7 @@ public class BtSender : Granite.Dialog {
             case "error":
                 hide_on_delete ();
                 var bt_retry = new Granite.MessageDialog (
-                    _("The transfer of '%s' failed.").printf (file_path.get_basename ()),
+                    _("The transfer of '%s' failed.").printf (file_to_send.get_basename ()),
                     "%s\n%s".printf (
                         _("The transfer was interrupted or it was declined by %s.").printf (
                             device.name
@@ -320,7 +320,7 @@ public class BtSender : Granite.Dialog {
         notification.set_icon (new ThemedIcon (device.icon));
         notification.set_priority (NotificationPriority.NORMAL);
         notification.set_title (_("File transferred successfully "));
-        notification.set_body (_("<b>From:</b> %s <b>Send to:</b> %s").printf (file_path.get_path (), device.name));
+        notification.set_body (_("<b>From:</b> %s <b>Send to:</b> %s").printf (file_to_send.get_path (), device.name));
         ((Gtk.Window)get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
     }
 
