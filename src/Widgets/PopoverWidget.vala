@@ -102,7 +102,6 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
             update_ui_state (state);
         });
 
-
         object_manager.device_added.connect ((device) => {
             // Remove existing rows for this device which are no longer connected to device
             remove_device (device);

@@ -22,9 +22,8 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
     public bool has_object { get; private set; default = false; }
     public bool retrieve_finished { get; private set; default = false; }
-    private Settings settings;
+    public Settings settings;
     private GLib.DBusObjectManagerClient object_manager;
-
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
 

@@ -6,5 +6,15 @@
 			<summary>Sets the last bluetooth state to re-apply on reboot</summary>
 			<description></description>
 		</key>
+		<key type="b" name="bluetooth-obex-enabled">
+			<default>true</default>
+			<summary>Sets registered agent obex</summary>
+			<description></description>
+		</key>
+		<key type="b" name="bluetooth-confirm-accept-files">
+			<default>true</default>
+			<summary>Whether to ask user before receiving a file</summary>
+			<description>If set to "true", when an external bluetooth device tries to send a file, the user will be asked to accept or decline it. </description>
+		</key>
 	</schema>
 </schemalist>
