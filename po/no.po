@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluetooth-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-26 02:02+0000\n"
+"POT-Creation-Date: 2022-10-02 09:55+0000\n"
 "PO-Revision-Date: 2018-02-12 18:40-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,55 +17,70 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Widgets/Device.vala:41 src/Widgets/Device.vala:151
+#: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
 msgstr ""
 
-#: src/Widgets/Device.vala:92
+#: src/Widgets/Device.vala:160
+#, c-format
+msgid "<b>Filename</b>: %s"
+msgstr ""
+
+#: src/Widgets/Device.vala:165
+#, c-format
+msgid "Receiving… %s of %s"
+msgstr ""
+
+#: src/Widgets/Device.vala:169
+#, c-format
+msgid "Sending… %s of %s"
+msgstr ""
+
+#: src/Widgets/Device.vala:216
 msgid "Connecting…"
 msgstr ""
 
-#: src/Widgets/Device.vala:95
+#: src/Widgets/Device.vala:219
 msgid "Disconnecting…"
 msgstr ""
 
-#: src/Widgets/Device.vala:100
+#: src/Widgets/Device.vala:224
 msgid "Unable to Connect"
 msgstr ""
 
-#: src/Widgets/Device.vala:113
+#: src/Widgets/Device.vala:237
 msgid "Speaker"
 msgstr ""
 
-#: src/Widgets/Device.vala:116
+#: src/Widgets/Device.vala:240
 msgid "Headphones"
 msgstr ""
 
-#: src/Widgets/Device.vala:119
+#: src/Widgets/Device.vala:243
 msgid "Controller"
 msgstr ""
 
-#: src/Widgets/Device.vala:122
+#: src/Widgets/Device.vala:246
 msgid "Keyboard"
 msgstr ""
 
-#: src/Widgets/Device.vala:125
+#: src/Widgets/Device.vala:249
 msgid "Mouse"
 msgstr ""
 
-#: src/Widgets/Device.vala:128
+#: src/Widgets/Device.vala:252
 msgid "Tablet"
 msgstr ""
 
-#: src/Widgets/Device.vala:131
+#: src/Widgets/Device.vala:255
 msgid "Touchpad"
 msgstr ""
 
-#: src/Widgets/Device.vala:134
+#: src/Widgets/Device.vala:258
 msgid "Phone"
 msgstr ""
 
-#: src/Widgets/Device.vala:148
+#: src/Widgets/Device.vala:272
 msgid "Connected"
 msgstr ""
 
