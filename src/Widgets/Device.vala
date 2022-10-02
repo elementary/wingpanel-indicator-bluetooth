@@ -65,7 +65,10 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         size_group.add_widget (status_label);
         size_group.add_widget (spinner);
 
-        icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon, Gtk.IconSize.DIALOG);
+        icon_image = new Gtk.Image.from_icon_name (
+            device.icon == null ? DEFAULT_ICON : device.icon,
+            Gtk.IconSize.DIALOG
+        );
 
         status_image = new Gtk.Image.from_icon_name ("user-offline", Gtk.IconSize.MENU) {
             halign = Gtk.Align.END,

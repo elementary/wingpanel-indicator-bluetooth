@@ -65,7 +65,11 @@ public class Bluetooth.ObjectManager : Object {
     [CCode (cname="bluetooth_adapter_proxy_get_type")]
     extern static GLib.Type get_adapter_proxy_type ();
 
-    private GLib.Type object_manager_proxy_get_type (DBusObjectManagerClient manager, string object_path, string? interface_name) {
+    private GLib.Type object_manager_proxy_get_type (
+        DBusObjectManagerClient manager,
+        string object_path,
+        string? interface_name
+    ) {
         if (interface_name == null) {
             return typeof (GLib.DBusObjectProxy);
         }
@@ -83,7 +87,16 @@ public class Bluetooth.ObjectManager : Object {
     private void obex_agentmanager () {
         try {
             var connection = GLib.Bus.get_sync (BusType.SESSION);
-            connection.call.begin ("org.bluez.obex", "/org/bluez/obex", "org.bluez.obex.AgentManager1", settings.get_boolean ("bluetooth-obex-enabled")? "RegisterAgent" : "UnregisterAgent", new Variant ("(o)", "/org/bluez/obex/elementary"), null, GLib.DBusCallFlags.NONE, -1);
+            connection.call.begin (
+                "org.bluez.obex",
+                "/org/bluez/obex",
+                "org.bluez.obex.AgentManager1",
+                settings.get_boolean ("bluetooth-obex-enabled") ? "RegisterAgent" : "UnregisterAgent",
+                new Variant ("(o)", "/org/bluez/obex/elementary"),
+                null,
+                GLib.DBusCallFlags.NONE,
+                -1
+            );
         } catch (Error e) {
             critical (e.message);
         }

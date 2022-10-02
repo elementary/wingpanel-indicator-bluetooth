@@ -55,12 +55,20 @@ public class Bluetooth.Obex.Agent : GLib.Object {
     public async string authorize_push (GLib.ObjectPath objectpath) throws Error {
         SourceFunc callback = authorize_push.callback;
         BluezObexError? btobexerror = null;
-        Bluetooth.Obex.Transfer transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
+        Bluetooth.Obex.Transfer transfer = Bus.get_proxy_sync (
+            BusType.SESSION,
+            "org.bluez.obex",
+            objectpath
+        );
         if (transfer.name == null) {
             throw new BluezObexError.REJECTED ("Authorize Reject");
         }
 
-        Bluetooth.Obex.Session session = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", transfer.session);
+        Bluetooth.Obex.Session session = Bus.get_proxy_sync (
+            BusType.SESSION,
+            "org.bluez.obex",
+            transfer.session
+        );
         var accept_action = new SimpleAction ("btaccept", VariantType.STRING);
         GLib.Application.get_default ().add_action (accept_action);
         accept_action.activate.connect ((parameter) => {

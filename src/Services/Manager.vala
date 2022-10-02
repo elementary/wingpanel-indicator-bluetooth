@@ -67,7 +67,11 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     [CCode (cname="bluetooth_indicator_services_adapter_proxy_get_type")]
     extern static GLib.Type get_adapter_proxy_type ();
 
-    private GLib.Type object_manager_proxy_get_type (DBusObjectManagerClient manager, string object_path, string? interface_name) {
+    private GLib.Type object_manager_proxy_get_type (
+        DBusObjectManagerClient manager,
+        string object_path,
+        string? interface_name
+    ) {
         if (interface_name == null)
             return typeof (GLib.DBusObjectProxy);
 
@@ -83,7 +87,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
     private void on_interface_added (GLib.DBusObject object, GLib.DBusInterface iface) {
         if (iface is BluetoothIndicator.Services.Device) {
-            unowned BluetoothIndicator.Services.Device device = (BluetoothIndicator.Services.Device) iface;
+            unowned var device = (BluetoothIndicator.Services.Device) iface;
 
             if (device.paired) {
                 device_added (device);
@@ -109,7 +113,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
             check_global_state ();
         } else if (iface is BluetoothIndicator.Services.Adapter) {
-            unowned BluetoothIndicator.Services.Adapter adapter = (BluetoothIndicator.Services.Adapter) iface;
+            unowned var adapter = (BluetoothIndicator.Services.Adapter) iface;
             has_object = true;
 
             ((DBusProxy) adapter).g_properties_changed.connect ((changed, invalid) => {
@@ -195,8 +199,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     public async void set_global_state (bool state) {
-        /* `is_powered` and `connected` properties will be set by the check_global state () callback when adapter or device
-         * properties change.  Do not set now so that global_state_changed signal will be emitted. */
+        /* `is_powered` and `connected` properties will be set by the
+         * check_global state () callback when adapter or device properties change.
+         * Do not set now so that global_state_changed signal will be emitted. */
 
         var adapters = get_adapters ();
         foreach (var adapter in adapters) {

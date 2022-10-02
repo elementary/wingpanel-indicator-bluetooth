@@ -115,7 +115,10 @@ public class DeviceRow : Gtk.ListBoxRow {
             }
         });
 
-        state_label.label = GLib.Markup.printf_escaped ("<span font_size='small'>%s</span>", device_icon ());
+        state_label.label = GLib.Markup.printf_escaped (
+            "<span font_size='small'>%s</span>",
+            device_icon ()
+        );
         send_button.clicked.connect (() => {
             send_file (device);
             get_toplevel ().destroy ();

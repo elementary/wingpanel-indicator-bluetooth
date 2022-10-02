@@ -233,7 +233,12 @@ public class BtSender : Granite.Dialog {
             VariantBuilder builder = new VariantBuilder (VariantType.DICTIONARY);
             builder.add ("{sv}", "Target", new Variant.string ("opp"));
             Variant parameters = new Variant ("(sa{sv})", device.address, builder);
-            Variant variant_client = yield client_proxy.call ("CreateSession", parameters, GLib.DBusCallFlags.NONE, -1);
+            Variant variant_client = yield client_proxy.call (
+                "CreateSession",
+                parameters,
+                GLib.DBusCallFlags.NONE,
+                -1
+            );
             variant_client.get ("(o)", out s_session);
             session = yield new GLib.DBusProxy (
                 connection,
@@ -258,15 +263,26 @@ public class BtSender : Granite.Dialog {
     private async void send_file () {
         path_label.set_markup (_("<b>From</b>: %s").printf (file_to_send.get_parent ().get_path ()));
         device_label.set_markup (_("<b>To</b>: %s").printf (GLib.Markup.escape_text (device.name)));
-        icon_label.set_from_gicon (new ThemedIcon (device.icon == null? "bluetooth" : device.icon), Gtk.IconSize.LARGE_TOOLBAR);
+        icon_label.set_from_gicon (
+            new ThemedIcon (device.icon == null? "bluetooth" : device.icon),
+            Gtk.IconSize.LARGE_TOOLBAR
+        );
         progress_label.label = _("Waiting for acceptance on %s…").printf (device.name);
         try {
-            Variant variant = yield session.call ("SendFile", new Variant ("(s)", file_to_send.get_path ()), GLib.DBusCallFlags.NONE, -1);
+            Variant variant = yield session.call (
+                "SendFile",
+                new Variant ("(s)",
+                file_to_send.get_path ()),
+                GLib.DBusCallFlags.NONE,
+                -1
+            );
             start_time = (int) get_real_time ();
             GLib.ObjectPath objectpath;
             variant.get ("(oa{sv})", out objectpath, null);
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
-            filename_label.set_markup (_("<b>Filename</b>: %s").printf (GLib.Markup.escape_text (transfer.name)));
+            filename_label.set_markup (_("<b>Filename</b>: %s").printf (
+                GLib.Markup.escape_text (transfer.name)
+            ));
             total_size = transfer.size;
             ((DBusProxy) transfer).g_properties_changed.connect ((changed, invalid) => {
                 tranfer_progress ();
@@ -329,8 +345,14 @@ public class BtSender : Granite.Dialog {
         notification.set_icon (new ThemedIcon (device.icon));
         notification.set_priority (NotificationPriority.NORMAL);
         notification.set_title (_("File transferred successfully "));
-        notification.set_body (_("<b>From:</b> %s <b>Send to:</b> %s").printf (file_to_send.get_path (), device.name));
-        ((Gtk.Window)get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
+        notification.set_body (
+            _("<b>From:</b> %s <b>Send to:</b> %s").printf (
+                file_to_send.get_path (), device.name
+            )
+        );
+        ((Gtk.Window)get_toplevel ()).application.send_notification (
+            "io.elementary.bluetooth", notification
+        );
     }
 
     private void on_transfer_progress (uint64 transferred) {
@@ -352,7 +374,13 @@ public class BtSender : Granite.Dialog {
 
         rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
-        progress_label.label = _("(%i/%i) %s of %s sent, time remaining %s").printf (current_file, total_file, GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));
+        progress_label.label = _("(%i/%i) %s of %s sent, time remaining %s").printf (
+            current_file,
+            total_file,
+            GLib.format_size (transferred),
+            GLib.format_size (total_size),
+            format_time ((int)remaining_time)
+        );
     }
 
     private string format_time (int seconds) {
