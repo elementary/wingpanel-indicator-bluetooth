@@ -112,12 +112,14 @@ public class BtScan : Granite.Dialog {
             destroy ();
         });
     }
+
     public override void show () {
         base.show ();
         var devices = manager.get_devices ();
         foreach (var device in devices) {
             add_device (device);
         }
+
         manager.start_discovery.begin ();
     }
 
@@ -128,15 +130,18 @@ public class BtScan : Granite.Dialog {
                 device_exist = true;
             }
         }
+
         if (device_exist) {
             return;
         }
+
         var row = new DeviceRow (device, manager.get_adapter_from_path (device.adapter));
         list_box.add (row);
         if (list_box.get_selected_row () == null) {
             list_box.select_row (row);
             list_box.row_activated (row);
         }
+
         row.send_file.connect ((device)=> {
             manager.stop_discovery.begin ();
             send_file (device);
@@ -151,6 +156,7 @@ public class BtScan : Granite.Dialog {
             }
         }
     }
+
     [CCode (instance_pos = -1)]
     private int compare_rows (DeviceRow row1, DeviceRow row2) {
         unowned Bluetooth.Device device1 = row1.device;
@@ -183,6 +189,7 @@ public class BtScan : Granite.Dialog {
         var name2 = device2.name ?? device2.address;
         return name1.collate (name2);
     }
+
     [CCode (instance_pos = -1)]
     private void title_rows (DeviceRow row1, DeviceRow? row2) {
         if (row2 == null) {

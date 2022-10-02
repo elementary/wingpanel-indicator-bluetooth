@@ -130,6 +130,7 @@ public class BtSender : Granite.Dialog {
                         remove_session.begin ();
                     }
                 }
+
                 destroy ();
             } else {
                 if (transfer.status == "active") {
@@ -154,6 +155,7 @@ public class BtSender : Granite.Dialog {
             liststore.append (out iter);
             liststore.set (iter, 0, file);
         }
+
         this.device = device;
 
         Gtk.TreeIter iter;
@@ -168,16 +170,19 @@ public class BtSender : Granite.Dialog {
         foreach (var file in files) {
             bool exist = false;
             liststore.foreach ((model, path, iter) => {
-            File filename;
-            model.get (iter, 0, out filename);
+                File filename;
+                model.get (iter, 0, out filename);
                 if (filename == file) {
                     exist = true;
                 }
+
                 return false;
             });
+
             if (exist) {
                 return;
             }
+
             Gtk.TreeIter iter;
             liststore.append (out iter);
             liststore.set (iter, 0, file);
@@ -192,6 +197,7 @@ public class BtSender : Granite.Dialog {
             total_n_current ();
             return true;
         }
+
         return false;
     }
     private void total_n_current (bool total = false) {
@@ -203,9 +209,11 @@ public class BtSender : Granite.Dialog {
             if (file == file_to_send) {
                 current = total_file;
             }
+
             total_file++;
             return false;
         });
+
         if (!total) {
             current_file = current + 1;
         }
@@ -312,6 +320,7 @@ public class BtSender : Granite.Dialog {
                     remove_session.begin ();
                     destroy ();
                 }
+
                 break;
         }
     }
@@ -331,13 +340,16 @@ public class BtSender : Granite.Dialog {
         if (current_time < start_time + 1000000) {
             return;
         }
+
         if (elapsed_time == 0) {
             return;
         }
+
         uint64 transfer_rate = transferred / elapsed_time;
         if (transfer_rate == 0) {
             return;
         }
+
         rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
         progress_label.label = _("(%i/%i) %s of %s sent, time remaining %s").printf (current_file, total_file, GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));

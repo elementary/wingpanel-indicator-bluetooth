@@ -59,6 +59,7 @@ public class Bluetooth.Obex.Agent : GLib.Object {
         if (transfer.name == null) {
             throw new BluezObexError.REJECTED ("Authorize Reject");
         }
+
         Bluetooth.Obex.Session session = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", transfer.session);
         var accept_action = new SimpleAction ("btaccept", VariantType.STRING);
         GLib.Application.get_default ().add_action (accept_action);
@@ -68,6 +69,7 @@ public class Bluetooth.Obex.Agent : GLib.Object {
                 Idle.add ((owned)callback);
             }
         });
+
         var cancel_action = new SimpleAction ("btcancel", VariantType.STRING);
         GLib.Application.get_default ().add_action (cancel_action);
         cancel_action.activate.connect ((parameter) => {
@@ -77,6 +79,7 @@ public class Bluetooth.Obex.Agent : GLib.Object {
                 Idle.add ((owned)callback);
             }
         });
+
         if (many_files == objectpath) {
             Idle.add (()=>{
                 response_accepted (session.destination, objectpath);
@@ -88,10 +91,12 @@ public class Bluetooth.Obex.Agent : GLib.Object {
         } else {
             response_notify (session.destination, objectpath);
         }
+
         yield;
         if (btobexerror != null) {
             throw btobexerror;
         }
+
         many_files = objectpath;
         return transfer.name;
     }

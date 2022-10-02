@@ -119,11 +119,13 @@ public class BtReceiver : Granite.Dialog {
                 } catch (Error e) {
                     GLib.warning (e.message);
                 }
+
                 destroy ();
             } else {
                 hide_on_delete ();
             }
         });
+
         delete_event.connect (() => {
             if (transfer.status == "active") {
                 return hide_on_delete ();
@@ -150,6 +152,7 @@ public class BtReceiver : Granite.Dialog {
             GLib.warning (e.message);
         }
     }
+
     private void tranfer_progress () {
         try {
             switch (transfer.status) {
@@ -167,6 +170,7 @@ public class BtReceiver : Granite.Dialog {
                     if (path != null) {
                         path_folder = path;
                     }
+
                     on_transfer_progress (transfer.transferred);
                     break;
                 case "complete":
@@ -178,6 +182,7 @@ public class BtReceiver : Granite.Dialog {
             critical (e.message);
         }
     }
+
     private void move_to_folder (string file) throws GLib.Error {
         var src = File.new_for_path (file);
         var dest = change_name (Path.build_filename (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD), src.get_basename ()));
@@ -199,6 +204,7 @@ public class BtReceiver : Granite.Dialog {
             } else {
                 without_ext = uri.slice (0, last_dot);
             }
+
             string ext_name = uri.substring (last_dot);
             string time = new GLib.DateTime.now_local ().format (" (%F %H:%M:%S)");
             return File.new_for_path (without_ext + time + ext_name);
@@ -215,13 +221,16 @@ public class BtReceiver : Granite.Dialog {
         if (current_time < start_time + 1000000) {
             return;
         }
+
         if (elapsed_time == 0) {
             return;
         }
+
         uint64 transfer_rate = transferred / elapsed_time;
         if (transfer_rate == 0) {
             return;
         }
+
         rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
         progress_label.label = _("%s of %s received, time remaining %s").printf (GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));

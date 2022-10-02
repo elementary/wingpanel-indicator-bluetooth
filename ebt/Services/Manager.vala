@@ -43,11 +43,13 @@ public class Bluetooth.ObjectManager : Object {
             object_manager.get_objects ().foreach ((object) => {
                 object.get_interfaces ().foreach ((iface) => on_interface_added (object, iface));
             });
+
             object_manager.interface_added.connect (on_interface_added);
             object_manager.interface_removed.connect (on_interface_removed);
             object_manager.object_added.connect ((object) => {
                 object.get_interfaces ().foreach ((iface) => on_interface_added (object, iface));
             });
+
             object_manager.object_removed.connect ((object) => {
                 object.get_interfaces ().foreach ((iface) => on_interface_removed (object, iface));
             });
@@ -136,6 +138,7 @@ public class Bluetooth.ObjectManager : Object {
 
         return (owned) devices;
     }
+
     public async void start_discovery () {
         var adapters = get_adapters ();
         foreach (var adapter in adapters) {
@@ -147,11 +150,13 @@ public class Bluetooth.ObjectManager : Object {
             }
         }
     }
+
     public bool check_discovering () {
         var adapters = get_adapters ();
         foreach (var adapter in adapters) {
             return adapter.discovering;
         }
+
         return false;
     }
 
@@ -185,6 +190,7 @@ public class Bluetooth.ObjectManager : Object {
                 return device;
             }
         }
+
         return null;
     }
 }

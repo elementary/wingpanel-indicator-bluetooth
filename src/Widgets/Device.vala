@@ -171,6 +171,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
                         );
                     }
                 }
+
                 break;
             case "complete":
                 hide_action ();
@@ -180,6 +181,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private bool bt_status (string filename) {
         return filename.contains ("/.cache/obexd")? true : false;
     }
+
     public void hide_action () {
         progress_label.label = "";//nothing pango ellipsize should free label
         progress_revealer.reveal_child = false;
@@ -203,8 +205,10 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
             } catch (Error e) {
                 critical (e.message);
             }
+
             return;
         }
+
         if (spinner.active) {
             return;
         }

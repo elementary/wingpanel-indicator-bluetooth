@@ -61,7 +61,6 @@ public class BluetoothApp : Gtk.Application {
         }
 
         activate ();
-
         if (send) {
             File [] files = {};
             foreach (string arg_file in arg_files) {
@@ -90,7 +89,6 @@ public class BluetoothApp : Gtk.Application {
                 bt_scan.destroy.connect (() => {
                     bt_scan = null;
                 });
-
                 bt_scan.send_file.connect ((device) => {
                     if (!insert_sender (files, device)) {
                         bt_sender = new BtSender (this);
@@ -103,12 +101,10 @@ public class BluetoothApp : Gtk.Application {
                                     bt_senders.remove_link (bt_senders.find (sender));
                                 }
                             });
-
                             check_quit ();
                         });
                     }
                 });
-
                 arg_files = {};
                 send = false;
             } else {
@@ -134,7 +130,6 @@ public class BluetoothApp : Gtk.Application {
             gtk_settings.gtk_application_prefer_dark_theme =
             granite_settings.prefers_color_scheme == Granite.Settings.ColorScheme.DARK;
         });
-
         if (silent && !is_held) {
             hold ();
             silent = false;
@@ -170,7 +165,6 @@ public class BluetoothApp : Gtk.Application {
                 exist = true;
             }
         });
-
         return exist;
     }
 
@@ -315,7 +309,6 @@ public class BluetoothApp : Gtk.Application {
         var build_path = Path.build_filename (
             Environment.get_home_dir (), ".local", "share", "contractor"
         );
-
         if (!File.new_for_path (build_path).query_exists ()) {
             DirUtils.create (build_path, 0700);
         }

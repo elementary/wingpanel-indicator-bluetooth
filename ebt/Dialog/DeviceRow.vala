@@ -114,6 +114,7 @@ public class DeviceRow : Gtk.ListBoxRow {
                 image.icon_name = device.icon ?? "bluetooth";
             }
         });
+
         state_label.label = GLib.Markup.printf_escaped ("<span font_size='small'>%s</span>", device_icon ());
         send_button.clicked.connect (() => {
             send_file (device);
@@ -141,6 +142,7 @@ public class DeviceRow : Gtk.ListBoxRow {
                 return device.address;
         }
     }
+
     private void set_status (bool status) {
         state.icon_name = status? "user-available" : "user-offline";
     }

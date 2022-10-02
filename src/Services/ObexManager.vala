@@ -75,12 +75,14 @@ public class BluetoothIndicator.Services.ObexManager : Object {
             } catch (Error e) {
                 critical (e.message);
             }
+
             transfer_added (session.destination, transfer);
             ((DBusProxy) transfer).g_properties_changed.connect ((changed, invalid) => {
                 transfer_active (session.destination);
             });
         }
     }
+
     private void on_interface_removed (GLib.DBusObject object, GLib.DBusInterface iface) {
          if (iface is BluetoothIndicator.Services.Obex.Transfer) {
             transfer_removed ((BluetoothIndicator.Services.Obex.Transfer) iface);
