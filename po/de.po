@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-02 09:55+0000\n"
-"PO-Revision-Date: 2021-06-16 01:32+0000\n"
+"PO-Revision-Date: 2022-10-05 22:57+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/de/>\n"
@@ -22,17 +22,17 @@ msgstr "Nicht verbunden"
 #: src/Widgets/Device.vala:160
 #, c-format
 msgid "<b>Filename</b>: %s"
-msgstr ""
+msgstr "<b>Dateiname</b>: %s"
 
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "Receiving… %s of %s"
-msgstr ""
+msgstr "Empfangen … %s von %s"
 
 #: src/Widgets/Device.vala:169
 #, c-format
 msgid "Sending… %s of %s"
-msgstr ""
+msgstr "Senden … %s von %s"
 
 #: src/Widgets/Device.vala:216
 msgid "Connecting…"
