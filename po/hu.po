@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-02 09:55+0000\n"
-"PO-Revision-Date: 2021-08-24 22:47+0000\n"
+"PO-Revision-Date: 2022-10-06 16:46+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/hu/>\n"
@@ -22,17 +22,17 @@ msgstr "Nincs csatlakoztatva"
 #: src/Widgets/Device.vala:160
 #, c-format
 msgid "<b>Filename</b>: %s"
-msgstr ""
+msgstr "<b>Fájlnév</b>: %s"
 
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "Receiving… %s of %s"
-msgstr ""
+msgstr "Fogadás… %s/%s"
 
 #: src/Widgets/Device.vala:169
 #, c-format
 msgid "Sending… %s of %s"
-msgstr ""
+msgstr "Küldés… %s/%s"
 
 #: src/Widgets/Device.vala:216
 msgid "Connecting…"
