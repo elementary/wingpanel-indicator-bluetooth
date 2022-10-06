@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 19:06+0000\n"
-"PO-Revision-Date: 2022-10-06 16:46+0000\n"
+"PO-Revision-Date: 2022-10-07 03:36+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/hu/>\n"
@@ -17,41 +17,39 @@ msgstr ""
 
 #: ebt/Application.vala:208
 msgid "Rejected file"
-msgstr ""
+msgstr "Visszautasított fájl"
 
 #: ebt/Application.vala:210
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>Fájl:</b> %s <b>Méret: </b>%s már létezik"
 
 #: ebt/Application.vala:225
 msgid "Incoming file"
-msgstr ""
+msgstr "Bejövő fájl"
 
 #: ebt/Application.vala:227
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> készen áll a fájl küldésére: %s méret: %s"
 
 #: ebt/Application.vala:234
 msgid "Accept"
-msgstr ""
+msgstr "Elfogadás"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:239
 msgid "Decline"
-msgstr ""
+msgstr "Visszautasítás"
 
 #: ebt/Application.vala:243
-#, fuzzy
-#| msgid "Receiving… %s of %s"
 msgid "Receiving file"
-msgstr "Fogadás… %s/%s"
+msgstr "Fájl fogadása"
 
 #: ebt/Application.vala:244
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s fájlt küld: %s méret: %s"
 
 #: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
@@ -94,10 +92,8 @@ msgid "Name=%s"
 msgstr ""
 
 #: ebt/Application.vala:320
-#, fuzzy
-#| msgid "bluetooth"
 msgid "Icon=bluetooth\n"
-msgstr "bluetooth"
+msgstr ""
 
 #: ebt/Application.vala:321
 #, c-format
@@ -110,19 +106,17 @@ msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
-msgstr ""
+msgstr "<b>Átvitel sebessége:</b>"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>From</b>: %s"
-msgstr "<b>Fájlnév</b>: %s"
+msgstr "<b>Küldő</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>To</b>: %s"
-msgstr "<b>Fájlnév</b>: %s"
+msgstr "<b>Fogadó</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
 #: src/Widgets/Device.vala:160
@@ -132,149 +126,143 @@ msgstr "<b>Fájlnév</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr ""
+msgstr "A fájlátvitel sikertelen"
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
 msgid "%s <b>File:</b> %s not received"
-msgstr ""
+msgstr "%s <b>A fájl:</b> %s nem lett fogadva"
 
 #: ebt/Dialog/BtReceiver.vala:186
 msgid "File transferred successfully"
-msgstr ""
+msgstr "A fájlátvitel sikeres"
 
 #: ebt/Dialog/BtReceiver.vala:187
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "%s <b>Save to:</b> %s"
-msgstr "<b>Fájlnév</b>: %s"
+msgstr "%s <b>Mentés ide:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:211
-#, fuzzy, c-format
-#| msgid "Receiving… %s of %s"
+#, c-format
 msgid "Receiving…  %s of %s"
-msgstr "Fogadás… %s/%s"
+msgstr "Fogadás…  %s/%s"
 
 #: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:341
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>Transfer rate:</b> %s"
-msgstr "<b>Fájlnév</b>: %s"
+msgstr "<b>Átvitel sebessége:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:227
 #, c-format
 msgid "%s of %s received, time remaining %s"
-msgstr ""
+msgstr "%s/%s fogadva, hátralévő idő: %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
 #, c-format
 msgid "%'d second"
 msgid_plural "%'d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'d másodperc"
+msgstr[1] "%'d másodperc"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
 #, c-format
 msgid "%'d minute"
 msgid_plural "%'d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'d perc"
+msgstr[1] "%'d perc"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
 #, c-format
 msgid "%'u hour"
 msgid_plural "%'u hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'u óra"
+msgstr[1] "%'u óra"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
 #, c-format
 msgid "%'u minute"
 msgid_plural "%'u minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'u perc"
+msgstr[1] "%'u perc"
 
 #: ebt/Dialog/BtReceiver.vala:250
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s %s"
 
 #. /TRANSLATORS For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:253 ebt/Dialog/BtSender.vala:369
 #, c-format
 msgid "approximately %'d hour"
 msgid_plural "approximately %'d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "körülbelül %'d óra"
+msgstr[1] "körülbelül %'d óra"
 
 #: ebt/Dialog/BtScan.vala:41
-#, fuzzy
-#| msgid "Bluetooth is on"
 msgid "Bluetooth File Transfer"
-msgstr "Bluetooth bekapcsolva"
+msgstr "Bluetooth fájlküldés"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
+msgstr "Válasszon egy Bluetooth-eszközt a fájlok küldéséhez"
 
 #: ebt/Dialog/BtScan.vala:57
 msgid "No Devices Found"
-msgstr ""
+msgstr "Nem található eszköz"
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
 msgstr ""
+"Győződjön meg róla, hogy az eszközei láthatók és készen állnak a párosításra."
 
 #: ebt/Dialog/BtScan.vala:79
-#, fuzzy
-#| msgid "Disconnecting…"
 msgid "Discovering"
-msgstr "Kapcsolat bontása…"
+msgstr "Felfedezés"
 
 #: ebt/Dialog/BtScan.vala:189
 msgid "Available Devices"
-msgstr ""
+msgstr "Elérhető eszközök"
 
 #: ebt/Dialog/BtSender.vala:67
 msgid "From"
-msgstr ""
+msgstr "Küldő"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
 msgid "Waiting for acceptance on %s…"
-msgstr ""
+msgstr "Várakozás a(z) %s eszközön való elfogadásra…"
 
 #: ebt/Dialog/BtSender.vala:276
 #, c-format
 msgid "The transfer of '%s' failed."
-msgstr ""
+msgstr "'%s' átvitele sikertelen."
 
 #: ebt/Dialog/BtSender.vala:278
 #, c-format
 msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
+msgstr "Az átvitel megszakadt vagy el lett utasítva %s által."
 
 #: ebt/Dialog/BtSender.vala:281
 msgid "The file has not been transferred"
-msgstr ""
+msgstr "A fájl nem lett átküldve"
 
 #: ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully "
-msgstr ""
+msgstr "A fájl sikeresen átküldve "
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
 msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr ""
+msgstr "<b>Küldő:</b> %s <b>Fogadó:</b> %s"
 
 #: ebt/Dialog/BtSender.vala:343
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
+msgstr "(%i/%i) %s/%s átküldve, hátralévő idő: %s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
-msgstr ""
+msgstr "Küldés"
 
 #: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
