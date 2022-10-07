@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 19:06+0000\n"
-"PO-Revision-Date: 2022-10-04 10:38+0000\n"
+"PO-Revision-Date: 2022-10-07 18:58+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ca/>\n"
@@ -17,41 +17,39 @@ msgstr ""
 
 #: ebt/Application.vala:208
 msgid "Rejected file"
-msgstr ""
+msgstr "Fitxer rebutjat"
 
 #: ebt/Application.vala:210
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>Fitxer:</b> %s <b>Mida: </b>%s ja existeix"
 
 #: ebt/Application.vala:225
 msgid "Incoming file"
-msgstr ""
+msgstr "Fitxer entrant"
 
 #: ebt/Application.vala:227
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> està preparat per enviar el fitxer %s, mida: %s"
 
 #: ebt/Application.vala:234
 msgid "Accept"
-msgstr ""
+msgstr "Accepta-ho"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:239
 msgid "Decline"
-msgstr ""
+msgstr "Rebutja-ho"
 
 #: ebt/Application.vala:243
-#, fuzzy
-#| msgid "Receiving… %s of %s"
 msgid "Receiving file"
-msgstr "Es rep... %s de %s"
+msgstr "Es rep un fitxer"
 
 #: ebt/Application.vala:244
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s envia el fitxer %s, mida: %s"
 
 #: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
@@ -91,38 +89,34 @@ msgstr "Telèfon"
 #: ebt/Application.vala:319
 #, c-format
 msgid "Name=%s"
-msgstr ""
+msgstr "Nom=%s"
 
 #: ebt/Application.vala:320
-#, fuzzy
-#| msgid "bluetooth"
 msgid "Icon=bluetooth\n"
-msgstr "Bluetooth"
+msgstr "Icona=bluetooth\n"
 
 #: ebt/Application.vala:321
 #, c-format
 msgid "Description=%s"
-msgstr ""
+msgstr "Descripció=%s"
 
 #: ebt/Application.vala:323
 msgid "MimeType=!inode;\n"
-msgstr ""
+msgstr "Tipus MIME=!inode;\n"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
-msgstr ""
+msgstr "<b>Taxa de transferència:</b>"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>From</b>: %s"
-msgstr "<b>Nom del fitxer</b>: %s"
+msgstr "<b>De</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>To</b>: %s"
-msgstr "<b>Nom del fitxer</b>: %s"
+msgstr "<b>Per a</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
 #: src/Widgets/Device.vala:160
@@ -132,149 +126,144 @@ msgstr "<b>Nom del fitxer</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr ""
+msgstr "La transferència de fitxers ha fallat."
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
 msgid "%s <b>File:</b> %s not received"
-msgstr ""
+msgstr "%s <b>Fitxer:</b> %s no rebut"
 
 #: ebt/Dialog/BtReceiver.vala:186
 msgid "File transferred successfully"
-msgstr ""
+msgstr "Fitxer transferit correctament"
 
 #: ebt/Dialog/BtReceiver.vala:187
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "%s <b>Save to:</b> %s"
-msgstr "<b>Nom del fitxer</b>: %s"
+msgstr "%s <b>Desa a:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:211
-#, fuzzy, c-format
-#| msgid "Receiving… %s of %s"
+#, c-format
 msgid "Receiving…  %s of %s"
-msgstr "Es rep... %s de %s"
+msgstr "Es rep...  %s de %s"
 
 #: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:341
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>Transfer rate:</b> %s"
-msgstr "<b>Nom del fitxer</b>: %s"
+msgstr "<b>Taxa de transferència:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:227
 #, c-format
 msgid "%s of %s received, time remaining %s"
-msgstr ""
+msgstr "%s de %s rebut, temps restant: %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
 #, c-format
 msgid "%'d second"
 msgid_plural "%'d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'d segon"
+msgstr[1] "%'d segons"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
 #, c-format
 msgid "%'d minute"
 msgid_plural "%'d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'d minut"
+msgstr[1] "%'d minuts"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
 #, c-format
 msgid "%'u hour"
 msgid_plural "%'u hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'u hora"
+msgstr[1] "%'u hores"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
 #, c-format
 msgid "%'u minute"
 msgid_plural "%'u minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%'u minut"
+msgstr[1] "%'u minuts"
 
 #: ebt/Dialog/BtReceiver.vala:250
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. /TRANSLATORS For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:253 ebt/Dialog/BtSender.vala:369
 #, c-format
 msgid "approximately %'d hour"
 msgid_plural "approximately %'d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "aproximadament %'d hora"
+msgstr[1] "aproximadament %'d hores"
 
 #: ebt/Dialog/BtScan.vala:41
-#, fuzzy
-#| msgid "Bluetooth is on"
 msgid "Bluetooth File Transfer"
-msgstr "Bluetooth actiu"
+msgstr "Transferència de fitxers per Bluetooth"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
+msgstr "Seleccioneu un dispositiu de Bluetooth per enviar fitxers."
 
 #: ebt/Dialog/BtScan.vala:57
 msgid "No Devices Found"
-msgstr ""
+msgstr "No s'ha trobat cap dispositiu."
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
 msgstr ""
+"Assegureu-vos que els dispositius estiguin visibles i preparats per a la "
+"vinculació."
 
 #: ebt/Dialog/BtScan.vala:79
-#, fuzzy
-#| msgid "Disconnecting…"
 msgid "Discovering"
-msgstr "Es desconnecta…"
+msgstr "Es descobreixen"
 
 #: ebt/Dialog/BtScan.vala:189
 msgid "Available Devices"
-msgstr ""
+msgstr "Dispositius disponibles"
 
 #: ebt/Dialog/BtSender.vala:67
 msgid "From"
-msgstr ""
+msgstr "De"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
 msgid "Waiting for acceptance on %s…"
-msgstr ""
+msgstr "S'espera l'acceptació: %s…"
 
 #: ebt/Dialog/BtSender.vala:276
 #, c-format
 msgid "The transfer of '%s' failed."
-msgstr ""
+msgstr "La transferència de %s ha fallat."
 
 #: ebt/Dialog/BtSender.vala:278
 #, c-format
 msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
+msgstr "La transferència s'ha interromput o %s l'ha rebutjada."
 
 #: ebt/Dialog/BtSender.vala:281
 msgid "The file has not been transferred"
-msgstr ""
+msgstr "El fitxer no s'ha transferit."
 
 #: ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully "
-msgstr ""
+msgstr "Fitxer transferit correctament "
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
 msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr ""
+msgstr "<b>De:</b> %s <b>Envia a:</b> %s"
 
 #: ebt/Dialog/BtSender.vala:343
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
+msgstr "(%i/%i) %s de %s enviats, temps restant: %s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
-msgstr ""
+msgstr "Envia"
 
 #: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
