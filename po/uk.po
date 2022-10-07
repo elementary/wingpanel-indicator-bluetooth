@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 19:06+0000\n"
-"PO-Revision-Date: 2022-10-04 10:38+0000\n"
+"PO-Revision-Date: 2022-10-07 18:58+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/uk/>\n"
@@ -18,41 +18,39 @@ msgstr ""
 
 #: ebt/Application.vala:208
 msgid "Rejected file"
-msgstr ""
+msgstr "Відхилений файл"
 
 #: ebt/Application.vala:210
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>Файл:</b> %s <b>Розмір: </b>%s вже існує"
 
 #: ebt/Application.vala:225
 msgid "Incoming file"
-msgstr ""
+msgstr "Вхідний файл"
 
 #: ebt/Application.vala:227
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> готовий надіслати файл: %s розмір: %s"
 
 #: ebt/Application.vala:234
 msgid "Accept"
-msgstr ""
+msgstr "Прийняти"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:239
 msgid "Decline"
-msgstr ""
+msgstr "Відхилити"
 
 #: ebt/Application.vala:243
-#, fuzzy
-#| msgid "Receiving… %s of %s"
 msgid "Receiving file"
-msgstr "Отримання… %s з %s"
+msgstr "Отримання файлу"
 
 #: ebt/Application.vala:244
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s надсилає файл: %s розмір: %s"
 
 #: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
@@ -92,38 +90,34 @@ msgstr "Телефон"
 #: ebt/Application.vala:319
 #, c-format
 msgid "Name=%s"
-msgstr ""
+msgstr "Name=%s"
 
 #: ebt/Application.vala:320
-#, fuzzy
-#| msgid "bluetooth"
 msgid "Icon=bluetooth\n"
-msgstr "блютуз"
+msgstr "Icon=bluetooth\n"
 
 #: ebt/Application.vala:321
 #, c-format
 msgid "Description=%s"
-msgstr ""
+msgstr "Description=%s"
 
 #: ebt/Application.vala:323
 msgid "MimeType=!inode;\n"
-msgstr ""
+msgstr "MimeType=!inode;\n"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
-msgstr ""
+msgstr "<b>Швидкість передавання:</b>"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>From</b>: %s"
-msgstr "<b>Назва файлу</b>: %s"
+msgstr "<b>Від</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>To</b>: %s"
-msgstr "<b>Назва файлу</b>: %s"
+msgstr "<b>До</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
 #: src/Widgets/Device.vala:160
@@ -133,154 +127,147 @@ msgstr "<b>Назва файлу</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr ""
+msgstr "Збій передавання файлу"
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
 msgid "%s <b>File:</b> %s not received"
-msgstr ""
+msgstr "%s <b>Файл:</b> %s не отримано"
 
 #: ebt/Dialog/BtReceiver.vala:186
 msgid "File transferred successfully"
-msgstr ""
+msgstr "Файл успішно передано"
 
 #: ebt/Dialog/BtReceiver.vala:187
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "%s <b>Save to:</b> %s"
-msgstr "<b>Назва файлу</b>: %s"
+msgstr "%s <b>Зберегти до:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:211
-#, fuzzy, c-format
-#| msgid "Receiving… %s of %s"
+#, c-format
 msgid "Receiving…  %s of %s"
-msgstr "Отримання… %s з %s"
+msgstr "Отримання…  %s з %s"
 
 #: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:341
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>Transfer rate:</b> %s"
-msgstr "<b>Назва файлу</b>: %s"
+msgstr "<b>Швидкість передавання:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:227
 #, c-format
 msgid "%s of %s received, time remaining %s"
-msgstr ""
+msgstr "Отримано %s з %s, залишилося часу %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
 #, c-format
 msgid "%'d second"
 msgid_plural "%'d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%'d секунда"
+msgstr[1] "%'d секунди"
+msgstr[2] "%'d секунд"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
 #, c-format
 msgid "%'d minute"
 msgid_plural "%'d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%'d хвилина"
+msgstr[1] "%'d хвилини"
+msgstr[2] "%'d хвилин"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
 #, c-format
 msgid "%'u hour"
 msgid_plural "%'u hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%'u година"
+msgstr[1] "%'u години"
+msgstr[2] "%'u годин"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
 #, c-format
 msgid "%'u minute"
 msgid_plural "%'u minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%'u хвилина"
+msgstr[1] "%'u хвилини"
+msgstr[2] "%'u хвилин"
 
 #: ebt/Dialog/BtReceiver.vala:250
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. /TRANSLATORS For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:253 ebt/Dialog/BtSender.vala:369
 #, c-format
 msgid "approximately %'d hour"
 msgid_plural "approximately %'d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "приблизно %'d година"
+msgstr[1] "приблизно %'d години"
+msgstr[2] "приблизно %'d годин"
 
 #: ebt/Dialog/BtScan.vala:41
-#, fuzzy
-#| msgid "Bluetooth is on"
 msgid "Bluetooth File Transfer"
-msgstr "Bluetooth увімкнено"
+msgstr "Передавання файлів через Bluetooth"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
+msgstr "Виберіть нижче пристрій Bluetooth для надсилання файлів"
 
 #: ebt/Dialog/BtScan.vala:57
 msgid "No Devices Found"
-msgstr ""
+msgstr "Пристроїв не знайдено"
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
+msgstr "Переконайтеся, що ваші пристрої видно і вони готові до сполучення."
 
 #: ebt/Dialog/BtScan.vala:79
-#, fuzzy
-#| msgid "Disconnecting…"
 msgid "Discovering"
-msgstr "Від'єднання…"
+msgstr "Виявлення"
 
 #: ebt/Dialog/BtScan.vala:189
 msgid "Available Devices"
-msgstr ""
+msgstr "Доступні пристрої"
 
 #: ebt/Dialog/BtSender.vala:67
 msgid "From"
-msgstr ""
+msgstr "Від"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
 msgid "Waiting for acceptance on %s…"
-msgstr ""
+msgstr "Очікування погодження %s…"
 
 #: ebt/Dialog/BtSender.vala:276
 #, c-format
 msgid "The transfer of '%s' failed."
-msgstr ""
+msgstr "Збій надсилання «%s»."
 
 #: ebt/Dialog/BtSender.vala:278
 #, c-format
 msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
+msgstr "Передавання було перервано або його було відхилено %s."
 
 #: ebt/Dialog/BtSender.vala:281
 msgid "The file has not been transferred"
-msgstr ""
+msgstr "Файл не передано"
 
 #: ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully "
-msgstr ""
+msgstr "Файл успішно передано "
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
 msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr ""
+msgstr "<b>Від:</b> %s <b>Надіслати до:</b> %s"
 
 #: ebt/Dialog/BtSender.vala:343
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
+msgstr "(%i/%i) %s з %s надіслано, залишилося до завершення %s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
-msgstr ""
+msgstr "Надіслати"
 
 #: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
