@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 19:06+0000\n"
-"PO-Revision-Date: 2022-10-04 10:38+0000\n"
+"PO-Revision-Date: 2022-10-07 18:58+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/he/>\n"
@@ -17,41 +17,39 @@ msgstr ""
 
 #: ebt/Application.vala:208
 msgid "Rejected file"
-msgstr ""
+msgstr "קובץ נדחה"
 
 #: ebt/Application.vala:210
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>קובץ:</b> %s <b>בגודל: </b>%s כבר קיים"
 
 #: ebt/Application.vala:225
 msgid "Incoming file"
-msgstr ""
+msgstr "קובץ נכנס"
 
 #: ebt/Application.vala:227
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "הסתיימו ההכנות לשליחת הקובץ על ידי <b>%s</b>:‏ %s גודל: %s"
 
 #: ebt/Application.vala:234
 msgid "Accept"
-msgstr ""
+msgstr "לקבל"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:239
 msgid "Decline"
-msgstr ""
+msgstr "לסרב"
 
 #: ebt/Application.vala:243
-#, fuzzy
-#| msgid "Receiving… %s of %s"
 msgid "Receiving file"
-msgstr "מתקבל… %s מתוך %s"
+msgstr "מתקבל קובץ"
 
 #: ebt/Application.vala:244
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "נשלח קובץ על ידי %s:‏ %s גודל: %s"
 
 #: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
@@ -110,19 +108,17 @@ msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
-msgstr ""
+msgstr "<b>קצב העברה:</b>"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>From</b>: %s"
-msgstr "<b>שם קובץ</b>: %s"
+msgstr "<b>מאת</b>:‏ %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>To</b>: %s"
-msgstr "<b>שם קובץ</b>: %s"
+msgstr "<b>אל</b>:‏ %s"
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
 #: src/Widgets/Device.vala:160
@@ -132,149 +128,142 @@ msgstr "<b>שם קובץ</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr ""
+msgstr "העברת הקובץ נכשלה"
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
 msgid "%s <b>File:</b> %s not received"
-msgstr ""
+msgstr "%s <b>הקובץ:</b> %s לא התקבל"
 
 #: ebt/Dialog/BtReceiver.vala:186
 msgid "File transferred successfully"
-msgstr ""
+msgstr "הקובץ הועבר בהצלחה"
 
 #: ebt/Dialog/BtReceiver.vala:187
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "%s <b>Save to:</b> %s"
-msgstr "<b>שם קובץ</b>: %s"
+msgstr "%s <b>שמירה אל:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:211
-#, fuzzy, c-format
-#| msgid "Receiving… %s of %s"
+#, c-format
 msgid "Receiving…  %s of %s"
-msgstr "מתקבל… %s מתוך %s"
+msgstr "מתקבל…  %s מתוך %s"
 
 #: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:341
-#, fuzzy, c-format
-#| msgid "<b>Filename</b>: %s"
+#, c-format
 msgid "<b>Transfer rate:</b> %s"
-msgstr "<b>שם קובץ</b>: %s"
+msgstr "<b>קצב העברה:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:227
 #, c-format
 msgid "%s of %s received, time remaining %s"
-msgstr ""
+msgstr "%s מתוך %s התקבלו, נותרו %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
 #, c-format
 msgid "%'d second"
 msgid_plural "%'d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "שנייה"
+msgstr[1] "%'d שניות"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
 #, c-format
 msgid "%'d minute"
 msgid_plural "%'d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "דקה"
+msgstr[1] "%'d דקות"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
 #, c-format
 msgid "%'u hour"
 msgid_plural "%'u hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "שעה"
+msgstr[1] "%'u שעות"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
 #, c-format
 msgid "%'u minute"
 msgid_plural "%'u minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "דקה"
+msgstr[1] "%'u דקות"
 
 #: ebt/Dialog/BtReceiver.vala:250
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #. /TRANSLATORS For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:253 ebt/Dialog/BtSender.vala:369
 #, c-format
 msgid "approximately %'d hour"
 msgid_plural "approximately %'d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "בערך שעה"
+msgstr[1] "בערך %'d שעות"
 
 #: ebt/Dialog/BtScan.vala:41
-#, fuzzy
-#| msgid "Bluetooth is on"
 msgid "Bluetooth File Transfer"
-msgstr "בלוטות׳ פעיל"
+msgstr "העברת קבצים בבלוטות׳"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
+msgstr "יש לבחור התקן בלוטות׳ להלן כדי לשלוח קבצים"
 
 #: ebt/Dialog/BtScan.vala:57
 msgid "No Devices Found"
-msgstr ""
+msgstr "לא נמצאו התקנים"
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
+msgstr "נא לוודא שהמכשירים שלך גלויים ומוכנים לצימוד."
 
 #: ebt/Dialog/BtScan.vala:79
-#, fuzzy
-#| msgid "Disconnecting…"
 msgid "Discovering"
-msgstr "מתבצע ניתוק…"
+msgstr "מתבצע גילוי"
 
 #: ebt/Dialog/BtScan.vala:189
 msgid "Available Devices"
-msgstr ""
+msgstr "התקנים זמינים"
 
 #: ebt/Dialog/BtSender.vala:67
 msgid "From"
-msgstr ""
+msgstr "מאת"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
 msgid "Waiting for acceptance on %s…"
-msgstr ""
+msgstr "בהמתנה לאישור מצד %s…"
 
 #: ebt/Dialog/BtSender.vala:276
 #, c-format
 msgid "The transfer of '%s' failed."
-msgstr ""
+msgstr "ההעברה של ‚%s’ נכשלה."
 
 #: ebt/Dialog/BtSender.vala:278
 #, c-format
 msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
+msgstr "ההעברה נקטעה או שנדחתה על ידי %s."
 
 #: ebt/Dialog/BtSender.vala:281
 msgid "The file has not been transferred"
-msgstr ""
+msgstr "הקובץ לא הועבר"
 
 #: ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully "
-msgstr ""
+msgstr "הקובץ הועבר בהצלחה "
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
 msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr ""
+msgstr "<b>מאת:</b> %s <b>לשלוח אל:</b> %s"
 
 #: ebt/Dialog/BtSender.vala:343
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
+msgstr "(%i/%i) %s מתוך %s נשלחו, נותרו %s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
-msgstr ""
+msgstr "שליחה"
 
 #: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
