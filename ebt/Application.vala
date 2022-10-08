@@ -316,11 +316,11 @@ public class BluetoothApp : Gtk.Application {
             permanent_delete (file);
             FileOutputStream out_stream = file.create (FileCreateFlags.PRIVATE);
             string str_contract = "[Contractor Entry]\n";
-            string str_name = _("Name=%s").printf ("Send Files via Bluetooth\n");
-            string str_icon = _("Icon=bluetooth\n");
-            string str_desc = _("Description=%s").printf ("Send files to device…\n");
+            string str_name = "Name=%s\n".printf (_("Send Files via Bluetooth"));
+            string str_icon = "Icon=bluetooth\n";
+            string str_desc = "Description=%s\n".printf (_("Send files to device…"));
             string str_command = "Exec=io.elementary.bluetooth -f %F \n";
-            string mimetype = _("MimeType=!inode;\n");
+            string mimetype = "MimeType=!inode;\n";
             out_stream.write (str_contract.data);
             out_stream.write (str_name.data);
             out_stream.write (str_icon.data);
