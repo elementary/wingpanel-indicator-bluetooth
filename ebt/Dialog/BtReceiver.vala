@@ -109,8 +109,8 @@ public class BtReceiver : Granite.Dialog {
         message_grid.attach (progress_label, 1, 5, 1, 1);
         get_content_area ().add (message_grid);
 
-        add_button ("Close", Gtk.ResponseType.CLOSE);
-        var suggested_button = add_button ("Reject", Gtk.ResponseType.ACCEPT);
+        add_button (_("Close"), Gtk.ResponseType.CLOSE);
+        var suggested_button = add_button (_("Reject"), Gtk.ResponseType.ACCEPT);
         suggested_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.ACCEPT) {
@@ -233,23 +233,24 @@ public class BtReceiver : Granite.Dialog {
         }
 
         if (seconds < 60) {
-            return ngettext ("%'d second", "%'d seconds", seconds).printf (seconds);
+            return ngettext ("%d second", "%d seconds", seconds).printf (seconds);
         }
 
         int minutes;
         if (seconds < 60 * 60) {
             minutes = (seconds + 30) / 60;
-            return ngettext ("%'d minute", "%'d minutes", minutes).printf (minutes);
+            return ngettext ("%d minute", "%d minutes", minutes).printf (minutes);
         }
 
         int hours = seconds / (60 * 60);
         if (seconds < 60 * 60 * 4) {
             minutes = (seconds - hours * 60 * 60 + 30) / 60;
-            string h = ngettext ("%'u hour", "%'u hours", hours).printf (hours);
-            string m = ngettext ("%'u minute", "%'u minutes", minutes).printf (minutes);
-            return _("%s, %s").printf (h, m); ///TRANSLATORS For example "1 hour, 8 minutes".
+            string h = ngettext ("%u hour", "%u hours", hours).printf (hours);
+            string m = ngettext ("%u minute", "%u minutes", minutes).printf (minutes);
+            ///TRANSLATORS: For example "1 hour, 8 minutes".
+            return _("%s, %s").printf (h, m);
         }
 
-        return ngettext ("approximately %'d hour", "approximately %'d hours", hours).printf (hours);
+        return ngettext ("approximately %d hour", "approximately %d hours", hours).printf (hours);
     }
 }
