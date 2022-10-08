@@ -64,7 +64,7 @@ public class BtSender : Granite.Dialog {
         overlay.add (icon_image);
         overlay.add_overlay (icon_label);
 
-        path_label = new Gtk.Label ("<b>%s</b>:".printf (_("From"))) {
+        path_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("From"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
@@ -72,19 +72,19 @@ public class BtSender : Granite.Dialog {
         };
         path_label.get_style_context ().add_class ("primary");
 
-        device_label = new Gtk.Label ("<b>%s</b>:".printf (_("To"))) {
+        device_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("To"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        filename_label = new Gtk.Label ("<b>%s</b>:".printf (_("Filename"))) {
+        filename_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("Filename"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        rate_label = new Gtk.Label ("<b>%s</b>:".printf (_("Transfer rate"))) {
+        rate_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("Transfer rate"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
@@ -248,8 +248,8 @@ public class BtSender : Granite.Dialog {
         }
     }
     private async void send_file () {
-        path_label.set_markup (_("<b>From</b>: %s").printf (file_path.get_parent ().get_path ()));
-        device_label.set_markup (_("<b>To</b>: %s").printf (GLib.Markup.escape_text (device.name)));
+        path_label.set_markup (GLib.Markup.printf_escaped (_("<b>From</b>: %s"), file_path.get_parent ().get_path ()));
+        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.name));
         icon_label.set_from_gicon (new ThemedIcon (device.icon == null? "bluetooth" : device.icon), Gtk.IconSize.LARGE_TOOLBAR);
         progress_label.label = _("Waiting for acceptance on %s…").printf (device.name);
         try {
@@ -258,7 +258,7 @@ public class BtSender : Granite.Dialog {
             GLib.ObjectPath objectpath;
             variant.get ("(oa{sv})", out objectpath, null);
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
-            filename_label.set_markup (_("<b>Filename</b>: %s").printf (GLib.Markup.escape_text (transfer.name)));
+            filename_label.set_markup (GLib.Markup.printf_escaped (_("<b>Filename</b>: %s"), transfer.name));
             total_size = transfer.size;
             ((DBusProxy) transfer).g_properties_changed.connect ((changed, invalid) => {
                 tranfer_progress ();
@@ -320,7 +320,7 @@ public class BtSender : Granite.Dialog {
         notification.set_icon (new ThemedIcon (device.icon));
         notification.set_priority (NotificationPriority.NORMAL);
         notification.set_title (_("File transferred successfully"));
-        notification.set_body (_("<b>From:</b> %s <b>Send to:</b> %s").printf (file_path.get_path (), device.name));
+        notification.set_body (GLib.Markup.printf_escaped (_("<b>From:</b> %s <b>Send to:</b> %s"), file_path.get_path (), device.name));
         ((Gtk.Window)get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
     }
 
@@ -338,7 +338,7 @@ public class BtSender : Granite.Dialog {
         if (transfer_rate == 0) {
             return;
         }
-        rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
+        rate_label.label = GLib.Markup.printf_escaped (_("<b>Transfer rate:</b> %s"), GLib.format_size (transfer_rate));
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
         progress_label.label = _("(%i/%i) %s of %s sent, time remaining %s").printf (current_file, total_file, GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));
     }
