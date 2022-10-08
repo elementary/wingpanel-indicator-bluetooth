@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 19:06+0000\n"
+"POT-Creation-Date: 2022-10-08 14:37+0000\n"
 "PO-Revision-Date: 2022-08-06 10:54+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/wingpanel/"
@@ -87,23 +87,11 @@ msgid "Phone"
 msgstr "전화"
 
 #: ebt/Application.vala:319
-#, c-format
-msgid "Name=%s"
+msgid "Send Files via Bluetooth"
 msgstr ""
-
-#: ebt/Application.vala:320
-#, fuzzy
-#| msgid "bluetooth"
-msgid "Icon=bluetooth\n"
-msgstr "블루투스"
 
 #: ebt/Application.vala:321
-#, c-format
-msgid "Description=%s"
-msgstr ""
-
-#: ebt/Application.vala:323
-msgid "MimeType=!inode;\n"
+msgid "Send files to device…"
 msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:82
@@ -325,6 +313,11 @@ msgstr "블루투스"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "블루투스 설정…"
+
+#, fuzzy
+#~| msgid "bluetooth"
+#~ msgid "Icon=bluetooth\n"
+#~ msgstr "블루투스"
 
 #~ msgid "The bluetooth indicator"
 #~ msgstr "블루투스 알림판"

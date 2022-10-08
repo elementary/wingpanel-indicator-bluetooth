@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-bluetooth\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 19:06+0000\n"
+"POT-Creation-Date: 2022-10-08 14:37+0000\n"
 "PO-Revision-Date: 2016-12-30 14:28+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -90,23 +90,11 @@ msgid "Phone"
 msgstr ""
 
 #: ebt/Application.vala:319
-#, c-format
-msgid "Name=%s"
+msgid "Send Files via Bluetooth"
 msgstr ""
-
-#: ebt/Application.vala:320
-#, fuzzy
-#| msgid "bluetooth"
-msgid "Icon=bluetooth\n"
-msgstr "كۆكچىش"
 
 #: ebt/Application.vala:321
-#, c-format
-msgid "Description=%s"
-msgstr ""
-
-#: ebt/Application.vala:323
-msgid "MimeType=!inode;\n"
+msgid "Send files to device…"
 msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:82
@@ -339,6 +327,11 @@ msgstr "كۆكچىش"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "كۆكچىش تەڭشىكى…"
+
+#, fuzzy
+#~| msgid "bluetooth"
+#~ msgid "Icon=bluetooth\n"
+#~ msgstr "كۆكچىش"
 
 #~ msgid "The bluetooth indicator"
 #~ msgstr "كۆكچىش كۆرسەتكۈچى"

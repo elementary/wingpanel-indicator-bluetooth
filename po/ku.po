@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-bluetooth\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 19:06+0000\n"
+"POT-Creation-Date: 2022-10-08 14:37+0000\n"
 "PO-Revision-Date: 2017-05-04 20:02+0000\n"
 "Last-Translator: Rokar <rokartv10@gmail.com>\n"
 "Language-Team: ku (generated) <https://l10n.elementary.io/projects/wingpanel/"
@@ -92,23 +92,11 @@ msgid "Phone"
 msgstr ""
 
 #: ebt/Application.vala:319
-#, c-format
-msgid "Name=%s"
+msgid "Send Files via Bluetooth"
 msgstr ""
-
-#: ebt/Application.vala:320
-#, fuzzy
-#| msgid "bluetooth"
-msgid "Icon=bluetooth\n"
-msgstr "bluetooth"
 
 #: ebt/Application.vala:321
-#, c-format
-msgid "Description=%s"
-msgstr ""
-
-#: ebt/Application.vala:323
-msgid "MimeType=!inode;\n"
+msgid "Send files to device…"
 msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:82
@@ -341,6 +329,11 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Eyarên Bluetoothê…"
+
+#, fuzzy
+#~| msgid "bluetooth"
+#~ msgid "Icon=bluetooth\n"
+#~ msgstr "bluetooth"
 
 #~ msgid "The bluetooth indicator"
 #~ msgstr "nîşane bluetooth"

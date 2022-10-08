@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 19:06+0000\n"
+"POT-Creation-Date: 2022-10-08 14:37+0000\n"
 "PO-Revision-Date: 2022-10-05 22:57+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/wingpanel/"
@@ -89,23 +89,11 @@ msgid "Phone"
 msgstr "Mobiltelefon"
 
 #: ebt/Application.vala:319
-#, c-format
-msgid "Name=%s"
+msgid "Send Files via Bluetooth"
 msgstr ""
-
-#: ebt/Application.vala:320
-#, fuzzy
-#| msgid "bluetooth"
-msgid "Icon=bluetooth\n"
-msgstr "Bluetooth"
 
 #: ebt/Application.vala:321
-#, c-format
-msgid "Description=%s"
-msgstr ""
-
-#: ebt/Application.vala:323
-msgid "MimeType=!inode;\n"
+msgid "Send files to device…"
 msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:82
@@ -337,6 +325,11 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth-Einstellungen …"
+
+#, fuzzy
+#~| msgid "bluetooth"
+#~ msgid "Icon=bluetooth\n"
+#~ msgstr "Bluetooth"
 
 #~ msgid "Middle-click to disable bluetooth"
 #~ msgstr "Bluetooth mit Mittelklick ausschalten"

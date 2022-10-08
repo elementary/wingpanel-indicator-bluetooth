@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-06 19:06+0000\n"
+"POT-Creation-Date: 2022-10-08 14:37+0000\n"
 "PO-Revision-Date: 2021-03-12 20:18+0000\n"
 "Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -87,23 +87,11 @@ msgid "Phone"
 msgstr "Telefone"
 
 #: ebt/Application.vala:319
-#, c-format
-msgid "Name=%s"
+msgid "Send Files via Bluetooth"
 msgstr ""
-
-#: ebt/Application.vala:320
-#, fuzzy
-#| msgid "bluetooth"
-msgid "Icon=bluetooth\n"
-msgstr "bluetooth"
 
 #: ebt/Application.vala:321
-#, c-format
-msgid "Description=%s"
-msgstr ""
-
-#: ebt/Application.vala:323
-msgid "MimeType=!inode;\n"
+msgid "Send files to device…"
 msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:82
@@ -338,6 +326,11 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Configurações de Bluetooth…"
+
+#, fuzzy
+#~| msgid "bluetooth"
+#~ msgid "Icon=bluetooth\n"
+#~ msgstr "bluetooth"
 
 #~ msgid "The bluetooth indicator"
 #~ msgstr "O indicador de bluetooth"
