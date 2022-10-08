@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-08 14:37+0000\n"
-"PO-Revision-Date: 2022-10-08 14:37+0000\n"
+"PO-Revision-Date: 2022-10-08 15:40+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ru/>\n"
@@ -89,11 +89,11 @@ msgstr "Телефон"
 
 #: ebt/Application.vala:319
 msgid "Send Files via Bluetooth"
-msgstr ""
+msgstr "Отправить файлы по Bluetooth"
 
 #: ebt/Application.vala:321
 msgid "Send files to device…"
-msgstr ""
+msgstr "Отправить файлы на устройство…"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
