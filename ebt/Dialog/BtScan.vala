@@ -106,7 +106,7 @@ public class BtScan : Granite.Dialog {
             overlaybar.active = manager.check_discovering ();
         });
 
-        add_button ("Close", Gtk.ResponseType.CLOSE);
+        add_button (_("Close"), Gtk.ResponseType.CLOSE);
         response.connect ((response_id) => {
             manager.stop_discovery.begin ();
             destroy ();
