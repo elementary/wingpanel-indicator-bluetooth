@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 19:06+0000\n"
-"PO-Revision-Date: 2021-11-16 11:33+0000\n"
+"PO-Revision-Date: 2022-10-08 14:37+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ja/>\n"
@@ -17,39 +17,39 @@ msgstr ""
 
 #: ebt/Application.vala:208
 msgid "Rejected file"
-msgstr ""
+msgstr "ファイルを拒否しました"
 
 #: ebt/Application.vala:210
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>ファイル:</b> %s <b>サイズ: </b>%s はすでに存在します"
 
 #: ebt/Application.vala:225
 msgid "Incoming file"
-msgstr ""
+msgstr "ファイルを受信できます"
 
 #: ebt/Application.vala:227
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> がファイルを送信しようとしています: %s サイズ: %s"
 
 #: ebt/Application.vala:234
 msgid "Accept"
-msgstr ""
+msgstr "受信"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:239
 msgid "Decline"
-msgstr ""
+msgstr "拒否"
 
 #: ebt/Application.vala:243
 msgid "Receiving file"
-msgstr ""
+msgstr "ファイルを受信しています"
 
 #: ebt/Application.vala:244
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s がファイルを送信しています: %s サイズ: %s"
 
 #: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
