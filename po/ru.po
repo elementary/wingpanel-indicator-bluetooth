@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-06 19:06+0000\n"
-"PO-Revision-Date: 2022-10-07 18:58+0000\n"
+"PO-Revision-Date: 2022-10-08 14:37+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ru/>\n"
@@ -127,7 +127,7 @@ msgstr "<b>Имя файла</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr "Ошибка отправкт файла"
+msgstr "Ошибка передачи файла"
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
@@ -136,7 +136,7 @@ msgstr "%s <b>Файл:</b> %s не получен"
 
 #: ebt/Dialog/BtReceiver.vala:186
 msgid "File transferred successfully"
-msgstr "Файл успешно отправлен"
+msgstr "Файл успешно передан"
 
 #: ebt/Dialog/BtReceiver.vala:187
 #, c-format
