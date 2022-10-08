@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-08 14:37+0000\n"
+"POT-Creation-Date: 2022-10-08 15:40+0000\n"
 "PO-Revision-Date: 2022-10-07 18:58+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
@@ -99,6 +99,17 @@ msgstr ""
 msgid "<b>Transfer rate:</b>"
 msgstr "<b>Швидкість передавання:</b>"
 
+#: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
+#: ebt/Dialog/BtSender.vala:117
+msgid "Close"
+msgstr ""
+
+#: ebt/Dialog/BtReceiver.vala:113
+#, fuzzy
+#| msgid "Rejected file"
+msgid "Reject"
+msgstr "Відхилений файл"
+
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
 #, c-format
 msgid "<b>From</b>: %s"
@@ -124,7 +135,7 @@ msgstr "Збій передавання файлу"
 msgid "%s <b>File:</b> %s not received"
 msgstr "%s <b>Файл:</b> %s не отримано"
 
-#: ebt/Dialog/BtReceiver.vala:186
+#: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully"
 msgstr "Файл успішно передано"
 
@@ -149,47 +160,57 @@ msgid "%s of %s received, time remaining %s"
 msgstr "Отримано %s з %s, залишилося часу %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
-#, c-format
-msgid "%'d second"
-msgid_plural "%'d seconds"
+#, fuzzy, c-format
+#| msgid "%'d second"
+#| msgid_plural "%'d seconds"
+msgid "%d second"
+msgid_plural "%d seconds"
 msgstr[0] "%'d секунда"
 msgstr[1] "%'d секунди"
 msgstr[2] "%'d секунд"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
-#, c-format
-msgid "%'d minute"
-msgid_plural "%'d minutes"
+#, fuzzy, c-format
+#| msgid "%'d minute"
+#| msgid_plural "%'d minutes"
+msgid "%d minute"
+msgid_plural "%d minutes"
 msgstr[0] "%'d хвилина"
 msgstr[1] "%'d хвилини"
 msgstr[2] "%'d хвилин"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
-#, c-format
-msgid "%'u hour"
-msgid_plural "%'u hours"
+#, fuzzy, c-format
+#| msgid "%'u hour"
+#| msgid_plural "%'u hours"
+msgid "%u hour"
+msgid_plural "%u hours"
 msgstr[0] "%'u година"
 msgstr[1] "%'u години"
 msgstr[2] "%'u годин"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
-#, c-format
-msgid "%'u minute"
-msgid_plural "%'u minutes"
+#, fuzzy, c-format
+#| msgid "%'u minute"
+#| msgid_plural "%'u minutes"
+msgid "%u minute"
+msgid_plural "%u minutes"
 msgstr[0] "%'u хвилина"
 msgstr[1] "%'u хвилини"
 msgstr[2] "%'u хвилин"
 
-#: ebt/Dialog/BtReceiver.vala:250
+#. /TRANSLATORS: For example "1 hour, 8 minutes".
+#: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
 #, c-format
 msgid "%s, %s"
 msgstr "%s, %s"
 
-#. /TRANSLATORS For example "1 hour, 8 minutes".
-#: ebt/Dialog/BtReceiver.vala:253 ebt/Dialog/BtSender.vala:369
-#, c-format
-msgid "approximately %'d hour"
-msgid_plural "approximately %'d hours"
+#: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
+#, fuzzy, c-format
+#| msgid "approximately %'d hour"
+#| msgid_plural "approximately %'d hours"
+msgid "approximately %d hour"
+msgid_plural "approximately %d hours"
 msgstr[0] "приблизно %'d година"
 msgstr[1] "приблизно %'d години"
 msgstr[2] "приблизно %'d годин"
@@ -222,6 +243,24 @@ msgstr "Доступні пристрої"
 msgid "From"
 msgstr "Від"
 
+#: ebt/Dialog/BtSender.vala:75
+msgid "To"
+msgstr ""
+
+#: ebt/Dialog/BtSender.vala:81
+msgid "Filename"
+msgstr ""
+
+#: ebt/Dialog/BtSender.vala:87
+#, fuzzy
+#| msgid "<b>Transfer rate:</b>"
+msgid "Transfer rate"
+msgstr "<b>Швидкість передавання:</b>"
+
+#: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
+msgid "Cancel"
+msgstr ""
+
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
 msgid "Waiting for acceptance on %s…"
@@ -241,9 +280,9 @@ msgstr "Передавання було перервано або його бу�
 msgid "The file has not been transferred"
 msgstr "Файл не передано"
 
-#: ebt/Dialog/BtSender.vala:322
-msgid "File transferred successfully "
-msgstr "Файл успішно передано "
+#: ebt/Dialog/BtSender.vala:289
+msgid "Retry"
+msgstr ""
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
@@ -320,6 +359,9 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Налаштування Bluetooth…"
+
+#~ msgid "File transferred successfully "
+#~ msgstr "Файл успішно передано "
 
 #~ msgid "Name=%s"
 #~ msgstr "Name=%s"

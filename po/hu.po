@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-08 14:37+0000\n"
+"POT-Creation-Date: 2022-10-08 15:40+0000\n"
 "PO-Revision-Date: 2022-10-07 03:36+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
@@ -98,6 +98,17 @@ msgstr ""
 msgid "<b>Transfer rate:</b>"
 msgstr "<b>Átvitel sebessége:</b>"
 
+#: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
+#: ebt/Dialog/BtSender.vala:117
+msgid "Close"
+msgstr ""
+
+#: ebt/Dialog/BtReceiver.vala:113
+#, fuzzy
+#| msgid "Rejected file"
+msgid "Reject"
+msgstr "Visszautasított fájl"
+
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
 #, c-format
 msgid "<b>From</b>: %s"
@@ -123,7 +134,7 @@ msgstr "A fájlátvitel sikertelen"
 msgid "%s <b>File:</b> %s not received"
 msgstr "%s <b>A fájl:</b> %s nem lett fogadva"
 
-#: ebt/Dialog/BtReceiver.vala:186
+#: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully"
 msgstr "A fájlátvitel sikeres"
 
@@ -148,43 +159,53 @@ msgid "%s of %s received, time remaining %s"
 msgstr "%s/%s fogadva, hátralévő idő: %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
-#, c-format
-msgid "%'d second"
-msgid_plural "%'d seconds"
+#, fuzzy, c-format
+#| msgid "%'d second"
+#| msgid_plural "%'d seconds"
+msgid "%d second"
+msgid_plural "%d seconds"
 msgstr[0] "%'d másodperc"
 msgstr[1] "%'d másodperc"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
-#, c-format
-msgid "%'d minute"
-msgid_plural "%'d minutes"
+#, fuzzy, c-format
+#| msgid "%'d minute"
+#| msgid_plural "%'d minutes"
+msgid "%d minute"
+msgid_plural "%d minutes"
 msgstr[0] "%'d perc"
 msgstr[1] "%'d perc"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
-#, c-format
-msgid "%'u hour"
-msgid_plural "%'u hours"
+#, fuzzy, c-format
+#| msgid "%'u hour"
+#| msgid_plural "%'u hours"
+msgid "%u hour"
+msgid_plural "%u hours"
 msgstr[0] "%'u óra"
 msgstr[1] "%'u óra"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
-#, c-format
-msgid "%'u minute"
-msgid_plural "%'u minutes"
+#, fuzzy, c-format
+#| msgid "%'u minute"
+#| msgid_plural "%'u minutes"
+msgid "%u minute"
+msgid_plural "%u minutes"
 msgstr[0] "%'u perc"
 msgstr[1] "%'u perc"
 
-#: ebt/Dialog/BtReceiver.vala:250
+#. /TRANSLATORS: For example "1 hour, 8 minutes".
+#: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
 #, c-format
 msgid "%s, %s"
 msgstr "%s %s"
 
-#. /TRANSLATORS For example "1 hour, 8 minutes".
-#: ebt/Dialog/BtReceiver.vala:253 ebt/Dialog/BtSender.vala:369
-#, c-format
-msgid "approximately %'d hour"
-msgid_plural "approximately %'d hours"
+#: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
+#, fuzzy, c-format
+#| msgid "approximately %'d hour"
+#| msgid_plural "approximately %'d hours"
+msgid "approximately %d hour"
+msgid_plural "approximately %d hours"
 msgstr[0] "körülbelül %'d óra"
 msgstr[1] "körülbelül %'d óra"
 
@@ -217,6 +238,24 @@ msgstr "Elérhető eszközök"
 msgid "From"
 msgstr "Küldő"
 
+#: ebt/Dialog/BtSender.vala:75
+msgid "To"
+msgstr ""
+
+#: ebt/Dialog/BtSender.vala:81
+msgid "Filename"
+msgstr ""
+
+#: ebt/Dialog/BtSender.vala:87
+#, fuzzy
+#| msgid "<b>Transfer rate:</b>"
+msgid "Transfer rate"
+msgstr "<b>Átvitel sebessége:</b>"
+
+#: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
+msgid "Cancel"
+msgstr ""
+
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
 msgid "Waiting for acceptance on %s…"
@@ -236,9 +275,9 @@ msgstr "Az átvitel megszakadt vagy el lett utasítva %s által."
 msgid "The file has not been transferred"
 msgstr "A fájl nem lett átküldve"
 
-#: ebt/Dialog/BtSender.vala:322
-msgid "File transferred successfully "
-msgstr "A fájl sikeresen átküldve "
+#: ebt/Dialog/BtSender.vala:289
+msgid "Retry"
+msgstr ""
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
@@ -315,6 +354,9 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:66
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth-beállítások…"
+
+#~ msgid "File transferred successfully "
+#~ msgstr "A fájl sikeresen átküldve "
 
 #~ msgid "The bluetooth indicator"
 #~ msgstr "A bluetooth indikátor"
