@@ -134,8 +134,8 @@ public class BtReceiver : Granite.Dialog {
     }
 
     public void set_transfer (string devicename, string deviceicon, string objectpath) {
-        device_label.set_markup (_("<b>From</b>: %s").printf (GLib.Markup.escape_text (devicename)));
-        directory_label.label = _("<b>To</b>: %s").printf (GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD));
+        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>From</b>: %s"), devicename));
+        directory_label.label = GLib.Markup.printf_escaped (_("<b>To</b>: %s"), GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD));
         device_image.set_from_gicon (new ThemedIcon (deviceicon == null? "bluetooth" : deviceicon), Gtk.IconSize.LARGE_TOOLBAR);
         start_time = (int) get_real_time ();
         try {
@@ -145,7 +145,7 @@ public class BtReceiver : Granite.Dialog {
             });
             total_size = transfer.size;
             session = transfer.session;
-            filename_label.set_markup (_("<b>Filename</b>: %s").printf (GLib.Markup.escape_text (transfer.name)));
+            filename_label.set_markup (GLib.Markup.printf_escaped (_("<b>Filename</b>: %s"), transfer.name));
         } catch (Error e) {
             GLib.warning (e.message);
         }
@@ -156,7 +156,7 @@ public class BtReceiver : Granite.Dialog {
                 case "error":
                     notification.set_icon (device_image.gicon);
                     notification.set_title (_("File transfer failed"));
-                    notification.set_body (_("%s <b>File:</b> %s not received").printf (device_label.get_label (), transfer.name));
+                    notification.set_body (GLib.Markup.printf_escaped (_("%s <b>File:</b> %s not received"), device_label.get_label (), transfer.name));
                     ((Gtk.Window) get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
                     destroy ();
                     break;
@@ -184,7 +184,7 @@ public class BtReceiver : Granite.Dialog {
         src.move (dest, FileCopyFlags.ALL_METADATA);
         notification.set_icon (device_image.gicon);
         notification.set_title (_("File transferred successfully"));
-        notification.set_body (_("%s <b>Save to:</b> %s").printf (device_label.get_label (), dest.get_path ()));
+        notification.set_body (GLib.Markup.printf_escaped (_("%s <b>Save to:</b> %s"), device_label.get_label (), dest.get_path ()));
         ((Gtk.Window) get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
     }
 
@@ -222,9 +222,9 @@ public class BtReceiver : Granite.Dialog {
         if (transfer_rate == 0) {
             return;
         }
-        rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
+        rate_label.label = GLib.Markup.printf_escaped (_("<b>Transfer rate:</b> %s"), GLib.format_size (transfer_rate));
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
-        progress_label.label = _("%s of %s received, time remaining %s").printf (GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));
+        progress_label.label = GLib.Markup.printf_escaped (_("%s of %s received, time remaining %s"), GLib.format_size (transferred), GLib.format_size (total_size), format_time ((int)remaining_time));
     }
 
     private string format_time (int seconds) {
