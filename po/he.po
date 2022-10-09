@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-08 15:40+0000\n"
-"PO-Revision-Date: 2022-10-07 18:58+0000\n"
+"PO-Revision-Date: 2022-10-10 06:08+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/he/>\n"
@@ -88,11 +88,11 @@ msgstr "טלפון"
 
 #: ebt/Application.vala:319
 msgid "Send Files via Bluetooth"
-msgstr ""
+msgstr "שליחת קבצים דרך בלוטות׳"
 
 #: ebt/Application.vala:321
 msgid "Send files to device…"
-msgstr ""
+msgstr "שליחת קבצים להתקן…"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
@@ -101,13 +101,11 @@ msgstr "<b>קצב העברה:</b>"
 #: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
 #: ebt/Dialog/BtSender.vala:117
 msgid "Close"
-msgstr ""
+msgstr "סגירה"
 
 #: ebt/Dialog/BtReceiver.vala:113
-#, fuzzy
-#| msgid "Rejected file"
 msgid "Reject"
-msgstr "קובץ נדחה"
+msgstr "דחייה"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
 #, c-format
@@ -159,40 +157,32 @@ msgid "%s of %s received, time remaining %s"
 msgstr "%s מתוך %s התקבלו, נותרו %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
-#, fuzzy, c-format
-#| msgid "%'d second"
-#| msgid_plural "%'d seconds"
+#, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "שנייה"
-msgstr[1] "%'d שניות"
+msgstr[1] "%d שניות"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
-#, fuzzy, c-format
-#| msgid "%'d minute"
-#| msgid_plural "%'d minutes"
+#, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "דקה"
-msgstr[1] "%'d דקות"
+msgstr[1] "%d דקות"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
-#, fuzzy, c-format
-#| msgid "%'u hour"
-#| msgid_plural "%'u hours"
+#, c-format
 msgid "%u hour"
 msgid_plural "%u hours"
 msgstr[0] "שעה"
-msgstr[1] "%'u שעות"
+msgstr[1] "%u שעות"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
-#, fuzzy, c-format
-#| msgid "%'u minute"
-#| msgid_plural "%'u minutes"
+#, c-format
 msgid "%u minute"
 msgid_plural "%u minutes"
 msgstr[0] "דקה"
-msgstr[1] "%'u דקות"
+msgstr[1] "%u דקות"
 
 #. /TRANSLATORS: For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
@@ -201,13 +191,11 @@ msgid "%s, %s"
 msgstr "%s, %s"
 
 #: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
-#, fuzzy, c-format
-#| msgid "approximately %'d hour"
-#| msgid_plural "approximately %'d hours"
+#, c-format
 msgid "approximately %d hour"
 msgid_plural "approximately %d hours"
 msgstr[0] "בערך שעה"
-msgstr[1] "בערך %'d שעות"
+msgstr[1] "בערך %d שעות"
 
 #: ebt/Dialog/BtScan.vala:41
 msgid "Bluetooth File Transfer"
@@ -239,21 +227,19 @@ msgstr "מאת"
 
 #: ebt/Dialog/BtSender.vala:75
 msgid "To"
-msgstr ""
+msgstr "אל"
 
 #: ebt/Dialog/BtSender.vala:81
 msgid "Filename"
-msgstr ""
+msgstr "שם קובץ"
 
 #: ebt/Dialog/BtSender.vala:87
-#, fuzzy
-#| msgid "<b>Transfer rate:</b>"
 msgid "Transfer rate"
-msgstr "<b>קצב העברה:</b>"
+msgstr "קצב העברה"
 
 #: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
@@ -276,7 +262,7 @@ msgstr "הקובץ לא הועבר"
 
 #: ebt/Dialog/BtSender.vala:289
 msgid "Retry"
-msgstr ""
+msgstr "ניסיון חוזר"
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
