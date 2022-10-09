@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-08 15:40+0000\n"
-"PO-Revision-Date: 2022-10-07 03:36+0000\n"
+"PO-Revision-Date: 2022-10-10 06:08+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/hu/>\n"
@@ -88,11 +88,11 @@ msgstr "Telefon"
 
 #: ebt/Application.vala:319
 msgid "Send Files via Bluetooth"
-msgstr ""
+msgstr "Fájlok küldése Bluetooth-on keresztül"
 
 #: ebt/Application.vala:321
 msgid "Send files to device…"
-msgstr ""
+msgstr "Fájlok küldése egy eszközre…"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
@@ -101,13 +101,11 @@ msgstr "<b>Átvitel sebessége:</b>"
 #: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
 #: ebt/Dialog/BtSender.vala:117
 msgid "Close"
-msgstr ""
+msgstr "Bezárás"
 
 #: ebt/Dialog/BtReceiver.vala:113
-#, fuzzy
-#| msgid "Rejected file"
 msgid "Reject"
-msgstr "Visszautasított fájl"
+msgstr "Elutasítás"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
 #, c-format
@@ -159,40 +157,32 @@ msgid "%s of %s received, time remaining %s"
 msgstr "%s/%s fogadva, hátralévő idő: %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
-#, fuzzy, c-format
-#| msgid "%'d second"
-#| msgid_plural "%'d seconds"
+#, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%'d másodperc"
-msgstr[1] "%'d másodperc"
+msgstr[0] "%d másodperc"
+msgstr[1] "%d másodperc"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
-#, fuzzy, c-format
-#| msgid "%'d minute"
-#| msgid_plural "%'d minutes"
+#, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%'d perc"
-msgstr[1] "%'d perc"
+msgstr[0] "%d perc"
+msgstr[1] "%d perc"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
-#, fuzzy, c-format
-#| msgid "%'u hour"
-#| msgid_plural "%'u hours"
+#, c-format
 msgid "%u hour"
 msgid_plural "%u hours"
-msgstr[0] "%'u óra"
-msgstr[1] "%'u óra"
+msgstr[0] "%u óra"
+msgstr[1] "%u óra"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
-#, fuzzy, c-format
-#| msgid "%'u minute"
-#| msgid_plural "%'u minutes"
+#, c-format
 msgid "%u minute"
 msgid_plural "%u minutes"
-msgstr[0] "%'u perc"
-msgstr[1] "%'u perc"
+msgstr[0] "%u perc"
+msgstr[1] "%u perc"
 
 #. /TRANSLATORS: For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
@@ -201,13 +191,11 @@ msgid "%s, %s"
 msgstr "%s %s"
 
 #: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
-#, fuzzy, c-format
-#| msgid "approximately %'d hour"
-#| msgid_plural "approximately %'d hours"
+#, c-format
 msgid "approximately %d hour"
 msgid_plural "approximately %d hours"
-msgstr[0] "körülbelül %'d óra"
-msgstr[1] "körülbelül %'d óra"
+msgstr[0] "körülbelül %d óra"
+msgstr[1] "körülbelül %d óra"
 
 #: ebt/Dialog/BtScan.vala:41
 msgid "Bluetooth File Transfer"
@@ -240,21 +228,19 @@ msgstr "Küldő"
 
 #: ebt/Dialog/BtSender.vala:75
 msgid "To"
-msgstr ""
+msgstr "Fogadó"
 
 #: ebt/Dialog/BtSender.vala:81
 msgid "Filename"
-msgstr ""
+msgstr "Fájlnév"
 
 #: ebt/Dialog/BtSender.vala:87
-#, fuzzy
-#| msgid "<b>Transfer rate:</b>"
 msgid "Transfer rate"
-msgstr "<b>Átvitel sebessége:</b>"
+msgstr "Átvitel sebessége"
 
 #: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
 msgid "Cancel"
-msgstr ""
+msgstr "Mégse"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
@@ -277,7 +263,7 @@ msgstr "A fájl nem lett átküldve"
 
 #: ebt/Dialog/BtSender.vala:289
 msgid "Retry"
-msgstr ""
+msgstr "Újrapróbálkozás"
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
