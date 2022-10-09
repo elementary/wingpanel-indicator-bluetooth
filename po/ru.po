@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-08 15:40+0000\n"
-"PO-Revision-Date: 2022-10-09 05:15+0000\n"
+"PO-Revision-Date: 2022-10-10 06:08+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ru/>\n"
@@ -217,8 +217,7 @@ msgstr "Устройства не найдены"
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
-"Пожалуйста, убедитесь, что Ваши устройства видны и готовы к сопряжению."
+msgstr "Пожалуйста, убедитесь, что ваши устройства видны и готовы к сопряжению."
 
 #: ebt/Dialog/BtScan.vala:79
 msgid "Discovering"
