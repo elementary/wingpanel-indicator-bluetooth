@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-08 15:40+0000\n"
-"PO-Revision-Date: 2022-10-07 18:58+0000\n"
+"PO-Revision-Date: 2022-10-11 02:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ca/>\n"
@@ -88,11 +88,11 @@ msgstr "Telèfon"
 
 #: ebt/Application.vala:319
 msgid "Send Files via Bluetooth"
-msgstr ""
+msgstr "Envia fitxers mitjançant Bluetooth"
 
 #: ebt/Application.vala:321
 msgid "Send files to device…"
-msgstr ""
+msgstr "Envia fitxers al dispositiu…"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
@@ -101,13 +101,11 @@ msgstr "<b>Taxa de transferència:</b>"
 #: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
 #: ebt/Dialog/BtSender.vala:117
 msgid "Close"
-msgstr ""
+msgstr "Tanca"
 
 #: ebt/Dialog/BtReceiver.vala:113
-#, fuzzy
-#| msgid "Rejected file"
 msgid "Reject"
-msgstr "Fitxer rebutjat"
+msgstr "Rebutja"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
 #, c-format
@@ -159,40 +157,32 @@ msgid "%s of %s received, time remaining %s"
 msgstr "%s de %s rebut, temps restant: %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
-#, fuzzy, c-format
-#| msgid "%'d second"
-#| msgid_plural "%'d seconds"
+#, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%'d segon"
-msgstr[1] "%'d segons"
+msgstr[0] "%d segon"
+msgstr[1] "%d segons"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
-#, fuzzy, c-format
-#| msgid "%'d minute"
-#| msgid_plural "%'d minutes"
+#, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%'d minut"
-msgstr[1] "%'d minuts"
+msgstr[0] "%d minut"
+msgstr[1] "%d minuts"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
-#, fuzzy, c-format
-#| msgid "%'u hour"
-#| msgid_plural "%'u hours"
+#, c-format
 msgid "%u hour"
 msgid_plural "%u hours"
-msgstr[0] "%'u hora"
-msgstr[1] "%'u hores"
+msgstr[0] "%u hora"
+msgstr[1] "%u hores"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
-#, fuzzy, c-format
-#| msgid "%'u minute"
-#| msgid_plural "%'u minutes"
+#, c-format
 msgid "%u minute"
 msgid_plural "%u minutes"
-msgstr[0] "%'u minut"
-msgstr[1] "%'u minuts"
+msgstr[0] "%u minut"
+msgstr[1] "%u minuts"
 
 #. /TRANSLATORS: For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
@@ -201,13 +191,11 @@ msgid "%s, %s"
 msgstr "%s, %s"
 
 #: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
-#, fuzzy, c-format
-#| msgid "approximately %'d hour"
-#| msgid_plural "approximately %'d hours"
+#, c-format
 msgid "approximately %d hour"
 msgid_plural "approximately %d hours"
-msgstr[0] "aproximadament %'d hora"
-msgstr[1] "aproximadament %'d hores"
+msgstr[0] "aproximadament %d hora"
+msgstr[1] "aproximadament %d hores"
 
 #: ebt/Dialog/BtScan.vala:41
 msgid "Bluetooth File Transfer"
@@ -241,21 +229,19 @@ msgstr "De"
 
 #: ebt/Dialog/BtSender.vala:75
 msgid "To"
-msgstr ""
+msgstr "A"
 
 #: ebt/Dialog/BtSender.vala:81
 msgid "Filename"
-msgstr ""
+msgstr "Nom del fitxer"
 
 #: ebt/Dialog/BtSender.vala:87
-#, fuzzy
-#| msgid "<b>Transfer rate:</b>"
 msgid "Transfer rate"
-msgstr "<b>Taxa de transferència:</b>"
+msgstr "Taxa de transferència"
 
 #: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel·la"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
@@ -278,7 +264,7 @@ msgstr "El fitxer no s'ha transferit."
 
 #: ebt/Dialog/BtSender.vala:289
 msgid "Retry"
-msgstr ""
+msgstr "Torna-ho a provar"
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
