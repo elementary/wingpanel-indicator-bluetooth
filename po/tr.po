@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-08 15:40+0000\n"
-"PO-Revision-Date: 2021-06-17 02:40+0000\n"
+"PO-Revision-Date: 2022-10-11 10:15+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/tr/>\n"
@@ -17,39 +17,39 @@ msgstr ""
 
 #: ebt/Application.vala:208
 msgid "Rejected file"
-msgstr ""
+msgstr "Reddedilen dosya"
 
 #: ebt/Application.vala:210
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>Dosya:</b> %s <b>Boyut: </b>%s zaten var"
 
 #: ebt/Application.vala:225
 msgid "Incoming file"
-msgstr ""
+msgstr "Gelen dosya"
 
 #: ebt/Application.vala:227
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> dosya göndermeye hazır: %s boyut: %s"
 
 #: ebt/Application.vala:234
 msgid "Accept"
-msgstr ""
+msgstr "Kabul Et"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:239
 msgid "Decline"
-msgstr ""
+msgstr "Reddet"
 
 #: ebt/Application.vala:243
 msgid "Receiving file"
-msgstr ""
+msgstr "Dosya alınıyor"
 
 #: ebt/Application.vala:244
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s dosya gönderiyor: %s boyut: %s"
 
 #: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
@@ -88,53 +88,53 @@ msgstr "Telefon"
 
 #: ebt/Application.vala:319
 msgid "Send Files via Bluetooth"
-msgstr ""
+msgstr "Bluetooth ile Dosya Gönder"
 
 #: ebt/Application.vala:321
 msgid "Send files to device…"
-msgstr ""
+msgstr "Dosyaları cihaza gönder…"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
-msgstr ""
+msgstr "<b>Aktarma hızı:</b>"
 
 #: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
 #: ebt/Dialog/BtSender.vala:117
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 #: ebt/Dialog/BtReceiver.vala:113
 msgid "Reject"
-msgstr ""
+msgstr "Reddet"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
 #, c-format
 msgid "<b>From</b>: %s"
-msgstr ""
+msgstr "<b>Gönderen</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
 #, c-format
 msgid "<b>To</b>: %s"
-msgstr ""
+msgstr "<b>Kime</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
 #: src/Widgets/Device.vala:160
 #, c-format
 msgid "<b>Filename</b>: %s"
-msgstr ""
+msgstr "<b>Dosya adı</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr ""
+msgstr "Dosya aktarımı başarısız oldu"
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
 msgid "%s <b>File:</b> %s not received"
-msgstr ""
+msgstr "%s <b>Dosya:</b> %s alınmadı"
 
 #: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully"
-msgstr ""
+msgstr "Dosya başarıyla aktarıldı"
 
 #: ebt/Dialog/BtReceiver.vala:187
 #, c-format
