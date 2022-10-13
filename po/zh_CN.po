@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-08 15:40+0000\n"
-"PO-Revision-Date: 2021-09-07 13:50+0000\n"
+"PO-Revision-Date: 2022-10-13 14:03+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/zh_Hans/>\n"
@@ -17,39 +17,39 @@ msgstr ""
 
 #: ebt/Application.vala:208
 msgid "Rejected file"
-msgstr ""
+msgstr "已拒绝的文件"
 
 #: ebt/Application.vala:210
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>文件：</b> %s <b>大小： </b>%s 已存在"
 
 #: ebt/Application.vala:225
 msgid "Incoming file"
-msgstr ""
+msgstr "即将传送的文件"
 
 #: ebt/Application.vala:227
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> 已准备好发送文件：%s 大小：%s"
 
 #: ebt/Application.vala:234
 msgid "Accept"
-msgstr ""
+msgstr "接收"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:239
 msgid "Decline"
-msgstr ""
+msgstr "拒绝"
 
 #: ebt/Application.vala:243
 msgid "Receiving file"
-msgstr ""
+msgstr "正在接收文件"
 
 #: ebt/Application.vala:244
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s 正在发送文件： %s 大小： %s"
 
 #: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
@@ -88,194 +88,190 @@ msgstr "手机"
 
 #: ebt/Application.vala:319
 msgid "Send Files via Bluetooth"
-msgstr ""
+msgstr "通过蓝牙发送"
 
 #: ebt/Application.vala:321
 msgid "Send files to device…"
-msgstr ""
+msgstr "发送至设备…"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
-msgstr ""
+msgstr "<b>传输速率：</b>"
 
 #: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
 #: ebt/Dialog/BtSender.vala:117
 msgid "Close"
-msgstr ""
+msgstr "关闭"
 
 #: ebt/Dialog/BtReceiver.vala:113
 msgid "Reject"
-msgstr ""
+msgstr "拒绝"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
 #, c-format
 msgid "<b>From</b>: %s"
-msgstr ""
+msgstr "<b>来源</b>： %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
 #, c-format
 msgid "<b>To</b>: %s"
-msgstr ""
+msgstr "<b>目标</b>： %s"
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
 #: src/Widgets/Device.vala:160
 #, c-format
 msgid "<b>Filename</b>: %s"
-msgstr ""
+msgstr "<b>文件名称</b>： %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr ""
+msgstr "文件传输失败"
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
 msgid "%s <b>File:</b> %s not received"
-msgstr ""
+msgstr "%s <b>文件：</b> %s 未接收"
 
 #: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully"
-msgstr ""
+msgstr "文件传输成功"
 
 #: ebt/Dialog/BtReceiver.vala:187
 #, c-format
 msgid "%s <b>Save to:</b> %s"
-msgstr ""
+msgstr "%s <b>保存到：</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:211
 #, c-format
 msgid "Receiving…  %s of %s"
-msgstr ""
+msgstr "正在接收…  %s / %s"
 
 #: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:341
 #, c-format
 msgid "<b>Transfer rate:</b> %s"
-msgstr ""
+msgstr "<b>传输速率：</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:227
 #, c-format
 msgid "%s of %s received, time remaining %s"
-msgstr ""
+msgstr "已接收 %s / %s ，剩余时间 %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
+msgstr[0] "%d 秒"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
+msgstr[0] "%d 分钟"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
 #, c-format
 msgid "%u hour"
 msgid_plural "%u hours"
-msgstr[0] ""
+msgstr[0] "%u 小时"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
 #, c-format
 msgid "%u minute"
 msgid_plural "%u minutes"
-msgstr[0] ""
+msgstr[0] "%u 分钟"
 
 #. /TRANSLATORS: For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
 #, c-format
 msgid "approximately %d hour"
 msgid_plural "approximately %d hours"
-msgstr[0] ""
+msgstr[0] "大约 %d 小时"
 
 #: ebt/Dialog/BtScan.vala:41
-#, fuzzy
-#| msgid "Bluetooth is on"
 msgid "Bluetooth File Transfer"
-msgstr "蓝牙已打开"
+msgstr "蓝牙文件传输"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
+msgstr "选择一个蓝牙设备"
 
 #: ebt/Dialog/BtScan.vala:57
 msgid "No Devices Found"
-msgstr ""
+msgstr "未发现任何设备"
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
+msgstr "请确保您的设备可见且处于匹配模式。"
 
 #: ebt/Dialog/BtScan.vala:79
-#, fuzzy
-#| msgid "Disconnecting…"
 msgid "Discovering"
-msgstr "断开中…"
+msgstr "正在查找"
 
 #: ebt/Dialog/BtScan.vala:189
 msgid "Available Devices"
-msgstr ""
+msgstr "可用设备"
 
 #: ebt/Dialog/BtSender.vala:67
 msgid "From"
-msgstr ""
+msgstr "来源"
 
 #: ebt/Dialog/BtSender.vala:75
 msgid "To"
-msgstr ""
+msgstr "目标"
 
 #: ebt/Dialog/BtSender.vala:81
 msgid "Filename"
-msgstr ""
+msgstr "文件名称"
 
 #: ebt/Dialog/BtSender.vala:87
 msgid "Transfer rate"
-msgstr ""
+msgstr "传输速率"
 
 #: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
 msgid "Waiting for acceptance on %s…"
-msgstr ""
+msgstr "等待 %s 接收…"
 
 #: ebt/Dialog/BtSender.vala:276
 #, c-format
 msgid "The transfer of '%s' failed."
-msgstr ""
+msgstr "传输至'%s' 失败。"
 
 #: ebt/Dialog/BtSender.vala:278
 #, c-format
 msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
+msgstr "传输中断或已被 %s 拒绝。"
 
 #: ebt/Dialog/BtSender.vala:281
 msgid "The file has not been transferred"
-msgstr ""
+msgstr "文件未传输"
 
 #: ebt/Dialog/BtSender.vala:289
 msgid "Retry"
-msgstr ""
+msgstr "重试"
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
 msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr ""
+msgstr "<b>来源：</b> %s <b>目标：</b> %s"
 
 #: ebt/Dialog/BtSender.vala:343
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
+msgstr "(%i/%i) 已发送 %s / %s ，剩余时间 %s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
-msgstr ""
+msgstr "发送"
 
 #: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
@@ -284,12 +280,12 @@ msgstr "未连接"
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "Receiving… %s of %s"
-msgstr ""
+msgstr "正在接收… %s / %s"
 
 #: src/Widgets/Device.vala:169
 #, c-format
 msgid "Sending… %s of %s"
-msgstr ""
+msgstr "正在发送… %s / %s"
 
 #: src/Widgets/Device.vala:216
 msgid "Connecting…"
