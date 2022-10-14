@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-08 15:40+0000\n"
-"PO-Revision-Date: 2022-01-13 21:09+0000\n"
+"PO-Revision-Date: 2022-10-14 20:32+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/nl/>\n"
@@ -17,34 +17,34 @@ msgstr ""
 
 #: ebt/Application.vala:208
 msgid "Rejected file"
-msgstr ""
+msgstr "Bestand afgewezen"
 
 #: ebt/Application.vala:210
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>Bestand:</b> %s <b>Grootte: </b>%s bestaat al"
 
 #: ebt/Application.vala:225
 msgid "Incoming file"
-msgstr ""
+msgstr "Inkomend bestand"
 
 #: ebt/Application.vala:227
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> is klaar om het bestand te versturen: %s grootte: %s"
 
 #: ebt/Application.vala:234
 msgid "Accept"
-msgstr ""
+msgstr "Accepteren"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:239
 msgid "Decline"
-msgstr ""
+msgstr "Afwijzen"
 
 #: ebt/Application.vala:243
 msgid "Receiving file"
-msgstr ""
+msgstr "Bestand wordt ontvangen"
 
 #: ebt/Application.vala:244
 #, c-format
