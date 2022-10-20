@@ -24,6 +24,7 @@ public class BtReceiver : Granite.Dialog {
     public Bluetooth.Obex.Transfer transfer;
     private Gtk.ProgressBar progressbar;
     private Gtk.Label device_label;
+    private string sending_device = "";
     private Gtk.Label directory_label;
     private Gtk.Label progress_label;
     private Gtk.Label filename_label;
@@ -136,6 +137,7 @@ public class BtReceiver : Granite.Dialog {
     }
 
     public void set_transfer (string devicename, string deviceicon, string objectpath) {
+        sending_device = devicename;
         device_label.set_markup (GLib.Markup.printf_escaped (_("<b>From:</b> %s"), devicename));
         directory_label.label = GLib.Markup.printf_escaped (
           _("<b>To:</b> %s"), 
@@ -169,7 +171,7 @@ public class BtReceiver : Granite.Dialog {
                     notification.set_title (_("File transfer failed"));
                     notification.set_body (
                         GLib.Markup.printf_escaped (
-                            _("%s <b>File:</b> %s not received"), device_label.get_label (), transfer.name
+                            _("<b>From:</b> %s <b>File:</b> %s not received"), sending_device, transfer.name
                     ));
                     ((Gtk.Window) get_toplevel ()).application.send_notification (
                         "io.elementary.bluetooth", 
@@ -205,9 +207,8 @@ public class BtReceiver : Granite.Dialog {
         src.move (dest, FileCopyFlags.ALL_METADATA);
         notification.set_icon (device_image.gicon);
         notification.set_title (_("File transferred successfully"));
-        notification.set_body (
-            GLib.Markup.printf_escaped (
-                _("%s <b>Save to:</b> %s"), device_label.get_label (), dest.get_path ()
+        notification.set_body (GLib.Markup.printf_escaped (
+            _("<b>From:</b> %s <b>Save to:</b> %s"), sending_device, dest.get_path ()
         ));
         ((Gtk.Window) get_toplevel ()).application.send_notification (
             "io.elementary.bluetooth", 
