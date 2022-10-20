@@ -64,7 +64,7 @@ public class BtSender : Granite.Dialog {
         overlay.add (icon_image);
         overlay.add_overlay (icon_label);
 
-        path_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("From"))) {
+        path_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s:</b>", _("From"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
@@ -72,19 +72,19 @@ public class BtSender : Granite.Dialog {
         };
         path_label.get_style_context ().add_class ("primary");
 
-        device_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("To"))) {
+        device_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s:</b>", _("To"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        filename_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("Filename"))) {
+        filename_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s:</b>", _("Filename"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        rate_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("Transfer rate"))) {
+        rate_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s:</b>", _("Transfer rate"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
@@ -262,9 +262,9 @@ public class BtSender : Granite.Dialog {
     }
     private async void send_file () {
         path_label.set_markup (
-            GLib.Markup.printf_escaped (_("<b>From</b>: %s"), file_to_send.get_parent ().get_path ())
+            GLib.Markup.printf_escaped (_("<b>From:</b> %s"), file_to_send.get_parent ().get_path ())
         );
-        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.name));
+        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To:</b> %s"), device.name));
         icon_label.set_from_gicon (
             new ThemedIcon (device.icon == null? "bluetooth" : device.icon), 
             Gtk.IconSize.LARGE_TOOLBAR
@@ -283,7 +283,7 @@ public class BtSender : Granite.Dialog {
             variant.get ("(oa{sv})", out objectpath, null);
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
             filename_label.set_markup (
-                GLib.Markup.printf_escaped (_("<b>Filename</b>: %s"), transfer.name)
+                GLib.Markup.printf_escaped (_("<b>Filename:</b> %s"), transfer.name)
             );
             total_size = transfer.size;
             ((DBusProxy) transfer).g_properties_changed.connect ((changed, invalid) => {

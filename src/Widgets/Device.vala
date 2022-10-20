@@ -160,7 +160,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
                 progress_revealer.reveal_child = true;
                 string name = transfer.name;
                 if (name != null) {
-                    file_label.set_markup (_("<b>Filename</b>: %s").printf (GLib.Markup.escape_text (name)));
+                    file_label.set_markup (_("<b>Filename:</b> %s").printf (GLib.Markup.escape_text (name)));
                 }
                 string filename = transfer.filename;
                 if (filename != null) {

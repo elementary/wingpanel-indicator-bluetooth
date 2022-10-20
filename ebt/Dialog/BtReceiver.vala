@@ -136,9 +136,9 @@ public class BtReceiver : Granite.Dialog {
     }
 
     public void set_transfer (string devicename, string deviceicon, string objectpath) {
-        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>From</b>: %s"), devicename));
+        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>From:</b> %s"), devicename));
         directory_label.label = GLib.Markup.printf_escaped (
-          _("<b>To</b>: %s"), 
+          _("<b>To:</b> %s"), 
           GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD)
         );
         device_image.set_from_gicon (
@@ -154,7 +154,7 @@ public class BtReceiver : Granite.Dialog {
             total_size = transfer.size;
             session = transfer.session;
             filename_label.set_markup (
-              GLib.Markup.printf_escaped (_("<b>Filename</b>: %s"), transfer.name)
+              GLib.Markup.printf_escaped (_("<b>Filename:</b> %s"), transfer.name)
             );
         } catch (Error e) {
             GLib.warning (e.message);
