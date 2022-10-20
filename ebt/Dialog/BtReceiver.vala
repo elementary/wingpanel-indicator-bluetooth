@@ -140,7 +140,7 @@ public class BtReceiver : Granite.Dialog {
         sending_device = devicename;
         device_label.set_markup (GLib.Markup.printf_escaped (_("<b>From:</b> %s"), devicename));
         directory_label.label = GLib.Markup.printf_escaped (
-          _("<b>To:</b> %s"), 
+          _("<b>To:</b> %s"),
           GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD)
         );
         device_image.set_from_gicon (
@@ -174,7 +174,7 @@ public class BtReceiver : Granite.Dialog {
                             _("<b>From:</b> %s <b>File:</b> %s not received"), sending_device, transfer.name
                     ));
                     ((Gtk.Window) get_toplevel ()).application.send_notification (
-                        "io.elementary.bluetooth", 
+                        "io.elementary.bluetooth",
                         notification
                     );
                     destroy ();
@@ -211,7 +211,7 @@ public class BtReceiver : Granite.Dialog {
             _("<b>From:</b> %s <b>Save to:</b> %s"), sending_device, dest.get_path ()
         ));
         ((Gtk.Window) get_toplevel ()).application.send_notification (
-            "io.elementary.bluetooth", 
+            "io.elementary.bluetooth",
             notification
         );
     }
@@ -257,14 +257,14 @@ public class BtReceiver : Granite.Dialog {
         }
 
         rate_label.label = GLib.Markup.printf_escaped (
-            _("<b>Transfer rate:</b> %s"), 
+            _("<b>Transfer rate:</b> %s"),
             GLib.format_size (transfer_rate)
         );
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
         progress_label.label = GLib.Markup.printf_escaped (
-            _("%s of %s received, time remaining %s"), 
-            GLib.format_size (transferred), 
-            GLib.format_size (total_size), 
+            _("%s of %s received, time remaining %s"),
+            GLib.format_size (transferred),
+            GLib.format_size (total_size),
             format_time ((int)remaining_time)
         );
     }

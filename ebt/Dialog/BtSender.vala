@@ -266,7 +266,7 @@ public class BtSender : Granite.Dialog {
         );
         device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To:</b> %s"), device.name));
         icon_label.set_from_gicon (
-            new ThemedIcon (device.icon == null? "bluetooth" : device.icon), 
+            new ThemedIcon (device.icon == null? "bluetooth" : device.icon),
             Gtk.IconSize.LARGE_TOOLBAR
         );
         progress_label.label = _("Waiting for acceptance on %s…").printf (device.name);
