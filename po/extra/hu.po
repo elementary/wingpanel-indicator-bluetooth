@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 09:55+0000\n"
-"PO-Revision-Date: 2021-12-26 01:10+0000\n"
+"POT-Creation-Date: 2022-10-08 15:40+0000\n"
+"PO-Revision-Date: 2022-10-06 17:28+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/hu/>\n"
@@ -34,6 +34,8 @@ msgstr "Apróbb frissítések:"
 #: data/bluetooth.appdata.xml.in:16
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
 msgstr ""
+"A Bluetooth állapotának visszaállítása újraindítás vagy felébresztés után "
+"megbízhatóbb lett"
 
 #: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
 #: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
@@ -43,11 +45,11 @@ msgstr "Frissített fordítások"
 
 #: data/bluetooth.appdata.xml.in:23
 msgid "Add tooltip on hover"
-msgstr ""
+msgstr "Címke a kurzor felé mozgatása során"
 
 #: data/bluetooth.appdata.xml.in:24
 msgid "Add a fallback device name for headphones"
-msgstr ""
+msgstr "Alapértelmezett név a fejhallgatóknak, ha más nem érhető el"
 
 #: data/bluetooth.appdata.xml.in:30
 msgid "Prevent showing duplicate devices"
@@ -60,6 +62,7 @@ msgstr "Ikonanimáció javítása a Bluetooth kikapcsolásakor"
 #: data/bluetooth.appdata.xml.in:32
 msgid "Use device type as fallback instead of \"(null)\""
 msgstr ""
+"\"(null)\" helyett az eszköz típusának használata alapértelmezett névként"
 
 #: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."

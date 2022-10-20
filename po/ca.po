@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 09:55+0000\n"
-"PO-Revision-Date: 2021-06-17 16:09+0000\n"
+"POT-Creation-Date: 2022-10-08 15:40+0000\n"
+"PO-Revision-Date: 2022-10-11 02:10+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ca/>\n"
@@ -15,24 +15,284 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
+#: ebt/Application.vala:208
+msgid "Rejected file"
+msgstr "Fitxer rebutjat"
+
+#: ebt/Application.vala:210
+#, c-format
+msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
+msgstr "<b>Fitxer:</b> %s <b>Mida: </b>%s ja existeix"
+
+#: ebt/Application.vala:225
+msgid "Incoming file"
+msgstr "Fitxer entrant"
+
+#: ebt/Application.vala:227
+#, c-format
+msgid "<b>%s</b> is ready to send file: %s size: %s"
+msgstr "<b>%s</b> està preparat per enviar el fitxer %s, mida: %s"
+
+#: ebt/Application.vala:234
+msgid "Accept"
+msgstr "Accepta-ho"
+
+#. /Translators response to refuse a file transfer
+#: ebt/Application.vala:239
+msgid "Decline"
+msgstr "Rebutja-ho"
+
+#: ebt/Application.vala:243
+msgid "Receiving file"
+msgstr "Es rep un fitxer"
+
+#: ebt/Application.vala:244
+#, c-format
+msgid "%s is sending file: %s size: %s"
+msgstr "%s envia el fitxer %s, mida: %s"
+
+#: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
+#: src/Widgets/Device.vala:237
+msgid "Speaker"
+msgstr "Altaveu"
+
+#: ebt/Application.vala:262 ebt/Dialog/DeviceRow.vala:129
+#: src/Widgets/Device.vala:243
+msgid "Controller"
+msgstr "Controlador"
+
+#: ebt/Application.vala:264 ebt/Dialog/DeviceRow.vala:131
+#: src/Widgets/Device.vala:246
+msgid "Keyboard"
+msgstr "Teclat"
+
+#: ebt/Application.vala:266 ebt/Dialog/DeviceRow.vala:133
+#: src/Widgets/Device.vala:249
+msgid "Mouse"
+msgstr "Ratolí"
+
+#: ebt/Application.vala:268 ebt/Dialog/DeviceRow.vala:135
+#: src/Widgets/Device.vala:252
+msgid "Tablet"
+msgstr "Tauleta"
+
+#: ebt/Application.vala:270 ebt/Dialog/DeviceRow.vala:137
+#: src/Widgets/Device.vala:255
+msgid "Touchpad"
+msgstr "Ratolí tàctil"
+
+#: ebt/Application.vala:272 ebt/Dialog/DeviceRow.vala:139
+#: src/Widgets/Device.vala:258
+msgid "Phone"
+msgstr "Telèfon"
+
+#: ebt/Application.vala:319
+msgid "Send Files via Bluetooth"
+msgstr "Envia fitxers mitjançant Bluetooth"
+
+#: ebt/Application.vala:321
+msgid "Send files to device…"
+msgstr "Envia fitxers al dispositiu…"
+
+#: ebt/Dialog/BtReceiver.vala:82
+msgid "<b>Transfer rate:</b>"
+msgstr "<b>Taxa de transferència:</b>"
+
+#: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
+#: ebt/Dialog/BtSender.vala:117
+msgid "Close"
+msgstr "Tanca"
+
+#: ebt/Dialog/BtReceiver.vala:113
+msgid "Reject"
+msgstr "Rebutja"
+
+#: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
+#, c-format
+msgid "<b>From</b>: %s"
+msgstr "<b>De</b>: %s"
+
+#: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
+#, c-format
+msgid "<b>To</b>: %s"
+msgstr "<b>Per a</b>: %s"
+
+#: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
+#: src/Widgets/Device.vala:160
+#, c-format
+msgid "<b>Filename</b>: %s"
+msgstr "<b>Nom del fitxer</b>: %s"
+
+#: ebt/Dialog/BtReceiver.vala:158
+msgid "File transfer failed"
+msgstr "La transferència de fitxers ha fallat."
+
+#: ebt/Dialog/BtReceiver.vala:159
+#, c-format
+msgid "%s <b>File:</b> %s not received"
+msgstr "%s <b>Fitxer:</b> %s no rebut"
+
+#: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:322
+msgid "File transferred successfully"
+msgstr "Fitxer transferit correctament"
+
+#: ebt/Dialog/BtReceiver.vala:187
+#, c-format
+msgid "%s <b>Save to:</b> %s"
+msgstr "%s <b>Desa a:</b> %s"
+
+#: ebt/Dialog/BtReceiver.vala:211
+#, c-format
+msgid "Receiving…  %s of %s"
+msgstr "Es rep...  %s de %s"
+
+#: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:341
+#, c-format
+msgid "<b>Transfer rate:</b> %s"
+msgstr "<b>Taxa de transferència:</b> %s"
+
+#: ebt/Dialog/BtReceiver.vala:227
+#, c-format
+msgid "%s of %s received, time remaining %s"
+msgstr "%s de %s rebut, temps restant: %s"
+
+#: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d segon"
+msgstr[1] "%d segons"
+
+#: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minut"
+msgstr[1] "%d minuts"
+
+#: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
+#, c-format
+msgid "%u hour"
+msgid_plural "%u hours"
+msgstr[0] "%u hora"
+msgstr[1] "%u hores"
+
+#: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
+#, c-format
+msgid "%u minute"
+msgid_plural "%u minutes"
+msgstr[0] "%u minut"
+msgstr[1] "%u minuts"
+
+#. /TRANSLATORS: For example "1 hour, 8 minutes".
+#: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
+#, c-format
+msgid "approximately %d hour"
+msgid_plural "approximately %d hours"
+msgstr[0] "aproximadament %d hora"
+msgstr[1] "aproximadament %d hores"
+
+#: ebt/Dialog/BtScan.vala:41
+msgid "Bluetooth File Transfer"
+msgstr "Transferència de fitxers per Bluetooth"
+
+#: ebt/Dialog/BtScan.vala:49
+msgid "Select a Bluetooth Device Below to Send Files"
+msgstr "Seleccioneu un dispositiu de Bluetooth per enviar fitxers."
+
+#: ebt/Dialog/BtScan.vala:57
+msgid "No Devices Found"
+msgstr "No s'ha trobat cap dispositiu."
+
+#: ebt/Dialog/BtScan.vala:58
+msgid "Please ensure that your devices are visible and ready for pairing."
+msgstr ""
+"Assegureu-vos que els dispositius estiguin visibles i preparats per a la "
+"vinculació."
+
+#: ebt/Dialog/BtScan.vala:79
+msgid "Discovering"
+msgstr "Es descobreixen"
+
+#: ebt/Dialog/BtScan.vala:189
+msgid "Available Devices"
+msgstr "Dispositius disponibles"
+
+#: ebt/Dialog/BtSender.vala:67
+msgid "From"
+msgstr "De"
+
+#: ebt/Dialog/BtSender.vala:75
+msgid "To"
+msgstr "A"
+
+#: ebt/Dialog/BtSender.vala:81
+msgid "Filename"
+msgstr "Nom del fitxer"
+
+#: ebt/Dialog/BtSender.vala:87
+msgid "Transfer rate"
+msgstr "Taxa de transferència"
+
+#: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
+msgid "Cancel"
+msgstr "Cancel·la"
+
+#: ebt/Dialog/BtSender.vala:254
+#, c-format
+msgid "Waiting for acceptance on %s…"
+msgstr "S'espera l'acceptació: %s…"
+
+#: ebt/Dialog/BtSender.vala:276
+#, c-format
+msgid "The transfer of '%s' failed."
+msgstr "La transferència de %s ha fallat."
+
+#: ebt/Dialog/BtSender.vala:278
+#, c-format
+msgid "The transfer was interrupted or it was declined by %s."
+msgstr "La transferència s'ha interromput o %s l'ha rebutjada."
+
+#: ebt/Dialog/BtSender.vala:281
+msgid "The file has not been transferred"
+msgstr "El fitxer no s'ha transferit."
+
+#: ebt/Dialog/BtSender.vala:289
+msgid "Retry"
+msgstr "Torna-ho a provar"
+
+#: ebt/Dialog/BtSender.vala:323
+#, c-format
+msgid "<b>From:</b> %s <b>Send to:</b> %s"
+msgstr "<b>De:</b> %s <b>Envia a:</b> %s"
+
+#: ebt/Dialog/BtSender.vala:343
+#, c-format
+msgid "(%i/%i) %s of %s sent, time remaining %s"
+msgstr "(%i/%i) %s de %s enviats, temps restant: %s"
+
+#: ebt/Dialog/DeviceRow.vala:74
+msgid "Send"
+msgstr "Envia"
+
 #: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
 msgstr "No connectat"
 
-#: src/Widgets/Device.vala:160
-#, c-format
-msgid "<b>Filename</b>: %s"
-msgstr ""
-
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "Receiving… %s of %s"
-msgstr ""
+msgstr "Es rep... %s de %s"
 
 #: src/Widgets/Device.vala:169
 #, c-format
 msgid "Sending… %s of %s"
-msgstr ""
+msgstr "S'envia… %s de %s"
 
 #: src/Widgets/Device.vala:216
 msgid "Connecting…"
@@ -46,37 +306,9 @@ msgstr "Es desconnecta…"
 msgid "Unable to Connect"
 msgstr "No es pot connectar"
 
-#: src/Widgets/Device.vala:237
-msgid "Speaker"
-msgstr "Altaveu"
-
 #: src/Widgets/Device.vala:240
 msgid "Headphones"
 msgstr "Auriculars"
-
-#: src/Widgets/Device.vala:243
-msgid "Controller"
-msgstr "Controlador"
-
-#: src/Widgets/Device.vala:246
-msgid "Keyboard"
-msgstr "Teclat"
-
-#: src/Widgets/Device.vala:249
-msgid "Mouse"
-msgstr "Ratolí"
-
-#: src/Widgets/Device.vala:252
-msgid "Tablet"
-msgstr "Tauleta"
-
-#: src/Widgets/Device.vala:255
-msgid "Touchpad"
-msgstr "Ratolí tàctil"
-
-#: src/Widgets/Device.vala:258
-msgid "Phone"
-msgstr "Telèfon"
 
 #: src/Widgets/Device.vala:272
 msgid "Connected"
@@ -110,14 +342,26 @@ msgstr "Bluetooth"
 msgid "Bluetooth Settings…"
 msgstr "Paràmetres del Bluetooth…"
 
+#~ msgid "File transferred successfully "
+#~ msgstr "Fitxer transferit correctament "
+
+#~ msgid "Name=%s"
+#~ msgstr "Nom=%s"
+
+#~ msgid "Icon=bluetooth\n"
+#~ msgstr "Icona=bluetooth\n"
+
+#~ msgid "Description=%s"
+#~ msgstr "Descripció=%s"
+
+#~ msgid "MimeType=!inode;\n"
+#~ msgstr "Tipus MIME=!inode;\n"
+
 #~ msgid "Middle-click to disable bluetooth"
 #~ msgstr "Clic del mig per inhabilitar el bluetooth"
 
 #~ msgid "Indicator for Bluetooth signal"
 #~ msgstr "Indicador del senyal de Bluetooth"
-
-#~ msgid "bluetooth"
-#~ msgstr "Bluetooth"
 
 #~ msgid "The bluetooth indicator"
 #~ msgstr "L'indicador del Bluetooth"

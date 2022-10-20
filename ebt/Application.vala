@@ -63,7 +63,7 @@ public class BluetoothApp : Gtk.Application {
         activate ();
         if (send) {
             File [] files = {};
-            foreach (string arg_file in arg_files) {
+            foreach (unowned string arg_file in arg_files) {
                 var file = command.create_file_for_arg (arg_file);
                 if (file.query_exists ()) {
                     files += file;
@@ -216,7 +216,7 @@ public class BluetoothApp : Gtk.Application {
         if (reject_if_exist (transfer.name, transfer.size)) {
             notification.set_title (_("Rejected file"));
             notification.set_body (
-                _("<b>File:</b> %s <b>Size: </b>%s already exists").printf (
+                GLib.Markup.printf_escaped (_("<b>File:</b> %s <b>Size: </b>%s already exists"),
                     transfer.name,
                     GLib.format_size (transfer.size)
                 )
@@ -233,7 +233,7 @@ public class BluetoothApp : Gtk.Application {
             notification.set_priority (NotificationPriority.URGENT);
             notification.set_title (_("Incoming file"));
             notification.set_body (
-                _("<b>%s</b> is ready to send file: %s size: %s").printf (
+                GLib.Markup.printf_escaped (_("<b>%s</b> is ready to send file: %s size: %s"),
                     devicename == null? get_device_description_from_icon (device) : devicename,
                     transfer.name,
                     GLib.format_size (transfer.size)
@@ -295,7 +295,7 @@ public class BluetoothApp : Gtk.Application {
         uint64 size_file = 0;
         if (input_file.query_exists ()) {
            try {
-                FileInfo info = input_file.query_info ("standard::*", 0);
+                FileInfo info = input_file.query_info (GLib.FileAttribute.STANDARD_SIZE, 0);
                 size_file = info.get_size ();
             } catch (Error e) {
                 GLib.warning (e.message);
@@ -324,19 +324,13 @@ public class BluetoothApp : Gtk.Application {
         try {
             File file = file_contract ();
             permanent_delete (file);
-            FileOutputStream out_stream = file.create (FileCreateFlags.PRIVATE);
-            string str_contract = "[Contractor Entry]\n";
-            string str_name = _("Name=%s").printf ("Send Files via Bluetooth\n");
-            string str_icon = _("Icon=bluetooth\n");
-            string str_desc = _("Description=%s").printf ("Send files to device…\n");
-            string str_command = "Exec=io.elementary.bluetooth -f %F \n";
-            string mimetype = _("MimeType=!inode;\n");
-            out_stream.write (str_contract.data);
-            out_stream.write (str_name.data);
-            out_stream.write (str_icon.data);
-            out_stream.write (str_desc.data);
-            out_stream.write (str_command.data);
-            out_stream.write (mimetype.data);
+            var keyfile = new GLib.KeyFile ();
+            keyfile.set_string ("Contractor Entry", "Name", _("Send Files via Bluetooth"));
+            keyfile.set_string ("Contractor Entry", "Icon", "bluetooth");
+            keyfile.set_string ("Contractor Entry", "Description", _("Send files to device…"));
+            keyfile.set_string ("Contractor Entry", "Exec", "io.elementary.bluetooth -f %F");
+            keyfile.set_string ("Contractor Entry", "MimeType", "!inode;");
+            keyfile.save_to_file (file.get_path ());
         } catch (Error e) {
             warning ("Error: %s\n", e.message);
         }

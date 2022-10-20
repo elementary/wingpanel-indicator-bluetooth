@@ -109,8 +109,8 @@ public class BtReceiver : Granite.Dialog {
         message_grid.attach (progress_label, 1, 5, 1, 1);
         get_content_area ().add (message_grid);
 
-        add_button ("Close", Gtk.ResponseType.CLOSE);
-        var suggested_button = add_button ("Reject", Gtk.ResponseType.ACCEPT);
+        add_button (_("Close"), Gtk.ResponseType.CLOSE);
+        var suggested_button = add_button (_("Reject"), Gtk.ResponseType.ACCEPT);
         suggested_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
         response.connect ((response_id) => {
             if (response_id == Gtk.ResponseType.ACCEPT) {
@@ -136,9 +136,10 @@ public class BtReceiver : Granite.Dialog {
     }
 
     public void set_transfer (string devicename, string deviceicon, string objectpath) {
-        device_label.set_markup (_("<b>From</b>: %s").printf (GLib.Markup.escape_text (devicename)));
-        directory_label.label = _("<b>To</b>: %s").printf (
-            GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD)
+        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>From</b>: %s"), devicename));
+        directory_label.label = GLib.Markup.printf_escaped (
+          _("<b>To</b>: %s"), 
+          GLib.Environment.get_user_special_dir (UserDirectory.DOWNLOAD)
         );
         device_image.set_from_gicon (
             new ThemedIcon (deviceicon == null? "bluetooth" : deviceicon),
@@ -153,7 +154,7 @@ public class BtReceiver : Granite.Dialog {
             total_size = transfer.size;
             session = transfer.session;
             filename_label.set_markup (
-                _("<b>Filename</b>: %s").printf (GLib.Markup.escape_text (transfer.name))
+              GLib.Markup.printf_escaped (_("<b>Filename</b>: %s"), transfer.name)
             );
         } catch (Error e) {
             GLib.warning (e.message);
@@ -167,13 +168,11 @@ public class BtReceiver : Granite.Dialog {
                     notification.set_icon (device_image.gicon);
                     notification.set_title (_("File transfer failed"));
                     notification.set_body (
-                        _("%s <b>File:</b> %s not received").printf (
-                            device_label.get_label (),
-                            transfer.name
-                        )
-                    );
+                        GLib.Markup.printf_escaped (
+                            _("%s <b>File:</b> %s not received"), device_label.get_label (), transfer.name
+                    ));
                     ((Gtk.Window) get_toplevel ()).application.send_notification (
-                        "io.elementary.bluetooth",
+                        "io.elementary.bluetooth", 
                         notification
                     );
                     destroy ();
@@ -206,12 +205,12 @@ public class BtReceiver : Granite.Dialog {
         src.move (dest, FileCopyFlags.ALL_METADATA);
         notification.set_icon (device_image.gicon);
         notification.set_title (_("File transferred successfully"));
-        notification.set_body (_("%s <b>Save to:</b> %s").printf (
-            device_label.get_label (),
-            dest.get_path ())
-        );
+        notification.set_body (
+            GLib.Markup.printf_escaped (
+                _("%s <b>Save to:</b> %s"), device_label.get_label (), dest.get_path ()
+        ));
         ((Gtk.Window) get_toplevel ()).application.send_notification (
-            "io.elementary.bluetooth",
+            "io.elementary.bluetooth", 
             notification
         );
     }
@@ -256,11 +255,15 @@ public class BtReceiver : Granite.Dialog {
             return;
         }
 
-        rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
+        rate_label.label = GLib.Markup.printf_escaped (
+            _("<b>Transfer rate:</b> %s"), 
+            GLib.format_size (transfer_rate)
+        );
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
-        progress_label.label = _("%s of %s received, time remaining %s").printf (
-            GLib.format_size (transferred),
-            GLib.format_size (total_size),
+        progress_label.label = GLib.Markup.printf_escaped (
+            _("%s of %s received, time remaining %s"), 
+            GLib.format_size (transferred), 
+            GLib.format_size (total_size), 
             format_time ((int)remaining_time)
         );
     }
@@ -271,23 +274,24 @@ public class BtReceiver : Granite.Dialog {
         }
 
         if (seconds < 60) {
-            return ngettext ("%'d second", "%'d seconds", seconds).printf (seconds);
+            return ngettext ("%d second", "%d seconds", seconds).printf (seconds);
         }
 
         int minutes;
         if (seconds < 60 * 60) {
             minutes = (seconds + 30) / 60;
-            return ngettext ("%'d minute", "%'d minutes", minutes).printf (minutes);
+            return ngettext ("%d minute", "%d minutes", minutes).printf (minutes);
         }
 
         int hours = seconds / (60 * 60);
         if (seconds < 60 * 60 * 4) {
             minutes = (seconds - hours * 60 * 60 + 30) / 60;
-            string h = ngettext ("%'u hour", "%'u hours", hours).printf (hours);
-            string m = ngettext ("%'u minute", "%'u minutes", minutes).printf (minutes);
-            return _("%s, %s").printf (h, m); ///TRANSLATORS For example "1 hour, 8 minutes".
+            string h = ngettext ("%u hour", "%u hours", hours).printf (hours);
+            string m = ngettext ("%u minute", "%u minutes", minutes).printf (minutes);
+            ///TRANSLATORS: For example "1 hour, 8 minutes".
+            return _("%s, %s").printf (h, m);
         }
 
-        return ngettext ("approximately %'d hour", "approximately %'d hours", hours).printf (hours);
+        return ngettext ("approximately %d hour", "approximately %d hours", hours).printf (hours);
     }
 }

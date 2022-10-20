@@ -64,7 +64,7 @@ public class BtSender : Granite.Dialog {
         overlay.add (icon_image);
         overlay.add_overlay (icon_label);
 
-        path_label = new Gtk.Label ("<b>%s</b>:".printf (_("From"))) {
+        path_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("From"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
@@ -72,19 +72,19 @@ public class BtSender : Granite.Dialog {
         };
         path_label.get_style_context ().add_class ("primary");
 
-        device_label = new Gtk.Label ("<b>To</b>:") {
+        device_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("To"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        filename_label = new Gtk.Label ("<b>Filename</b>:") {
+        filename_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("Filename"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
             xalign = 0
         };
-        rate_label = new Gtk.Label ("<b>Transfer rate:</b>") {
+        rate_label = new Gtk.Label (GLib.Markup.printf_escaped ("<b>%s</b>:", _("Transfer rate"))) {
             max_width_chars = 45,
             use_markup = true,
             wrap = true,
@@ -114,8 +114,8 @@ public class BtSender : Granite.Dialog {
         message_grid.attach (progress_label, 1, 5, 1, 1);
         get_content_area ().add (message_grid);
 
-        add_button ("Close", Gtk.ResponseType.CLOSE);
-        var reject_transfer = add_button ("Cancel", Gtk.ResponseType.CANCEL);
+        add_button (_("Close"), Gtk.ResponseType.CLOSE);
+        var reject_transfer = add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
         reject_transfer.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
 
         response.connect ((response_id) => {
@@ -261,10 +261,12 @@ public class BtSender : Granite.Dialog {
         }
     }
     private async void send_file () {
-        path_label.set_markup (_("<b>From</b>: %s").printf (file_to_send.get_parent ().get_path ()));
-        device_label.set_markup (_("<b>To</b>: %s").printf (GLib.Markup.escape_text (device.name)));
+        path_label.set_markup (
+            GLib.Markup.printf_escaped (_("<b>From</b>: %s"), file_to_send.get_parent ().get_path ())
+        );
+        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.name));
         icon_label.set_from_gicon (
-            new ThemedIcon (device.icon == null? "bluetooth" : device.icon),
+            new ThemedIcon (device.icon == null? "bluetooth" : device.icon), 
             Gtk.IconSize.LARGE_TOOLBAR
         );
         progress_label.label = _("Waiting for acceptance on %s…").printf (device.name);
@@ -280,9 +282,9 @@ public class BtSender : Granite.Dialog {
             GLib.ObjectPath objectpath;
             variant.get ("(oa{sv})", out objectpath, null);
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);
-            filename_label.set_markup (_("<b>Filename</b>: %s").printf (
-                GLib.Markup.escape_text (transfer.name)
-            ));
+            filename_label.set_markup (
+                GLib.Markup.printf_escaped (_("<b>Filename</b>: %s"), transfer.name)
+            );
             total_size = transfer.size;
             ((DBusProxy) transfer).g_properties_changed.connect ((changed, invalid) => {
                 tranfer_progress ();
@@ -309,8 +311,8 @@ public class BtSender : Granite.Dialog {
                 ) {
                     badge_icon = new ThemedIcon ("process-error")
                 };
-                bt_retry.add_button ("Cancel", Gtk.ResponseType.CANCEL);
-                var suggested_button = bt_retry.add_button ("Retry", Gtk.ResponseType.ACCEPT);
+                bt_retry.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+                var suggested_button = bt_retry.add_button (_("Retry"), Gtk.ResponseType.ACCEPT);
                 suggested_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
 
                 bt_retry.response.connect ((response_id) => {
@@ -344,12 +346,11 @@ public class BtSender : Granite.Dialog {
         var notification = new GLib.Notification ("bluetooth");
         notification.set_icon (new ThemedIcon (device.icon));
         notification.set_priority (NotificationPriority.NORMAL);
-        notification.set_title (_("File transferred successfully "));
+        notification.set_title (_("File transferred successfully"));
         notification.set_body (
-            _("<b>From:</b> %s <b>Send to:</b> %s").printf (
-                file_to_send.get_path (), device.name
-            )
-        );
+            GLib.Markup.printf_escaped (
+                _("<b>From:</b> %s <b>Send to:</b> %s"), file_to_send.get_path (), device.name
+        ));
         ((Gtk.Window)get_toplevel ()).application.send_notification (
             "io.elementary.bluetooth", notification
         );
@@ -372,7 +373,9 @@ public class BtSender : Granite.Dialog {
             return;
         }
 
-        rate_label.label = _("<b>Transfer rate:</b> %s").printf (GLib.format_size (transfer_rate));
+        rate_label.label = GLib.Markup.printf_escaped (
+            _("<b>Transfer rate:</b> %s"), GLib.format_size (transfer_rate)
+        );
         uint64 remaining_time = (total_size - transferred) / transfer_rate;
         progress_label.label = _("(%i/%i) %s of %s sent, time remaining %s").printf (
             current_file,
@@ -389,23 +392,24 @@ public class BtSender : Granite.Dialog {
         }
 
         if (seconds < 60) {
-            return ngettext ("%'d second", "%'d seconds", seconds).printf (seconds);
+            return ngettext ("%d second", "%d seconds", seconds).printf (seconds);
         }
 
         int minutes;
         if (seconds < 60 * 60) {
             minutes = (seconds + 30) / 60;
-            return ngettext ("%'d minute", "%'d minutes", minutes).printf (minutes);
+            return ngettext ("%d minute", "%d minutes", minutes).printf (minutes);
         }
 
         int hours = seconds / (60 * 60);
         if (seconds < 60 * 60 * 4) {
             minutes = (seconds - hours * 60 * 60 + 30) / 60;
-            string h = ngettext ("%'u hour", "%'u hours", hours).printf (hours);
-            string m = ngettext ("%'u minute", "%'u minutes", minutes).printf (minutes);
-            return h.concat (", ", m);
+            string h = ngettext ("%u hour", "%u hours", hours).printf (hours);
+            string m = ngettext ("%u minute", "%u minutes", minutes).printf (minutes);
+            ///TRANSLATORS: For example "1 hour, 8 minutes".
+            return _("%s, %s").printf (h, m);
         }
 
-        return ngettext ("approximately %'d hour", "approximately %'d hours", hours).printf (hours);
+        return ngettext ("approximately %d hour", "approximately %d hours", hours).printf (hours);
     }
 }

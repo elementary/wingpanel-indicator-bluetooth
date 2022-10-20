@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-02 09:55+0000\n"
-"PO-Revision-Date: 2021-06-16 01:32+0000\n"
+"POT-Creation-Date: 2022-10-08 15:40+0000\n"
+"PO-Revision-Date: 2022-10-10 06:08+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/de/>\n"
@@ -15,24 +15,282 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
+#: ebt/Application.vala:208
+msgid "Rejected file"
+msgstr "Zurückgewiesene Datei"
+
+#: ebt/Application.vala:210
+#, c-format
+msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
+msgstr "<b>Datei:</b> %s <b>Größe: </b>%s bereits vorhanden"
+
+#: ebt/Application.vala:225
+msgid "Incoming file"
+msgstr "Ankommende Datei"
+
+#: ebt/Application.vala:227
+#, c-format
+msgid "<b>%s</b> is ready to send file: %s size: %s"
+msgstr "<b>%s</b> ist bereit zum Senden einer Datei: %s Größe: %s"
+
+#: ebt/Application.vala:234
+msgid "Accept"
+msgstr "Annehmen"
+
+#. /Translators response to refuse a file transfer
+#: ebt/Application.vala:239
+msgid "Decline"
+msgstr "Ablehnen"
+
+#: ebt/Application.vala:243
+msgid "Receiving file"
+msgstr "Datei empfangen"
+
+#: ebt/Application.vala:244
+#, c-format
+msgid "%s is sending file: %s size: %s"
+msgstr "%s sendet eine Datei: %s Größe: %s"
+
+#: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
+#: src/Widgets/Device.vala:237
+msgid "Speaker"
+msgstr "Lautsprecher"
+
+#: ebt/Application.vala:262 ebt/Dialog/DeviceRow.vala:129
+#: src/Widgets/Device.vala:243
+msgid "Controller"
+msgstr "Controller"
+
+#: ebt/Application.vala:264 ebt/Dialog/DeviceRow.vala:131
+#: src/Widgets/Device.vala:246
+msgid "Keyboard"
+msgstr "Tastatur"
+
+#: ebt/Application.vala:266 ebt/Dialog/DeviceRow.vala:133
+#: src/Widgets/Device.vala:249
+msgid "Mouse"
+msgstr "Maus"
+
+#: ebt/Application.vala:268 ebt/Dialog/DeviceRow.vala:135
+#: src/Widgets/Device.vala:252
+msgid "Tablet"
+msgstr "Grafiktablett"
+
+#: ebt/Application.vala:270 ebt/Dialog/DeviceRow.vala:137
+#: src/Widgets/Device.vala:255
+msgid "Touchpad"
+msgstr "Tastfeld"
+
+#: ebt/Application.vala:272 ebt/Dialog/DeviceRow.vala:139
+#: src/Widgets/Device.vala:258
+msgid "Phone"
+msgstr "Mobiltelefon"
+
+#: ebt/Application.vala:319
+msgid "Send Files via Bluetooth"
+msgstr "Dateien mittels Bluetooth senden"
+
+#: ebt/Application.vala:321
+msgid "Send files to device…"
+msgstr "Dateien an Gerät senden …"
+
+#: ebt/Dialog/BtReceiver.vala:82
+msgid "<b>Transfer rate:</b>"
+msgstr "<b>Übertragungsgeschwindigkeit:</b>"
+
+#: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
+#: ebt/Dialog/BtSender.vala:117
+msgid "Close"
+msgstr "Schließen"
+
+#: ebt/Dialog/BtReceiver.vala:113
+msgid "Reject"
+msgstr "Ablehnen"
+
+#: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
+#, c-format
+msgid "<b>From</b>: %s"
+msgstr "<b>Von</b>: %s"
+
+#: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
+#, c-format
+msgid "<b>To</b>: %s"
+msgstr "<b>An</b>: %s"
+
+#: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
+#: src/Widgets/Device.vala:160
+#, c-format
+msgid "<b>Filename</b>: %s"
+msgstr "<b>Dateiname</b>: %s"
+
+#: ebt/Dialog/BtReceiver.vala:158
+msgid "File transfer failed"
+msgstr "Dateiübertragung fehlgeschlagen"
+
+#: ebt/Dialog/BtReceiver.vala:159
+#, c-format
+msgid "%s <b>File:</b> %s not received"
+msgstr "%s <b>Datei:</b> %s nicht empfangen"
+
+#: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:322
+msgid "File transferred successfully"
+msgstr "Dateiübertragung erfolgreich"
+
+#: ebt/Dialog/BtReceiver.vala:187
+#, c-format
+msgid "%s <b>Save to:</b> %s"
+msgstr "%s <b>Speicherungsort:</b> %s"
+
+#: ebt/Dialog/BtReceiver.vala:211
+#, c-format
+msgid "Receiving…  %s of %s"
+msgstr "Empfangen … %s von %s"
+
+#: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:341
+#, c-format
+msgid "<b>Transfer rate:</b> %s"
+msgstr "<b>Übertragungsgeschwindigkeit</b>: %s"
+
+#: ebt/Dialog/BtReceiver.vala:227
+#, c-format
+msgid "%s of %s received, time remaining %s"
+msgstr "%s von %s empfangen, verbleibende Zeit %s"
+
+#: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
+#, c-format
+msgid "%d second"
+msgid_plural "%d seconds"
+msgstr[0] "%d Sekunde"
+msgstr[1] "%d Sekunden"
+
+#: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
+#, c-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d Minute"
+msgstr[1] "%d Minuten"
+
+#: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
+#, c-format
+msgid "%u hour"
+msgid_plural "%u hours"
+msgstr[0] "%u Stunde"
+msgstr[1] "%u Stunden"
+
+#: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
+#, c-format
+msgid "%u minute"
+msgid_plural "%u minutes"
+msgstr[0] "%u Minute"
+msgstr[1] "%u Minuten"
+
+#. /TRANSLATORS: For example "1 hour, 8 minutes".
+#: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
+#, c-format
+msgid "%s, %s"
+msgstr "%s, %s"
+
+#: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
+#, c-format
+msgid "approximately %d hour"
+msgid_plural "approximately %d hours"
+msgstr[0] "ungefähr %d Stunde"
+msgstr[1] "ungefähr %d Stunden"
+
+#: ebt/Dialog/BtScan.vala:41
+msgid "Bluetooth File Transfer"
+msgstr "Bluetooth-Dateiübertragung"
+
+#: ebt/Dialog/BtScan.vala:49
+msgid "Select a Bluetooth Device Below to Send Files"
+msgstr "Bluetooth-Gerät zum Senden von Dateien wählen"
+
+#: ebt/Dialog/BtScan.vala:57
+msgid "No Devices Found"
+msgstr "Kein Gerät gefunden"
+
+#: ebt/Dialog/BtScan.vala:58
+msgid "Please ensure that your devices are visible and ready for pairing."
+msgstr "Sicherstellen, dass die Geräte sichtbar und bereit zur Koppelung sind."
+
+#: ebt/Dialog/BtScan.vala:79
+msgid "Discovering"
+msgstr "Suchen"
+
+#: ebt/Dialog/BtScan.vala:189
+msgid "Available Devices"
+msgstr "Verfügbare Geräte"
+
+#: ebt/Dialog/BtSender.vala:67
+msgid "From"
+msgstr "Von"
+
+#: ebt/Dialog/BtSender.vala:75
+msgid "To"
+msgstr "An"
+
+#: ebt/Dialog/BtSender.vala:81
+msgid "Filename"
+msgstr "Dateiname"
+
+#: ebt/Dialog/BtSender.vala:87
+msgid "Transfer rate"
+msgstr "Übertragungsgeschwindigkeit"
+
+#: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: ebt/Dialog/BtSender.vala:254
+#, c-format
+msgid "Waiting for acceptance on %s…"
+msgstr "Warten auf Annahme von %s …"
+
+#: ebt/Dialog/BtSender.vala:276
+#, c-format
+msgid "The transfer of '%s' failed."
+msgstr "Die Übertragung von »%s« ist fehlgeschlagen."
+
+#: ebt/Dialog/BtSender.vala:278
+#, c-format
+msgid "The transfer was interrupted or it was declined by %s."
+msgstr "Die Übertragung wurde abgebrochen oder sie wurde von %s abgelehnt."
+
+#: ebt/Dialog/BtSender.vala:281
+msgid "The file has not been transferred"
+msgstr "Die Datei wurde nicht übertragen"
+
+#: ebt/Dialog/BtSender.vala:289
+msgid "Retry"
+msgstr "Erneut versuchen"
+
+#: ebt/Dialog/BtSender.vala:323
+#, c-format
+msgid "<b>From:</b> %s <b>Send to:</b> %s"
+msgstr "<b>Von:</b> %s <b>Senden an:</b> %s"
+
+#: ebt/Dialog/BtSender.vala:343
+#, c-format
+msgid "(%i/%i) %s of %s sent, time remaining %s"
+msgstr "(%i/%i) %s von %s gesendet, verbleibende Zeit %s"
+
+#: ebt/Dialog/DeviceRow.vala:74
+msgid "Send"
+msgstr "Senden"
+
 #: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
 msgstr "Nicht verbunden"
 
-#: src/Widgets/Device.vala:160
-#, c-format
-msgid "<b>Filename</b>: %s"
-msgstr ""
-
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "Receiving… %s of %s"
-msgstr ""
+msgstr "Empfangen … %s von %s"
 
 #: src/Widgets/Device.vala:169
 #, c-format
 msgid "Sending… %s of %s"
-msgstr ""
+msgstr "Senden … %s von %s"
 
 #: src/Widgets/Device.vala:216
 msgid "Connecting…"
@@ -46,37 +304,9 @@ msgstr "Verbindung trennen …"
 msgid "Unable to Connect"
 msgstr "Verbindung nicht möglich"
 
-#: src/Widgets/Device.vala:237
-msgid "Speaker"
-msgstr "Lautsprecher"
-
 #: src/Widgets/Device.vala:240
 msgid "Headphones"
 msgstr "Kopfhörer"
-
-#: src/Widgets/Device.vala:243
-msgid "Controller"
-msgstr "Controller"
-
-#: src/Widgets/Device.vala:246
-msgid "Keyboard"
-msgstr "Tastatur"
-
-#: src/Widgets/Device.vala:249
-msgid "Mouse"
-msgstr "Maus"
-
-#: src/Widgets/Device.vala:252
-msgid "Tablet"
-msgstr "Grafiktablett"
-
-#: src/Widgets/Device.vala:255
-msgid "Touchpad"
-msgstr "Tastfeld"
-
-#: src/Widgets/Device.vala:258
-msgid "Phone"
-msgstr "Mobiltelefon"
 
 #: src/Widgets/Device.vala:272
 msgid "Connected"
@@ -110,14 +340,16 @@ msgstr "Bluetooth"
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth-Einstellungen …"
 
+#, fuzzy
+#~| msgid "bluetooth"
+#~ msgid "Icon=bluetooth\n"
+#~ msgstr "Bluetooth"
+
 #~ msgid "Middle-click to disable bluetooth"
 #~ msgstr "Bluetooth mit Mittelklick ausschalten"
 
 #~ msgid "Indicator for Bluetooth signal"
 #~ msgstr "Anzeige für das Bluetooth-Signal"
-
-#~ msgid "bluetooth"
-#~ msgstr "Bluetooth"
 
 #~ msgid "The bluetooth indicator"
 #~ msgstr "Der Bluetooth-Indikator"
