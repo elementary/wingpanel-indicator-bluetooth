@@ -137,6 +137,21 @@ public class BluetoothApp : Gtk.Application {
             bt_senders = new GLib.List<BtSender> ();
             object_manager = new Bluetooth.ObjectManager ();
             object_manager.notify["has-object"].connect (() => {
+                var build_path = Path.build_filename (
+                    Environment.get_home_dir (), ".local", "share", "contractor"
+                );
+
+                if (!File.new_for_path (build_path).query_exists ()) {
+                    DirUtils.create (build_path, 0700);
+                }
+
+                var file = File.new_for_path (
+                    Path.build_filename (
+                        build_path,
+                        Environment.get_application_name () + ".contract"
+                    )
+                );
+
                 if (object_manager.has_object) {
                     if (!active_once) {
                         agent_obex = new Bluetooth.Obex.Agent ();
@@ -144,9 +159,29 @@ public class BluetoothApp : Gtk.Application {
                         agent_obex.response_notify.connect (response_notify);
                         active_once = true;
                     }
-                    create_contract ();
+
+                    if (!file.query_exists ()) {
+                        var keyfile = new GLib.KeyFile ();
+                        keyfile.set_string ("Contractor Entry", "Name", _("Send Files via Bluetooth"));
+                        keyfile.set_string ("Contractor Entry", "Icon", "bluetooth");
+                        keyfile.set_string ("Contractor Entry", "Description", _("Send files to device…"));
+                        keyfile.set_string ("Contractor Entry", "Exec", "io.elementary.bluetooth -f %F");
+                        keyfile.set_string ("Contractor Entry", "MimeType", "!inode;");
+
+                        try {
+                            keyfile.save_to_file (file.get_path ());
+                        } catch (Error e) {
+                            critical ("Unable to create contract: %s", e.message);
+                        }
+                    }
                 } else {
-                    remove_contract ();
+                    if (file.query_exists ()) {
+                        try {
+                            file.delete ();
+                        } catch (Error e) {
+                            critical (e.message);
+                        }
+                    }
                 }
             });
         }
@@ -294,50 +329,6 @@ public class BluetoothApp : Gtk.Application {
         return size == size_file && input_file.query_exists ();
     }
 
-    private File file_contract () {
-        var build_path = Path.build_filename (
-            Environment.get_home_dir (), ".local", "share", "contractor"
-        );
-
-        if (!File.new_for_path (build_path).query_exists ()) {
-            DirUtils.create (build_path, 0700);
-        }
-
-        return File.new_for_path (
-                Path.build_filename (
-                    build_path,
-                    Environment.get_application_name () + ".contract"
-                )
-        );
-    }
-    private void create_contract () {
-        try {
-            File file = file_contract ();
-            permanent_delete (file);
-            var keyfile = new GLib.KeyFile ();
-            keyfile.set_string ("Contractor Entry", "Name", _("Send Files via Bluetooth"));
-            keyfile.set_string ("Contractor Entry", "Icon", "bluetooth");
-            keyfile.set_string ("Contractor Entry", "Description", _("Send files to device…"));
-            keyfile.set_string ("Contractor Entry", "Exec", "io.elementary.bluetooth -f %F");
-            keyfile.set_string ("Contractor Entry", "MimeType", "!inode;");
-            keyfile.save_to_file (file.get_path ());
-        } catch (Error e) {
-            warning ("Error: %s\n", e.message);
-        }
-    }
-
-    private void remove_contract () {
-        permanent_delete (file_contract ());
-    }
-    private void permanent_delete (File file) {
-        try {
-            if (file.query_exists ()) {
-                file.delete ();
-            }
-        } catch (Error e) {
-            warning ("Error: %s\n", e.message);
-        }
-    }
     public static int main (string[] args) {
         var app = new BluetoothApp ();
         return app.run (args);
