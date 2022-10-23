@@ -128,7 +128,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         update_status ();
         get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
         selectable = false;
-        obex_manager.transferact.foreach ((transfer, address)=> {
+        obex_manager.active_transfers.foreach ((transfer, address)=> {
             transfer_added (address, transfer);
         });
     }
