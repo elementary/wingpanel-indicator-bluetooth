@@ -20,15 +20,17 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public signal void discovery_requested ();
 
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
+    public BluetoothIndicator.Services.ObexManager obex_manager { get; construct; }
     public bool is_in_session { get; construct; }
 
     private Granite.SwitchModelButton main_switch;
     private Gtk.ListBox devices_list;
     private Gtk.Revealer revealer;
 
-    public PopoverWidget (BluetoothIndicator.Services.ObjectManager object_manager, bool is_in_session) {
+    public PopoverWidget (BluetoothIndicator.Services.ObjectManager object_manager, BluetoothIndicator.Services.ObexManager obex_manager, bool is_in_session) {
         Object (
             object_manager: object_manager,
+            obex_manager: obex_manager,
             is_in_session: is_in_session
         );
     }
@@ -161,7 +163,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void add_device (BluetoothIndicator.Services.Device device) {
-        var device_widget = new Widgets.Device (device);
+        var device_widget = new Widgets.Device (device, obex_manager);
         devices_list.add (device_widget);
         devices_list.show_all ();
 

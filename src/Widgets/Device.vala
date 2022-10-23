@@ -21,6 +21,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private const string OBEX_PATH = "/org/bluez/obex/elementary";
     public signal void show_device (BluetoothIndicator.Services.Device device);
     public BluetoothIndicator.Services.Device device { get; construct; }
+    public BluetoothIndicator.Services.ObexManager obex_manager { get; construct; }
     public BluetoothIndicator.Services.Obex.Transfer transfer;
     private Gtk.Label status_label;
     private Gtk.Label name_label;
@@ -32,12 +33,13 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private Gtk.Revealer progress_revealer;
     private Gtk.ProgressBar progressbar;
 
-    public Device (BluetoothIndicator.Services.Device device) {
-        Object (device: device);
+    public Device (BluetoothIndicator.Services.Device device, BluetoothIndicator.Services.ObexManager obex_manager) {
+        Object (device: device,
+                obex_manager: obex_manager
+        );
     }
 
     construct {
-        var obex_manager = new BluetoothIndicator.Services.ObexManager ();
         obex_manager.transfer_added.connect (transfer_added);
         obex_manager.transfer_removed.connect (transfer_removed);
         obex_manager.transfer_active.connect (transfer_active);
@@ -126,6 +128,9 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         update_status ();
         get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
         selectable = false;
+        obex_manager.transferact.foreach ((transfer, address)=> {
+            transfer_added (address, transfer);
+        });
     }
 
     private void transfer_removed (BluetoothIndicator.Services.Obex.Transfer transfer) {

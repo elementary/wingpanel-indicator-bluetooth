@@ -21,6 +21,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
     private Widgets.PopoverWidget popover_widget;
     private Widgets.DisplayWidget dynamic_icon;
     private Services.ObjectManager object_manager;
+    private Services.ObexManager obex_manager;
 
     public Indicator (bool is_in_session) {
         Object (
@@ -35,7 +36,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
 
         object_manager = new BluetoothIndicator.Services.ObjectManager ();
         object_manager.bind_property ("has-object", this, "visible", GLib.BindingFlags.SYNC_CREATE);
-
+        obex_manager = new BluetoothIndicator.Services.ObexManager ();
         if (object_manager.has_object) {
             object_manager.set_last_state.begin ();
         }
@@ -57,7 +58,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
 
     public override Gtk.Widget? get_widget () {
         if (popover_widget == null) {
-            popover_widget = new Widgets.PopoverWidget (object_manager, is_in_session);
+            popover_widget = new Widgets.PopoverWidget (object_manager, obex_manager, is_in_session);
         }
 
         return popover_widget;
