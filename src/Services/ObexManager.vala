@@ -20,10 +20,10 @@ public class BluetoothIndicator.Services.ObexManager : Object {
     public signal void transfer_removed (BluetoothIndicator.Services.Obex.Transfer transfer);
     public signal void transfer_active (string address);
     private GLib.DBusObjectManagerClient object_manager;
-    public GLib.HashTable<BluetoothIndicator.Services.Obex.Transfer, string> transferact;
+    public GLib.HashTable<BluetoothIndicator.Services.Obex.Transfer, string> active_transfers;
 
     construct {
-        transferact = new GLib.HashTable <BluetoothIndicator.Services.Obex.Transfer, string> (GLib.str_hash, GLib.str_equal);
+        active_transfers = new GLib.HashTable <BluetoothIndicator.Services.Obex.Transfer, string> (GLib.str_hash, GLib.str_equal);
         create_manager.begin ();
     }
 
@@ -77,7 +77,7 @@ public class BluetoothIndicator.Services.ObexManager : Object {
             } catch (Error e) {
                 critical (e.message);
             }
-            transferact[transfer] = session.destination;
+            active_transfers[transfer] = session.destination;
             ((DBusProxy) transfer).g_properties_changed.connect ((changed, invalid) => {
                 transfer_active (session.destination);
             });
@@ -88,8 +88,8 @@ public class BluetoothIndicator.Services.ObexManager : Object {
     private void on_interface_removed (GLib.DBusObject object, GLib.DBusInterface iface) {
          if (iface is BluetoothIndicator.Services.Obex.Transfer) {
             unowned BluetoothIndicator.Services.Obex.Transfer transfer = (BluetoothIndicator.Services.Obex.Transfer) iface;
-            if (transferact.contains (transfer)) {
-                transferact.remove (transfer);
+            if (active_transfers.contains (transfer)) {
+                active_transfers.remove (transfer);
             }
             transfer_removed (transfer);
         }
