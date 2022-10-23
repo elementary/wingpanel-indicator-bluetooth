@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-08 15:40+0000\n"
+"POT-Creation-Date: 2022-10-21 08:47+0000\n"
 "PO-Revision-Date: 2021-07-05 09:14+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -15,84 +15,84 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: ebt/Application.vala:208
+#: ebt/Application.vala:165
+msgid "Send Files via Bluetooth"
+msgstr ""
+
+#: ebt/Application.vala:167
+msgid "Send files to device…"
+msgstr ""
+
+#: ebt/Application.vala:243
 msgid "Rejected file"
 msgstr ""
 
-#: ebt/Application.vala:210
+#: ebt/Application.vala:245
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
 msgstr ""
 
-#: ebt/Application.vala:225
+#: ebt/Application.vala:260
 msgid "Incoming file"
 msgstr ""
 
-#: ebt/Application.vala:227
+#: ebt/Application.vala:262
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
 msgstr ""
 
-#: ebt/Application.vala:234
+#: ebt/Application.vala:269
 msgid "Accept"
 msgstr ""
 
 #. /Translators response to refuse a file transfer
-#: ebt/Application.vala:239
+#: ebt/Application.vala:274
 msgid "Decline"
 msgstr ""
 
-#: ebt/Application.vala:243
+#: ebt/Application.vala:278
 msgid "Receiving file"
 msgstr ""
 
-#: ebt/Application.vala:244
+#: ebt/Application.vala:279
 #, c-format
 msgid "%s is sending file: %s size: %s"
 msgstr ""
 
-#: ebt/Application.vala:260 ebt/Dialog/DeviceRow.vala:127
+#: ebt/Application.vala:295 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
 msgid "Speaker"
 msgstr "Speaker"
 
-#: ebt/Application.vala:262 ebt/Dialog/DeviceRow.vala:129
+#: ebt/Application.vala:297 ebt/Dialog/DeviceRow.vala:129
 #: src/Widgets/Device.vala:243
 msgid "Controller"
 msgstr "Controller"
 
-#: ebt/Application.vala:264 ebt/Dialog/DeviceRow.vala:131
+#: ebt/Application.vala:299 ebt/Dialog/DeviceRow.vala:131
 #: src/Widgets/Device.vala:246
 msgid "Keyboard"
 msgstr "Keyboard"
 
-#: ebt/Application.vala:266 ebt/Dialog/DeviceRow.vala:133
+#: ebt/Application.vala:301 ebt/Dialog/DeviceRow.vala:133
 #: src/Widgets/Device.vala:249
 msgid "Mouse"
 msgstr "Mouse"
 
-#: ebt/Application.vala:268 ebt/Dialog/DeviceRow.vala:135
+#: ebt/Application.vala:303 ebt/Dialog/DeviceRow.vala:135
 #: src/Widgets/Device.vala:252
 msgid "Tablet"
 msgstr "Tablet"
 
-#: ebt/Application.vala:270 ebt/Dialog/DeviceRow.vala:137
+#: ebt/Application.vala:305 ebt/Dialog/DeviceRow.vala:137
 #: src/Widgets/Device.vala:255
 msgid "Touchpad"
 msgstr "Touchpad"
 
-#: ebt/Application.vala:272 ebt/Dialog/DeviceRow.vala:139
+#: ebt/Application.vala:307 ebt/Dialog/DeviceRow.vala:139
 #: src/Widgets/Device.vala:258
 msgid "Phone"
 msgstr "Phone"
-
-#: ebt/Application.vala:319
-msgid "Send Files via Bluetooth"
-msgstr ""
-
-#: ebt/Application.vala:321
-msgid "Send files to device…"
-msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
