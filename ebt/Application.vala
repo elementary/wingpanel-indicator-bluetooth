@@ -155,6 +155,7 @@ public class BluetoothApp : Gtk.Application {
                 if (object_manager.has_object) {
                     if (!active_once) {
                         agent_obex = new Bluetooth.Obex.Agent ();
+                        agent_obex.transfer_view.connect (dialog_active);
                         agent_obex.response_accepted.connect (response_accepted);
                         agent_obex.response_notify.connect (response_notify);
                         active_once = true;
@@ -185,6 +186,19 @@ public class BluetoothApp : Gtk.Application {
                 }
             });
         }
+    }
+
+    private void dialog_active (string session_path) {
+        bt_receivers.foreach ((receiver)=>{
+            if (receiver.transfer.session == session_path) {
+                receiver.show_all ();
+            }
+        });
+        bt_senders.foreach ((sender)=>{
+            if (sender.transfer.session == session_path) {
+                sender.show_all ();
+            }
+        });
     }
 
     private bool insert_sender (File[] files, Bluetooth.Device device) {
