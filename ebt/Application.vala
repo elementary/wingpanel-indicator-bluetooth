@@ -127,7 +127,9 @@ public class BluetoothApp : Gtk.Application {
         });
 
         if (silent) {
-            release (); // Protect from multiple holds. Has no effect if not already held.
+            if (active_once) { // after process hold exist.
+                release (); // Protect from multiple holds. Has no effect if not already held.
+            }
             hold ();
             silent = false;
         }
