@@ -222,6 +222,10 @@ public class BtSender : Granite.Dialog {
                 "/org/bluez/obex",
                 "org.bluez.obex.Client1"
             );
+            path_label.set_markup (GLib.Markup.printf_escaped (_("<b>From</b>: %s"), file_path.get_parent ().get_path ()));
+            device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.name));
+            icon_label.set_from_gicon (new ThemedIcon (device.icon == null? "bluetooth" : device.icon), Gtk.IconSize.LARGE_TOOLBAR);
+            progress_label.label = _("Try connecting to %s…").printf (device.name);
             VariantBuilder builder = new VariantBuilder (VariantType.DICTIONARY);
             builder.add ("{sv}", "Target", new Variant.string ("opp"));
             Variant parameters = new Variant ("(sa{sv})", device.address, builder);
@@ -237,6 +241,36 @@ public class BtSender : Granite.Dialog {
             );
             send_file.begin ();
         } catch (Error e) {
+            hide_on_delete ();
+            var bt_retry = new Granite.MessageDialog (
+                _("The transfer of '%s' failed.").printf (file_path.get_basename ()),
+                "%s\n%s".printf (
+                    _("Timed out waiting for response by %s.").printf (
+                        device.name
+                ),
+                    _("The file has not been transferred")
+                ),
+                new ThemedIcon ("bluetooth"),
+                Gtk.ButtonsType.NONE
+            ) {
+                badge_icon = new ThemedIcon ("process-error")
+            };
+            bt_retry.add_button (_("Cancel"), Gtk.ResponseType.CANCEL);
+            var suggested_button = bt_retry.add_button (_("Retry"), Gtk.ResponseType.ACCEPT);
+            suggested_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+
+            bt_retry.response.connect ((response_id) => {
+                if (response_id == Gtk.ResponseType.ACCEPT) {
+                    create_session.begin ();
+                    present ();
+                } else if (response_id == Gtk.ResponseType.CANCEL) {
+                    destroy ();
+                }
+
+                bt_retry.destroy ();
+            });
+            bt_retry.show_all ();
+            progress_label.label = e.message.split ("org.bluez.obex.Error.Failed:")[1];
             GLib.warning (e.message);
         }
     }
@@ -293,6 +327,8 @@ public class BtSender : Granite.Dialog {
                     if (response_id == Gtk.ResponseType.ACCEPT) {
                         create_session.begin ();
                         present ();
+                    } else if (response_id == Gtk.ResponseType.CANCEL) {
+                        destroy (); //if canceled should destroy the main dialog
                     }
 
                     bt_retry.destroy ();
