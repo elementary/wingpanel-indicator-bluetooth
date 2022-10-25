@@ -243,10 +243,10 @@ public class BtSender : Granite.Dialog {
         } catch (Error e) {
             hide_on_delete ();
             var bt_retry = new Granite.MessageDialog (
-                _("Connecting to '%s' failed.").printf (file_path.get_basename ()),
+                _("Connecting to '%s' failed.").printf (device.name),
                 "%s\n%s".printf (
-                    _("Timed out waiting for response by %s.").printf (
-                        device.name
+                    _("The transfer of '%s' failed.").printf (
+                        file_path.get_basename ()
                 ),
                     _("The file has not been transferred")
                 ),
