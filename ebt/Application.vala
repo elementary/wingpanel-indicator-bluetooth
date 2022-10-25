@@ -22,8 +22,8 @@
 
 public class BluetoothApp : Gtk.Application {
     public const OptionEntry[] OPTIONS_BLUETOOTH = {
-        { "silent", 's', 0, OptionArg.NONE, out silent, "Run the Application in background", null},
-        { "send", 'f', 0, OptionArg.NONE, out send, "Open file to send via bluetooth", null },
+        { "silent", 's', 0, OptionArg.NONE, out silent, N_("Run the Application in background"), null},
+        { "send", 'f', 0, OptionArg.NONE, out send, N_("Open file to send via bluetooth"), null },
         { "", 0, 0, OptionArg.STRING_ARRAY, out arg_files, null, N_("[URI…]") },
         { null }
     };
@@ -52,7 +52,7 @@ public class BluetoothApp : Gtk.Application {
     public override int command_line (ApplicationCommandLine command) {
         string [] args_cmd = command.get_arguments ();
         unowned string [] args = args_cmd;
-        var opt_context = new OptionContext (null);
+        var opt_context = new OptionContext (_("\n\nSend a file to another device by Bluetooth"));
         opt_context.add_main_entries (OPTIONS_BLUETOOTH, null);
         try {
             opt_context.parse (ref args);
@@ -112,8 +112,7 @@ public class BluetoothApp : Gtk.Application {
             }
         } else if (!is_held) {
             stderr.printf ("\n" + _("Must supply at least one option") + "\n\n");
-            var help = opt_context.get_help (true, null);
-            stderr.printf (help);
+            stderr.printf (opt_context.get_help (true, null));
         }
 
         return 0;
