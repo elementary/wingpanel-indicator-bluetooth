@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-21 08:47+0000\n"
-"PO-Revision-Date: 2021-06-18 10:23+0000\n"
+"PO-Revision-Date: 2022-10-26 12:36+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/fi/>\n"
@@ -17,47 +17,47 @@ msgstr ""
 
 #: ebt/Application.vala:165
 msgid "Send Files via Bluetooth"
-msgstr ""
+msgstr "Lähetä tiedostoja Bluetoothin välityksellä"
 
 #: ebt/Application.vala:167
 msgid "Send files to device…"
-msgstr ""
+msgstr "Lähetä tiedostoja laitteelle…"
 
 #: ebt/Application.vala:243
 msgid "Rejected file"
-msgstr ""
+msgstr "Tiedosto hylätty"
 
 #: ebt/Application.vala:245
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>Tiedosto:</b> %s <b>Koko: </b>%s on jo olemassa"
 
 #: ebt/Application.vala:260
 msgid "Incoming file"
-msgstr ""
+msgstr "Saapuva tiedosto"
 
 #: ebt/Application.vala:262
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> on valmis tiedoston lähetykseen: %s koko: %s"
 
 #: ebt/Application.vala:269
 msgid "Accept"
-msgstr ""
+msgstr "Hyväksy"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:274
 msgid "Decline"
-msgstr ""
+msgstr "Hylkää"
 
 #: ebt/Application.vala:278
 msgid "Receiving file"
-msgstr ""
+msgstr "Vastaanotetaan tiedosto"
 
 #: ebt/Application.vala:279
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s lähettää tiedoston: %s koko: %s"
 
 #: ebt/Application.vala:295 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:237
@@ -96,164 +96,160 @@ msgstr "Puhelin"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
-msgstr ""
+msgstr "<b>Siirtonopeus:</b>"
 
 #: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
 #: ebt/Dialog/BtSender.vala:117
 msgid "Close"
-msgstr ""
+msgstr "Sulje"
 
 #: ebt/Dialog/BtReceiver.vala:113
 msgid "Reject"
-msgstr ""
+msgstr "Hylkää"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:251
 #, c-format
 msgid "<b>From</b>: %s"
-msgstr ""
+msgstr "<b>Lähettäjä</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:252
 #, c-format
 msgid "<b>To</b>: %s"
-msgstr ""
+msgstr "<b>Vastaanottaja</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:261
 #: src/Widgets/Device.vala:160
 #, c-format
 msgid "<b>Filename</b>: %s"
-msgstr ""
+msgstr "<b>Tiedoston nimi</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr ""
+msgstr "Tiedostonsiirto epäonnistui"
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
 msgid "%s <b>File:</b> %s not received"
-msgstr ""
+msgstr "%s <b>Tiedosto:</b> %s ei vastaanotettu"
 
 #: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:322
 msgid "File transferred successfully"
-msgstr ""
+msgstr "Tiedostonsiirto onnistui"
 
 #: ebt/Dialog/BtReceiver.vala:187
 #, c-format
 msgid "%s <b>Save to:</b> %s"
-msgstr ""
+msgstr "%s <b>Tallenna sijaintiin:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:211
 #, c-format
 msgid "Receiving…  %s of %s"
-msgstr ""
+msgstr "Vastaanotetaan…  %s/%s"
 
 #: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:341
 #, c-format
 msgid "<b>Transfer rate:</b> %s"
-msgstr ""
+msgstr "<b>Siirtonopeus:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:227
 #, c-format
 msgid "%s of %s received, time remaining %s"
-msgstr ""
+msgstr "%s/%s vastaanotettu, aikaa jäljellä %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:352
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d sekunti"
+msgstr[1] "%d sekuntia"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:358
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d minuutti"
+msgstr[1] "%d minuuttia"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:364
 #, c-format
 msgid "%u hour"
 msgid_plural "%u hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u tunti"
+msgstr[1] "%u tuntia"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:365
 #, c-format
 msgid "%u minute"
 msgid_plural "%u minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%u minuutti"
+msgstr[1] "%u minuuttia"
 
 #. /TRANSLATORS: For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:367
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s %s"
 
 #: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:370
 #, c-format
 msgid "approximately %d hour"
 msgid_plural "approximately %d hours"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "noin %d tunti"
+msgstr[1] "noin %d tuntia"
 
 #: ebt/Dialog/BtScan.vala:41
-#, fuzzy
-#| msgid "Bluetooth is on"
 msgid "Bluetooth File Transfer"
-msgstr "Bluetooth on päällä"
+msgstr "Bluetooth-tiedostonsiirto"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
+msgstr "Valitse Bluetooth-laite alapuolelta lähettääksesi tiedostoja"
 
 #: ebt/Dialog/BtScan.vala:57
 msgid "No Devices Found"
-msgstr ""
+msgstr "Laitteita ei löytynyt"
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
+msgstr "Varmista, että laitteet ovat näkyvissä ja valmiit pariliitosta varten."
 
 #: ebt/Dialog/BtScan.vala:79
-#, fuzzy
-#| msgid "Disconnecting…"
 msgid "Discovering"
-msgstr "Katkaistaan yhteyttä…"
+msgstr "Tutkitaan"
 
 #: ebt/Dialog/BtScan.vala:189
 msgid "Available Devices"
-msgstr ""
+msgstr "Käytettävissä olevat laitteet"
 
 #: ebt/Dialog/BtSender.vala:67
 msgid "From"
-msgstr ""
+msgstr "Lähettäjä"
 
 #: ebt/Dialog/BtSender.vala:75
 msgid "To"
-msgstr ""
+msgstr "Vastaanottaja"
 
 #: ebt/Dialog/BtSender.vala:81
 msgid "Filename"
-msgstr ""
+msgstr "Tiedoston nimi"
 
 #: ebt/Dialog/BtSender.vala:87
 msgid "Transfer rate"
-msgstr ""
+msgstr "Siirtonopeus"
 
 #: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:288
 msgid "Cancel"
-msgstr ""
+msgstr "Peru"
 
 #: ebt/Dialog/BtSender.vala:254
 #, c-format
 msgid "Waiting for acceptance on %s…"
-msgstr ""
+msgstr "Odotetaan vastapuolen %s hyväksyntää…"
 
 #: ebt/Dialog/BtSender.vala:276
 #, c-format
 msgid "The transfer of '%s' failed."
-msgstr ""
+msgstr "Kohteen '%s' siirtäminen epäonnistui."
 
 #: ebt/Dialog/BtSender.vala:278
 #, c-format
@@ -262,11 +258,11 @@ msgstr ""
 
 #: ebt/Dialog/BtSender.vala:281
 msgid "The file has not been transferred"
-msgstr ""
+msgstr "Tiedostoa ei ole siirretty"
 
 #: ebt/Dialog/BtSender.vala:289
 msgid "Retry"
-msgstr ""
+msgstr "Yritä uudelleen"
 
 #: ebt/Dialog/BtSender.vala:323
 #, c-format
@@ -276,11 +272,11 @@ msgstr ""
 #: ebt/Dialog/BtSender.vala:343
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
+msgstr "(%i/%i) %s/%s lähetetty, aikaa jäljellä %s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
-msgstr ""
+msgstr "Lähetä"
 
 #: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
 msgid "Not Connected"
@@ -289,12 +285,12 @@ msgstr "Ei yhdistetty"
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "Receiving… %s of %s"
-msgstr ""
+msgstr "Vastaanotetaan… %s/%s"
 
 #: src/Widgets/Device.vala:169
 #, c-format
 msgid "Sending… %s of %s"
-msgstr ""
+msgstr "Lähetetään… %s/%s"
 
 #: src/Widgets/Device.vala:216
 msgid "Connecting…"
