@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-27 14:50+0000\n"
-"PO-Revision-Date: 2022-10-09 05:15+0000\n"
+"PO-Revision-Date: 2022-10-27 19:48+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/uk/>\n"
@@ -253,13 +253,12 @@ msgstr "Скасувати"
 #: ebt/Dialog/BtSender.vala:228
 #, c-format
 msgid "Trying to connect to %s…"
-msgstr ""
+msgstr "Спроба під'єднатися до %s…"
 
 #: ebt/Dialog/BtSender.vala:246
-#, fuzzy, c-format
-#| msgid "The transfer of '%s' failed."
+#, c-format
 msgid "Connecting to '%s' failed."
-msgstr "Збій надсилання «%s»."
+msgstr "Не вдалося під'єднатися до «%s»."
 
 #: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
 #, c-format
