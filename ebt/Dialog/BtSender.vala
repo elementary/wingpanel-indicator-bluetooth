@@ -225,7 +225,7 @@ public class BtSender : Granite.Dialog {
             path_label.set_markup (GLib.Markup.printf_escaped (_("<b>From</b>: %s"), file_path.get_parent ().get_path ()));
             device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.name));
             icon_label.set_from_gicon (new ThemedIcon (device.icon == null? "bluetooth" : device.icon), Gtk.IconSize.LARGE_TOOLBAR);
-            progress_label.label = _("Try connecting to %s…").printf (device.name);
+            progress_label.label = _("Trying to connect to %s…").printf (device.name);
             VariantBuilder builder = new VariantBuilder (VariantType.DICTIONARY);
             builder.add ("{sv}", "Target", new Variant.string ("opp"));
             Variant parameters = new Variant ("(sa{sv})", device.address, builder);
@@ -263,7 +263,7 @@ public class BtSender : Granite.Dialog {
                 if (response_id == Gtk.ResponseType.ACCEPT) {
                     create_session.begin ();
                     present ();
-                } else if (response_id == Gtk.ResponseType.CANCEL) {
+                } else {
                     destroy ();
                 }
 
@@ -327,7 +327,7 @@ public class BtSender : Granite.Dialog {
                     if (response_id == Gtk.ResponseType.ACCEPT) {
                         create_session.begin ();
                         present ();
-                    } else if (response_id == Gtk.ResponseType.CANCEL) {
+                    } else {
                         destroy (); //if canceled should destroy the main dialog
                     }
 
