@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-27 14:50+0000\n"
-"PO-Revision-Date: 2022-10-10 06:08+0000\n"
+"PO-Revision-Date: 2022-10-27 19:48+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/he/>\n"
@@ -247,13 +247,12 @@ msgstr "ביטול"
 #: ebt/Dialog/BtSender.vala:228
 #, c-format
 msgid "Trying to connect to %s…"
-msgstr ""
+msgstr "מתבצע ניסיון להתחבר אל %s…"
 
 #: ebt/Dialog/BtSender.vala:246
-#, fuzzy, c-format
-#| msgid "The transfer of '%s' failed."
+#, c-format
 msgid "Connecting to '%s' failed."
-msgstr "ההעברה של ‚%s’ נכשלה."
+msgstr "ההתחברות אל ‚%s’ נכשלה."
 
 #: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
 #, c-format
