@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-27 14:50+0000\n"
-"PO-Revision-Date: 2022-10-09 05:15+0000\n"
+"PO-Revision-Date: 2022-10-29 01:59+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ja/>\n"
@@ -244,13 +244,12 @@ msgstr "キャンセル"
 #: ebt/Dialog/BtSender.vala:228
 #, c-format
 msgid "Trying to connect to %s…"
-msgstr ""
+msgstr "%s に接続しようとしています…"
 
 #: ebt/Dialog/BtSender.vala:246
-#, fuzzy, c-format
-#| msgid "The transfer of '%s' failed."
+#, c-format
 msgid "Connecting to '%s' failed."
-msgstr "'%s' の転送に失敗しました。"
+msgstr "'%s' への接続に失敗しました。"
 
 #: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
 #, c-format
