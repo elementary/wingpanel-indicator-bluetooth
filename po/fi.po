@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-27 14:50+0000\n"
-"PO-Revision-Date: 2022-11-01 21:09+0000\n"
+"PO-Revision-Date: 2022-11-15 12:37+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/fi/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: ebt/Application.vala:167
@@ -275,7 +275,7 @@ msgstr "Odotetaan vastapuolen %s hyväksyntää…"
 #: ebt/Dialog/BtSender.vala:312
 #, c-format
 msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
+msgstr "Siirto keskeytyi tai %s kieltäytyi siitä."
 
 #: ebt/Dialog/BtSender.vala:359
 #, c-format
