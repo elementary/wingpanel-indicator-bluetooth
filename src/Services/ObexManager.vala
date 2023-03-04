@@ -23,7 +23,7 @@ public class BluetoothIndicator.Services.ObexManager : Object {
     public GLib.HashTable<BluetoothIndicator.Services.Obex.Transfer, string> active_transfers;
 
     construct {
-        active_transfers = new GLib.HashTable <BluetoothIndicator.Services.Obex.Transfer, string> (GLib.str_hash, GLib.str_equal);
+        active_transfers = new GLib.HashTable <BluetoothIndicator.Services.Obex.Transfer, string> (GLib.direct_hash, GLib.direct_equal);
         create_manager.begin ();
     }
 
