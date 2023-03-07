@@ -139,7 +139,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
 
     private void on_obex_transfer_active (string address) {
         if (address == device.address) {
-            tranfer_progress ();
+            update_transfer_progress ();
         }
     }
 
@@ -149,7 +149,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         }
     }
 
-    private void tranfer_progress () {
+    private void update_transfer_progress () {
         switch (transfer.status) {
             case "error":
                 hide_action ();
