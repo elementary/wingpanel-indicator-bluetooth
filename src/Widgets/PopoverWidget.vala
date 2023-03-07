@@ -27,7 +27,10 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     private Gtk.ListBox devices_list;
     private Gtk.Revealer revealer;
 
-    public PopoverWidget (BluetoothIndicator.Services.ObjectManager object_manager, BluetoothIndicator.Services.ObexManager obex_manager, bool is_in_session) {
+    public PopoverWidget (
+        BluetoothIndicator.Services.ObjectManager object_manager,
+        BluetoothIndicator.Services.ObexManager obex_manager, bool is_in_session
+    ) {
         Object (
             object_manager: object_manager,
             obex_manager: obex_manager,
