@@ -40,9 +40,9 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     }
 
     construct {
-        obex_manager.transfer_added.connect (transfer_added);
-        obex_manager.transfer_removed.connect (transfer_removed);
-        obex_manager.transfer_active.connect (transfer_active);
+        obex_manager.transfer_added.connect (on_obex_transfer_added);
+        obex_manager.transfer_removed.connect (on_obex_transfer_removed);
+        obex_manager.transfer_active.connect (on_obex_transfer_active);
 
         name_label = new Gtk.Label (null) {
             halign = Gtk.Align.START,
@@ -129,21 +129,21 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
         selectable = false;
         obex_manager.active_transfers.foreach ((transfer, address)=> {
-            transfer_added (address, transfer);
+            on_obex_transfer_added (address, transfer);
         });
     }
 
-    private void transfer_removed (BluetoothIndicator.Services.Obex.Transfer transfer) {
+    private void on_obex_transfer_removed (BluetoothIndicator.Services.Obex.Transfer transfer) {
         hide_action ();
     }
 
-    private void transfer_active (string address) {
+    private void on_obex_transfer_active (string address) {
         if (address == device.address) {
             tranfer_progress ();
         }
     }
 
-    private void transfer_added (string address, BluetoothIndicator.Services.Obex.Transfer transfer) {
+    private void on_obex_transfer_added (string address, BluetoothIndicator.Services.Obex.Transfer transfer) {
         if (address == device.address) {
             this.transfer = transfer;
         }
