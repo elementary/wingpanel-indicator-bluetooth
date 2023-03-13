@@ -1,5 +1,5 @@
 /*-
- * Copyright (c) 2015-2018 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2015-2023 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -21,6 +21,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private const string OBEX_PATH = "/org/bluez/obex/elementary";
     public signal void show_device (BluetoothIndicator.Services.Device device);
     public BluetoothIndicator.Services.Device device { get; construct; }
+    public BluetoothIndicator.Services.ObexManager obex_manager { get; construct; }
     public BluetoothIndicator.Services.Obex.Transfer transfer;
     private Gtk.Label status_label;
     private Gtk.Label name_label;
@@ -32,15 +33,16 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private Gtk.Revealer progress_revealer;
     private Gtk.ProgressBar progressbar;
 
-    public Device (BluetoothIndicator.Services.Device device) {
-        Object (device: device);
+    public Device (BluetoothIndicator.Services.Device device, BluetoothIndicator.Services.ObexManager obex_manager) {
+        Object (device: device,
+                obex_manager: obex_manager
+        );
     }
 
     construct {
-        var obex_manager = new BluetoothIndicator.Services.ObexManager ();
-        obex_manager.transfer_added.connect (transfer_added);
-        obex_manager.transfer_removed.connect (transfer_removed);
-        obex_manager.transfer_active.connect (transfer_active);
+        obex_manager.transfer_added.connect (on_obex_transfer_added);
+        obex_manager.transfer_removed.connect (on_obex_transfer_removed);
+        obex_manager.transfer_active.connect (on_obex_transfer_active);
 
         name_label = new Gtk.Label (null) {
             halign = Gtk.Align.START,
@@ -126,25 +128,28 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         update_status ();
         get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
         selectable = false;
+        obex_manager.active_transfers.foreach ((transfer, address)=> {
+            on_obex_transfer_added (address, transfer);
+        });
     }
 
-    private void transfer_removed (BluetoothIndicator.Services.Obex.Transfer transfer) {
+    private void on_obex_transfer_removed (BluetoothIndicator.Services.Obex.Transfer transfer) {
         hide_action ();
     }
 
-    private void transfer_active (string address) {
+    private void on_obex_transfer_active (string address) {
         if (address == device.address) {
-            tranfer_progress ();
+            update_transfer_progress ();
         }
     }
 
-    private void transfer_added (string address, BluetoothIndicator.Services.Obex.Transfer transfer) {
+    private void on_obex_transfer_added (string address, BluetoothIndicator.Services.Obex.Transfer transfer) {
         if (address == device.address) {
             this.transfer = transfer;
         }
     }
 
-    private void tranfer_progress () {
+    private void update_transfer_progress () {
         switch (transfer.status) {
             case "error":
                 hide_action ();
