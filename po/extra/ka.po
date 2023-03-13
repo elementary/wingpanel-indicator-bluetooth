@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-27 14:50+0000\n"
-"PO-Revision-Date: 2019-11-07 13:58-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-03-12 18:25+0000\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://l10n.elementary.io/projects/wingpanel/"
+"indicator-bluetooth-extra/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/bluetooth.appdata.xml.in:8
 msgid "Bluetooth Indicator"
@@ -36,7 +39,7 @@ msgstr ""
 #: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
 #: data/bluetooth.appdata.xml.in:43
 msgid "Updated translations"
-msgstr ""
+msgstr "განახლებული თარგმანები"
 
 #: data/bluetooth.appdata.xml.in:23
 msgid "Add tooltip on hover"
@@ -60,4 +63,4 @@ msgstr ""
 
 #: data/bluetooth.appdata.xml.in:82
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
