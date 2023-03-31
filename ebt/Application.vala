@@ -235,7 +235,7 @@ public class BluetoothApp : Gtk.Application {
             });
         });
         Bluetooth.Device device = object_manager.get_device (address);
-        var devicename = device.name;
+        var devicename = device.alias;
         var deviceicon = device.icon;
         bt_receiver.set_transfer (
             devicename == null ? get_device_description_from_icon (device) : devicename,
@@ -246,7 +246,7 @@ public class BluetoothApp : Gtk.Application {
 
     private void response_notify (string address, GLib.ObjectPath objectpath) {
         Bluetooth.Device device = object_manager.get_device (address);
-        var devicename = device.name;
+        var devicename = device.alias;
         var deviceicon = device.icon;
         try {
             transfer = Bus.get_proxy_sync (BusType.SESSION, "org.bluez.obex", objectpath);

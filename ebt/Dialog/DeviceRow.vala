@@ -54,7 +54,7 @@ public class DeviceRow : Gtk.ListBoxRow {
         overlay.add (image);
         overlay.add_overlay (state);
 
-        string? device_name = device.name;
+        string? device_name = device.alias;
         if (device_name == null) {
             if (device.icon != null) {
                 device_name = device_icon ();
@@ -106,7 +106,7 @@ public class DeviceRow : Gtk.ListBoxRow {
 
             var name = changed.lookup_value ("Name", new VariantType ("s"));
             if (name != null) {
-                label.label = device.name;
+                label.label = device.alias;
             }
 
             var icon = changed.lookup_value ("Icon", new VariantType ("s"));
