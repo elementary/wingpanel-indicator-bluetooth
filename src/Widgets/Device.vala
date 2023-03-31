@@ -234,7 +234,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     }
 
     private void update_status () {
-        string? device_name = device.name;
+        string? device_name = device.alias;
         if (device_name == null) {
             if (device.icon != null) {
                 switch (device.icon) {

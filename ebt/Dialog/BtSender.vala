@@ -223,9 +223,9 @@ public class BtSender : Granite.Dialog {
                 "org.bluez.obex.Client1"
             );
             path_label.set_markup (GLib.Markup.printf_escaped (_("<b>From</b>: %s"), file_path.get_parent ().get_path ()));
-            device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.name));
+            device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.alias));
             icon_label.set_from_gicon (new ThemedIcon (device.icon == null? "bluetooth" : device.icon), Gtk.IconSize.LARGE_TOOLBAR);
-            progress_label.label = _("Trying to connect to %s…").printf (device.name);
+            progress_label.label = _("Trying to connect to %s…").printf (device.alias);
             VariantBuilder builder = new VariantBuilder (VariantType.DICTIONARY);
             builder.add ("{sv}", "Target", new Variant.string ("opp"));
             Variant parameters = new Variant ("(sa{sv})", device.address, builder);
@@ -243,7 +243,7 @@ public class BtSender : Granite.Dialog {
         } catch (Error e) {
             hide_on_delete ();
             var bt_retry = new Granite.MessageDialog (
-                _("Connecting to '%s' failed.").printf (device.name),
+                _("Connecting to '%s' failed.").printf (device.alias),
                 "%s\n%s".printf (
                     _("The transfer of '%s' failed.").printf (
                         file_path.get_basename ()
@@ -283,9 +283,9 @@ public class BtSender : Granite.Dialog {
     }
     private async void send_file () {
         path_label.set_markup (GLib.Markup.printf_escaped (_("<b>From</b>: %s"), file_path.get_parent ().get_path ()));
-        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.name));
+        device_label.set_markup (GLib.Markup.printf_escaped (_("<b>To</b>: %s"), device.alias));
         icon_label.set_from_gicon (new ThemedIcon (device.icon == null? "bluetooth" : device.icon), Gtk.IconSize.LARGE_TOOLBAR);
-        progress_label.label = _("Waiting for acceptance on %s…").printf (device.name);
+        progress_label.label = _("Waiting for acceptance on %s…").printf (device.alias);
         try {
             Variant variant = yield session.call ("SendFile", new Variant ("(s)", file_path.get_path ()), GLib.DBusCallFlags.NONE, -1);
             start_time = (int) get_real_time ();
@@ -310,7 +310,7 @@ public class BtSender : Granite.Dialog {
                     _("The transfer of '%s' failed.").printf (file_path.get_basename ()),
                     "%s\n%s".printf (
                         _("The transfer was interrupted or it was declined by %s.").printf (
-                            device.name
+                            device.alias
                         ),
                         _("The file has not been transferred")
                     ),
@@ -356,7 +356,7 @@ public class BtSender : Granite.Dialog {
         notification.set_icon (new ThemedIcon (device.icon));
         notification.set_priority (NotificationPriority.NORMAL);
         notification.set_title (_("File transferred successfully"));
-        notification.set_body (GLib.Markup.printf_escaped (_("<b>From:</b> %s <b>Send to:</b> %s"), file_path.get_path (), device.name));
+        notification.set_body (GLib.Markup.printf_escaped (_("<b>From:</b> %s <b>Send to:</b> %s"), file_path.get_path (), device.alias));
         ((Gtk.Window)get_toplevel ()).application.send_notification ("io.elementary.bluetooth", notification);
     }
 
