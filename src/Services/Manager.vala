@@ -169,8 +169,13 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
         /* Only signal if actually changed */
         if (powered != is_powered || connected != is_connected) {
-            is_powered = powered;
-            is_connected = connected;
+            if (powered != is_powered) {
+                is_powered = powered;
+            }
+
+            if (connected != is_connected) {
+                is_connected = connected;
+            }
             global_state_changed (is_powered, is_connected);
         }
     }
