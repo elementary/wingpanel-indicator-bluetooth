@@ -23,7 +23,6 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     public bool has_object { get; private set; default = false; }
     public bool retrieve_finished { get; private set; default = false; }
     public Settings settings { get; construct; }
-    public Settings settings;
     private GLib.DBusObjectManagerClient object_manager;
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
@@ -120,6 +119,8 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                     check_global_state ();
                 }
             });
+
+            check_global_state ();
         } else if (iface is BluetoothIndicator.Services.Adapter) {
             unowned BluetoothIndicator.Services.Adapter adapter = (BluetoothIndicator.Services.Adapter) iface;
             has_object = true;
@@ -127,12 +128,12 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             ((DBusProxy) adapter).g_properties_changed.connect ((changed, invalid) => {
                 var powered = changed.lookup_value ("Powered", new VariantType ("b"));
                 if (powered != null) {
-                    set_state_from_settings.begin ();
+                    check_global_state ();
                 }
             });
-        }
 
-        check_global_state ();
+            check_global_state ();
+        }
     }
 
     private void on_interface_removed (GLib.DBusObject object, GLib.DBusInterface iface) {
@@ -184,6 +185,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             if (connected != is_connected) {
                 is_connected = connected;
             }
+
             global_state_changed (is_powered, is_connected);
         }
     }
@@ -210,10 +212,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         return false;
     }
 
-    public async void set_global_state (bool state) {
+    private async void set_global_state (bool state) {
         /* `is_powered` and `connected` properties will be set by the check_global state () callback when adapter or device
          * properties change.  Do not set now so that global_state_changed signal will be emitted. */
-
         var adapters = get_adapters ();
         foreach (var adapter in adapters) {
             adapter.powered = state;
@@ -236,6 +237,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             check_global_state ();
             return false;
         });
+
     }
 
     public async void set_state_from_settings () {
