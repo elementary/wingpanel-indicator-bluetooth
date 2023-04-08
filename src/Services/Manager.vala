@@ -91,10 +91,6 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
 
             ((DBusProxy) device).g_properties_changed.connect ((changed, invalid) => {
                 var connected = changed.lookup_value ("Connected", new VariantType ("b"));
-                if (connected != null) {
-                    check_global_state ();
-                }
-
                 var paired = changed.lookup_value ("Paired", new VariantType ("b"));
                 if (paired != null) {
                     if (device.paired) {
@@ -102,12 +98,12 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                     } else {
                         device_removed (device);
                     }
+                }
 
+                if (connected != null || paired != null) {
                     check_global_state ();
                 }
             });
-
-            check_global_state ();
         } else if (iface is BluetoothIndicator.Services.Adapter) {
             unowned BluetoothIndicator.Services.Adapter adapter = (BluetoothIndicator.Services.Adapter) iface;
             has_object = true;
@@ -119,6 +115,8 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 }
             });
         }
+
+        check_global_state ();
     }
 
     private void on_interface_removed (GLib.DBusObject object, GLib.DBusInterface iface) {
@@ -127,6 +125,8 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         } else if (iface is BluetoothIndicator.Services.Adapter) {
             has_object = !get_adapters ().is_empty;
         }
+
+        check_global_state ();
     }
 
     public Gee.LinkedList<BluetoothIndicator.Services.Adapter> get_adapters () {
@@ -155,21 +155,16 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
         return (owned) devices;
     }
 
-    public void check_global_state () {
-        /* As this is called within a signal handler, it should be in a Idle loop  else
-         * races occur */
-        Idle.add (() => {
-            var powered = get_global_state ();
-            var connected = get_connected ();
+    private void check_global_state () {
+        var powered = get_global_state ();
+        var connected = get_connected ();
 
-            /* Only signal if actually changed */
-            if (powered != is_powered || connected != is_connected) {
-                is_powered = powered;
-                is_connected = connected;
-                global_state_changed (is_powered, is_connected);
-            }
-            return false;
-        });
+        /* Only signal if actually changed */
+        if (powered != is_powered || connected != is_connected) {
+            is_powered = powered;
+            is_connected = connected;
+            global_state_changed (is_powered, is_connected);
+        }
     }
 
     public bool get_connected () {
@@ -221,11 +216,9 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     }
 
     public async void set_last_state () {
+
         bool last_state = settings.get_boolean ("bluetooth-enabled");
-
-        yield set_global_state (last_state);
-
-        check_global_state ();
+        yield set_global_state (last_state); // This will call check_global_state ()
     }
 
     public static bool compare_devices (Device device, Device other) {
