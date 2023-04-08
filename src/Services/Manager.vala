@@ -59,15 +59,12 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
                 object.get_interfaces ().foreach ((iface) => on_interface_removed (object, iface));
             });
 
-           // We only want the "in session" instance to sync with settings (for now)
-           if (is_in_session) {
-                settings.changed["bluetooth-enabled"].connect (() => {
-                    var enabled = settings.get_boolean ("bluetooth-enabled");
-                    if (enabled != this.is_powered) {
-                        set_state_from_settings.begin ();
-                    }
-                });
-            }
+            settings.changed["bluetooth-enabled"].connect (() => {
+                var enabled = settings.get_boolean ("bluetooth-enabled");
+                if (enabled != this.is_powered) {
+                    set_state_from_settings.begin ();
+                }
+            });
         } catch (Error e) {
             critical (e.message);
         }
