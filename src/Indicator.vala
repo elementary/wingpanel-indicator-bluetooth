@@ -34,7 +34,7 @@ public class BluetoothIndicator.Indicator : Wingpanel.Indicator {
         GLib.Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
         GLib.Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
-        object_manager = new BluetoothIndicator.Services.ObjectManager ();
+        object_manager = new BluetoothIndicator.Services.ObjectManager (is_in_session);
         object_manager.bind_property ("has-object", this, "visible", GLib.BindingFlags.SYNC_CREATE);
         obex_manager = new BluetoothIndicator.Services.ObexManager ();
         if (object_manager.has_object) {
