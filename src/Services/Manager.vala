@@ -53,6 +53,14 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             object_manager.object_removed.connect ((object) => {
                 object.get_interfaces ().foreach ((iface) => on_interface_removed (object, iface));
             });
+
+            notify["is-powered"].connect (() => {
+                settings.set_boolean ("bluetooth-enabled", this.is_powered);
+            });
+
+            settings.changed["bluetooth-enabled"].connect (() => {
+                set_state_from_settings ();
+            });
         } catch (Error e) {
             critical (e.message);
         }
@@ -211,14 +219,11 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             }
         }
 
-        settings.set_boolean ("bluetooth-enabled", state);
         check_global_state ();
     }
 
-    public async void set_last_state () {
-
-        bool last_state = settings.get_boolean ("bluetooth-enabled");
-        yield set_global_state (last_state); // This will call check_global_state ()
+    public async void set_state_from_settings () {
+        yield set_global_state (settings.get_boolean ("bluetooth-enabled"));
     }
 
     public static bool compare_devices (Device device, Device other) {
