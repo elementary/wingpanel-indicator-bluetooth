@@ -59,7 +59,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             });
 
             settings.changed["bluetooth-enabled"].connect (() => {
-                set_state_from_settings ();
+                set_state_from_settings.begin ();
             });
         } catch (Error e) {
             critical (e.message);
