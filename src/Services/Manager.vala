@@ -225,10 +225,7 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
             }
         }
 
-        Idle.add (() => {
-            check_global_state ();
-            return false;
-        });
+        check_global_state ();
 
     }
 
