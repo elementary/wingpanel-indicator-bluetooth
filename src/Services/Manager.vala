@@ -26,11 +26,6 @@ public class BluetoothIndicator.Services.ObjectManager : Object {
     private GLib.DBusObjectManagerClient object_manager;
     public bool is_powered {get; private set; default = false; }
     public bool is_connected {get; private set; default = false; }
-    public bool is_in_session { get; construct; }
-
-    public ObjectManager (bool is_in_session) {
-        Object (is_in_session: is_in_session);
-    }
 
     construct {
         settings = new Settings ("io.elementary.desktop.wingpanel.bluetooth");
