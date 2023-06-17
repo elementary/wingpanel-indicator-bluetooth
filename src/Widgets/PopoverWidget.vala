@@ -92,7 +92,8 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         });
 
         main_switch.notify["active"].connect (() => {
-            object_manager.set_global_state.begin (main_switch.active);
+            warning ("main switch toggle - active %s", main_switch.active.to_string ());
+            object_manager.settings.set_boolean ("bluetooth-enabled", main_switch.active);
         });
 
         show_settings_button.clicked.connect (() => {

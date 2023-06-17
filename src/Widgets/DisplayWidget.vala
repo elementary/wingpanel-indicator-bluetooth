@@ -45,7 +45,10 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
 
         button_press_event.connect ((e) => {
             if (e.button == Gdk.BUTTON_MIDDLE) {
-                object_manager.set_global_state.begin (!object_manager.get_global_state ());
+                object_manager.settings.set_boolean (
+                    "bluetooth-enabled",
+                    !object_manager.settings.get_boolean ("bluetooth-enabled")
+                );
                 return Gdk.EVENT_STOP;
             }
 
