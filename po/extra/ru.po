@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 16:34+0000\n"
+"POT-Creation-Date: 2023-06-27 16:49+0000\n"
 "PO-Revision-Date: 2022-09-30 09:41+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
@@ -32,39 +32,39 @@ msgstr "Подключайте и отсоединяйте сопряжённы�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/bluetooth.metainfo.xml.in:34
+#: data/bluetooth.metainfo.xml.in:34 data/bluetooth.metainfo.xml.in:49
 msgid "Minor updates:"
 msgstr "Незначительные обновления:"
 
-#: data/bluetooth.metainfo.xml.in:36
+#: data/bluetooth.metainfo.xml.in:36 data/bluetooth.metainfo.xml.in:52
+#: data/bluetooth.metainfo.xml.in:61 data/bluetooth.metainfo.xml.in:70
+#: data/bluetooth.metainfo.xml.in:76 data/bluetooth.metainfo.xml.in:82
+msgid "Updated translations"
+msgstr "Обновлены переводы"
+
+#: data/bluetooth.metainfo.xml.in:51
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
 msgstr ""
 "Улучшено восстановление состояния Bluetooth при перезагрузке и выходе из "
 "режима сна"
 
-#: data/bluetooth.metainfo.xml.in:37 data/bluetooth.metainfo.xml.in:46
-#: data/bluetooth.metainfo.xml.in:55 data/bluetooth.metainfo.xml.in:61
-#: data/bluetooth.metainfo.xml.in:67
-msgid "Updated translations"
-msgstr "Обновлены переводы"
-
-#: data/bluetooth.metainfo.xml.in:44
+#: data/bluetooth.metainfo.xml.in:59
 msgid "Add tooltip on hover"
 msgstr "Добавлена всплывающая подсказка при наведении"
 
-#: data/bluetooth.metainfo.xml.in:45
+#: data/bluetooth.metainfo.xml.in:60
 msgid "Add a fallback device name for headphones"
 msgstr "Добавлено запасное имя устройства для наушников"
 
-#: data/bluetooth.metainfo.xml.in:52
+#: data/bluetooth.metainfo.xml.in:67
 msgid "Prevent showing duplicate devices"
 msgstr "Предотвращение повторяющегося показа устройств"
 
-#: data/bluetooth.metainfo.xml.in:53
+#: data/bluetooth.metainfo.xml.in:68
 msgid "Fix animated icon when disabling Bluetooth"
 msgstr "Исправлена анимация иконки при отключении Bluetooth"
 
-#: data/bluetooth.metainfo.xml.in:54
+#: data/bluetooth.metainfo.xml.in:69
 msgid "Use device type as fallback instead of \"(null)\""
 msgstr ""
 "Использовать тип устройства в качестве запасного устройства вместо «(null)»"
