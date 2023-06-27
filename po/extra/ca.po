@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-27 14:50+0000\n"
+"POT-Creation-Date: 2023-06-27 16:34+0000\n"
 "PO-Revision-Date: 2021-08-27 11:29+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
@@ -19,50 +19,50 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: data/bluetooth.appdata.xml.in:8
+#: data/bluetooth.metainfo.xml.in:12
 msgid "Bluetooth Indicator"
 msgstr "Indicador del Bluetooth"
 
-#: data/bluetooth.appdata.xml.in:9
+#: data/bluetooth.metainfo.xml.in:13
 msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "Connexió i desconnexió de dispositius Bluetooth aparellats"
 
-#: data/bluetooth.appdata.xml.in:14
+#: data/bluetooth.metainfo.xml.in:27
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
+
+#: data/bluetooth.metainfo.xml.in:34
 msgid "Minor updates:"
 msgstr "Actualitzacions menors:"
 
-#: data/bluetooth.appdata.xml.in:16
+#: data/bluetooth.metainfo.xml.in:36
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
 msgstr ""
 "Millora de la restauració de l'estat del bluetooth en reiniciar i reprendre "
 "després d'una suspensió"
 
-#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
-#: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
-#: data/bluetooth.appdata.xml.in:43
+#: data/bluetooth.metainfo.xml.in:37 data/bluetooth.metainfo.xml.in:46
+#: data/bluetooth.metainfo.xml.in:55 data/bluetooth.metainfo.xml.in:61
+#: data/bluetooth.metainfo.xml.in:67
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/bluetooth.appdata.xml.in:23
+#: data/bluetooth.metainfo.xml.in:44
 msgid "Add tooltip on hover"
 msgstr "Afegeix una descripció emergent en passar-hi"
 
-#: data/bluetooth.appdata.xml.in:24
+#: data/bluetooth.metainfo.xml.in:45
 msgid "Add a fallback device name for headphones"
 msgstr "Afegeix un nom de dispositiu alternatiu per als auriculars"
 
-#: data/bluetooth.appdata.xml.in:30
+#: data/bluetooth.metainfo.xml.in:52
 msgid "Prevent showing duplicate devices"
 msgstr "Evita mostrar dispositius duplicats."
 
-#: data/bluetooth.appdata.xml.in:31
+#: data/bluetooth.metainfo.xml.in:53
 msgid "Fix animated icon when disabling Bluetooth"
 msgstr "Correcció de la icona animada quan s'inhabilita el Bluetooth"
 
-#: data/bluetooth.appdata.xml.in:32
+#: data/bluetooth.metainfo.xml.in:54
 msgid "Use device type as fallback instead of \"(null)\""
 msgstr "Usa el tipus de dispositiu com a alternativa en lloc de (null)"
-
-#: data/bluetooth.appdata.xml.in:82
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
