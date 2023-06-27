@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 16:34+0000\n"
+"POT-Creation-Date: 2023-06-27 16:49+0000\n"
 "PO-Revision-Date: 2021-02-16 01:08+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/wingpanel/"
@@ -34,37 +34,37 @@ msgstr "Повежите и прекините везу упарених блу�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/bluetooth.metainfo.xml.in:34
+#: data/bluetooth.metainfo.xml.in:34 data/bluetooth.metainfo.xml.in:49
 msgid "Minor updates:"
 msgstr ""
 
-#: data/bluetooth.metainfo.xml.in:36
-msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
-msgstr ""
-
-#: data/bluetooth.metainfo.xml.in:37 data/bluetooth.metainfo.xml.in:46
-#: data/bluetooth.metainfo.xml.in:55 data/bluetooth.metainfo.xml.in:61
-#: data/bluetooth.metainfo.xml.in:67
+#: data/bluetooth.metainfo.xml.in:36 data/bluetooth.metainfo.xml.in:52
+#: data/bluetooth.metainfo.xml.in:61 data/bluetooth.metainfo.xml.in:70
+#: data/bluetooth.metainfo.xml.in:76 data/bluetooth.metainfo.xml.in:82
 msgid "Updated translations"
 msgstr "Освежени преводи"
 
-#: data/bluetooth.metainfo.xml.in:44
+#: data/bluetooth.metainfo.xml.in:51
+msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
+msgstr ""
+
+#: data/bluetooth.metainfo.xml.in:59
 msgid "Add tooltip on hover"
 msgstr ""
 
-#: data/bluetooth.metainfo.xml.in:45
+#: data/bluetooth.metainfo.xml.in:60
 msgid "Add a fallback device name for headphones"
 msgstr ""
 
-#: data/bluetooth.metainfo.xml.in:52
+#: data/bluetooth.metainfo.xml.in:67
 msgid "Prevent showing duplicate devices"
 msgstr "Спречава приказивање удвојених уређаја"
 
-#: data/bluetooth.metainfo.xml.in:53
+#: data/bluetooth.metainfo.xml.in:68
 msgid "Fix animated icon when disabling Bluetooth"
 msgstr "Поправља анимиране иконице приликом искључивања Блутута"
 
-#: data/bluetooth.metainfo.xml.in:54
+#: data/bluetooth.metainfo.xml.in:69
 #, fuzzy
 #| msgid "Fallback device names to their device type instead of \"(null)\""
 msgid "Use device type as fallback instead of \"(null)\""
