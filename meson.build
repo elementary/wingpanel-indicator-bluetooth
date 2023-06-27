@@ -1,7 +1,7 @@
 project(
     'bluetooth',
     'vala', 'c',
-    version: '2.1.8'
+    version: '7.0.0'
 )
 
 gettext_name = meson.project_name() + '-indicator'
