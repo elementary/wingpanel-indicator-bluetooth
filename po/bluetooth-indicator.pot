@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bluetooth-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-27 14:50+0000\n"
+"POT-Creation-Date: 2023-06-27 16:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,82 +18,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ebt/Application.vala:167
+#: ebt/Application.vala:168
 msgid "Send Files via Bluetooth"
 msgstr ""
 
-#: ebt/Application.vala:169
+#: ebt/Application.vala:170
 msgid "Send files to device…"
 msgstr ""
 
-#: ebt/Application.vala:245
+#: ebt/Application.vala:259
 msgid "Rejected file"
 msgstr ""
 
-#: ebt/Application.vala:247
+#: ebt/Application.vala:261
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
 msgstr ""
 
-#: ebt/Application.vala:262
+#: ebt/Application.vala:276
 msgid "Incoming file"
 msgstr ""
 
-#: ebt/Application.vala:264
+#: ebt/Application.vala:278
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
 msgstr ""
 
-#: ebt/Application.vala:271
+#: ebt/Application.vala:285
 msgid "Accept"
 msgstr ""
 
 #. /Translators response to refuse a file transfer
-#: ebt/Application.vala:276
+#: ebt/Application.vala:290
 msgid "Decline"
 msgstr ""
 
-#: ebt/Application.vala:280
+#: ebt/Application.vala:294
 msgid "Receiving file"
 msgstr ""
 
-#: ebt/Application.vala:281
+#: ebt/Application.vala:295
 #, c-format
 msgid "%s is sending file: %s size: %s"
 msgstr ""
 
-#: ebt/Application.vala:297 ebt/Dialog/DeviceRow.vala:127
-#: src/Widgets/Device.vala:237
+#: ebt/Application.vala:311 ebt/Dialog/DeviceRow.vala:127
+#: src/Widgets/Device.vala:242
 msgid "Speaker"
 msgstr ""
 
-#: ebt/Application.vala:299 ebt/Dialog/DeviceRow.vala:129
-#: src/Widgets/Device.vala:243
+#: ebt/Application.vala:313 ebt/Dialog/DeviceRow.vala:129
+#: src/Widgets/Device.vala:248
 msgid "Controller"
 msgstr ""
 
-#: ebt/Application.vala:301 ebt/Dialog/DeviceRow.vala:131
-#: src/Widgets/Device.vala:246
+#: ebt/Application.vala:315 ebt/Dialog/DeviceRow.vala:131
+#: src/Widgets/Device.vala:251
 msgid "Keyboard"
 msgstr ""
 
-#: ebt/Application.vala:303 ebt/Dialog/DeviceRow.vala:133
-#: src/Widgets/Device.vala:249
+#: ebt/Application.vala:317 ebt/Dialog/DeviceRow.vala:133
+#: src/Widgets/Device.vala:254
 msgid "Mouse"
 msgstr ""
 
-#: ebt/Application.vala:305 ebt/Dialog/DeviceRow.vala:135
-#: src/Widgets/Device.vala:252
+#: ebt/Application.vala:319 ebt/Dialog/DeviceRow.vala:135
+#: src/Widgets/Device.vala:257
 msgid "Tablet"
 msgstr ""
 
-#: ebt/Application.vala:307 ebt/Dialog/DeviceRow.vala:137
-#: src/Widgets/Device.vala:255
+#: ebt/Application.vala:321 ebt/Dialog/DeviceRow.vala:137
+#: src/Widgets/Device.vala:260
 msgid "Touchpad"
 msgstr ""
 
-#: ebt/Application.vala:309 ebt/Dialog/DeviceRow.vala:139
-#: src/Widgets/Device.vala:258
+#: ebt/Application.vala:323 ebt/Dialog/DeviceRow.vala:139
+#: src/Widgets/Device.vala:263
 msgid "Phone"
 msgstr ""
 
@@ -123,7 +123,7 @@ msgid "<b>To</b>: %s"
 msgstr ""
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:295
-#: src/Widgets/Device.vala:160
+#: src/Widgets/Device.vala:165
 #, c-format
 msgid "<b>Filename</b>: %s"
 msgstr ""
@@ -294,64 +294,64 @@ msgstr ""
 msgid "Send"
 msgstr ""
 
-#: src/Widgets/Device.vala:52 src/Widgets/Device.vala:275
+#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
 msgid "Not Connected"
 msgstr ""
 
-#: src/Widgets/Device.vala:165
+#: src/Widgets/Device.vala:170
 #, c-format
 msgid "Receiving… %s of %s"
 msgstr ""
 
-#: src/Widgets/Device.vala:169
+#: src/Widgets/Device.vala:174
 #, c-format
 msgid "Sending… %s of %s"
 msgstr ""
 
-#: src/Widgets/Device.vala:216
+#: src/Widgets/Device.vala:221
 msgid "Connecting…"
 msgstr ""
 
-#: src/Widgets/Device.vala:219
+#: src/Widgets/Device.vala:224
 msgid "Disconnecting…"
 msgstr ""
 
-#: src/Widgets/Device.vala:224
+#: src/Widgets/Device.vala:229
 msgid "Unable to Connect"
 msgstr ""
 
-#: src/Widgets/Device.vala:240
+#: src/Widgets/Device.vala:245
 msgid "Headphones"
 msgstr ""
 
-#: src/Widgets/Device.vala:272
+#: src/Widgets/Device.vala:277
 msgid "Connected"
 msgstr ""
 
-#: src/Widgets/DisplayWidget.vala:73
+#: src/Widgets/DisplayWidget.vala:76
 msgid "Middle-click to turn Bluetooth off"
 msgstr ""
 
-#: src/Widgets/DisplayWidget.vala:76
+#: src/Widgets/DisplayWidget.vala:79
 msgid "Bluetooth connected"
 msgstr ""
 
-#: src/Widgets/DisplayWidget.vala:79
+#: src/Widgets/DisplayWidget.vala:82
 msgid "Bluetooth is on"
 msgstr ""
 
-#: src/Widgets/DisplayWidget.vala:84
+#: src/Widgets/DisplayWidget.vala:87
 msgid "Bluetooth is off"
 msgstr ""
 
-#: src/Widgets/DisplayWidget.vala:85
+#: src/Widgets/DisplayWidget.vala:88
 msgid "Middle-click to turn Bluetooth on"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:39
+#: src/Widgets/PopoverWidget.vala:44
 msgid "Bluetooth"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:66
+#: src/Widgets/PopoverWidget.vala:71
 msgid "Bluetooth Settings…"
 msgstr ""
