@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-27 14:50+0000\n"
+"POT-Creation-Date: 2023-06-27 16:34+0000\n"
 "PO-Revision-Date: 2019-11-07 13:58-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -18,48 +18,48 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: data/bluetooth.appdata.xml.in:8
+#: data/bluetooth.metainfo.xml.in:12
 msgid "Bluetooth Indicator"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:9
+#: data/bluetooth.metainfo.xml.in:13
 msgid "Connect and disconnect paired Bluetooth devices"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:14
+#: data/bluetooth.metainfo.xml.in:27
+msgid "elementary, Inc."
+msgstr ""
+
+#: data/bluetooth.metainfo.xml.in:34
 msgid "Minor updates:"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:16
+#: data/bluetooth.metainfo.xml.in:36
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:17 data/bluetooth.appdata.xml.in:25
-#: data/bluetooth.appdata.xml.in:33 data/bluetooth.appdata.xml.in:38
-#: data/bluetooth.appdata.xml.in:43
+#: data/bluetooth.metainfo.xml.in:37 data/bluetooth.metainfo.xml.in:46
+#: data/bluetooth.metainfo.xml.in:55 data/bluetooth.metainfo.xml.in:61
+#: data/bluetooth.metainfo.xml.in:67
 msgid "Updated translations"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:23
+#: data/bluetooth.metainfo.xml.in:44
 msgid "Add tooltip on hover"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:24
+#: data/bluetooth.metainfo.xml.in:45
 msgid "Add a fallback device name for headphones"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:30
+#: data/bluetooth.metainfo.xml.in:52
 msgid "Prevent showing duplicate devices"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:31
+#: data/bluetooth.metainfo.xml.in:53
 msgid "Fix animated icon when disabling Bluetooth"
 msgstr ""
 
-#: data/bluetooth.appdata.xml.in:32
+#: data/bluetooth.metainfo.xml.in:54
 msgid "Use device type as fallback instead of \"(null)\""
-msgstr ""
-
-#: data/bluetooth.appdata.xml.in:82
-msgid "elementary, Inc."
 msgstr ""
