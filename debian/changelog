@@ -1,3 +1,9 @@
+wingpanel-indicator-bluetooth (7.0.0) jammy; urgency=medium
+
+  * New upstream release
+
+ -- Danielle Foré <danielle@elementary.io>  Tue, 27 Jun 2023 12:51:21 -0700
+
 wingpanel-indicator-bluetooth (2.1.8) bionic; urgency=medium
 
   * Release 2.1.8 (#167)
