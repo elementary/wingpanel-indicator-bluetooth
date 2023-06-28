@@ -25,6 +25,10 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     }
 
     construct {
+        // Prevent a race that skips automatic resource loading
+        // https://github.com/elementary/wingpanel-indicator-bluetooth/issues/203
+        Gtk.IconTheme.get_default ().add_resource_path ("/org/elementary/wingpanel/icons");
+
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
 
