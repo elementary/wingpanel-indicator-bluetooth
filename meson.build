@@ -1,7 +1,8 @@
 project(
     'bluetooth',
     'vala', 'c',
-    version: '7.0.1'
+    version: '7.0.1',
+    meson_version : '>= 0.57'
 )
 
 gettext_name = meson.project_name() + '-indicator'
@@ -64,4 +65,4 @@ subdir('data')
 subdir('po')
 subdir('ebt')
 
-meson.add_install_script('meson/post_install.py')
+gnome.post_install(glib_compile_schemas: true)
