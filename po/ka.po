@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-06-27 16:49+0000\n"
-"PO-Revision-Date: 2023-04-15 00:59+0000\n"
+"PO-Revision-Date: 2023-10-23 05:10+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ka/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.4\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: ebt/Application.vala:168
@@ -205,7 +205,7 @@ msgstr "ბლუთუზით ფაილის გადაცემა"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
+msgstr "ფაილების გასაგზავნად ქვემო სიიდან აირჩიეთ ბლუთუზის მოწყობილობა"
 
 #: ebt/Dialog/BtScan.vala:57
 msgid "No Devices Found"
@@ -213,7 +213,7 @@ msgstr "მოწყობილობების პოვნა ვერ მ
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
+msgstr "დარწმუნდით, რომ თქვენი მოწყობილობები ხილულია და მზადაა დაწყვილებისთვის."
 
 #: ebt/Dialog/BtScan.vala:79
 msgid "Discovering"
@@ -247,7 +247,7 @@ msgstr "გაუქმება"
 #: ebt/Dialog/BtSender.vala:228
 #, c-format
 msgid "Trying to connect to %s…"
-msgstr ""
+msgstr "%s-სთან მიერთების მცდელობა…"
 
 #: ebt/Dialog/BtSender.vala:246
 #, c-format
@@ -270,12 +270,12 @@ msgstr "გამეორება"
 #: ebt/Dialog/BtSender.vala:288
 #, c-format
 msgid "Waiting for acceptance on %s…"
-msgstr ""
+msgstr "%s-ის დასტურის მოლოდინი…"
 
 #: ebt/Dialog/BtSender.vala:312
 #, c-format
 msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
+msgstr "გადაცემა შეწყვეტილია ან უარყოფილია %s-ის მიერ."
 
 #: ebt/Dialog/BtSender.vala:359
 #, c-format
@@ -285,7 +285,7 @@ msgstr "<b>საიდან:</b> %s <b>გაგზავნა:</b> %s"
 #: ebt/Dialog/BtSender.vala:379
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
+msgstr "(%i/%i) %s / %s გაგზავნილია. დარჩენილია დრო %s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
