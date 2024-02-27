@@ -39,7 +39,7 @@ public class DeviceRow : Gtk.ListBoxRow {
     construct {
         var image = new Gtk.Image.from_icon_name (device.icon ?? "bluetooth", Gtk.IconSize.DND);
 
-        state = new Gtk.Image.from_icon_name ("user-offline", Gtk.IconSize.MENU) {
+        state = new Gtk.Image.from_icon_name ("emblem-disabled", Gtk.IconSize.MENU) {
             halign = Gtk.Align.END,
             valign = Gtk.Align.END
         };
@@ -142,6 +142,6 @@ public class DeviceRow : Gtk.ListBoxRow {
         }
     }
     private void set_status (bool status) {
-        state.icon_name = status? "user-available" : "user-offline";
+        state.icon_name = status? "emblem-enabled" : "emblem-disabled";
     }
 }
