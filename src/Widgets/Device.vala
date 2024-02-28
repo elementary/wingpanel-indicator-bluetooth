@@ -69,7 +69,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
 
         icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon, Gtk.IconSize.DIALOG);
 
-        status_image = new Gtk.Image.from_icon_name ("user-offline", Gtk.IconSize.MENU) {
+        status_image = new Gtk.Image.from_icon_name ("emblem-disabled", Gtk.IconSize.MENU) {
             halign = Gtk.Align.END,
             valign = Gtk.Align.END
         };
@@ -215,7 +215,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         }
 
         spinner.active = true;
-        status_image.icon_name = "user-away";
+        status_image.icon_name = "emblem-mixed";
         try {
             if (!device.connected) {
                 status_label.label = _("Connecting…");
@@ -227,7 +227,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         } catch (Error e) {
             critical (e.message);
             status_label.label = _("Unable to Connect");
-            status_image.icon_name = "user-busy";
+            status_image.icon_name = "emblem-error";
         }
 
         spinner.active = false;
@@ -275,10 +275,10 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
 
         if (device.connected) {
             status_label.label = _("Connected");
-            status_image.icon_name = "user-available";
+            status_image.icon_name = "emblem-enabled";
         } else {
             status_label.label = _("Not Connected");
-            status_image.icon_name = "user-offline";
+            status_image.icon_name = "emblem-disabled";
         }
 
         icon_image.icon_name = device.icon == null ? DEFAULT_ICON : device.icon;
