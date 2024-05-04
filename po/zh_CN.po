@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 16:49+0000\n"
+"POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2022-12-10 05:25+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -320,23 +320,23 @@ msgstr "耳机"
 msgid "Connected"
 msgstr "已连接"
 
-#: src/Widgets/DisplayWidget.vala:76
+#: src/Widgets/DisplayWidget.vala:80
 msgid "Middle-click to turn Bluetooth off"
 msgstr "点按鼠标中键可关闭蓝牙"
 
-#: src/Widgets/DisplayWidget.vala:79
+#: src/Widgets/DisplayWidget.vala:83
 msgid "Bluetooth connected"
 msgstr "蓝牙已连接"
 
-#: src/Widgets/DisplayWidget.vala:82
+#: src/Widgets/DisplayWidget.vala:86
 msgid "Bluetooth is on"
 msgstr "蓝牙已打开"
 
-#: src/Widgets/DisplayWidget.vala:87
+#: src/Widgets/DisplayWidget.vala:91
 msgid "Bluetooth is off"
 msgstr "蓝牙已关闭"
 
-#: src/Widgets/DisplayWidget.vala:88
+#: src/Widgets/DisplayWidget.vala:92
 msgid "Middle-click to turn Bluetooth on"
 msgstr "点按鼠标中键可开启蓝牙"
 

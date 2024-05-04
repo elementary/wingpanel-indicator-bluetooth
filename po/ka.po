@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 16:49+0000\n"
+"POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2023-10-23 05:10+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/wingpanel/"
@@ -213,7 +213,8 @@ msgstr "მოწყობილობების პოვნა ვერ მ
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr "დარწმუნდით, რომ თქვენი მოწყობილობები ხილულია და მზადაა დაწყვილებისთვის."
+msgstr ""
+"დარწმუნდით, რომ თქვენი მოწყობილობები ხილულია და მზადაა დაწყვილებისთვის."
 
 #: ebt/Dialog/BtScan.vala:79
 msgid "Discovering"
@@ -325,23 +326,23 @@ msgstr "ყურსაცვამები"
 msgid "Connected"
 msgstr "დაკავშირებულია"
 
-#: src/Widgets/DisplayWidget.vala:76
+#: src/Widgets/DisplayWidget.vala:80
 msgid "Middle-click to turn Bluetooth off"
 msgstr "შუა-წკაპი ბლუთუზის გამოსართავად"
 
-#: src/Widgets/DisplayWidget.vala:79
+#: src/Widgets/DisplayWidget.vala:83
 msgid "Bluetooth connected"
 msgstr "ბლუთუზი დაკავშირებულია"
 
-#: src/Widgets/DisplayWidget.vala:82
+#: src/Widgets/DisplayWidget.vala:86
 msgid "Bluetooth is on"
 msgstr "ბლუთუზი ჩართულია"
 
-#: src/Widgets/DisplayWidget.vala:87
+#: src/Widgets/DisplayWidget.vala:91
 msgid "Bluetooth is off"
 msgstr "ბლუთუზი გამორთულია"
 
-#: src/Widgets/DisplayWidget.vala:88
+#: src/Widgets/DisplayWidget.vala:92
 msgid "Middle-click to turn Bluetooth on"
 msgstr "შუა-წკაპი ბლუთუზის ჩასართავად"
 

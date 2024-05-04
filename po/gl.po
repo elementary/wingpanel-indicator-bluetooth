@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 16:49+0000\n"
+"POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2019-09-07 10:22+0000\n"
 "Last-Translator: Daniel <riesp@protonmail.com>\n"
 "Language-Team: Galician <https://l10n.elementary.io/projects/wingpanel/"
@@ -329,29 +329,29 @@ msgstr ""
 msgid "Connected"
 msgstr "Conectado"
 
-#: src/Widgets/DisplayWidget.vala:76
+#: src/Widgets/DisplayWidget.vala:80
 msgid "Middle-click to turn Bluetooth off"
 msgstr ""
 
-#: src/Widgets/DisplayWidget.vala:79
+#: src/Widgets/DisplayWidget.vala:83
 #, fuzzy
 #| msgid "Not Connected"
 msgid "Bluetooth connected"
 msgstr "Non conectado"
 
-#: src/Widgets/DisplayWidget.vala:82
+#: src/Widgets/DisplayWidget.vala:86
 #, fuzzy
 #| msgid "Bluetooth"
 msgid "Bluetooth is on"
 msgstr "Bluetooth"
 
-#: src/Widgets/DisplayWidget.vala:87
+#: src/Widgets/DisplayWidget.vala:91
 #, fuzzy
 #| msgid "Bluetooth"
 msgid "Bluetooth is off"
 msgstr "Bluetooth"
 
-#: src/Widgets/DisplayWidget.vala:88
+#: src/Widgets/DisplayWidget.vala:92
 #, fuzzy
 #| msgid "Indicator for Bluetooth signal"
 msgid "Middle-click to turn Bluetooth on"

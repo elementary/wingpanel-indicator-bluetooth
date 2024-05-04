@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 16:49+0000\n"
+"POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2016-06-13 17:17+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -327,29 +327,29 @@ msgstr ""
 msgid "Connected"
 msgstr "Ühendatud"
 
-#: src/Widgets/DisplayWidget.vala:76
+#: src/Widgets/DisplayWidget.vala:80
 msgid "Middle-click to turn Bluetooth off"
 msgstr ""
 
-#: src/Widgets/DisplayWidget.vala:79
+#: src/Widgets/DisplayWidget.vala:83
 #, fuzzy
 #| msgid "Not Connected"
 msgid "Bluetooth connected"
 msgstr "Ühendus puudub"
 
-#: src/Widgets/DisplayWidget.vala:82
+#: src/Widgets/DisplayWidget.vala:86
 #, fuzzy
 #| msgid "Bluetooth"
 msgid "Bluetooth is on"
 msgstr "Bluetooth"
 
-#: src/Widgets/DisplayWidget.vala:87
+#: src/Widgets/DisplayWidget.vala:91
 #, fuzzy
 #| msgid "Bluetooth"
 msgid "Bluetooth is off"
 msgstr "Bluetooth"
 
-#: src/Widgets/DisplayWidget.vala:88
+#: src/Widgets/DisplayWidget.vala:92
 msgid "Middle-click to turn Bluetooth on"
 msgstr ""
 

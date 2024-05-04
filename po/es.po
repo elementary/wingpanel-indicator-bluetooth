@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-27 16:49+0000\n"
+"POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2021-06-21 11:11+0000\n"
 "Last-Translator: Alvaro <alvaroaraoz_92@hotmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
@@ -329,23 +329,23 @@ msgstr "Auriculares"
 msgid "Connected"
 msgstr "Conectado"
 
-#: src/Widgets/DisplayWidget.vala:76
+#: src/Widgets/DisplayWidget.vala:80
 msgid "Middle-click to turn Bluetooth off"
 msgstr "Pulse con el botón central del ratón para desactivar el Bluetooth"
 
-#: src/Widgets/DisplayWidget.vala:79
+#: src/Widgets/DisplayWidget.vala:83
 msgid "Bluetooth connected"
 msgstr "Bluetooth conectado"
 
-#: src/Widgets/DisplayWidget.vala:82
+#: src/Widgets/DisplayWidget.vala:86
 msgid "Bluetooth is on"
 msgstr "Bluetooth activado"
 
-#: src/Widgets/DisplayWidget.vala:87
+#: src/Widgets/DisplayWidget.vala:91
 msgid "Bluetooth is off"
 msgstr "Bluetooth desactivado"
 
-#: src/Widgets/DisplayWidget.vala:88
+#: src/Widgets/DisplayWidget.vala:92
 msgid "Middle-click to turn Bluetooth on"
 msgstr "Pulse con el botón central del ratón para activar el Bluetooth"
 
