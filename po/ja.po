@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
-"PO-Revision-Date: 2023-10-07 17:03+0000\n"
+"PO-Revision-Date: 2024-05-06 17:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: ebt/Application.vala:168
@@ -156,31 +156,31 @@ msgstr "<b>転送速度:</b> %s"
 #: ebt/Dialog/BtReceiver.vala:227
 #, c-format
 msgid "%s of %s received, time remaining %s"
-msgstr "%2$s 中 %1$s 受信済み、残り時間%3$s"
+msgstr "%2$s 中 %1$s 受信済み、残り時間 %3$s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:388
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] "%d秒"
+msgstr[0] "%d 秒"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:394
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] "%d分"
+msgstr[0] "%d 分"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:400
 #, c-format
 msgid "%u hour"
 msgid_plural "%u hours"
-msgstr[0] "%u時間"
+msgstr[0] "%u 時間"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:401
 #, c-format
 msgid "%u minute"
 msgid_plural "%u minutes"
-msgstr[0] "%u分"
+msgstr[0] "%u 分"
 
 #. /TRANSLATORS: For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:403
@@ -192,7 +192,7 @@ msgstr "%s%s"
 #, c-format
 msgid "approximately %d hour"
 msgid_plural "approximately %d hours"
-msgstr[0] "約%d時間"
+msgstr[0] "約 %d 時間"
 
 #: ebt/Dialog/BtScan.vala:41
 msgid "Bluetooth File Transfer"
@@ -282,7 +282,7 @@ msgstr "<b>送信元:</b> %s <b>送信先:</b> %s"
 #: ebt/Dialog/BtSender.vala:379
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr "(%2$i項目中%1$i項目目) %4$s 中 %3$s 送信済み、残り時間%5$s"
+msgstr "(%2$i 項目中 %1$i 項目目) %4$s 中 %3$s 送信済み、残り時間 %5$s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
