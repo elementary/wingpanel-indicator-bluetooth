@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
-"PO-Revision-Date: 2024-05-26 16:29+0000\n"
+"PO-Revision-Date: 2024-05-26 16:30+0000\n"
 "Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
@@ -222,47 +222,47 @@ msgstr "Buscando…"
 
 #: ebt/Dialog/BtScan.vala:189
 msgid "Available Devices"
-msgstr ""
+msgstr "Dispositivos disponibles"
 
 #: ebt/Dialog/BtSender.vala:67
 msgid "From"
-msgstr ""
+msgstr "Desde"
 
 #: ebt/Dialog/BtSender.vala:75
 msgid "To"
-msgstr ""
+msgstr "Hacia"
 
 #: ebt/Dialog/BtSender.vala:81
 msgid "Filename"
-msgstr ""
+msgstr "Archivo"
 
 #: ebt/Dialog/BtSender.vala:87
 msgid "Transfer rate"
-msgstr ""
+msgstr "Velocidad de transferencia"
 
 #: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:258
 #: ebt/Dialog/BtSender.vala:322
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ebt/Dialog/BtSender.vala:228
 #, c-format
 msgid "Trying to connect to %s…"
-msgstr ""
+msgstr "Tratando de establecer conexión con %s…"
 
 #: ebt/Dialog/BtSender.vala:246
 #, c-format
 msgid "Connecting to '%s' failed."
-msgstr ""
+msgstr "La conexión a '%s' falló."
 
 #: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
 #, c-format
 msgid "The transfer of '%s' failed."
-msgstr ""
+msgstr "La transferencia a '%s' falló."
 
 #: ebt/Dialog/BtSender.vala:251 ebt/Dialog/BtSender.vala:315
 msgid "The file has not been transferred"
-msgstr ""
+msgstr "El archivo no ha sido transferido"
 
 #: ebt/Dialog/BtSender.vala:259 ebt/Dialog/BtSender.vala:323
 msgid "Retry"
