@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2024-05-26 16:22+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
 "Language: es\n"
@@ -34,7 +34,7 @@ msgstr "<b>El archivo</b> %s <b>de tamaño</b> %s ya existe"
 
 #: ebt/Application.vala:276
 msgid "Incoming file"
-msgstr ""
+msgstr "Recibimiento de archivo"
 
 #: ebt/Application.vala:278
 #, c-format
