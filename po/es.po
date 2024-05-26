@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2024-05-27 01:27+0000\n"
-"Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
 "Language: es\n"
@@ -30,7 +30,7 @@ msgstr "Archivo rechazado"
 #: ebt/Application.vala:261
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr "<b>El archivo</b> %s <b>de tamaño</b> %s ya existe"
+msgstr "<b>Archivo</b> %s <b>Tamaño</b> %s ya existe"
 
 #: ebt/Application.vala:276
 msgid "Incoming file"
@@ -48,7 +48,7 @@ msgstr "Aceptar"
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:290
 msgid "Decline"
-msgstr "Rechazar"
+msgstr "Denegar"
 
 #: ebt/Application.vala:294
 msgid "Receiving file"
@@ -262,7 +262,7 @@ msgstr "La transferencia a '%s' falló."
 
 #: ebt/Dialog/BtSender.vala:251 ebt/Dialog/BtSender.vala:315
 msgid "The file has not been transferred"
-msgstr "El archivo no ha sido transferido"
+msgstr "El archivo no fue transferido"
 
 #: ebt/Dialog/BtSender.vala:259 ebt/Dialog/BtSender.vala:323
 msgid "Retry"
@@ -316,7 +316,7 @@ msgstr "Desconectando…"
 
 #: src/Widgets/Device.vala:229
 msgid "Unable to Connect"
-msgstr "No se puede conectar"
+msgstr "No se pudo conectar"
 
 #: src/Widgets/Device.vala:245
 msgid "Headphones"
@@ -328,7 +328,7 @@ msgstr "Conectado"
 
 #: src/Widgets/DisplayWidget.vala:80
 msgid "Middle-click to turn Bluetooth off"
-msgstr "Pulse con el botón central del ratón para desactivar el Bluetooth"
+msgstr "Haga clic con el botón central del ratón para desactivar el Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:83
 msgid "Bluetooth connected"
@@ -344,7 +344,7 @@ msgstr "Bluetooth desactivado"
 
 #: src/Widgets/DisplayWidget.vala:92
 msgid "Middle-click to turn Bluetooth on"
-msgstr "Pulse con el botón central del ratón para activar el Bluetooth"
+msgstr "Haga clic con el botón central del ratón para activar el Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:44
 msgid "Bluetooth"
