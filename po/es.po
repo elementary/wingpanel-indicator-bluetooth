@@ -201,7 +201,7 @@ msgstr[1] "aproximadamente %d horas"
 
 #: ebt/Dialog/BtScan.vala:41
 msgid "Bluetooth File Transfer"
-msgstr "Transferencia vía Bluetooth"
+msgstr "Transferencia mediante Bluetooth"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
