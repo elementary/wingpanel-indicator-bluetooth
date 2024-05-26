@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
-"PO-Revision-Date: 2024-05-26 16:26+0000\n"
-"Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
+"PO-Revision-Date: 2024-05-26 16:27+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
 "Language: es\n"
@@ -136,7 +136,7 @@ msgstr "%s <b>Archivo:</b> %s no recibido"
 
 #: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:358
 msgid "File transferred successfully"
-msgstr "Archivo transferido exitosamente"
+msgstr "Archivo transferido con éxito"
 
 #: ebt/Dialog/BtReceiver.vala:187
 #, c-format
