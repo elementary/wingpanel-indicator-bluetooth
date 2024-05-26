@@ -25,7 +25,7 @@ msgstr "Enviar archivos a dispositivo…"
 
 #: ebt/Application.vala:259
 msgid "Rejected file"
-msgstr ""
+msgstr "Archivo rechazado"
 
 #: ebt/Application.vala:261
 #, c-format
