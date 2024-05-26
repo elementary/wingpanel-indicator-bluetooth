@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
-"PO-Revision-Date: 2024-05-26 16:21+0000\n"
-"Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
+"PO-Revision-Date: 2024-05-26 16:22+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
 "Language: es\n"
@@ -30,7 +30,7 @@ msgstr "Archivo rechazado"
 #: ebt/Application.vala:261
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr "<b>Archivo:</b> %s <b>Tamaño: </b>%s ya existe"
+msgstr "<b>El archivo</b> %s <b>de tamaño</b> %s ya existe"
 
 #: ebt/Application.vala:276
 msgid "Incoming file"
