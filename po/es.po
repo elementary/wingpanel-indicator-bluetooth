@@ -52,7 +52,7 @@ msgstr "Rechazar"
 
 #: ebt/Application.vala:294
 msgid "Receiving file"
-msgstr ""
+msgstr "Recibiendo archivo"
 
 #: ebt/Application.vala:295
 #, c-format
