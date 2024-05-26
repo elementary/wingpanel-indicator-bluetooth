@@ -136,7 +136,7 @@ msgstr "%s <b>Archivo:</b> %s no recibido"
 
 #: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:358
 msgid "File transferred successfully"
-msgstr ""
+msgstr "Archivo transferido exitosamente"
 
 #: ebt/Dialog/BtReceiver.vala:187
 #, c-format
