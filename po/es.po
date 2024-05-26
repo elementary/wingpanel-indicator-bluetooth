@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2024-05-26 16:20+0000\n"
-"Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: ebt/Application.vala:168
 msgid "Send Files via Bluetooth"
-msgstr "Enviar archivos vía Bluetooth"
+msgstr "Enviar archivos mediante Bluetooth"
 
 #: ebt/Application.vala:170
 msgid "Send files to device…"
