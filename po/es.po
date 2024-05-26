@@ -57,7 +57,7 @@ msgstr "Recibiendo archivo"
 #: ebt/Application.vala:295
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s está enviando el archivo: %s tamaño: %s"
 
 #: ebt/Application.vala:311 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:242
