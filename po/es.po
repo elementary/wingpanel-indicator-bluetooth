@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
-"PO-Revision-Date: 2024-05-26 16:24+0000\n"
+"PO-Revision-Date: 2024-05-26 16:25+0000\n"
 "Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
@@ -105,13 +105,13 @@ msgstr "Cerrar"
 
 #: ebt/Dialog/BtReceiver.vala:113
 msgid "Reject"
-msgstr ""
+msgstr "Rechazar"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:225
 #: ebt/Dialog/BtSender.vala:285
 #, c-format
 msgid "<b>From</b>: %s"
-msgstr ""
+msgstr "<b>Desde</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:226
 #: ebt/Dialog/BtSender.vala:286
