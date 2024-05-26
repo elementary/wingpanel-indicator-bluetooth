@@ -101,7 +101,7 @@ msgstr "<b>Velocidad de transferencia:</b>"
 #: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
 #: ebt/Dialog/BtSender.vala:117
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #: ebt/Dialog/BtReceiver.vala:113
 msgid "Reject"
