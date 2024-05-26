@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2024-05-26 16:29+0000\n"
-"Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
 "Language: es\n"
@@ -214,8 +214,7 @@ msgstr "No se encontraron dispositivos"
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
 msgstr ""
-"Por favor asegúrate de que tus dispositivos están visibles y listos para "
-"emparejar."
+"Asegúrese de que sus dispositivos estén visibles y listos para emparejar."
 
 #: ebt/Dialog/BtScan.vala:79
 #, fuzzy
