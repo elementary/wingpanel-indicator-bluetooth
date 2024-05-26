@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2024-05-26 16:23+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Lucas Cesa <lucascesa455@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/es/>\n"
 "Language: es\n"
@@ -43,7 +43,7 @@ msgstr "<b>%s</b> está listo para enviar el archivo %s de tamaño %s"
 
 #: ebt/Application.vala:285
 msgid "Accept"
-msgstr ""
+msgstr "Aceptar"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:290
