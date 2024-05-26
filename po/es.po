@@ -48,7 +48,7 @@ msgstr "Aceptar"
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:290
 msgid "Decline"
-msgstr ""
+msgstr "Rechazar"
 
 #: ebt/Application.vala:294
 msgid "Receiving file"
