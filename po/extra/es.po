@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
-"PO-Revision-Date: 2024-05-27 01:28+0000\n"
-"Last-Translator: Reinaldo <reinaldoplacetas@tutanota.com>\n"
+"PO-Revision-Date: 2024-05-28 02:13+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/es/>\n"
 "Language: es\n"
@@ -51,7 +51,7 @@ msgstr "Mostrar información al posicionar el cursor"
 
 #: data/bluetooth.metainfo.xml.in:74
 msgid "Add a fallback device name for headphones"
-msgstr "Añadir un nombre por defecto para auriculares"
+msgstr "Añadir un nombre predeterminado para auriculares"
 
 #: data/bluetooth.metainfo.xml.in:81
 msgid "Prevent showing duplicate devices"
@@ -59,7 +59,7 @@ msgstr "Se evita mostrar dispositivos duplicados"
 
 #: data/bluetooth.metainfo.xml.in:82
 msgid "Fix animated icon when disabling Bluetooth"
-msgstr "Se arregló el icono animado al desactivar el Bluetooth"
+msgstr "Se corrigió el icono animado al desactivar el Bluetooth"
 
 #: data/bluetooth.metainfo.xml.in:83
 msgid "Use device type as fallback instead of \"(null)\""
