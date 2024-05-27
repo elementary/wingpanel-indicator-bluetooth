@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
 "PO-Revision-Date: 2024-05-27 01:28+0000\n"
-"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
+"Last-Translator: Reinaldo <reinaldoplacetas@tutanota.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/es/>\n"
 "Language: es\n"
@@ -51,7 +51,7 @@ msgstr "Mostrar información al posicionar el cursor"
 
 #: data/bluetooth.metainfo.xml.in:74
 msgid "Add a fallback device name for headphones"
-msgstr ""
+msgstr "Añadir un nombre por defecto para auriculares"
 
 #: data/bluetooth.metainfo.xml.in:81
 msgid "Prevent showing duplicate devices"
