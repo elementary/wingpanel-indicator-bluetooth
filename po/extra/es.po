@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
-"PO-Revision-Date: 2024-05-29 16:13+0000\n"
+"PO-Revision-Date: 2024-06-30 14:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5\n"
+"X-Generator: Weblate 5.5.5\n"
 
 #: data/bluetooth.metainfo.xml.in:12
 msgid "Bluetooth Indicator"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: data/bluetooth.metainfo.xml.in:73
 msgid "Add tooltip on hover"
-msgstr "Mostrar información al posicionar el cursor"
+msgstr "Se ha agregado una descripción emergente al pasar el puntero del ratón"
 
 #: data/bluetooth.metainfo.xml.in:74
 msgid "Add a fallback device name for headphones"
