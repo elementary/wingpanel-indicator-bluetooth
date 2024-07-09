@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:32+0000\n"
-"PO-Revision-Date: 2021-08-20 01:13+0000\n"
+"PO-Revision-Date: 2024-07-10 19:16+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/sk/>\n"
@@ -12,52 +12,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: ebt/Application.vala:168
 msgid "Send Files via Bluetooth"
-msgstr ""
+msgstr "Poslať súbory cez Bluetooth"
 
 #: ebt/Application.vala:170
 msgid "Send files to device…"
-msgstr ""
+msgstr "Poslať súbory do zariadenia…"
 
 #: ebt/Application.vala:259
 msgid "Rejected file"
-msgstr ""
+msgstr "Súbor odmietnutý"
 
 #: ebt/Application.vala:261
 #, c-format
 msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
+msgstr "<b>Súbor:</b> %s <b> Veľkosť: </b>%s už existuje"
 
 #: ebt/Application.vala:276
 msgid "Incoming file"
-msgstr ""
+msgstr "Prichádzajúci súbor"
 
 #: ebt/Application.vala:278
 #, c-format
 msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
+msgstr "<b>%s</b> je pripravené poslať súbor: %s veľkosť: %s"
 
 #: ebt/Application.vala:285
 msgid "Accept"
-msgstr ""
+msgstr "Prijať"
 
 #. /Translators response to refuse a file transfer
 #: ebt/Application.vala:290
 msgid "Decline"
-msgstr ""
+msgstr "Odmietnuť"
 
 #: ebt/Application.vala:294
 msgid "Receiving file"
-msgstr ""
+msgstr "Príjem súboru"
 
 #: ebt/Application.vala:295
 #, c-format
 msgid "%s is sending file: %s size: %s"
-msgstr ""
+msgstr "%s posiela súbor: %s veľkosť: %s"
 
 #: ebt/Application.vala:311 ebt/Dialog/DeviceRow.vala:127
 #: src/Widgets/Device.vala:242
@@ -96,209 +96,205 @@ msgstr "Telefón"
 
 #: ebt/Dialog/BtReceiver.vala:82
 msgid "<b>Transfer rate:</b>"
-msgstr ""
+msgstr "<b>Prenosová rýchlosť:</b>"
 
 #: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
 #: ebt/Dialog/BtSender.vala:117
 msgid "Close"
-msgstr ""
+msgstr "Zatvoriť"
 
 #: ebt/Dialog/BtReceiver.vala:113
 msgid "Reject"
-msgstr ""
+msgstr "Zamietnuť"
 
 #: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:225
 #: ebt/Dialog/BtSender.vala:285
 #, c-format
 msgid "<b>From</b>: %s"
-msgstr ""
+msgstr "<b>Od</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:226
 #: ebt/Dialog/BtSender.vala:286
 #, c-format
 msgid "<b>To</b>: %s"
-msgstr ""
+msgstr "<b>Do</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:295
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "<b>Filename</b>: %s"
-msgstr ""
+msgstr "<b>Názov súboru</b>: %s"
 
 #: ebt/Dialog/BtReceiver.vala:158
 msgid "File transfer failed"
-msgstr ""
+msgstr "Prenos súboru zlyhal"
 
 #: ebt/Dialog/BtReceiver.vala:159
 #, c-format
 msgid "%s <b>File:</b> %s not received"
-msgstr ""
+msgstr "%s <b>Súbor:</b> %s neprijatý"
 
 #: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:358
 msgid "File transferred successfully"
-msgstr ""
+msgstr "Súbor úspešne prenesený"
 
 #: ebt/Dialog/BtReceiver.vala:187
 #, c-format
 msgid "%s <b>Save to:</b> %s"
-msgstr ""
+msgstr "%s <b>Uložiť do:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:211
 #, c-format
 msgid "Receiving…  %s of %s"
-msgstr ""
+msgstr "Príjem…  %s z %s"
 
 #: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:377
 #, c-format
 msgid "<b>Transfer rate:</b> %s"
-msgstr ""
+msgstr "<b>Prenosová rýchlosť:</b> %s"
 
 #: ebt/Dialog/BtReceiver.vala:227
 #, c-format
 msgid "%s of %s received, time remaining %s"
-msgstr ""
+msgstr "%s z %s prijaté, zostávajúci čas %s"
 
 #: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:388
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d sekunda"
+msgstr[1] "%d sekundy"
+msgstr[2] "%d sekúnd"
 
 #: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:394
 #, c-format
 msgid "%d minute"
 msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%d minúta"
+msgstr[1] "%d minúty"
+msgstr[2] "%d minút"
 
 #: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:400
 #, c-format
 msgid "%u hour"
 msgid_plural "%u hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%u hodina"
+msgstr[1] "%u hodiny"
+msgstr[2] "%u hodín"
 
 #: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:401
 #, c-format
 msgid "%u minute"
 msgid_plural "%u minutes"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%u minúta"
+msgstr[1] "%u minúty"
+msgstr[2] "%u minút"
 
 #. /TRANSLATORS: For example "1 hour, 8 minutes".
 #: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:403
 #, c-format
 msgid "%s, %s"
-msgstr ""
+msgstr "%s, %s"
 
 #: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:406
 #, c-format
 msgid "approximately %d hour"
 msgid_plural "approximately %d hours"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "približne %d hodina"
+msgstr[1] "približne %d hodiny"
+msgstr[2] "približne %d hodín"
 
 #: ebt/Dialog/BtScan.vala:41
-#, fuzzy
-#| msgid "Bluetooth is on"
 msgid "Bluetooth File Transfer"
-msgstr "Bluetooth je zapnutý"
+msgstr "Prenos súborov cez Bluetooth"
 
 #: ebt/Dialog/BtScan.vala:49
 msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
+msgstr "Vyberte zariadenie Bluetooth pre prenos súborov"
 
 #: ebt/Dialog/BtScan.vala:57
 msgid "No Devices Found"
-msgstr ""
+msgstr "Neboli nájdené žiadne zariadenia"
 
 #: ebt/Dialog/BtScan.vala:58
 msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
+msgstr "Uistite sa, že vaše zariadenia sú viditeľné a pripravené na párovanie."
 
 #: ebt/Dialog/BtScan.vala:79
-#, fuzzy
-#| msgid "Disconnecting…"
 msgid "Discovering"
-msgstr "Odpájanie…"
+msgstr "Hľadanie"
 
 #: ebt/Dialog/BtScan.vala:189
 msgid "Available Devices"
-msgstr ""
+msgstr "Dostupné zariadenia"
 
 #: ebt/Dialog/BtSender.vala:67
 msgid "From"
-msgstr ""
+msgstr "Od"
 
 #: ebt/Dialog/BtSender.vala:75
 msgid "To"
-msgstr ""
+msgstr "Do"
 
 #: ebt/Dialog/BtSender.vala:81
 msgid "Filename"
-msgstr ""
+msgstr "Názov súboru"
 
 #: ebt/Dialog/BtSender.vala:87
 msgid "Transfer rate"
-msgstr ""
+msgstr "Prenosová rýchlosť"
 
 #: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:258
 #: ebt/Dialog/BtSender.vala:322
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušiť"
 
 #: ebt/Dialog/BtSender.vala:228
 #, c-format
 msgid "Trying to connect to %s…"
-msgstr ""
+msgstr "Prebieha snaha o pripojenie k %s…"
 
 #: ebt/Dialog/BtSender.vala:246
 #, c-format
 msgid "Connecting to '%s' failed."
-msgstr ""
+msgstr "Pripájanie k ‚%s‘ zlyhalo."
 
 #: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
 #, c-format
 msgid "The transfer of '%s' failed."
-msgstr ""
+msgstr "Prenos ‚%s‘ zlyhal."
 
 #: ebt/Dialog/BtSender.vala:251 ebt/Dialog/BtSender.vala:315
 msgid "The file has not been transferred"
-msgstr ""
+msgstr "Súbor nebol prenesený"
 
 #: ebt/Dialog/BtSender.vala:259 ebt/Dialog/BtSender.vala:323
 msgid "Retry"
-msgstr ""
+msgstr "Skúsiť znova"
 
 #: ebt/Dialog/BtSender.vala:288
 #, c-format
 msgid "Waiting for acceptance on %s…"
-msgstr ""
+msgstr "Čaká sa na prijatie od %s…"
 
 #: ebt/Dialog/BtSender.vala:312
 #, c-format
 msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
+msgstr "Prenos bol prerušený alebo bol odmietnutý od %s."
 
 #: ebt/Dialog/BtSender.vala:359
 #, c-format
 msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr ""
+msgstr "<b>Od:</b> %s <b>Poslať do:</b> %s"
 
 #: ebt/Dialog/BtSender.vala:379
 #, c-format
 msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
+msgstr "(%i/%i) %s z %s poslané, zostávajúci čas %s"
 
 #: ebt/Dialog/DeviceRow.vala:74
 msgid "Send"
-msgstr ""
+msgstr "Odoslať"
 
 #: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
 msgid "Not Connected"
@@ -307,12 +303,12 @@ msgstr "Nepripojené"
 #: src/Widgets/Device.vala:170
 #, c-format
 msgid "Receiving… %s of %s"
-msgstr ""
+msgstr "Príjem… %s z %s"
 
 #: src/Widgets/Device.vala:174
 #, c-format
 msgid "Sending… %s of %s"
-msgstr ""
+msgstr "Odosielanie… %s z %s"
 
 #: src/Widgets/Device.vala:221
 msgid "Connecting…"
