@@ -63,6 +63,5 @@ shared_module(
 
 subdir('data')
 subdir('po')
-subdir('ebt')
 
 gnome.post_install(glib_compile_schemas: true)
