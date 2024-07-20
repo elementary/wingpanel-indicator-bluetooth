@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:32+0000\n"
+"POT-Creation-Date: 2024-07-20 00:10+0000\n"
 "PO-Revision-Date: 2017-02-09 14:54+0000\n"
 "Last-Translator: Christos Iatropoulos <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,289 +13,14 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 "X-Generator: Launchpad (build 18335)\n"
 
-#: ebt/Application.vala:168
-msgid "Send Files via Bluetooth"
-msgstr ""
+#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
+msgid "Not Connected"
+msgstr "Μη Συνδεδεμένη"
 
-#: ebt/Application.vala:170
-msgid "Send files to device…"
-msgstr ""
-
-#: ebt/Application.vala:259
-msgid "Rejected file"
-msgstr ""
-
-#: ebt/Application.vala:261
-#, c-format
-msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr ""
-
-#: ebt/Application.vala:276
-msgid "Incoming file"
-msgstr ""
-
-#: ebt/Application.vala:278
-#, c-format
-msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr ""
-
-#: ebt/Application.vala:285
-msgid "Accept"
-msgstr ""
-
-#. /Translators response to refuse a file transfer
-#: ebt/Application.vala:290
-msgid "Decline"
-msgstr ""
-
-#: ebt/Application.vala:294
-msgid "Receiving file"
-msgstr ""
-
-#: ebt/Application.vala:295
-#, c-format
-msgid "%s is sending file: %s size: %s"
-msgstr ""
-
-#: ebt/Application.vala:311 ebt/Dialog/DeviceRow.vala:127
-#: src/Widgets/Device.vala:242
-msgid "Speaker"
-msgstr ""
-
-#: ebt/Application.vala:313 ebt/Dialog/DeviceRow.vala:129
-#: src/Widgets/Device.vala:248
-msgid "Controller"
-msgstr ""
-
-#: ebt/Application.vala:315 ebt/Dialog/DeviceRow.vala:131
-#: src/Widgets/Device.vala:251
-msgid "Keyboard"
-msgstr ""
-
-#: ebt/Application.vala:317 ebt/Dialog/DeviceRow.vala:133
-#: src/Widgets/Device.vala:254
-msgid "Mouse"
-msgstr ""
-
-#: ebt/Application.vala:319 ebt/Dialog/DeviceRow.vala:135
-#: src/Widgets/Device.vala:257
-msgid "Tablet"
-msgstr ""
-
-#: ebt/Application.vala:321 ebt/Dialog/DeviceRow.vala:137
-#: src/Widgets/Device.vala:260
-msgid "Touchpad"
-msgstr ""
-
-#: ebt/Application.vala:323 ebt/Dialog/DeviceRow.vala:139
-#: src/Widgets/Device.vala:263
-msgid "Phone"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:82
-msgid "<b>Transfer rate:</b>"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
-#: ebt/Dialog/BtSender.vala:117
-msgid "Close"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:113
-msgid "Reject"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:225
-#: ebt/Dialog/BtSender.vala:285
-#, c-format
-msgid "<b>From</b>: %s"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:226
-#: ebt/Dialog/BtSender.vala:286
-#, c-format
-msgid "<b>To</b>: %s"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:295
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "<b>Filename</b>: %s"
 msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:158
-msgid "File transfer failed"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:159
-#, c-format
-msgid "%s <b>File:</b> %s not received"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:358
-msgid "File transferred successfully"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:187
-#, c-format
-msgid "%s <b>Save to:</b> %s"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:211
-#, c-format
-msgid "Receiving…  %s of %s"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:377
-#, c-format
-msgid "<b>Transfer rate:</b> %s"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:227
-#, c-format
-msgid "%s of %s received, time remaining %s"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:388
-#, c-format
-msgid "%d second"
-msgid_plural "%d seconds"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:394
-#, c-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:400
-#, c-format
-msgid "%u hour"
-msgid_plural "%u hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:401
-#, c-format
-msgid "%u minute"
-msgid_plural "%u minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#. /TRANSLATORS: For example "1 hour, 8 minutes".
-#: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:403
-#, c-format
-msgid "%s, %s"
-msgstr ""
-
-#: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:406
-#, c-format
-msgid "approximately %d hour"
-msgid_plural "approximately %d hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ebt/Dialog/BtScan.vala:41
-#, fuzzy
-#| msgid "Bluetooth"
-msgid "Bluetooth File Transfer"
-msgstr "Bluetooth"
-
-#: ebt/Dialog/BtScan.vala:49
-msgid "Select a Bluetooth Device Below to Send Files"
-msgstr ""
-
-#: ebt/Dialog/BtScan.vala:57
-msgid "No Devices Found"
-msgstr ""
-
-#: ebt/Dialog/BtScan.vala:58
-msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
-
-#: ebt/Dialog/BtScan.vala:79
-#, fuzzy
-#| msgid "Disconnecting…"
-msgid "Discovering"
-msgstr "Γίνεται αποσύνδεση..."
-
-#: ebt/Dialog/BtScan.vala:189
-msgid "Available Devices"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:67
-msgid "From"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:75
-msgid "To"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:81
-msgid "Filename"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:87
-msgid "Transfer rate"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:258
-#: ebt/Dialog/BtSender.vala:322
-msgid "Cancel"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:228
-#, c-format
-msgid "Trying to connect to %s…"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:246
-#, c-format
-msgid "Connecting to '%s' failed."
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
-#, c-format
-msgid "The transfer of '%s' failed."
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:251 ebt/Dialog/BtSender.vala:315
-msgid "The file has not been transferred"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:259 ebt/Dialog/BtSender.vala:323
-msgid "Retry"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:288
-#, c-format
-msgid "Waiting for acceptance on %s…"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:312
-#, c-format
-msgid "The transfer was interrupted or it was declined by %s."
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:359
-#, c-format
-msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr ""
-
-#: ebt/Dialog/BtSender.vala:379
-#, c-format
-msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr ""
-
-#: ebt/Dialog/DeviceRow.vala:74
-msgid "Send"
-msgstr ""
-
-#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
-msgid "Not Connected"
-msgstr "Μη Συνδεδεμένη"
 
 #: src/Widgets/Device.vala:170
 #, c-format
@@ -319,8 +44,36 @@ msgstr "Γίνεται αποσύνδεση..."
 msgid "Unable to Connect"
 msgstr "Αδυναμία σύνδεσης"
 
+#: src/Widgets/Device.vala:242
+msgid "Speaker"
+msgstr ""
+
 #: src/Widgets/Device.vala:245
 msgid "Headphones"
+msgstr ""
+
+#: src/Widgets/Device.vala:248
+msgid "Controller"
+msgstr ""
+
+#: src/Widgets/Device.vala:251
+msgid "Keyboard"
+msgstr ""
+
+#: src/Widgets/Device.vala:254
+msgid "Mouse"
+msgstr ""
+
+#: src/Widgets/Device.vala:257
+msgid "Tablet"
+msgstr ""
+
+#: src/Widgets/Device.vala:260
+msgid "Touchpad"
+msgstr ""
+
+#: src/Widgets/Device.vala:263
+msgid "Phone"
 msgstr ""
 
 #: src/Widgets/Device.vala:277
@@ -360,6 +113,16 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:71
 msgid "Bluetooth Settings…"
 msgstr "Ρυθμίσεις bluetooth..."
+
+#, fuzzy
+#~| msgid "Bluetooth"
+#~ msgid "Bluetooth File Transfer"
+#~ msgstr "Bluetooth"
+
+#, fuzzy
+#~| msgid "Disconnecting…"
+#~ msgid "Discovering"
+#~ msgstr "Γίνεται αποσύνδεση..."
 
 #, fuzzy
 #~| msgid "bluetooth"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:32+0000\n"
+"POT-Creation-Date: 2024-07-20 00:10+0000\n"
 "PO-Revision-Date: 2023-02-18 14:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -15,285 +15,14 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: ebt/Application.vala:168
-msgid "Send Files via Bluetooth"
-msgstr "Send Files via Bluetooth"
+#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
+msgid "Not Connected"
+msgstr "Not Connected"
 
-#: ebt/Application.vala:170
-msgid "Send files to device…"
-msgstr "Send files to device…"
-
-#: ebt/Application.vala:259
-msgid "Rejected file"
-msgstr "Rejected file"
-
-#: ebt/Application.vala:261
-#, c-format
-msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr "<b>File:</b> %s <b>Size: </b>%s already exists"
-
-#: ebt/Application.vala:276
-msgid "Incoming file"
-msgstr "Incoming file"
-
-#: ebt/Application.vala:278
-#, c-format
-msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr "<b>%s</b> is ready to send file: %s size: %s"
-
-#: ebt/Application.vala:285
-msgid "Accept"
-msgstr "Accept"
-
-#. /Translators response to refuse a file transfer
-#: ebt/Application.vala:290
-msgid "Decline"
-msgstr "Decline"
-
-#: ebt/Application.vala:294
-msgid "Receiving file"
-msgstr "Receiving file"
-
-#: ebt/Application.vala:295
-#, c-format
-msgid "%s is sending file: %s size: %s"
-msgstr "%s is sending file: %s size: %s"
-
-#: ebt/Application.vala:311 ebt/Dialog/DeviceRow.vala:127
-#: src/Widgets/Device.vala:242
-msgid "Speaker"
-msgstr "Speaker"
-
-#: ebt/Application.vala:313 ebt/Dialog/DeviceRow.vala:129
-#: src/Widgets/Device.vala:248
-msgid "Controller"
-msgstr "Controller"
-
-#: ebt/Application.vala:315 ebt/Dialog/DeviceRow.vala:131
-#: src/Widgets/Device.vala:251
-msgid "Keyboard"
-msgstr "Keyboard"
-
-#: ebt/Application.vala:317 ebt/Dialog/DeviceRow.vala:133
-#: src/Widgets/Device.vala:254
-msgid "Mouse"
-msgstr "Mouse"
-
-#: ebt/Application.vala:319 ebt/Dialog/DeviceRow.vala:135
-#: src/Widgets/Device.vala:257
-msgid "Tablet"
-msgstr "Tablet"
-
-#: ebt/Application.vala:321 ebt/Dialog/DeviceRow.vala:137
-#: src/Widgets/Device.vala:260
-msgid "Touchpad"
-msgstr "Touchpad"
-
-#: ebt/Application.vala:323 ebt/Dialog/DeviceRow.vala:139
-#: src/Widgets/Device.vala:263
-msgid "Phone"
-msgstr "Phone"
-
-#: ebt/Dialog/BtReceiver.vala:82
-msgid "<b>Transfer rate:</b>"
-msgstr "<b>Transfer rate:</b>"
-
-#: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
-#: ebt/Dialog/BtSender.vala:117
-msgid "Close"
-msgstr "Close"
-
-#: ebt/Dialog/BtReceiver.vala:113
-msgid "Reject"
-msgstr "Reject"
-
-#: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:225
-#: ebt/Dialog/BtSender.vala:285
-#, c-format
-msgid "<b>From</b>: %s"
-msgstr "<b>From</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:226
-#: ebt/Dialog/BtSender.vala:286
-#, c-format
-msgid "<b>To</b>: %s"
-msgstr "<b>To</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:295
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "<b>Filename</b>: %s"
 msgstr "<b>Filename</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:158
-msgid "File transfer failed"
-msgstr "File transfer failed"
-
-#: ebt/Dialog/BtReceiver.vala:159
-#, c-format
-msgid "%s <b>File:</b> %s not received"
-msgstr "%s <b>File:</b> %s not received"
-
-#: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:358
-msgid "File transferred successfully"
-msgstr "File transferred successfully"
-
-#: ebt/Dialog/BtReceiver.vala:187
-#, c-format
-msgid "%s <b>Save to:</b> %s"
-msgstr "%s <b>Save to:</b> %s"
-
-#: ebt/Dialog/BtReceiver.vala:211
-#, c-format
-msgid "Receiving…  %s of %s"
-msgstr "Receiving…  %s of %s"
-
-#: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:377
-#, c-format
-msgid "<b>Transfer rate:</b> %s"
-msgstr "<b>Transfer rate:</b> %s"
-
-#: ebt/Dialog/BtReceiver.vala:227
-#, c-format
-msgid "%s of %s received, time remaining %s"
-msgstr "%s of %s received, time remaining %s"
-
-#: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:388
-#, c-format
-msgid "%d second"
-msgid_plural "%d seconds"
-msgstr[0] "%d second"
-msgstr[1] "%d seconds"
-
-#: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:394
-#, c-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] "%d minute"
-msgstr[1] "%d minutes"
-
-#: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:400
-#, c-format
-msgid "%u hour"
-msgid_plural "%u hours"
-msgstr[0] "%u hour"
-msgstr[1] "%u hours"
-
-#: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:401
-#, c-format
-msgid "%u minute"
-msgid_plural "%u minutes"
-msgstr[0] "%u minute"
-msgstr[1] "%u minutes"
-
-#. /TRANSLATORS: For example "1 hour, 8 minutes".
-#: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:403
-#, c-format
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:406
-#, c-format
-msgid "approximately %d hour"
-msgid_plural "approximately %d hours"
-msgstr[0] "approximately %d hour"
-msgstr[1] "approximately %d hours"
-
-#: ebt/Dialog/BtScan.vala:41
-msgid "Bluetooth File Transfer"
-msgstr "Bluetooth File Transfer"
-
-#: ebt/Dialog/BtScan.vala:49
-msgid "Select a Bluetooth Device Below to Send Files"
-msgstr "Select a Bluetooth Device Below to Send Files"
-
-#: ebt/Dialog/BtScan.vala:57
-msgid "No Devices Found"
-msgstr "No Devices Found"
-
-#: ebt/Dialog/BtScan.vala:58
-msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr "Please ensure that your devices are visible and ready for pairing."
-
-#: ebt/Dialog/BtScan.vala:79
-msgid "Discovering"
-msgstr "Discovering"
-
-#: ebt/Dialog/BtScan.vala:189
-msgid "Available Devices"
-msgstr "Available Devices"
-
-#: ebt/Dialog/BtSender.vala:67
-msgid "From"
-msgstr "From"
-
-#: ebt/Dialog/BtSender.vala:75
-msgid "To"
-msgstr "To"
-
-#: ebt/Dialog/BtSender.vala:81
-msgid "Filename"
-msgstr "Filename"
-
-#: ebt/Dialog/BtSender.vala:87
-msgid "Transfer rate"
-msgstr "Transfer rate"
-
-#: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:258
-#: ebt/Dialog/BtSender.vala:322
-msgid "Cancel"
-msgstr "Cancel"
-
-#: ebt/Dialog/BtSender.vala:228
-#, c-format
-msgid "Trying to connect to %s…"
-msgstr "Trying to connect to %s…"
-
-#: ebt/Dialog/BtSender.vala:246
-#, c-format
-msgid "Connecting to '%s' failed."
-msgstr "Connecting to '%s' failed."
-
-#: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
-#, c-format
-msgid "The transfer of '%s' failed."
-msgstr "The transfer of '%s' failed."
-
-#: ebt/Dialog/BtSender.vala:251 ebt/Dialog/BtSender.vala:315
-msgid "The file has not been transferred"
-msgstr "The file has not been transferred"
-
-#: ebt/Dialog/BtSender.vala:259 ebt/Dialog/BtSender.vala:323
-msgid "Retry"
-msgstr "Retry"
-
-#: ebt/Dialog/BtSender.vala:288
-#, c-format
-msgid "Waiting for acceptance on %s…"
-msgstr "Waiting for acceptance on %s…"
-
-#: ebt/Dialog/BtSender.vala:312
-#, c-format
-msgid "The transfer was interrupted or it was declined by %s."
-msgstr "The transfer was interrupted or it was declined by %s."
-
-#: ebt/Dialog/BtSender.vala:359
-#, c-format
-msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr "<b>From:</b> %s <b>Send to:</b> %s"
-
-#: ebt/Dialog/BtSender.vala:379
-#, c-format
-msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr "(%i/%i) %s of %s sent, time remaining %s"
-
-#: ebt/Dialog/DeviceRow.vala:74
-msgid "Send"
-msgstr "Send"
-
-#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
-msgid "Not Connected"
-msgstr "Not Connected"
 
 #: src/Widgets/Device.vala:170
 #, c-format
@@ -317,9 +46,37 @@ msgstr "Disconnecting…"
 msgid "Unable to Connect"
 msgstr "Unable to Connect"
 
+#: src/Widgets/Device.vala:242
+msgid "Speaker"
+msgstr "Speaker"
+
 #: src/Widgets/Device.vala:245
 msgid "Headphones"
 msgstr "Headphones"
+
+#: src/Widgets/Device.vala:248
+msgid "Controller"
+msgstr "Controller"
+
+#: src/Widgets/Device.vala:251
+msgid "Keyboard"
+msgstr "Keyboard"
+
+#: src/Widgets/Device.vala:254
+msgid "Mouse"
+msgstr "Mouse"
+
+#: src/Widgets/Device.vala:257
+msgid "Tablet"
+msgstr "Tablet"
+
+#: src/Widgets/Device.vala:260
+msgid "Touchpad"
+msgstr "Touchpad"
+
+#: src/Widgets/Device.vala:263
+msgid "Phone"
+msgstr "Phone"
 
 #: src/Widgets/Device.vala:277
 msgid "Connected"
@@ -352,6 +109,186 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:71
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth Settings…"
+
+#~ msgid "Send Files via Bluetooth"
+#~ msgstr "Send Files via Bluetooth"
+
+#~ msgid "Send files to device…"
+#~ msgstr "Send files to device…"
+
+#~ msgid "Rejected file"
+#~ msgstr "Rejected file"
+
+#, c-format
+#~ msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
+#~ msgstr "<b>File:</b> %s <b>Size: </b>%s already exists"
+
+#~ msgid "Incoming file"
+#~ msgstr "Incoming file"
+
+#, c-format
+#~ msgid "<b>%s</b> is ready to send file: %s size: %s"
+#~ msgstr "<b>%s</b> is ready to send file: %s size: %s"
+
+#~ msgid "Accept"
+#~ msgstr "Accept"
+
+#~ msgid "Decline"
+#~ msgstr "Decline"
+
+#~ msgid "Receiving file"
+#~ msgstr "Receiving file"
+
+#, c-format
+#~ msgid "%s is sending file: %s size: %s"
+#~ msgstr "%s is sending file: %s size: %s"
+
+#~ msgid "<b>Transfer rate:</b>"
+#~ msgstr "<b>Transfer rate:</b>"
+
+#~ msgid "Close"
+#~ msgstr "Close"
+
+#~ msgid "Reject"
+#~ msgstr "Reject"
+
+#, c-format
+#~ msgid "<b>From</b>: %s"
+#~ msgstr "<b>From</b>: %s"
+
+#, c-format
+#~ msgid "<b>To</b>: %s"
+#~ msgstr "<b>To</b>: %s"
+
+#~ msgid "File transfer failed"
+#~ msgstr "File transfer failed"
+
+#, c-format
+#~ msgid "%s <b>File:</b> %s not received"
+#~ msgstr "%s <b>File:</b> %s not received"
+
+#~ msgid "File transferred successfully"
+#~ msgstr "File transferred successfully"
+
+#, c-format
+#~ msgid "%s <b>Save to:</b> %s"
+#~ msgstr "%s <b>Save to:</b> %s"
+
+#, c-format
+#~ msgid "Receiving…  %s of %s"
+#~ msgstr "Receiving…  %s of %s"
+
+#, c-format
+#~ msgid "<b>Transfer rate:</b> %s"
+#~ msgstr "<b>Transfer rate:</b> %s"
+
+#, c-format
+#~ msgid "%s of %s received, time remaining %s"
+#~ msgstr "%s of %s received, time remaining %s"
+
+#, c-format
+#~ msgid "%d second"
+#~ msgid_plural "%d seconds"
+#~ msgstr[0] "%d second"
+#~ msgstr[1] "%d seconds"
+
+#, c-format
+#~ msgid "%d minute"
+#~ msgid_plural "%d minutes"
+#~ msgstr[0] "%d minute"
+#~ msgstr[1] "%d minutes"
+
+#, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u hour"
+#~ msgstr[1] "%u hours"
+
+#, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minute"
+#~ msgstr[1] "%u minutes"
+
+#, c-format
+#~ msgid "%s, %s"
+#~ msgstr "%s, %s"
+
+#, c-format
+#~ msgid "approximately %d hour"
+#~ msgid_plural "approximately %d hours"
+#~ msgstr[0] "approximately %d hour"
+#~ msgstr[1] "approximately %d hours"
+
+#~ msgid "Bluetooth File Transfer"
+#~ msgstr "Bluetooth File Transfer"
+
+#~ msgid "Select a Bluetooth Device Below to Send Files"
+#~ msgstr "Select a Bluetooth Device Below to Send Files"
+
+#~ msgid "No Devices Found"
+#~ msgstr "No Devices Found"
+
+#~ msgid "Please ensure that your devices are visible and ready for pairing."
+#~ msgstr "Please ensure that your devices are visible and ready for pairing."
+
+#~ msgid "Discovering"
+#~ msgstr "Discovering"
+
+#~ msgid "Available Devices"
+#~ msgstr "Available Devices"
+
+#~ msgid "From"
+#~ msgstr "From"
+
+#~ msgid "To"
+#~ msgstr "To"
+
+#~ msgid "Filename"
+#~ msgstr "Filename"
+
+#~ msgid "Transfer rate"
+#~ msgstr "Transfer rate"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancel"
+
+#, c-format
+#~ msgid "Trying to connect to %s…"
+#~ msgstr "Trying to connect to %s…"
+
+#, c-format
+#~ msgid "Connecting to '%s' failed."
+#~ msgstr "Connecting to '%s' failed."
+
+#, c-format
+#~ msgid "The transfer of '%s' failed."
+#~ msgstr "The transfer of '%s' failed."
+
+#~ msgid "The file has not been transferred"
+#~ msgstr "The file has not been transferred"
+
+#~ msgid "Retry"
+#~ msgstr "Retry"
+
+#, c-format
+#~ msgid "Waiting for acceptance on %s…"
+#~ msgstr "Waiting for acceptance on %s…"
+
+#, c-format
+#~ msgid "The transfer was interrupted or it was declined by %s."
+#~ msgstr "The transfer was interrupted or it was declined by %s."
+
+#, c-format
+#~ msgid "<b>From:</b> %s <b>Send to:</b> %s"
+#~ msgstr "<b>From:</b> %s <b>Send to:</b> %s"
+
+#, c-format
+#~ msgid "(%i/%i) %s of %s sent, time remaining %s"
+#~ msgstr "(%i/%i) %s of %s sent, time remaining %s"
+
+#~ msgid "Send"
+#~ msgstr "Send"
 
 #, fuzzy
 #~| msgid "bluetooth"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:32+0000\n"
+"POT-Creation-Date: 2024-07-20 00:10+0000\n"
 "PO-Revision-Date: 2023-10-23 05:10+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,286 +15,14 @@ msgstr ""
 "X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: ebt/Application.vala:168
-msgid "Send Files via Bluetooth"
-msgstr "ფაილების ბლუთუზით გადაცემა"
+#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
+msgid "Not Connected"
+msgstr "დაკავშირებული არაა"
 
-#: ebt/Application.vala:170
-msgid "Send files to device…"
-msgstr "ფაილების გაგზავნა მოწყობილობაზე…"
-
-#: ebt/Application.vala:259
-msgid "Rejected file"
-msgstr "ფაილი უარყოფილია"
-
-#: ebt/Application.vala:261
-#, c-format
-msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr "<b>ფაილი:</b> %s <b>ზომა: </b>%s უკვე არსებობს"
-
-#: ebt/Application.vala:276
-msgid "Incoming file"
-msgstr "შემომავალი ფაილი"
-
-#: ebt/Application.vala:278
-#, c-format
-msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr "<b>%s</b> მზადაა გააგზავნოს ფაილი: %s ზომა: %s"
-
-#: ebt/Application.vala:285
-msgid "Accept"
-msgstr "დასტური"
-
-#. /Translators response to refuse a file transfer
-#: ebt/Application.vala:290
-msgid "Decline"
-msgstr "უარყოფა"
-
-#: ebt/Application.vala:294
-msgid "Receiving file"
-msgstr "ფალის მიღება"
-
-#: ebt/Application.vala:295
-#, c-format
-msgid "%s is sending file: %s size: %s"
-msgstr "%s აგზავნის ფაილს: %s ზომა: %s"
-
-#: ebt/Application.vala:311 ebt/Dialog/DeviceRow.vala:127
-#: src/Widgets/Device.vala:242
-msgid "Speaker"
-msgstr "დინამიკი"
-
-#: ebt/Application.vala:313 ebt/Dialog/DeviceRow.vala:129
-#: src/Widgets/Device.vala:248
-msgid "Controller"
-msgstr "კონტროლერი"
-
-#: ebt/Application.vala:315 ebt/Dialog/DeviceRow.vala:131
-#: src/Widgets/Device.vala:251
-msgid "Keyboard"
-msgstr "კლავიატურა"
-
-#: ebt/Application.vala:317 ebt/Dialog/DeviceRow.vala:133
-#: src/Widgets/Device.vala:254
-msgid "Mouse"
-msgstr "თაგუნა"
-
-#: ebt/Application.vala:319 ebt/Dialog/DeviceRow.vala:135
-#: src/Widgets/Device.vala:257
-msgid "Tablet"
-msgstr "ტაბლეტი"
-
-#: ebt/Application.vala:321 ebt/Dialog/DeviceRow.vala:137
-#: src/Widgets/Device.vala:260
-msgid "Touchpad"
-msgstr "თაჩპედი"
-
-#: ebt/Application.vala:323 ebt/Dialog/DeviceRow.vala:139
-#: src/Widgets/Device.vala:263
-msgid "Phone"
-msgstr "ტელეფონი"
-
-#: ebt/Dialog/BtReceiver.vala:82
-msgid "<b>Transfer rate:</b>"
-msgstr "<b>გადაცემის სიჩქარე:</b>"
-
-#: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
-#: ebt/Dialog/BtSender.vala:117
-msgid "Close"
-msgstr "დაკეტვა"
-
-#: ebt/Dialog/BtReceiver.vala:113
-msgid "Reject"
-msgstr "უარყოფა"
-
-#: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:225
-#: ebt/Dialog/BtSender.vala:285
-#, c-format
-msgid "<b>From</b>: %s"
-msgstr "<b>ვისგან</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:226
-#: ebt/Dialog/BtSender.vala:286
-#, c-format
-msgid "<b>To</b>: %s"
-msgstr "<b>ვის</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:295
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "<b>Filename</b>: %s"
 msgstr "<b>ფაილის სახელი</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:158
-msgid "File transfer failed"
-msgstr "ფაილის მიმოცვლის შეცდომა"
-
-#: ebt/Dialog/BtReceiver.vala:159
-#, c-format
-msgid "%s <b>File:</b> %s not received"
-msgstr "%s <b>ფაილი:</b> %s მიღებული არაა"
-
-#: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:358
-msgid "File transferred successfully"
-msgstr "ფაილის გადაცემა წარმატებულია"
-
-#: ebt/Dialog/BtReceiver.vala:187
-#, c-format
-msgid "%s <b>Save to:</b> %s"
-msgstr "%s <b>შენახვა:</b> %s"
-
-#: ebt/Dialog/BtReceiver.vala:211
-#, c-format
-msgid "Receiving…  %s of %s"
-msgstr "მიღება…  %s %s-დან"
-
-#: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:377
-#, c-format
-msgid "<b>Transfer rate:</b> %s"
-msgstr "<b>გადაცემის სიჩქარე:</b> %s"
-
-#: ebt/Dialog/BtReceiver.vala:227
-#, c-format
-msgid "%s of %s received, time remaining %s"
-msgstr "%s-დან %s მიღებულია. დარჩენილი დრო %s"
-
-#: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:388
-#, c-format
-msgid "%d second"
-msgid_plural "%d seconds"
-msgstr[0] "%d წამი"
-msgstr[1] "%d წამი"
-
-#: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:394
-#, c-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] "%d წუთი"
-msgstr[1] "%d წუთი"
-
-#: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:400
-#, c-format
-msgid "%u hour"
-msgid_plural "%u hours"
-msgstr[0] "%u საათი"
-msgstr[1] "%u საათი"
-
-#: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:401
-#, c-format
-msgid "%u minute"
-msgid_plural "%u minutes"
-msgstr[0] "%u minute"
-msgstr[1] "%u minutes"
-
-#. /TRANSLATORS: For example "1 hour, 8 minutes".
-#: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:403
-#, c-format
-msgid "%s, %s"
-msgstr "%s, %s"
-
-#: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:406
-#, c-format
-msgid "approximately %d hour"
-msgid_plural "approximately %d hours"
-msgstr[0] "დაახლოებით %d საათი"
-msgstr[1] "დაახლოებით %d საათი"
-
-#: ebt/Dialog/BtScan.vala:41
-msgid "Bluetooth File Transfer"
-msgstr "ბლუთუზით ფაილის გადაცემა"
-
-#: ebt/Dialog/BtScan.vala:49
-msgid "Select a Bluetooth Device Below to Send Files"
-msgstr "ფაილების გასაგზავნად ქვემო სიიდან აირჩიეთ ბლუთუზის მოწყობილობა"
-
-#: ebt/Dialog/BtScan.vala:57
-msgid "No Devices Found"
-msgstr "მოწყობილობების პოვნა ვერ მოხერხდა"
-
-#: ebt/Dialog/BtScan.vala:58
-msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
-"დარწმუნდით, რომ თქვენი მოწყობილობები ხილულია და მზადაა დაწყვილებისთვის."
-
-#: ebt/Dialog/BtScan.vala:79
-msgid "Discovering"
-msgstr "აღმოჩენა"
-
-#: ebt/Dialog/BtScan.vala:189
-msgid "Available Devices"
-msgstr "ხელმისაწვდომი მოწყობილობები"
-
-#: ebt/Dialog/BtSender.vala:67
-msgid "From"
-msgstr "საიდან"
-
-#: ebt/Dialog/BtSender.vala:75
-msgid "To"
-msgstr "ვის"
-
-#: ebt/Dialog/BtSender.vala:81
-msgid "Filename"
-msgstr "ფაილის სახელი"
-
-#: ebt/Dialog/BtSender.vala:87
-msgid "Transfer rate"
-msgstr "გადაცემის სიჩქარე"
-
-#: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:258
-#: ebt/Dialog/BtSender.vala:322
-msgid "Cancel"
-msgstr "გაუქმება"
-
-#: ebt/Dialog/BtSender.vala:228
-#, c-format
-msgid "Trying to connect to %s…"
-msgstr "%s-სთან მიერთების მცდელობა…"
-
-#: ebt/Dialog/BtSender.vala:246
-#, c-format
-msgid "Connecting to '%s' failed."
-msgstr "'%s'-სთან მიერთების შეცდომა."
-
-#: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
-#, c-format
-msgid "The transfer of '%s' failed."
-msgstr "'%s'-ის გადაცემის სეცდომა."
-
-#: ebt/Dialog/BtSender.vala:251 ebt/Dialog/BtSender.vala:315
-msgid "The file has not been transferred"
-msgstr "ფაილი გადაცემული არაა"
-
-#: ebt/Dialog/BtSender.vala:259 ebt/Dialog/BtSender.vala:323
-msgid "Retry"
-msgstr "გამეორება"
-
-#: ebt/Dialog/BtSender.vala:288
-#, c-format
-msgid "Waiting for acceptance on %s…"
-msgstr "%s-ის დასტურის მოლოდინი…"
-
-#: ebt/Dialog/BtSender.vala:312
-#, c-format
-msgid "The transfer was interrupted or it was declined by %s."
-msgstr "გადაცემა შეწყვეტილია ან უარყოფილია %s-ის მიერ."
-
-#: ebt/Dialog/BtSender.vala:359
-#, c-format
-msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr "<b>საიდან:</b> %s <b>გაგზავნა:</b> %s"
-
-#: ebt/Dialog/BtSender.vala:379
-#, c-format
-msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr "(%i/%i) %s / %s გაგზავნილია. დარჩენილია დრო %s"
-
-#: ebt/Dialog/DeviceRow.vala:74
-msgid "Send"
-msgstr "გაგზავნა"
-
-#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
-msgid "Not Connected"
-msgstr "დაკავშირებული არაა"
 
 #: src/Widgets/Device.vala:170
 #, c-format
@@ -318,9 +46,37 @@ msgstr "გათიშვა…"
 msgid "Unable to Connect"
 msgstr "დაკავშირება შეუძლებელია"
 
+#: src/Widgets/Device.vala:242
+msgid "Speaker"
+msgstr "დინამიკი"
+
 #: src/Widgets/Device.vala:245
 msgid "Headphones"
 msgstr "ყურსაცვამები"
+
+#: src/Widgets/Device.vala:248
+msgid "Controller"
+msgstr "კონტროლერი"
+
+#: src/Widgets/Device.vala:251
+msgid "Keyboard"
+msgstr "კლავიატურა"
+
+#: src/Widgets/Device.vala:254
+msgid "Mouse"
+msgstr "თაგუნა"
+
+#: src/Widgets/Device.vala:257
+msgid "Tablet"
+msgstr "ტაბლეტი"
+
+#: src/Widgets/Device.vala:260
+msgid "Touchpad"
+msgstr "თაჩპედი"
+
+#: src/Widgets/Device.vala:263
+msgid "Phone"
+msgstr "ტელეფონი"
 
 #: src/Widgets/Device.vala:277
 msgid "Connected"
@@ -353,3 +109,184 @@ msgstr "ბლუთუზი"
 #: src/Widgets/PopoverWidget.vala:71
 msgid "Bluetooth Settings…"
 msgstr "ბლუთუზის მორგება…"
+
+#~ msgid "Send Files via Bluetooth"
+#~ msgstr "ფაილების ბლუთუზით გადაცემა"
+
+#~ msgid "Send files to device…"
+#~ msgstr "ფაილების გაგზავნა მოწყობილობაზე…"
+
+#~ msgid "Rejected file"
+#~ msgstr "ფაილი უარყოფილია"
+
+#, c-format
+#~ msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
+#~ msgstr "<b>ფაილი:</b> %s <b>ზომა: </b>%s უკვე არსებობს"
+
+#~ msgid "Incoming file"
+#~ msgstr "შემომავალი ფაილი"
+
+#, c-format
+#~ msgid "<b>%s</b> is ready to send file: %s size: %s"
+#~ msgstr "<b>%s</b> მზადაა გააგზავნოს ფაილი: %s ზომა: %s"
+
+#~ msgid "Accept"
+#~ msgstr "დასტური"
+
+#~ msgid "Decline"
+#~ msgstr "უარყოფა"
+
+#~ msgid "Receiving file"
+#~ msgstr "ფალის მიღება"
+
+#, c-format
+#~ msgid "%s is sending file: %s size: %s"
+#~ msgstr "%s აგზავნის ფაილს: %s ზომა: %s"
+
+#~ msgid "<b>Transfer rate:</b>"
+#~ msgstr "<b>გადაცემის სიჩქარე:</b>"
+
+#~ msgid "Close"
+#~ msgstr "დაკეტვა"
+
+#~ msgid "Reject"
+#~ msgstr "უარყოფა"
+
+#, c-format
+#~ msgid "<b>From</b>: %s"
+#~ msgstr "<b>ვისგან</b>: %s"
+
+#, c-format
+#~ msgid "<b>To</b>: %s"
+#~ msgstr "<b>ვის</b>: %s"
+
+#~ msgid "File transfer failed"
+#~ msgstr "ფაილის მიმოცვლის შეცდომა"
+
+#, c-format
+#~ msgid "%s <b>File:</b> %s not received"
+#~ msgstr "%s <b>ფაილი:</b> %s მიღებული არაა"
+
+#~ msgid "File transferred successfully"
+#~ msgstr "ფაილის გადაცემა წარმატებულია"
+
+#, c-format
+#~ msgid "%s <b>Save to:</b> %s"
+#~ msgstr "%s <b>შენახვა:</b> %s"
+
+#, c-format
+#~ msgid "Receiving…  %s of %s"
+#~ msgstr "მიღება…  %s %s-დან"
+
+#, c-format
+#~ msgid "<b>Transfer rate:</b> %s"
+#~ msgstr "<b>გადაცემის სიჩქარე:</b> %s"
+
+#, c-format
+#~ msgid "%s of %s received, time remaining %s"
+#~ msgstr "%s-დან %s მიღებულია. დარჩენილი დრო %s"
+
+#, c-format
+#~ msgid "%d second"
+#~ msgid_plural "%d seconds"
+#~ msgstr[0] "%d წამი"
+#~ msgstr[1] "%d წამი"
+
+#, c-format
+#~ msgid "%d minute"
+#~ msgid_plural "%d minutes"
+#~ msgstr[0] "%d წუთი"
+#~ msgstr[1] "%d წუთი"
+
+#, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u საათი"
+#~ msgstr[1] "%u საათი"
+
+#, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u minute"
+#~ msgstr[1] "%u minutes"
+
+#, c-format
+#~ msgid "%s, %s"
+#~ msgstr "%s, %s"
+
+#, c-format
+#~ msgid "approximately %d hour"
+#~ msgid_plural "approximately %d hours"
+#~ msgstr[0] "დაახლოებით %d საათი"
+#~ msgstr[1] "დაახლოებით %d საათი"
+
+#~ msgid "Bluetooth File Transfer"
+#~ msgstr "ბლუთუზით ფაილის გადაცემა"
+
+#~ msgid "Select a Bluetooth Device Below to Send Files"
+#~ msgstr "ფაილების გასაგზავნად ქვემო სიიდან აირჩიეთ ბლუთუზის მოწყობილობა"
+
+#~ msgid "No Devices Found"
+#~ msgstr "მოწყობილობების პოვნა ვერ მოხერხდა"
+
+#~ msgid "Please ensure that your devices are visible and ready for pairing."
+#~ msgstr ""
+#~ "დარწმუნდით, რომ თქვენი მოწყობილობები ხილულია და მზადაა დაწყვილებისთვის."
+
+#~ msgid "Discovering"
+#~ msgstr "აღმოჩენა"
+
+#~ msgid "Available Devices"
+#~ msgstr "ხელმისაწვდომი მოწყობილობები"
+
+#~ msgid "From"
+#~ msgstr "საიდან"
+
+#~ msgid "To"
+#~ msgstr "ვის"
+
+#~ msgid "Filename"
+#~ msgstr "ფაილის სახელი"
+
+#~ msgid "Transfer rate"
+#~ msgstr "გადაცემის სიჩქარე"
+
+#~ msgid "Cancel"
+#~ msgstr "გაუქმება"
+
+#, c-format
+#~ msgid "Trying to connect to %s…"
+#~ msgstr "%s-სთან მიერთების მცდელობა…"
+
+#, c-format
+#~ msgid "Connecting to '%s' failed."
+#~ msgstr "'%s'-სთან მიერთების შეცდომა."
+
+#, c-format
+#~ msgid "The transfer of '%s' failed."
+#~ msgstr "'%s'-ის გადაცემის სეცდომა."
+
+#~ msgid "The file has not been transferred"
+#~ msgstr "ფაილი გადაცემული არაა"
+
+#~ msgid "Retry"
+#~ msgstr "გამეორება"
+
+#, c-format
+#~ msgid "Waiting for acceptance on %s…"
+#~ msgstr "%s-ის დასტურის მოლოდინი…"
+
+#, c-format
+#~ msgid "The transfer was interrupted or it was declined by %s."
+#~ msgstr "გადაცემა შეწყვეტილია ან უარყოფილია %s-ის მიერ."
+
+#, c-format
+#~ msgid "<b>From:</b> %s <b>Send to:</b> %s"
+#~ msgstr "<b>საიდან:</b> %s <b>გაგზავნა:</b> %s"
+
+#, c-format
+#~ msgid "(%i/%i) %s of %s sent, time remaining %s"
+#~ msgstr "(%i/%i) %s / %s გაგზავნილია. დარჩენილია დრო %s"
+
+#~ msgid "Send"
+#~ msgstr "გაგზავნა"

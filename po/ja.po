@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:32+0000\n"
+"POT-Creation-Date: 2024-07-20 00:10+0000\n"
 "PO-Revision-Date: 2024-05-06 17:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,282 +15,14 @@ msgstr ""
 "X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
-#: ebt/Application.vala:168
-msgid "Send Files via Bluetooth"
-msgstr "Bluetooth 経由でファイルを送信"
+#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
+msgid "Not Connected"
+msgstr "接続していません"
 
-#: ebt/Application.vala:170
-msgid "Send files to device…"
-msgstr "デバイスにファイルを送信します…"
-
-#: ebt/Application.vala:259
-msgid "Rejected file"
-msgstr "ファイルを拒否しました"
-
-#: ebt/Application.vala:261
-#, c-format
-msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
-msgstr "<b>ファイル:</b> %s <b>サイズ: </b>%s はすでに存在します"
-
-#: ebt/Application.vala:276
-msgid "Incoming file"
-msgstr "ファイルを受信できます"
-
-#: ebt/Application.vala:278
-#, c-format
-msgid "<b>%s</b> is ready to send file: %s size: %s"
-msgstr "<b>%s</b> がファイルを送信しようとしています: %s サイズ: %s"
-
-#: ebt/Application.vala:285
-msgid "Accept"
-msgstr "受信"
-
-#. /Translators response to refuse a file transfer
-#: ebt/Application.vala:290
-msgid "Decline"
-msgstr "拒否"
-
-#: ebt/Application.vala:294
-msgid "Receiving file"
-msgstr "ファイルを受信しています"
-
-#: ebt/Application.vala:295
-#, c-format
-msgid "%s is sending file: %s size: %s"
-msgstr "%s がファイルを送信しています: %s サイズ: %s"
-
-#: ebt/Application.vala:311 ebt/Dialog/DeviceRow.vala:127
-#: src/Widgets/Device.vala:242
-msgid "Speaker"
-msgstr "スピーカー"
-
-#: ebt/Application.vala:313 ebt/Dialog/DeviceRow.vala:129
-#: src/Widgets/Device.vala:248
-msgid "Controller"
-msgstr "コントローラー"
-
-#: ebt/Application.vala:315 ebt/Dialog/DeviceRow.vala:131
-#: src/Widgets/Device.vala:251
-msgid "Keyboard"
-msgstr "キーボード"
-
-#: ebt/Application.vala:317 ebt/Dialog/DeviceRow.vala:133
-#: src/Widgets/Device.vala:254
-msgid "Mouse"
-msgstr "マウス"
-
-#: ebt/Application.vala:319 ebt/Dialog/DeviceRow.vala:135
-#: src/Widgets/Device.vala:257
-msgid "Tablet"
-msgstr "タブレット"
-
-#: ebt/Application.vala:321 ebt/Dialog/DeviceRow.vala:137
-#: src/Widgets/Device.vala:260
-msgid "Touchpad"
-msgstr "タッチパッド"
-
-#: ebt/Application.vala:323 ebt/Dialog/DeviceRow.vala:139
-#: src/Widgets/Device.vala:263
-msgid "Phone"
-msgstr "電話"
-
-#: ebt/Dialog/BtReceiver.vala:82
-msgid "<b>Transfer rate:</b>"
-msgstr "<b>転送速度:</b>"
-
-#: ebt/Dialog/BtReceiver.vala:112 ebt/Dialog/BtScan.vala:109
-#: ebt/Dialog/BtSender.vala:117
-msgid "Close"
-msgstr "閉じる"
-
-#: ebt/Dialog/BtReceiver.vala:113
-msgid "Reject"
-msgstr "拒否"
-
-#: ebt/Dialog/BtReceiver.vala:137 ebt/Dialog/BtSender.vala:225
-#: ebt/Dialog/BtSender.vala:285
-#, c-format
-msgid "<b>From</b>: %s"
-msgstr "<b>送信元</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:138 ebt/Dialog/BtSender.vala:226
-#: ebt/Dialog/BtSender.vala:286
-#, c-format
-msgid "<b>To</b>: %s"
-msgstr "<b>送信先</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:148 ebt/Dialog/BtSender.vala:295
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "<b>Filename</b>: %s"
 msgstr "<b>ファイル名</b>: %s"
-
-#: ebt/Dialog/BtReceiver.vala:158
-msgid "File transfer failed"
-msgstr "ファイルの転送に失敗しました"
-
-#: ebt/Dialog/BtReceiver.vala:159
-#, c-format
-msgid "%s <b>File:</b> %s not received"
-msgstr "%s <b>ファイル:</b> %s を受信できませんでした"
-
-#: ebt/Dialog/BtReceiver.vala:186 ebt/Dialog/BtSender.vala:358
-msgid "File transferred successfully"
-msgstr "ファイルの転送に成功しました"
-
-#: ebt/Dialog/BtReceiver.vala:187
-#, c-format
-msgid "%s <b>Save to:</b> %s"
-msgstr "%s <b>保存先:</b> %s"
-
-#: ebt/Dialog/BtReceiver.vala:211
-#, c-format
-msgid "Receiving…  %s of %s"
-msgstr "受信しています… %2$s 中 %1$s"
-
-#: ebt/Dialog/BtReceiver.vala:225 ebt/Dialog/BtSender.vala:377
-#, c-format
-msgid "<b>Transfer rate:</b> %s"
-msgstr "<b>転送速度:</b> %s"
-
-#: ebt/Dialog/BtReceiver.vala:227
-#, c-format
-msgid "%s of %s received, time remaining %s"
-msgstr "%2$s 中 %1$s 受信済み、残り時間 %3$s"
-
-#: ebt/Dialog/BtReceiver.vala:236 ebt/Dialog/BtSender.vala:388
-#, c-format
-msgid "%d second"
-msgid_plural "%d seconds"
-msgstr[0] "%d 秒"
-
-#: ebt/Dialog/BtReceiver.vala:242 ebt/Dialog/BtSender.vala:394
-#, c-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] "%d 分"
-
-#: ebt/Dialog/BtReceiver.vala:248 ebt/Dialog/BtSender.vala:400
-#, c-format
-msgid "%u hour"
-msgid_plural "%u hours"
-msgstr[0] "%u 時間"
-
-#: ebt/Dialog/BtReceiver.vala:249 ebt/Dialog/BtSender.vala:401
-#, c-format
-msgid "%u minute"
-msgid_plural "%u minutes"
-msgstr[0] "%u 分"
-
-#. /TRANSLATORS: For example "1 hour, 8 minutes".
-#: ebt/Dialog/BtReceiver.vala:251 ebt/Dialog/BtSender.vala:403
-#, c-format
-msgid "%s, %s"
-msgstr "%s%s"
-
-#: ebt/Dialog/BtReceiver.vala:254 ebt/Dialog/BtSender.vala:406
-#, c-format
-msgid "approximately %d hour"
-msgid_plural "approximately %d hours"
-msgstr[0] "約 %d 時間"
-
-#: ebt/Dialog/BtScan.vala:41
-msgid "Bluetooth File Transfer"
-msgstr "Bluetooth ファイル転送"
-
-#: ebt/Dialog/BtScan.vala:49
-msgid "Select a Bluetooth Device Below to Send Files"
-msgstr "以下から、ファイル送信先の Bluetooth デバイスを選択してください"
-
-#: ebt/Dialog/BtScan.vala:57
-msgid "No Devices Found"
-msgstr "デバイスが見つかりません"
-
-#: ebt/Dialog/BtScan.vala:58
-msgid "Please ensure that your devices are visible and ready for pairing."
-msgstr ""
-"お使いのデバイスが検出可能で、ペアリングの準備ができているか確認してくださ"
-"い。"
-
-#: ebt/Dialog/BtScan.vala:79
-msgid "Discovering"
-msgstr "探しています"
-
-#: ebt/Dialog/BtScan.vala:189
-msgid "Available Devices"
-msgstr "利用可能なデバイス"
-
-#: ebt/Dialog/BtSender.vala:67
-msgid "From"
-msgstr "送信元"
-
-#: ebt/Dialog/BtSender.vala:75
-msgid "To"
-msgstr "送信先"
-
-#: ebt/Dialog/BtSender.vala:81
-msgid "Filename"
-msgstr "ファイル名"
-
-#: ebt/Dialog/BtSender.vala:87
-msgid "Transfer rate"
-msgstr "転送速度"
-
-#: ebt/Dialog/BtSender.vala:118 ebt/Dialog/BtSender.vala:258
-#: ebt/Dialog/BtSender.vala:322
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: ebt/Dialog/BtSender.vala:228
-#, c-format
-msgid "Trying to connect to %s…"
-msgstr "%s に接続しようとしています…"
-
-#: ebt/Dialog/BtSender.vala:246
-#, c-format
-msgid "Connecting to '%s' failed."
-msgstr "'%s' への接続に失敗しました。"
-
-#: ebt/Dialog/BtSender.vala:248 ebt/Dialog/BtSender.vala:310
-#, c-format
-msgid "The transfer of '%s' failed."
-msgstr "'%s' の転送に失敗しました。"
-
-#: ebt/Dialog/BtSender.vala:251 ebt/Dialog/BtSender.vala:315
-msgid "The file has not been transferred"
-msgstr "ファイルは転送されていません"
-
-#: ebt/Dialog/BtSender.vala:259 ebt/Dialog/BtSender.vala:323
-msgid "Retry"
-msgstr "再試行"
-
-#: ebt/Dialog/BtSender.vala:288
-#, c-format
-msgid "Waiting for acceptance on %s…"
-msgstr "%s の受信許可待ちをしています…"
-
-#: ebt/Dialog/BtSender.vala:312
-#, c-format
-msgid "The transfer was interrupted or it was declined by %s."
-msgstr "転送は中断されたか、%s が受信を拒否しました。"
-
-#: ebt/Dialog/BtSender.vala:359
-#, c-format
-msgid "<b>From:</b> %s <b>Send to:</b> %s"
-msgstr "<b>送信元:</b> %s <b>送信先:</b> %s"
-
-#: ebt/Dialog/BtSender.vala:379
-#, c-format
-msgid "(%i/%i) %s of %s sent, time remaining %s"
-msgstr "(%2$i 項目中 %1$i 項目目) %4$s 中 %3$s 送信済み、残り時間 %5$s"
-
-#: ebt/Dialog/DeviceRow.vala:74
-msgid "Send"
-msgstr "送信"
-
-#: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
-msgid "Not Connected"
-msgstr "接続していません"
 
 #: src/Widgets/Device.vala:170
 #, c-format
@@ -314,9 +46,37 @@ msgstr "切断しています…"
 msgid "Unable to Connect"
 msgstr "接続できません"
 
+#: src/Widgets/Device.vala:242
+msgid "Speaker"
+msgstr "スピーカー"
+
 #: src/Widgets/Device.vala:245
 msgid "Headphones"
 msgstr "ヘッドフォン"
+
+#: src/Widgets/Device.vala:248
+msgid "Controller"
+msgstr "コントローラー"
+
+#: src/Widgets/Device.vala:251
+msgid "Keyboard"
+msgstr "キーボード"
+
+#: src/Widgets/Device.vala:254
+msgid "Mouse"
+msgstr "マウス"
+
+#: src/Widgets/Device.vala:257
+msgid "Tablet"
+msgstr "タブレット"
+
+#: src/Widgets/Device.vala:260
+msgid "Touchpad"
+msgstr "タッチパッド"
+
+#: src/Widgets/Device.vala:263
+msgid "Phone"
+msgstr "電話"
 
 #: src/Widgets/Device.vala:277
 msgid "Connected"
@@ -349,6 +109,183 @@ msgstr "Bluetooth"
 #: src/Widgets/PopoverWidget.vala:71
 msgid "Bluetooth Settings…"
 msgstr "Bluetooth の設定…"
+
+#~ msgid "Send Files via Bluetooth"
+#~ msgstr "Bluetooth 経由でファイルを送信"
+
+#~ msgid "Send files to device…"
+#~ msgstr "デバイスにファイルを送信します…"
+
+#~ msgid "Rejected file"
+#~ msgstr "ファイルを拒否しました"
+
+#, c-format
+#~ msgid "<b>File:</b> %s <b>Size: </b>%s already exists"
+#~ msgstr "<b>ファイル:</b> %s <b>サイズ: </b>%s はすでに存在します"
+
+#~ msgid "Incoming file"
+#~ msgstr "ファイルを受信できます"
+
+#, c-format
+#~ msgid "<b>%s</b> is ready to send file: %s size: %s"
+#~ msgstr "<b>%s</b> がファイルを送信しようとしています: %s サイズ: %s"
+
+#~ msgid "Accept"
+#~ msgstr "受信"
+
+#~ msgid "Decline"
+#~ msgstr "拒否"
+
+#~ msgid "Receiving file"
+#~ msgstr "ファイルを受信しています"
+
+#, c-format
+#~ msgid "%s is sending file: %s size: %s"
+#~ msgstr "%s がファイルを送信しています: %s サイズ: %s"
+
+#~ msgid "<b>Transfer rate:</b>"
+#~ msgstr "<b>転送速度:</b>"
+
+#~ msgid "Close"
+#~ msgstr "閉じる"
+
+#~ msgid "Reject"
+#~ msgstr "拒否"
+
+#, c-format
+#~ msgid "<b>From</b>: %s"
+#~ msgstr "<b>送信元</b>: %s"
+
+#, c-format
+#~ msgid "<b>To</b>: %s"
+#~ msgstr "<b>送信先</b>: %s"
+
+#~ msgid "File transfer failed"
+#~ msgstr "ファイルの転送に失敗しました"
+
+#, c-format
+#~ msgid "%s <b>File:</b> %s not received"
+#~ msgstr "%s <b>ファイル:</b> %s を受信できませんでした"
+
+#~ msgid "File transferred successfully"
+#~ msgstr "ファイルの転送に成功しました"
+
+#, c-format
+#~ msgid "%s <b>Save to:</b> %s"
+#~ msgstr "%s <b>保存先:</b> %s"
+
+#, c-format
+#~ msgid "Receiving…  %s of %s"
+#~ msgstr "受信しています… %2$s 中 %1$s"
+
+#, c-format
+#~ msgid "<b>Transfer rate:</b> %s"
+#~ msgstr "<b>転送速度:</b> %s"
+
+#, c-format
+#~ msgid "%s of %s received, time remaining %s"
+#~ msgstr "%2$s 中 %1$s 受信済み、残り時間 %3$s"
+
+#, c-format
+#~ msgid "%d second"
+#~ msgid_plural "%d seconds"
+#~ msgstr[0] "%d 秒"
+
+#, c-format
+#~ msgid "%d minute"
+#~ msgid_plural "%d minutes"
+#~ msgstr[0] "%d 分"
+
+#, c-format
+#~ msgid "%u hour"
+#~ msgid_plural "%u hours"
+#~ msgstr[0] "%u 時間"
+
+#, c-format
+#~ msgid "%u minute"
+#~ msgid_plural "%u minutes"
+#~ msgstr[0] "%u 分"
+
+#, c-format
+#~ msgid "%s, %s"
+#~ msgstr "%s%s"
+
+#, c-format
+#~ msgid "approximately %d hour"
+#~ msgid_plural "approximately %d hours"
+#~ msgstr[0] "約 %d 時間"
+
+#~ msgid "Bluetooth File Transfer"
+#~ msgstr "Bluetooth ファイル転送"
+
+#~ msgid "Select a Bluetooth Device Below to Send Files"
+#~ msgstr "以下から、ファイル送信先の Bluetooth デバイスを選択してください"
+
+#~ msgid "No Devices Found"
+#~ msgstr "デバイスが見つかりません"
+
+#~ msgid "Please ensure that your devices are visible and ready for pairing."
+#~ msgstr ""
+#~ "お使いのデバイスが検出可能で、ペアリングの準備ができているか確認してくださ"
+#~ "い。"
+
+#~ msgid "Discovering"
+#~ msgstr "探しています"
+
+#~ msgid "Available Devices"
+#~ msgstr "利用可能なデバイス"
+
+#~ msgid "From"
+#~ msgstr "送信元"
+
+#~ msgid "To"
+#~ msgstr "送信先"
+
+#~ msgid "Filename"
+#~ msgstr "ファイル名"
+
+#~ msgid "Transfer rate"
+#~ msgstr "転送速度"
+
+#~ msgid "Cancel"
+#~ msgstr "キャンセル"
+
+#, c-format
+#~ msgid "Trying to connect to %s…"
+#~ msgstr "%s に接続しようとしています…"
+
+#, c-format
+#~ msgid "Connecting to '%s' failed."
+#~ msgstr "'%s' への接続に失敗しました。"
+
+#, c-format
+#~ msgid "The transfer of '%s' failed."
+#~ msgstr "'%s' の転送に失敗しました。"
+
+#~ msgid "The file has not been transferred"
+#~ msgstr "ファイルは転送されていません"
+
+#~ msgid "Retry"
+#~ msgstr "再試行"
+
+#, c-format
+#~ msgid "Waiting for acceptance on %s…"
+#~ msgstr "%s の受信許可待ちをしています…"
+
+#, c-format
+#~ msgid "The transfer was interrupted or it was declined by %s."
+#~ msgstr "転送は中断されたか、%s が受信を拒否しました。"
+
+#, c-format
+#~ msgid "<b>From:</b> %s <b>Send to:</b> %s"
+#~ msgstr "<b>送信元:</b> %s <b>送信先:</b> %s"
+
+#, c-format
+#~ msgid "(%i/%i) %s of %s sent, time remaining %s"
+#~ msgstr "(%2$i 項目中 %1$i 項目目) %4$s 中 %3$s 送信済み、残り時間 %5$s"
+
+#~ msgid "Send"
+#~ msgstr "送信"
 
 #, fuzzy
 #~| msgid "bluetooth"
