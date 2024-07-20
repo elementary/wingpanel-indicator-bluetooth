@@ -1,14 +1,3 @@
-ebt/Application.vala
-ebt/Dialog/BtReceiver.vala
-ebt/Dialog/BtScan.vala
-ebt/Dialog/BtSender.vala
-ebt/Dialog/DeviceRow.vala
-ebt/Services/Adapter.vala
-ebt/Services/Device.vala
-ebt/Services/Manager.vala
-ebt/Services/ObexAgent.vala
-ebt/Services/Session.vala
-ebt/Services/Transfer.vala
 src/Indicator.vala
 src/Services/Adapter.vala
 src/Services/Device.vala
