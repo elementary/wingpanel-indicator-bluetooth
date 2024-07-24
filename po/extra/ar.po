@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-20 00:10+0000\n"
+"POT-Creation-Date: 2024-07-24 18:13+0000\n"
 "PO-Revision-Date: 2021-08-26 22:37+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/wingpanel/"
@@ -29,40 +29,36 @@ msgid "Connect and disconnect paired Bluetooth devices"
 msgstr "قم بالاتصال بأجهزة البلوتوث أو أيقاف الاتصال بها"
 
 #: data/bluetooth.metainfo.xml.in:36 data/bluetooth.metainfo.xml.in:48
-#: data/bluetooth.metainfo.xml.in:63
+#: data/bluetooth.metainfo.xml.in:60 data/bluetooth.metainfo.xml.in:75
 msgid "Minor updates:"
 msgstr "تحديثات طفيفة:"
 
 #: data/bluetooth.metainfo.xml.in:38 data/bluetooth.metainfo.xml.in:50
-#: data/bluetooth.metainfo.xml.in:66 data/bluetooth.metainfo.xml.in:75
-#: data/bluetooth.metainfo.xml.in:84 data/bluetooth.metainfo.xml.in:90
-#: data/bluetooth.metainfo.xml.in:96
+#: data/bluetooth.metainfo.xml.in:62 data/bluetooth.metainfo.xml.in:78
+#: data/bluetooth.metainfo.xml.in:87
 msgid "Updated translations"
 msgstr "تحديثات على الترجمة"
 
-#: data/bluetooth.metainfo.xml.in:65
+#: data/bluetooth.metainfo.xml.in:77
 msgid "Improve restoring Bluetooth state on restart and resuming from suspend"
 msgstr "تحسين إرجاع حالة البلوتوث بعد إعادة التشغيل أو الاستكمال بعد الإغلاق"
 
-#: data/bluetooth.metainfo.xml.in:73
+#: data/bluetooth.metainfo.xml.in:85
 msgid "Add tooltip on hover"
 msgstr "إضافة تلميح عند تمرير مؤشر الفأرة"
 
-#: data/bluetooth.metainfo.xml.in:74
+#: data/bluetooth.metainfo.xml.in:86
 msgid "Add a fallback device name for headphones"
 msgstr "إضافة بديل احتياطي لاسم الجهاز لسماعات الأذن"
 
-#: data/bluetooth.metainfo.xml.in:81
-msgid "Prevent showing duplicate devices"
-msgstr "منع إظهار الأجهزة المتكررة"
+#~ msgid "Prevent showing duplicate devices"
+#~ msgstr "منع إظهار الأجهزة المتكررة"
 
-#: data/bluetooth.metainfo.xml.in:82
-msgid "Fix animated icon when disabling Bluetooth"
-msgstr "إصلاح الأيقونة المتحركة عند تعطيل البلوتوث"
+#~ msgid "Fix animated icon when disabling Bluetooth"
+#~ msgstr "إصلاح الأيقونة المتحركة عند تعطيل البلوتوث"
 
-#: data/bluetooth.metainfo.xml.in:83
-msgid "Use device type as fallback instead of \"(null)\""
-msgstr "استخدام نوع الجهاز كاسم بديل احتياطي بدلاً من \"(null)\""
+#~ msgid "Use device type as fallback instead of \"(null)\""
+#~ msgstr "استخدام نوع الجهاز كاسم بديل احتياطي بدلاً من \"(null)\""
 
 #~ msgid "elementary, Inc."
 #~ msgstr "elementary, Inc."
