@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-24 18:13+0000\n"
-"PO-Revision-Date: 2020-02-23 00:08+0000\n"
-"Last-Translator: gkkulik <g.kulik@o2.pl>\n"
+"PO-Revision-Date: 2024-08-07 18:16+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/szl/>\n"
 "Language: szl\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
 msgid "Not Connected"
@@ -59,15 +59,15 @@ msgstr ""
 
 #: src/Widgets/Device.vala:251
 msgid "Keyboard"
-msgstr ""
+msgstr "Tastatura"
 
 #: src/Widgets/Device.vala:254
 msgid "Mouse"
-msgstr ""
+msgstr "Mysz"
 
 #: src/Widgets/Device.vala:257
 msgid "Tablet"
-msgstr ""
+msgstr "Tablet"
 
 #: src/Widgets/Device.vala:260
 msgid "Touchpad"
@@ -75,7 +75,7 @@ msgstr ""
 
 #: src/Widgets/Device.vala:263
 msgid "Phone"
-msgstr ""
+msgstr "Telefōn"
 
 #: src/Widgets/Device.vala:277
 msgid "Connected"
