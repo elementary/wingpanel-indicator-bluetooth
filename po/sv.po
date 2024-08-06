@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-24 18:13+0000\n"
-"PO-Revision-Date: 2016-07-16 08:38+0000\n"
-"Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2024-08-07 18:16+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: Swedish <https://l10n.elementary.io/projects/wingpanel/"
+"wingpanel-indicator-bluetooth/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
-"X-Generator: Launchpad (build 18335)\n"
 
 #: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
 msgid "Not Connected"
@@ -58,15 +60,15 @@ msgstr ""
 
 #: src/Widgets/Device.vala:251
 msgid "Keyboard"
-msgstr ""
+msgstr "Tangentbord"
 
 #: src/Widgets/Device.vala:254
 msgid "Mouse"
-msgstr ""
+msgstr "Mus"
 
 #: src/Widgets/Device.vala:257
 msgid "Tablet"
-msgstr ""
+msgstr "Surfplatta"
 
 #: src/Widgets/Device.vala:260
 msgid "Touchpad"
@@ -74,7 +76,7 @@ msgstr ""
 
 #: src/Widgets/Device.vala:263
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: src/Widgets/Device.vala:277
 msgid "Connected"
