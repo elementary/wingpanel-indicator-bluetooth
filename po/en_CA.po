@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-24 18:13+0000\n"
-"PO-Revision-Date: 2018-03-08 14:22+0000\n"
-"Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
-"Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
+"PO-Revision-Date: 2024-08-07 18:16+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: English (Canada) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/en_CA/>\n"
 "Language: en_CA\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
@@ -60,15 +60,15 @@ msgstr ""
 
 #: src/Widgets/Device.vala:251
 msgid "Keyboard"
-msgstr ""
+msgstr "Keyboard"
 
 #: src/Widgets/Device.vala:254
 msgid "Mouse"
-msgstr ""
+msgstr "Mouse"
 
 #: src/Widgets/Device.vala:257
 msgid "Tablet"
-msgstr ""
+msgstr "Tablet"
 
 #: src/Widgets/Device.vala:260
 msgid "Touchpad"
@@ -76,7 +76,7 @@ msgstr ""
 
 #: src/Widgets/Device.vala:263
 msgid "Phone"
-msgstr ""
+msgstr "Phone"
 
 #: src/Widgets/Device.vala:277
 msgid "Connected"
