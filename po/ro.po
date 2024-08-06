@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-24 18:13+0000\n"
-"PO-Revision-Date: 2017-04-08 10:46+0000\n"
-"Last-Translator: popvladaurel <popvladaurel@gmail.com>\n"
-"Language-Team: Romanian <http://weblate.elementary.io/projects/desktop/"
+"PO-Revision-Date: 2024-08-07 18:16+0000\n"
+"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Language-Team: Romanian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-bluetooth/ro/>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
@@ -61,11 +61,11 @@ msgstr ""
 
 #: src/Widgets/Device.vala:251
 msgid "Keyboard"
-msgstr ""
+msgstr "Tastatură"
 
 #: src/Widgets/Device.vala:254
 msgid "Mouse"
-msgstr ""
+msgstr "Cursor"
 
 #: src/Widgets/Device.vala:257
 msgid "Tablet"
@@ -77,7 +77,7 @@ msgstr ""
 
 #: src/Widgets/Device.vala:263
 msgid "Phone"
-msgstr ""
+msgstr "Telefon"
 
 #: src/Widgets/Device.vala:277
 msgid "Connected"
