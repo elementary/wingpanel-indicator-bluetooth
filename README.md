@@ -13,7 +13,7 @@ You'll need the following dependencies:
     libgranite-dev >= 6.0.0
     libnotify-dev
     libwingpanel-dev
-    meson
+    meson >= 0.58.0
     valac
 
 Run `meson` to configure the build environment and then `ninja` to build
