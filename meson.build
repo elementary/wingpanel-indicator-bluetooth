@@ -2,7 +2,7 @@ project(
     'bluetooth',
     'vala', 'c',
     version: '8.0.0',
-    meson_version : '>= 0.57'
+    meson_version : '>= 0.58'
 )
 
 gettext_name = meson.project_name() + '-indicator'
@@ -10,8 +10,8 @@ gnome = import('gnome')
 i18n = import('i18n')
 
 prefix = get_option('prefix')
-datadir = join_paths(prefix, get_option('datadir'))
-libdir = join_paths(prefix, get_option('libdir'))
+datadir = prefix / get_option('datadir')
+libdir = prefix / get_option('libdir')
 
 add_global_arguments('-DGETTEXT_PACKAGE="@0@"'.format(gettext_name), language:'c')
 
@@ -19,15 +19,15 @@ add_project_arguments('-DG_LOG_DOMAIN="io.elementary.wingpanel.bluetooth"', lang
 
 gresource = gnome.compile_resources(
     'gresource',
-    join_paths('data', 'gresource.xml'),
+    'data' / 'gresource.xml',
     source_dir: 'data'
 )
 
 wingpanel_dep = dependency('wingpanel')
-wingpanel_indicatorsdir = wingpanel_dep.get_pkgconfig_variable('indicatorsdir', define_variable: ['libdir', libdir])
+wingpanel_indicatorsdir = wingpanel_dep.get_variable('indicatorsdir', pkgconfig_define: ['libdir', libdir])
 
 config_data = configuration_data()
-config_data.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
+config_data.set_quoted('LOCALEDIR', prefix / get_option('localedir'))
 config_data.set_quoted('GETTEXT_PACKAGE', meson.project_name() + '-indicator')
 config_file = configure_file(
     input: 'src/Config.vala.in',
