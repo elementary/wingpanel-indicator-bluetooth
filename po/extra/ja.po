@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-24 18:13+0000\n"
-"PO-Revision-Date: 2022-04-09 01:03+0000\n"
+"PO-Revision-Date: 2024-12-12 05:36+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-bluetooth-extra/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.8.4\n"
 
 #: data/bluetooth.metainfo.xml.in:12
 msgid "Bluetooth Indicator"
@@ -30,7 +30,7 @@ msgstr "ペアリングした Bluetooth デバイスを接続したり切断し�
 #: data/bluetooth.metainfo.xml.in:36 data/bluetooth.metainfo.xml.in:48
 #: data/bluetooth.metainfo.xml.in:60 data/bluetooth.metainfo.xml.in:75
 msgid "Minor updates:"
-msgstr "そのほかのアップデート:"
+msgstr "マイナーアップデート:"
 
 #: data/bluetooth.metainfo.xml.in:38 data/bluetooth.metainfo.xml.in:50
 #: data/bluetooth.metainfo.xml.in:62 data/bluetooth.metainfo.xml.in:78
