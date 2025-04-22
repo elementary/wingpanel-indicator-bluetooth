@@ -3,16 +3,21 @@
 * SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
 */
 
-public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
+public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Bin {
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
 
     private Gtk.GestureMultiPress gesture_click;
+    private Gtk.Spinner spinner;
 
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
         Object (object_manager: object_manager);
     }
 
     construct {
+        spinner = new Gtk.Spinner ();
+
+        child = spinner;
+
         // Prevent a race that skips automatic resource loading
         // https://github.com/elementary/wingpanel-indicator-bluetooth/issues/203
         Gtk.IconTheme.get_default ().add_resource_path ("/org/elementary/wingpanel/icons");
@@ -22,8 +27,8 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
 
         Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        get_style_context ().add_class ("bluetooth-icon");
-        get_style_context ().add_class ("disabled");
+        spinner.get_style_context ().add_class ("bluetooth-icon");
+        spinner.get_style_context ().add_class ("disabled");
 
         object_manager.global_state_changed.connect ((state, connected) => {
             set_icon ();
@@ -62,18 +67,18 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
         string context;
 
         if (state) {
-            get_style_context ().remove_class ("disabled");
+            spinner.get_style_context ().remove_class ("disabled");
             context = _("Middle-click to turn Bluetooth off");
             if (connected) {
-                get_style_context ().add_class ("paired");
+                spinner.get_style_context ().add_class ("paired");
                 description = _("Bluetooth connected");
             } else {
-                get_style_context ().remove_class ("paired");
+                spinner.get_style_context ().remove_class ("paired");
                 description = _("Bluetooth is on");
             }
         } else {
-            get_style_context ().remove_class ("paired");
-            get_style_context ().add_class ("disabled");
+            spinner.get_style_context ().remove_class ("paired");
+            spinner.get_style_context ().add_class ("disabled");
             description = _("Bluetooth is off");
             context = _("Middle-click to turn Bluetooth on");
         }
