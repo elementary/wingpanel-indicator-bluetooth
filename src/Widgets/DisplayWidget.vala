@@ -3,14 +3,20 @@
 * SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
 */
 
-public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
+public class BluetoothIndicator.Widgets.DisplayWidget : Granite.Bin {
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
+
+    private Gtk.Spinner spinner;
 
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
         Object (object_manager: object_manager);
     }
 
     construct {
+        spinner = new Gtk.Spinner ();
+
+        child = spinner;
+
         // Prevent a race that skips automatic resource loading
         // https://github.com/elementary/wingpanel-indicator-bluetooth/issues/203
         Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/org/elementary/wingpanel/icons");
@@ -20,8 +26,8 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
 
         Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        add_css_class ("bluetooth-icon");
-        add_css_class ("disabled");
+        spinner.add_css_class ("bluetooth-icon");
+        spinner.add_css_class ("disabled");
 
         object_manager.global_state_changed.connect ((state, connected) => {
             set_icon ();
@@ -62,18 +68,18 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
         string context;
 
         if (state) {
-            remove_css_class ("disabled");
+            spinner.remove_css_class ("disabled");
             context = _("Middle-click to turn Bluetooth off");
             if (connected) {
-                add_css_class ("paired");
+                spinner.add_css_class ("paired");
                 description = _("Bluetooth connected");
             } else {
-                remove_css_class ("paired");
+                spinner.remove_css_class ("paired");
                 description = _("Bluetooth is on");
             }
         } else {
-            remove_css_class ("paired");
-            add_css_class ("disabled");
+            spinner.remove_css_class ("paired");
+            spinner.add_css_class ("disabled");
             description = _("Bluetooth is off");
             context = _("Middle-click to turn Bluetooth on");
         }
