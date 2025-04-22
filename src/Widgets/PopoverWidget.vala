@@ -1,19 +1,7 @@
-/*-
- * Copyright (c) 2015-2023 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Library General Public License as published by
- * the Free Software Foundation, either version 2.1 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Library General Public License for more details.
- *
- * You should have received a copy of the GNU Library General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+/*
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
+*/
 
 public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public signal void device_requested (BluetoothIndicator.Services.Device device);
@@ -39,7 +27,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     }
 
     construct {
-        orientation = Gtk.Orientation.VERTICAL;
+        orientation = VERTICAL;
 
         main_switch = new Granite.SwitchModelButton (_("Bluetooth")) {
             active = object_manager.get_global_state ()
@@ -49,23 +37,25 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         devices_list = new Gtk.ListBox ();
         devices_list.set_sort_func ((Gtk.ListBoxSortFunc) compare_rows);
 
-        var scroll_box = new Gtk.ScrolledWindow (null, null);
-        scroll_box.max_content_height = 512;
-        scroll_box.propagate_natural_height = true;
-        scroll_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        scroll_box.add (devices_list);
+        var scroll_box = new Gtk.ScrolledWindow (null, null) {
+            child = devices_list,
+            hscrollbar_policy = NEVER,
+            max_content_height = 512,
+            propagate_natural_height = true
+        };
 
-        var revealer_content_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+        var revealer_content_separator = new Gtk.Separator (HORIZONTAL) {
             margin_top = 3,
             margin_bottom = 3
         };
 
-        var revealer_content = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        var revealer_content = new Gtk.Box (VERTICAL, 0);
         revealer_content.add (revealer_content_separator);
         revealer_content.add (scroll_box);
 
-        revealer = new Gtk.Revealer ();
-        revealer.add (revealer_content);
+        revealer = new Gtk.Revealer () {
+            child = revealer_content
+        };
 
         var show_settings_button = new Gtk.ModelButton ();
         show_settings_button.text = _("Bluetooth Settings…");
@@ -73,7 +63,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         add (main_switch);
         add (revealer);
         if (is_in_session) {
-            var settings_button_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            var settings_button_separator = new Gtk.Separator (HORIZONTAL) {
                 margin_top = 3,
                 margin_bottom = 3
             };
@@ -159,7 +149,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void update_devices_box_visible () {
-        if (devices_list.get_children () != null) {
+        if (devices_list.get_row_at_index (0) != null) {
             revealer.reveal_child = main_switch.active;
         } else {
             revealer.reveal_child = false;
@@ -179,11 +169,12 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void remove_device (BluetoothIndicator.Services.Device device) {
-        devices_list.get_children ().foreach ((row) => {
-            var device_child = (Widgets.Device) ((Gtk.ListBoxRow) row);
+        for (int i = 0; devices_list.get_row_at_index (i) != null; i++) {
+            var device_child = (Widgets.Device) devices_list.get_row_at_index (i);
             if (device_child != null && device_child.device.address == device.address) {
-                row.destroy ();
+                devices_list.remove (device_child);
+                return;
             }
-        });
+        }
     }
 }
