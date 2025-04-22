@@ -45,21 +45,21 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         obex_manager.transfer_active.connect (on_obex_transfer_active);
 
         name_label = new Gtk.Label (null) {
-            halign = Gtk.Align.START,
+            halign = START,
             use_markup = true,
-            valign = Gtk.Align.END,
+            valign = END,
             vexpand = true
         };
 
         status_label = new Gtk.Label (_("Not Connected")) {
-            halign = Gtk.Align.START,
-            valign = Gtk.Align.START,
+            halign = START,
+            valign = START,
             vexpand = true
         };
 
         spinner = new Gtk.Spinner () {
-            halign = Gtk.Align.START,
-            valign = Gtk.Align.START,
+            halign = START,
+            valign = START,
             hexpand = true
         };
 
@@ -67,16 +67,18 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         size_group.add_widget (status_label);
         size_group.add_widget (spinner);
 
-        icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon, Gtk.IconSize.DIALOG);
+        icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon) {
+            pixel_size = 48
+        };
 
-        status_image = new Gtk.Image.from_icon_name ("emblem-disabled", Gtk.IconSize.MENU) {
-            halign = Gtk.Align.END,
-            valign = Gtk.Align.END
+        status_image = new Gtk.Image.from_icon_name ("emblem-disabled") {
+            halign = END,
+            valign = END
         };
 
         progress_label = new Gtk.Label (null) {
-            halign = Gtk.Align.START,
-            valign = Gtk.Align.END,
+            halign = START,
+            valign = END,
             use_markup = true,
             hexpand = true
         };
@@ -87,8 +89,8 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
 
         file_label = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,
-            halign = Gtk.Align.START,
-            valign = Gtk.Align.END,
+            halign = START,
+            valign = END,
             use_markup = true,
             hexpand = true
         };
@@ -99,14 +101,15 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         content_grid.attach (progress_label, 0, 2);
 
         progress_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_DOWN,
+            child = content_grid,
+            transition_type = SLIDE_DOWN,
             margin_start = 5,
             margin_end = 5
         };
-        progress_revealer.add (content_grid);
 
-        var overlay = new Gtk.Overlay ();
-        overlay.add (icon_image);
+        var overlay = new Gtk.Overlay () {
+            child = icon_image
+        };
         overlay.add_overlay (status_image);
 
         var grid = new Gtk.Grid () {
@@ -121,12 +124,13 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         var box_grid = new Gtk.Grid ();
         box_grid.attach (grid, 0, 0);
         box_grid.attach (progress_revealer, 0, 1);
-        add (box_grid);
+
+        child = box_grid;
 
         ((DBusProxy) device).g_properties_changed.connect (update_status);
 
         update_status ();
-        get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        add_css_class (Granite.STYLE_CLASS_MENUITEM);
         selectable = false;
         obex_manager.active_transfers.foreach ((transfer, address)=> {
             on_obex_transfer_added (address, transfer);
@@ -210,11 +214,11 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
             }
             return;
         }
-        if (spinner.active) {
+        if (spinner.spinning) {
             return;
         }
 
-        spinner.active = true;
+        spinner.spinning = true;
         status_image.icon_name = "emblem-mixed";
         try {
             if (!device.connected) {
@@ -230,7 +234,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
             status_image.icon_name = "emblem-error";
         }
 
-        spinner.active = false;
+        spinner.spinning = false;
     }
 
     private void update_status () {
