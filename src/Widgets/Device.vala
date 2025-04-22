@@ -1,19 +1,7 @@
-/*-
- * Copyright (c) 2015-2023 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Library General Public License as published by
- * the Free Software Foundation, either version 2.1 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Library General Public License for more details.
- *
- * You should have received a copy of the GNU Library General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+/*
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
+*/
 
 public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
     private const string DEFAULT_ICON = "bluetooth";
@@ -117,9 +105,9 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
             margin_end = 5
         };
         grid.attach (overlay, 0, 0, 1, 2);
-        grid.attach (name_label, 1, 0, 2, 1);
-        grid.attach (status_label, 1, 1, 1, 1);
-        grid.attach (spinner, 2, 1, 1, 1);
+        grid.attach (name_label, 1, 0, 2);
+        grid.attach (status_label, 1, 1);
+        grid.attach (spinner, 2, 1);
 
         var box_grid = new Gtk.Grid ();
         box_grid.attach (grid, 0, 0);

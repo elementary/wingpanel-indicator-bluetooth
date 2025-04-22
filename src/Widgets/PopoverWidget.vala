@@ -1,19 +1,7 @@
-/*-
- * Copyright (c) 2015-2023 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Library General Public License as published by
- * the Free Software Foundation, either version 2.1 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Library General Public License for more details.
- *
- * You should have received a copy of the GNU Library General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+/*
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
+*/
 
 public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
     public signal void device_requested (BluetoothIndicator.Services.Device device);
@@ -51,9 +39,9 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
         var scroll_box = new Gtk.ScrolledWindow () {
             child = devices_list,
+            hscrollbar_policy = NEVER,
             max_content_height = 512,
-            propagate_natural_height = true,
-            hscrollbar_policy = NEVER
+            propagate_natural_height = true
         };
 
         var revealer_content_separator = new Gtk.Separator (HORIZONTAL) {
@@ -182,7 +170,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         for (int i = 0; devices_list.get_row_at_index (i) != null; i++) {
             var device_child = (Widgets.Device) devices_list.get_row_at_index (i);
             if (device_child != null && device_child.device.address == device.address) {
-                device_child.destroy ();
+                devices_list.remove (device_child);
                 return;
             }
         }

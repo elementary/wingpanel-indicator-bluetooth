@@ -1,24 +1,10 @@
-/*-
- * Copyright (c) 2015-2021 elementary LLC. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Library General Public License as published by
- * the Free Software Foundation, either version 2.1 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Library General Public License for more details.
- *
- * You should have received a copy of the GNU Library General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+/*
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
+*/
 
 public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
-
-    private unowned Gtk.StyleContext style_context;
 
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
         Object (object_manager: object_manager);
@@ -76,17 +62,17 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Spinner {
         string context;
 
         if (state) {
-            style_context.remove_class ("disabled");
+            remove_css_class ("disabled");
             context = _("Middle-click to turn Bluetooth off");
             if (connected) {
                 add_css_class ("paired");
                 description = _("Bluetooth connected");
             } else {
-                style_context.remove_class ("paired");
+                remove_css_class ("paired");
                 description = _("Bluetooth is on");
             }
         } else {
-            style_context.remove_class ("paired");
+            remove_css_class ("paired");
             add_css_class ("disabled");
             description = _("Bluetooth is off");
             context = _("Middle-click to turn Bluetooth on");
