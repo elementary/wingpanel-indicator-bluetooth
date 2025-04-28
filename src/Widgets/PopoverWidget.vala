@@ -57,7 +57,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
             child = revealer_content
         };
 
-        var show_settings_button = new PopoverMenuitem () {
+        var show_settings_button = new Wingpanel.PopoverMenuItem () {
             text = _("Bluetooth Settings…")
         };
 
@@ -174,33 +174,6 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
                 devices_list.remove (device_child);
                 return;
             }
-        }
-    }
-
-    private class PopoverMenuitem : Gtk.Button {
-        public string text {
-            set {
-                child = new Granite.AccelLabel (value) {
-                    action_name = this.action_name
-                };
-
-                update_property (Gtk.AccessibleProperty.LABEL, value, -1);
-            }
-        }
-
-        class construct {
-            set_css_name ("modelbutton");
-        }
-
-        construct {
-            accessible_role = MENU_ITEM;
-
-            clicked.connect (() => {
-                var popover = (Gtk.Popover) get_ancestor (typeof (Gtk.Popover));
-                if (popover != null) {
-                    popover.popdown ();
-                }
-            });
         }
     }
 }
