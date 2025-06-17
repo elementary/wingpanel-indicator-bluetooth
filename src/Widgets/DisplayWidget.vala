@@ -45,8 +45,8 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Bin {
         };
         gesture_click.pressed.connect (() => {
             object_manager.settings.set_boolean (
-                "bluetooth-enabled",
-                !object_manager.settings.get_boolean ("bluetooth-enabled")
+                "enabled",
+                !object_manager.settings.get_boolean ("enabled")
             );
         });
     }
