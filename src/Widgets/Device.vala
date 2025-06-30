@@ -55,11 +55,11 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         size_group.add_widget (status_label);
         size_group.add_widget (spinner);
 
-        icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon, Gtk.IconSize.DIALOG) {
+        icon_image = new Gtk.Image.from_icon_name (device.icon == null ? DEFAULT_ICON : device.icon) {
             pixel_size = 48
         };
 
-        status_image = new Gtk.Image.from_icon_name ("emblem-disabled", Gtk.IconSize.MENU) {
+        status_image = new Gtk.Image.from_icon_name ("emblem-disabled") {
             halign = END,
             valign = END
         };
@@ -118,7 +118,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
         ((DBusProxy) device).g_properties_changed.connect (update_status);
 
         update_status ();
-        get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+        add_css_class (Granite.STYLE_CLASS_MENUITEM);
         selectable = false;
         obex_manager.active_transfers.foreach ((transfer, address)=> {
             on_obex_transfer_added (address, transfer);
@@ -202,11 +202,11 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
             }
             return;
         }
-        if (spinner.active) {
+        if (spinner.spinning) {
             return;
         }
 
-        spinner.active = true;
+        spinner.spinning = true;
         status_image.icon_name = "emblem-mixed";
         try {
             if (!device.connected) {
@@ -222,7 +222,7 @@ public class BluetoothIndicator.Widgets.Device : Gtk.ListBoxRow {
             status_image.icon_name = "emblem-error";
         }
 
-        spinner.active = false;
+        spinner.spinning = false;
     }
 
     private void update_status () {
