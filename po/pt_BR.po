@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-24 18:13+0000\n"
-"PO-Revision-Date: 2021-03-12 20:18+0000\n"
-"Last-Translator: Leonardo <leonardo@elementary.io>\n"
-"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
+"PO-Revision-Date: 2025-07-27 21:55+0000\n"
+"Last-Translator: Guilherme Faura <guilhermefaura@gmail.com>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementaryos.org/projects/"
 "wingpanel/wingpanel-indicator-bluetooth/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:48+0000\n"
 
 #: src/Widgets/Device.vala:54 src/Widgets/Device.vala:280
@@ -22,17 +22,17 @@ msgstr "Desconectado"
 #: src/Widgets/Device.vala:165
 #, c-format
 msgid "<b>Filename</b>: %s"
-msgstr ""
+msgstr "<b>Nome do arquivo</b>: %s"
 
 #: src/Widgets/Device.vala:170
 #, c-format
 msgid "Receiving… %s of %s"
-msgstr ""
+msgstr "Recebendo… %s de %s"
 
 #: src/Widgets/Device.vala:174
 #, c-format
 msgid "Sending… %s of %s"
-msgstr ""
+msgstr "Enviando… %s de %s"
 
 #: src/Widgets/Device.vala:221
 msgid "Connecting…"
@@ -52,7 +52,7 @@ msgstr "Auto-falantes"
 
 #: src/Widgets/Device.vala:245
 msgid "Headphones"
-msgstr ""
+msgstr "Fones de ouvido"
 
 #: src/Widgets/Device.vala:248
 msgid "Controller"
@@ -84,31 +84,23 @@ msgstr "Conectado"
 
 #: src/Widgets/DisplayWidget.vala:80
 msgid "Middle-click to turn Bluetooth off"
-msgstr ""
+msgstr "Clique com o botão do meio para desligar o Bluetooth"
 
 #: src/Widgets/DisplayWidget.vala:83
-#, fuzzy
-#| msgid "Not Connected"
 msgid "Bluetooth connected"
-msgstr "Desconectado"
+msgstr "Bluetooth conectado"
 
 #: src/Widgets/DisplayWidget.vala:86
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is on"
-msgstr "Bluetooth"
+msgstr "Bluetooth está ligado"
 
 #: src/Widgets/DisplayWidget.vala:91
-#, fuzzy
-#| msgid "Bluetooth"
 msgid "Bluetooth is off"
-msgstr "Bluetooth"
+msgstr "Bluetooth está desligado"
 
 #: src/Widgets/DisplayWidget.vala:92
-#, fuzzy
-#| msgid "Indicator for Bluetooth signal"
 msgid "Middle-click to turn Bluetooth on"
-msgstr "Indicador de sinal Bluetooth"
+msgstr "Clique com o botão do meio para ligar o Bluetooth"
 
 #: src/Widgets/PopoverWidget.vala:44
 msgid "Bluetooth"
