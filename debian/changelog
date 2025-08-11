@@ -1,22 +1,22 @@
-wingpanel-indicator-bluetooth (8.0.0) jammy; urgency=medium
+io.elementary.panel.bluetooth (8.0.0) jammy; urgency=medium
 
   * Release 8.0.0 (#217)
 
- -- elementary LLC <builds@elementary.io>  Wed, 21 Aug 2024 19:55:43 +0000
+ -- elementary, Inc. <builds@elementary.io>  Wed, 21 Aug 2024 19:55:43 +0000
 
-wingpanel-indicator-bluetooth (7.0.1) jammy; urgency=medium
+io.elementary.panel.bluetooth (7.0.1) jammy; urgency=medium
 
   * New upstream release
 
  -- Danielle Fore <danielle@elementary.io>  Thu, 29 Jun 2023 11:12:12 -0700
 
-wingpanel-indicator-bluetooth (7.0.0) jammy; urgency=medium
+io.elementary.panel.bluetooth (7.0.0) jammy; urgency=medium
 
   * New upstream release
 
  -- Danielle Foré <danielle@elementary.io>  Tue, 27 Jun 2023 12:51:21 -0700
 
-wingpanel-indicator-bluetooth (2.1.8) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.8) bionic; urgency=medium
 
   * Release 2.1.8 (#167)
   * l10n: Correctly setup the locales (#166)
@@ -24,9 +24,9 @@ wingpanel-indicator-bluetooth (2.1.8) bionic; urgency=medium
   * Update translation files
   * Update translation template
 
- -- elementary LLC <builds@elementary.io>  Thu, 26 Aug 2021 02:02:15 +0000
+ -- elementary, Inc. <builds@elementary.io>  Thu, 26 Aug 2021 02:02:15 +0000
 
-wingpanel-indicator-bluetooth (2.1.7) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.7) bionic; urgency=medium
 
   * Release 2.1.7 (#163)
   * Update translation files
@@ -39,9 +39,9 @@ wingpanel-indicator-bluetooth (2.1.7) bionic; urgency=medium
   * Update for libwingpanel transition (#146)
   * LINGUAS: sort, remove en_US
 
- -- elementary LLC <builds@elementary.io>  Wed, 14 Jul 2021 20:11:06 +0000
+ -- elementary, Inc. <builds@elementary.io>  Wed, 14 Jul 2021 20:11:06 +0000
 
-wingpanel-indicator-bluetooth (2.1.6) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.6) bionic; urgency=medium
 
   * Release 2.1.6 (#141)
   * Update translation files
@@ -52,9 +52,9 @@ wingpanel-indicator-bluetooth (2.1.6) bionic; urgency=medium
   * Appdata: Add icon (#122)
   * Prevent device duplicates (#116)
 
- -- elementary LLC <builds@elementary.io>  Tue, 05 Jan 2021 22:00:48 +0000
+ -- elementary, Inc. <builds@elementary.io>  Tue, 05 Jan 2021 22:00:48 +0000
 
-wingpanel-indicator-bluetooth (2.1.5) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.5) bionic; urgency=medium
 
   * Release 2.1.5 (#107)
   * Use GLib.DBusObjectManagerClient instead of doing everything by
@@ -64,9 +64,9 @@ wingpanel-indicator-bluetooth (2.1.5) bionic; urgency=medium
   * Meson: Add data to subdirs (#100)
   * Data: clean up names and meson (#101)
 
- -- elementary LLC <builds@elementary.io>  Wed, 08 Apr 2020 23:08:16 +0000
+ -- elementary, Inc. <builds@elementary.io>  Wed, 08 Apr 2020 23:08:16 +0000
 
-wingpanel-indicator-bluetooth (2.1.4) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.4) bionic; urgency=medium
 
   * Release 2.1.4 (#98)
   * Add Release to Actions
@@ -85,57 +85,57 @@ wingpanel-indicator-bluetooth (2.1.4) bionic; urgency=medium
   * Add Silesian and update translation template
   * Create FUNDING.yml
 
- -- elementary LLC <builds@elementary.io>  Mon, 25 Nov 2019 16:44:42 +0000
+ -- elementary, Inc. <builds@elementary.io>  Mon, 25 Nov 2019 16:44:42 +0000
 
-wingpanel-indicator-bluetooth (2.1.3) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.3) bionic; urgency=medium
 
   * New upstream release.
 
  -- Cody Garver <codygarver@gmail.com>  Wed, 22 May 2019 12:55:03 -0500
 
-wingpanel-indicator-bluetooth (2.1.2) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.2) bionic; urgency=medium
 
   * New upstream release.
 
  -- Cody Garver <cody@elementary.io>  Fri, 21 Dec 2018 03:59:41 -0600
 
-wingpanel-indicator-bluetooth (2.1.1) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.1) bionic; urgency=medium
 
   * New upstream release.
 
  -- Cody Garver <cody@elementary.io>  Wed, 03 Oct 2018 05:18:32 -0500
 
-wingpanel-indicator-bluetooth (2.1.0) bionic; urgency=medium
+io.elementary.panel.bluetooth (2.1.0) bionic; urgency=medium
 
   * New upstream release.
 
  -- Cody Garver <cody@elementary.io>  Mon, 11 Jun 2018 13:43:31 -0500
 
-wingpanel-indicator-bluetooth (2.0.3) xenial; urgency=medium
+io.elementary.panel.bluetooth (2.0.3) xenial; urgency=medium
 
   * New upstream release.
 
  -- Cody Garver <cody@elementary.io>  Fri, 18 Aug 2017 17:42:10 -0500
 
-wingpanel-indicator-bluetooth (2.0.2) xenial; urgency=medium
+io.elementary.panel.bluetooth (2.0.2) xenial; urgency=medium
 
   * New upstream release.
 
  -- Cody Garver <cody@elementary.io>  Mon, 22 May 2017 18:16:59 -0500
 
-wingpanel-indicator-bluetooth (2.0.1) xenial; urgency=medium
+io.elementary.panel.bluetooth (2.0.1) xenial; urgency=medium
 
   * New upstream release.
 
  -- Cody Garver <cody@elementary.io>  Sun, 22 Jan 2017 19:45:55 -0600
 
-wingpanel-indicator-bluetooth (2.0) xenial; urgency=medium
+io.elementary.panel.bluetooth (2.0) xenial; urgency=medium
 
   * New upstream release.
 
  -- Cody Garver <cody@elementary.io>  Sun, 14 Aug 2016 03:27:29 -0500
 
-wingpanel-indicator-bluetooth (0.1) trusty; urgency=low
+io.elementary.panel.bluetooth (0.1) trusty; urgency=low
 
   * Initial Release.
 
