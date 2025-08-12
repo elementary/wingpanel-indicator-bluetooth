@@ -18,7 +18,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Granite.Bin {
         child = spinner;
 
         // Prevent a race that skips automatic resource loading
-        // https://github.com/elementary/wingpanel-indicator-bluetooth/issues/203
+        // https://github.com/elementary/panel-bluetooth/issues/203
         Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/org/elementary/wingpanel/icons");
 
         var provider = new Gtk.CssProvider ();
