@@ -3,10 +3,9 @@
 * SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
 */
 
-public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Bin {
+public class BluetoothIndicator.Widgets.DisplayWidget : Granite.Bin {
     public BluetoothIndicator.Services.ObjectManager object_manager { get; construct; }
 
-    private Gtk.GestureMultiPress gesture_click;
     private Gtk.Spinner spinner;
 
     public DisplayWidget (BluetoothIndicator.Services.ObjectManager object_manager) {
@@ -20,15 +19,15 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Bin {
 
         // Prevent a race that skips automatic resource loading
         // https://github.com/elementary/wingpanel-indicator-bluetooth/issues/203
-        Gtk.IconTheme.get_default ().add_resource_path ("/org/elementary/wingpanel/icons");
+        Gtk.IconTheme.get_for_display (Gdk.Display.get_default ()).add_resource_path ("/org/elementary/wingpanel/icons");
 
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/wingpanel/bluetooth/indicator.css");
 
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+        Gtk.StyleContext.add_provider_for_display (Gdk.Display.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        spinner.get_style_context ().add_class ("bluetooth-icon");
-        spinner.get_style_context ().add_class ("disabled");
+        spinner.add_css_class ("bluetooth-icon");
+        spinner.add_css_class ("disabled");
 
         object_manager.global_state_changed.connect ((state, connected) => {
             set_icon ();
@@ -40,7 +39,7 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Bin {
             object_manager.notify["retrieve-finished"].connect (set_icon);
         }
 
-        gesture_click = new Gtk.GestureMultiPress (this) {
+        var gesture_click = new Gtk.GestureClick () {
             button = Gdk.BUTTON_MIDDLE
         };
         gesture_click.pressed.connect (() => {
@@ -49,6 +48,8 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Bin {
                 !object_manager.settings.get_boolean ("bluetooth-enabled")
             );
         });
+
+        add_controller (gesture_click);
     }
 
     private void set_icon () {
@@ -67,18 +68,18 @@ public class BluetoothIndicator.Widgets.DisplayWidget : Gtk.Bin {
         string context;
 
         if (state) {
-            spinner.get_style_context ().remove_class ("disabled");
+            spinner.remove_css_class ("disabled");
             context = _("Middle-click to turn Bluetooth off");
             if (connected) {
-                spinner.get_style_context ().add_class ("paired");
+                spinner.add_css_class ("paired");
                 description = _("Bluetooth connected");
             } else {
-                spinner.get_style_context ().remove_class ("paired");
+                spinner.remove_css_class ("paired");
                 description = _("Bluetooth is on");
             }
         } else {
-            spinner.get_style_context ().remove_class ("paired");
-            spinner.get_style_context ().add_class ("disabled");
+            spinner.remove_css_class ("paired");
+            spinner.add_css_class ("disabled");
             description = _("Bluetooth is off");
             context = _("Middle-click to turn Bluetooth on");
         }
