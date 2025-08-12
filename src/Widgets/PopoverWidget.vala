@@ -30,12 +30,12 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         orientation = VERTICAL;
 
         main_switch = new Granite.SwitchModelButton (_("Bluetooth"));
-        main_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        main_switch.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
         devices_list = new Gtk.ListBox ();
         devices_list.set_sort_func ((Gtk.ListBoxSortFunc) compare_rows);
 
-        var scroll_box = new Gtk.ScrolledWindow (null, null) {
+        var scroll_box = new Gtk.ScrolledWindow () {
             child = devices_list,
             hscrollbar_policy = NEVER,
             max_content_height = 512,
@@ -48,30 +48,30 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
         };
 
         var revealer_content = new Gtk.Box (VERTICAL, 0);
-        revealer_content.add (revealer_content_separator);
-        revealer_content.add (scroll_box);
+        revealer_content.append (revealer_content_separator);
+        revealer_content.append (scroll_box);
 
         revealer = new Gtk.Revealer () {
             child = revealer_content
         };
 
-        var show_settings_button = new Gtk.ModelButton ();
-        show_settings_button.text = _("Bluetooth Settings…");
+        var show_settings_button = new Wingpanel.PopoverMenuItem () {
+            text = _("Bluetooth Settings…")
+        };
 
-        add (main_switch);
-        add (revealer);
+        append (main_switch);
+        append (revealer);
         if (is_in_session) {
             var settings_button_separator = new Gtk.Separator (HORIZONTAL) {
                 margin_top = 3,
                 margin_bottom = 3
             };
 
-            add (settings_button_separator);
-            add (show_settings_button);
+            append (settings_button_separator);
+            append (show_settings_button);
         }
 
         update_ui_state (object_manager.get_global_state ());
-        show_all ();
 
         devices_list.row_activated.connect ((row) => {
             ((Widgets.Device) row).toggle_device.begin ();
@@ -151,8 +151,7 @@ public class BluetoothIndicator.Widgets.PopoverWidget : Gtk.Box {
 
     private void add_device (BluetoothIndicator.Services.Device device) {
         var device_widget = new Widgets.Device (device, obex_manager);
-        devices_list.add (device_widget);
-        devices_list.show_all ();
+        devices_list.append (device_widget);
 
         update_devices_box_visible ();
 

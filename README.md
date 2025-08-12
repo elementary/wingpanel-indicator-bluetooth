@@ -1,6 +1,6 @@
 # Wingpanel Bluetooth Indicator
 [![Packaging status](https://repology.org/badge/tiny-repos/wingpanel-indicator-bluetooth.svg)](https://repology.org/metapackage/wingpanel-indicator-bluetooth)
-[![Translation status](https://l10n.elementary.io/widgets/wingpanel/-/wingpanel-indicator-bluetooth/svg-badge.svg)](https://l10n.elementary.io/engage/wingpanel/?utm_source=widget)
+[![Translation status](https://l10n.elementaryos.org/widget/wingpanel/wingpanel-indicator-bluetooth/svg-badge.svg)](https://l10n.elementaryos.org/engage/wingpanel/)
 
 ![Screenshot](data/screenshot.png?raw=true)
 
@@ -10,8 +10,8 @@ You'll need the following dependencies:
 
     gobject-introspection
     libglib2.0-dev
-    libgranite-dev >= 6.0.0
-    libwingpanel-dev
+    libgranite-7-dev >= 7.0.0
+    libwingpanel-8-dev
     meson >= 0.58.0
     valac
 

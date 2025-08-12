@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2019-2023 elementary, Inc. <contact@elementary.io> -->
 <component type="addon">
-  <id>io.elementary.wingpanel.bluetooth</id>
-  <translation type="gettext">bluetooth-indicator</translation>
+  <id>io.elementary.panel.bluetooth</id>
+  <translation type="gettext">io.elementary.panel.bluetooth</translation>
   <extends>io.elementary.wingpanel</extends>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LGPL-2.1</project_license>
@@ -14,15 +14,15 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/wingpanel-indicator-bluetooth/8.0.0/data/screenshot.png</image>
+      <image>https://raw.githubusercontent.com/elementary/panel-bluetooth/8.0.0/data/screenshot.png</image>
     </screenshot>
   </screenshots>
 
-  <url type="bugtracker">https://github.com/elementary/wingpanel-indicator-bluetooth/issues/new/choose</url>
+  <url type="bugtracker">https://github.com/elementary/panel-bluetooth/issues/new/choose</url>
   <url type="donation">https://elementary.io/get-involved#funding</url>
-  <url type="help">https://github.com/elementary/wingpanel-indicator-bluetooth/discussions/categories/q-a</url>
+  <url type="help">https://github.com/elementary/panel-bluetooth/discussions/categories/q-a</url>
   <url type="homepage">https://elementary.io/</url>
-  <url type="translate">https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-bluetooth/</url>
+  <url type="translate">https://l10n.elementary.io/projects/wingpanel/panel-bluetooth/</url>
 
   <developer id="org.elementaryos">
     <name>elementary, Inc.</name>
@@ -39,7 +39,7 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/wingpanel-indicator-bluetooth/issues/211">Bluetooth status icons use old namespace</issue>
+        <issue url="https://github.com/elementary/panel-bluetooth/issues/211">Bluetooth status icons use old namespace</issue>
       </issues>
     </release>
 
@@ -51,7 +51,7 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/wingpanel-indicator-bluetooth/issues/203">No icon on wingpanel</issue>
+        <issue url="https://github.com/elementary/panel-bluetooth/issues/203">No icon on wingpanel</issue>
       </issues>
     </release>
 
@@ -63,10 +63,10 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/wingpanel-indicator-bluetooth/issues/2">Doesn't update when setting dconf key</issue>
-        <issue url="https://github.com/elementary/wingpanel-indicator-bluetooth/issues/124">Receive file and athorize on wing panel</issue>
-        <issue url="https://github.com/elementary/wingpanel-indicator-bluetooth/issues/183">Update indicator icon</issue>
-        <issue url="https://github.com/elementary/wingpanel-indicator-bluetooth/issues/188">Device's alias should be displayed if available</issue>
+        <issue url="https://github.com/elementary/panel-bluetooth/issues/2">Doesn't update when setting dconf key</issue>
+        <issue url="https://github.com/elementary/panel-bluetooth/issues/124">Receive file and athorize on wing panel</issue>
+        <issue url="https://github.com/elementary/panel-bluetooth/issues/183">Update indicator icon</issue>
+        <issue url="https://github.com/elementary/panel-bluetooth/issues/188">Device's alias should be displayed if available</issue>
       </issues>
     </release>
 
