@@ -12,11 +12,11 @@ Build-Depends: debhelper (>= 10.5.1),
                meson,
                valac (>= 0.28)
 Standards-Version: 4.1.1
-Homepage: https://github.com/elementary/wingpanel-indicator-bluetooth
+Homepage: https://github.com/elementary/panel-bluetooth
 
 Package: io.elementary.panel.bluetooth
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Enhances: wingpanel
+Enhances: io.elementary.wingpanel
 Description: WingPanel Bluetooth Indicator
  WingPanel Bluetooth Indicator
